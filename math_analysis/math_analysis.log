@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  28 NOV 2024 11:06
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  28 NOV 2024 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -871,15 +871,8 @@ runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
-
-Package rerunfilecheck Warning: File `math_analysis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `math_analysis.out':
-(rerunfilecheck)             Before: B37D3E8F6E74025E8D067AB63AE5CB21;1314
-(rerunfilecheck)             After:  BB238079D1A6FF765C4717CA0CDADC3A;1208.
+Package rerunfilecheck Info: File `math_analysis.out' has not changed.
+(rerunfilecheck)             Checksum: BB238079D1A6FF765C4717CA0CDADC3A;1208.
  ) 
 Here is how much of TeX's memory you used:
  17351 strings out of 474773
