@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  28 NOV 2024 11:31
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  28 NOV 2024 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -850,37 +850,97 @@ t line 45.
 ] [2] [3] [4] [5]
 Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\displaystyle' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lim' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\left' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\endgroup' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@over' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\right' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 757.
+
+[16]
+Overfull \vbox (3.82388pt too high) has occurred while \output is active []
+
+
+[17]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
+[18
+
+
+
+
+]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
-(./math_analysis.ind) [17
+ (./math_analysis.ind) [19
 
 
+] [20
 
-
-
-
-] [18
-
-] [19] (./math_analysis.aux (./angiosperms.aux))
+] [21] (./math_analysis.aux
+(./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: BB238079D1A6FF765C4717CA0CDADC3A;1208.
+(rerunfilecheck)             Checksum: B7EA38BD59F89BF6762AAE1728615641;1670.
  ) 
 Here is how much of TeX's memory you used:
- 17351 strings out of 474773
- 384631 string characters out of 5757724
+ 17383 strings out of 474773
+ 385881 string characters out of 5757724
  1944839 words of memory out of 5000000
- 39214 multiletter control sequences out of 15000+600000
- 568505 words of font info for 120 fonts, out of 8000000 for 9000
+ 39240 multiletter control sequences out of 15000+600000
+ 571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,21n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (23 pages).
+Output written on math_analysis.pdf (25 pages).
