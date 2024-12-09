@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  28 NOV 2024 16:45
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  9 DEC 2024 07:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -907,12 +907,31 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 
 
-[17]
+[17] [18]
+Missing character: There is no 。 (U+3002) in font [lmroman10-regular]:mapping=t
+ex-text;!
+
+Overfull \vbox (3.82388pt too high) has occurred while \output is active []
+
+
+[19] [20]
+Overfull \vbox (3.82388pt too high) has occurred while \output is active []
+
+
+[21] [22]
+Overfull \vbox (3.82388pt too high) has occurred while \output is active []
+
+
+[23] [24]
+Overfull \vbox (3.82388pt too high) has occurred while \output is active []
+
+
+[25]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[18
+[26
 
 
 
@@ -920,27 +939,27 @@ No file angiosperms.tex.
 ]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [19
+ (./math_analysis.ind) [27
 
 
-] [20
+] [28
 
-] [21] (./math_analysis.aux
+] [29] (./math_analysis.aux
 (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: B7EA38BD59F89BF6762AAE1728615641;1670.
+(rerunfilecheck)             Checksum: BE7B815C29C612D45243C1DB093C9EA1;1666.
  ) 
 Here is how much of TeX's memory you used:
- 17383 strings out of 474773
- 385881 string characters out of 5757724
- 1944839 words of memory out of 5000000
- 39240 multiletter control sequences out of 15000+600000
+ 17431 strings out of 474773
+ 389429 string characters out of 5757724
+ 1946839 words of memory out of 5000000
+ 39288 multiletter control sequences out of 15000+600000
  571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,21n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (25 pages).
+Output written on math_analysis.pdf (33 pages).
