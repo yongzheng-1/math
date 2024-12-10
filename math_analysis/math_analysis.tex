@@ -729,7 +729,7 @@ $$\frac{2n+2}{n+1} = \displaystyle\sum_{k=n^2}^{(n+1)^2}\frac{1}{\sqrt{(n+1)^2}}
 \end{example}
 \begin{proof}
 假设$n=p_1^{m_1}p_2^{m_2}\cdots p_l^{m_l}$, 其中$p_1 < p_2 <\cdots < p_l$是互异的素数，$m_k \geq 1, k=1,2,\cdots, l$。这里$l=p(n)$.
-$$\ln{n} = \displaystyle\sum_{k=1}^{l}m_k\ln{p_l} \geq \displaystyle\sum_{k=1}^{p(n)}\ln{2}=p(n)\ln{2}.$$
+$$\ln{n} = \displaystyle\sum_{k=1}^{l}m_k\ln{p_k} \geq \displaystyle\sum_{k=1}^{p(n)}\ln{2}=p(n)\ln{2}.$$
 因此
 $$0 \leq \frac{p(n)}{n} \leq \frac{\ln{n}}{n\ln{2}}.$$
 由夹逼定理可知，$\displaystyle \lim_{n\to +\infty}\frac{p(n)}{n} = 0.$
@@ -841,6 +841,7 @@ $$\displaystyle \lim_{n\to +\infty}x_n=a =\frac{1+\sqrt{1+4c}}{2}.$$
 设$x_1=c>0$，令$\displaystyle x_{n+1} = c + \frac{1}{x_n}$，$n\in\mathbb{N}$。求极限$\displaystyle \lim_{n\to +\infty}x_n$.
 \end{example}
 \begin{solution}
+由$x_n$的定义可以，$x_n > c, \forall n > 2$且$x_n \geq 2\sqrt{c\frac{1}{x_{n-1}}}$
 \end{solution}
 %%%%%%%%%%%%%%%%%%%
 
@@ -1081,7 +1082,7 @@ $$\displaystyle \frac{a_{n+1}}{a_n} = \frac{3 + 3a_n}{3a_n + a_n^2}.$$
 \item $a_n > \sqrt{3}\Rightarrow 3 + 3a_n < 3a_n + a_n^2 \Rightarrow  a_{n+1}< a_{n}$;
 \item $a_n = \sqrt{3}\Rightarrow 3 + 3a_n = 3a_n + a_n^2 \Rightarrow  a_{n+1}= a_{n}$.
 \end{enumerate}
-基于以上的计算，不管$a_1$取何值，数列$\{a_n\}$将会振荡地靠近$\sqrt{3}$且最后收敛于$\sqrt{3}$.事实上
+基于以上的计算，不管$a_1$取何值，我们都有
 $$\left|a_{n+1}-\sqrt{3}\right| = \left|\frac{3+3a_n - 3\sqrt{3} -\sqrt{3}a_n}{a_n+3}\right|=\left|\frac{(3-\sqrt{3})(a_n-\sqrt{3})}{a_n+3}\right|<\left(\frac{3-\sqrt{3}}{3}\right)\left| a_n-\sqrt{3}\right|.$$
 因为$\displaystyle \frac{3-\sqrt{3}}{3} < 1$,所以$(a_n-\sqrt{3})\rightarrow 0 \Rightarrow a_n\rightarrow \sqrt{3}.$
 \end{proof}
@@ -1090,28 +1091,56 @@ $$\left|a_{n+1}-\sqrt{3}\right| = \left|\frac{3+3a_n - 3\sqrt{3} -\sqrt{3}a_n}{a
 \begin{example}
 设$a>0$，$x_1>0$，$x_{n+1} = \displaystyle\frac{x_n(x_n^2+3a)}{3x_n^2+a}$，$n=1,2,\cdots$。证明：$\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$
 \end{example}
-\begin{proof}这题和上一题类似。首先我们证明，如果$x_n < \sqrt{a}$,则 $x_{n+1} > x_{n}$.如果$x_n > \sqrt{a}$,则$x_{n+1} < x_{n}$. 
-$$\displaystyle \frac{x_{n+1}}{x_n} = \frac{x_n^2+3a}{3x_n^2+a}.$$
+\begin{proof}这题和上一题类似。我们计算
+$$x_{n+1}-x_{n} = \frac{2x_n(\sqrt{a}-x_n)(\sqrt{a}+x_n)}{3x_n^2+a},$$
+所以：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item 如果$x_n < \sqrt{a}\Rightarrow x_n^2 + 3a > 3x_n^2 + a_n \Rightarrow  x_{n+1}>x_{n}$;
-\item 如果$x_n > \sqrt{a}\Rightarrow x_n^2 + 3a < 3x_n^2 + a_n \Rightarrow  x_{n+1}< x_{n}$;
-\item 如果$a_n = \sqrt{3}\Rightarrow x_n^2 + 3a = 3x_n^2 + a_n\Rightarrow  x_{n+1}= x_{n}$.
+\item 如果$x_1\leq \sqrt{a}$,则$\{x_n\}$是单调增且有上界$\sqrt{a}$的数列;
+\item 如果$x_1 > \sqrt{a}$, 则$\{x_n\}$是单调减且有下界$\sqrt{a}$的数列;
 \end{enumerate}
-所以直觉告诉我们，不管$x_1$为何值，当$n$充分大之后， $\{x_n\}$应该从左右两边聚集到$\sqrt{a}$.事实上
-\begin{equation*}
-\begin{split}
-\left|x_{n+1}-\sqrt{a}\right|&=\left|\frac{x_n^3 -3x_n^2\sqrt{a} + 3ax_n -a\sqrt{a}}{3x_n^2 + a}\right| \\
-&=\frac{\left|x_n -\sqrt{a}\right|^3}{3x_n^2 + a}
-\end{split}
-\end{equation*}
+无论那种情况发生，由实数连续性命题(二)可知，$\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$。
+
+\noindent 对于以上两种情况我们可以分别用数学归纳法讨论：\\
+\noindent(1): 当$x_1 \leq \sqrt{a}$时：\\
+$x_2 - x_1 \geq 0\Rightarrow x_2 \geq x_1$且
+$x_2 - \sqrt{a} = \displaystyle\frac{(x_1-\sqrt{a})^3}{3x_1^2+a} \leq 0\Rightarrow x_2 \leq \sqrt{a}.$\\
+假设$n=k$时也有$x_{k}\geq x_{k-1}$且$x_k \leq \sqrt{a}$.\\
+现证$n=k+1$时也有这些。$x_{k+1} \geq x_{k}$是显然的。$x_{k+1} - \sqrt{a} = \displaystyle\frac{(x_{k}-\sqrt{a})^3}{3x_k^2+a} \leq 0\Rightarrow x_{k+1} \leq \sqrt{a}.$\\
+\noindent(2)： 当$x_1 > \sqrt{a}$时：\\
+$x_2 - x_1 < 0\Rightarrow x_2 < x_1$且
+$x_2 - \sqrt{a} = \displaystyle\frac{(x_1-\sqrt{a})^3}{3x_1^2+a} > 0\Rightarrow x_2 > \sqrt{a}.$\\
+假设$n=k$时也有$x_{k}< x_{k-1}$且$x_k > \sqrt{a}$.\\
+现证$n=k+1$时也有这些。$x_{k+1} < x_{k}$是显然的。$x_{k+1} - \sqrt{a} = \displaystyle\frac{(x_{k}-\sqrt{a})^3}{3x_k^2+a} > 0\Rightarrow x_{k+1} > \sqrt{a}.$
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$a> 0$，$x_1 =  \sqrt[3]{a}$，$x_n=\sqrt[3]{ax_{n-1}}(n> 1)$。证明： $\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$
-
 \end{example}
+\begin{proof}
+我们只需要证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$a\geq 1$,则数列$\{x_n\}$是单调递增，且有上界$\sqrt{a}$.
+\item 如果$a<1$,则数列$\{x_n\}$是单调递减，且有下界$\sqrt{a}$.
+\end{enumerate}
+无论上述那种情况发生，由实数连续性命题(二)可知， $\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$。
+
+$$x_n - x_{n-1} = \displaystyle\frac{x_{n-1}(\sqrt{a}-x_{n-1})(\sqrt{a}+x_{n-1})}{\left(\sqrt[3]{ax_{n-1}}\right)^2 + \sqrt[3]{ax_{n-1}}x_{n-1}+x_{n-1}^2}.$$
+
+\noindent(1):当$a\geq1$时：\\
+$\sqrt[3]{a} \leq \sqrt{a}$.\\
+当$n=2$时，$\sqrt{a}-x_1 = \sqrt{a}-\sqrt[3]{a} \geq 0 \Rightarrow x_2-x_1 \geq  0$且$x_2 = \sqrt[3]{ax_1} \leq \sqrt[3]{a \sqrt{a}} = \sqrt{a}$.\\
+假设$n=k$时,$x_k \geq x_{k-1}$且$x_k \leq \sqrt{a}$.\\
+由归纳法可得知，$n=k+1$时有，$x_{k+1} \geq x_k$且$x_{k+1}\leq \sqrt{a}$.\\
+
+\noindent(2):当$a<1$时：\\
+$\sqrt[3]{a} > \sqrt{a}$.\\
+当$n=2$时，$\sqrt{a}-x_1 = \sqrt{a}-\sqrt[3]{a} < 0 \Rightarrow x_2-x_1 < 0$且$x_2 = \sqrt[3]{ax_1} > \sqrt[3]{a \sqrt{a}} = \sqrt{a}$.\\
+假设$n=k$时,$x_k < x_{k-1}$且$x_k > \sqrt{a}$.\\
+由归纳法可得知，$n=k+1$时有，$x_{k+1} < x_k$且$x_{k+1} > \sqrt{a}$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$0<a_1<b_1<c_1$。令
@@ -1142,7 +1171,19 @@ c = \displaystyle\frac{a+b+c}{3}
 设$a_n > 0$，$S_n=a_1+\cdots+a_n$，$T_n=\frac{a_1}{S_1}+\cdots+\frac{a_n}{S_n}$，且$\displaystyle  \lim_{n\to +\infty}S_n=+\infty$。证明:$\displaystyle  \lim_{n\to +\infty}T_n=+\infty.$
 \end{example}
 \begin{proof}
-
+由于$S_n \rightarrow  +\infty$, 我们可以找到一个子列$\{n_k\}$使得
+$$\frac{S_{n_{k-1}}}{S_{n_k}} < \frac{1}{2}, \quad\forall k\in\mathbb{N}.$$
+现在我们计算$T_{n_k}$:
+\begin{equation*}
+\begin{split}
+T_{n_k} &= \left(\frac{a_1}{S_1}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\frac{a_{n_1+1}}{S_{n_1+1}}+\cdots \frac{a_{n_2}}{S_{n_2}}\right) +\cdots+\left(\frac{a_{n_{k-1}+1}}{S_{n_{k-1}+1}}+\cdots \frac{a_{n_k}}{S_{n_k}}\right) \\
+&> \left(\frac{a_1}{S_{n_1}}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\frac{a_{n_1+1}}{S_{n_2}}+\cdots \frac{a_{n_2}}{S_{n_2}}\right) +\cdots+\left(\frac{a_{n_{k-1}+1}}{S_{n_k}}+\cdots \frac{a_{n_k}}{S_{n_k}}\right)\\
+&=\frac{S_{n_1}- 0}{S_{n_1}} + \frac{S_{n_2}-S_1}{S_{n_2}} + \cdots +  \frac{S_{n_k}-S_{n_{k-1}}}{S_{n_{k}}}\\
+&>\frac{k}{2}.
+\end{split}
+\end{equation*}
+即:$\displaystyle \lim_{k\to +\infty}T_{n_k}=+\infty.$
+因为$T_n$是单调增的数列，从而$\displaystyle \lim_{n\to +\infty}T_{n}=+\infty.$命题 得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
