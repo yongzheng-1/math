@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  9 DEC 2024 07:34
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  10 DEC 2024 14:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -922,30 +922,32 @@ Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 
 
-[23] [24]
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1137
+
+ []
+
+[24]
 Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 
 
-[25]
+[25] [26]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[26
-
-
-
-
-]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [27
+(./math_analysis.ind) [27
+
+
+
+
 
 
 ] [28
 
-] [29] (./math_analysis.aux
-(./angiosperms.aux))
+] [29] (./math_analysis.aux (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
