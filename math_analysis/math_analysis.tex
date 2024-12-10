@@ -841,7 +841,27 @@ $$\displaystyle \lim_{n\to +\infty}x_n=a =\frac{1+\sqrt{1+4c}}{2}.$$
 设$x_1=c>0$，令$\displaystyle x_{n+1} = c + \frac{1}{x_n}$，$n\in\mathbb{N}$。求极限$\displaystyle \lim_{n\to +\infty}x_n$.
 \end{example}
 \begin{solution}
-由$x_n$的定义可以，$x_n > c, \forall n > 2$且$x_n \geq 2\sqrt{c\frac{1}{x_{n-1}}}$
+由递推公式，我们有
+$$x_{n+1}-x_{n} = \frac{x_{n-1}- x_n}{x_n\cdot x_{n-1}}.$$
+下面我们证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $x_{2k-1} < x_{2k+1},\quad\forall k\in\mathbb{N}$;
+\item $x_{2k} > x_{2(k+1)},\quad\forall k\in\mathbb{N}$.
+\end{enumerate}
+$$x_{n}-x_{n-2} = \frac{x_{n-3} - x_{n-1}}{x_{n-1}\cdot x_{n-3}} = \frac{x_{n-2} - x_{n-4}}{x_{n-1}\cdot x_{n-2}\cdot x_{n-3}\cdot x_{n-4}}.$$
+由于$x_3-x_1 = \displaystyle\frac{1}{x_2} > 0$, 从而知$(1)$成立。由于$x_4-x_2 = \displaystyle\frac{x_1-x_3}{x_1\cdot x_3} < 0$,从而知$(2)$成立。
+
+另一方面：
+$$x_{2k}-x_1 = c+\frac{1}{x_{2k-1}}-c = \frac{1}{x_{2k-1}} > 0,\quad \forall k\in\mathbb{N};$$
+$$x_{2k+1} - x_2 = c+\frac{1}{x_{2k}} - c -\frac{1}{x_1} = \frac{x_1 - x_{2k}}{x_1\cdot x_{2k}} < 0,\quad\forall k\in\mathbb{N}.$$
+
+由实数连续性命题(二)可知，奇数列和偶数列都是收敛子列。假设
+$$\displaystyle \lim_{k\to +\infty}x_{2k-1} = a, \lim_{k\to +\infty}x_{2k} = b.$$
+由递推公式，我们有
+$$x_{2k+1} =c+\frac{1}{c+\frac{1}{x_{2k-1}}}\Rightarrow a^2-ac-1 = 0\Rightarrow a = \frac{c+\sqrt{c^2 + 4}}{2},$$
+$$x_{2k+2} =c+\frac{1}{c+\frac{1}{x_{2k}}}\Rightarrow b^2-bc-1 = 0\Rightarrow b = \frac{c+\sqrt{c^2 + 4}}{2}.$$
+即，$\{x_n\}$收敛，且$\displaystyle \lim_{n\to +\infty}x_n=\frac{c+\sqrt{c^2+4}}{2}$.
 \end{solution}
 %%%%%%%%%%%%%%%%%%%
 
@@ -1026,13 +1046,25 @@ $$\left(1+\frac{1}{2n}\right)^n \leq 2\Rightarrow \left(1+\frac{1}{2n}\right)^{2
 \end{example}
 \begin{proof}
 $$b^{n+1}-a^{n+1}=(b-a)(b^{n}+b^{n-1}a+\cdots+a^n) > (n+1)a^n(b-a).$$
+即$$b^{n+1}> a^n\left[(n+1)b-na\right].$$
+取$a=1+\frac{1}{n+1}, b = 1+\frac{1}{n}$,我们有
+\begin{equation*}
+\begin{split}
+\left(1+\frac{1}{n}\right)^{n+1} &> \left(1+\frac{1}{n+1}\right)^n\left[(n+1)\frac{n+1}{n}-n\frac{n+2}{n+1}\right]\\
+&=\left(1+\frac{1}{n+1}\right)^n\left(\frac{n^2+3n+1}{n(n+1)}\right)\\
+&=\left(1+\frac{1}{n+1}\right)^{n+2}\left[\frac{n^2+3n+1}{n(n+1)}\cdot\left(\frac{n+1}{n+2}\right)^2\right]\\
+&=\left(1+\frac{1}{n+1}\right)^{n+2}\left(\frac{n^3+4n^2+4n+1}{n^3+4n^2+4n}\right)\\
+&>\left(1+\frac{1}{n+1}\right)^{n+2}
+\end{split}
+\end{equation*}
+由此可见$\{\left(1+\frac{1}{n}\right)^{n+1}\}$是严格单调减，且有界。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 证明：$\left(1+\frac{1}{n}\right)^{n+1} < \frac{3}{n}+\left(1+\frac{1}{n}\right)^n, \forall n\in\mathbb{N}$.
 \end{example}
 \begin{proof}
-$$\left(1+\frac{1}{n}\right)^{n+1} - \left(1+\frac{1}{n}\right)^n = \left(1+\frac{1}{n}\right)^n\left(1+\frac{1}{n} - 1\right)<\frac{3}{n}, \forall n\in\mathbb{N}.$$
+$$\left(1+\frac{1}{n}\right)^{n+1} - \left(1+\frac{1}{n}\right)^n = \left(1+\frac{1}{n}\right)^n\left(1+\frac{1}{n} - 1\right)<\frac{3}{n}, \quad\forall n\in\mathbb{N}.$$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
