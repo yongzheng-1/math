@@ -11,7 +11,10 @@
 \contentsline {section}{\numberline {1.4}Cauchy收敛准则(原理)，单调数列的极限，数$e=\displaystyle \lim _{n\to +\infty }\left (1+\frac {1}{n}\right )^n$}{16}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}练习题}{16}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}思考题}{24}{subsection.1.4.2}%
-\contentsline {chapter}{索~引}{29}{example.1.4.25}%
-\contentsline {chapter}{参考文献}{29}{example.1.4.25}%
+\contentsline {section}{\numberline {1.5}上极限与下极限}{27}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}练习题}{27}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}思考题}{27}{subsection.1.5.2}%
+\contentsline {chapter}{索~引}{29}{subsection.1.5.2}%
+\contentsline {chapter}{参考文献}{29}{subsection.1.5.2}%
 \contentsline {chapter}{后~~记}{31}{appendix*.3}%
 \contentsfinish 
