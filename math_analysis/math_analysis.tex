@@ -770,7 +770,7 @@ S_n$.很显然$S_n > 0,\forall n\in\mathbb{N}$. 由实数连续性命题(二)可
 \item $\displaystyle\frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}, n\in\mathbb{N}$.
 
 \begin{proof}
-记$S_n = \frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}$. 当$n>10$时，$\frac{n+9}{2b-1} < 1$.即$S_{n+1} < S_{n},\forall n \in \mathbb{N}, n > 10$.另一方面
+记$S_n = \frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}$. 当$n>10$时，$\frac{n+9}{2n-1} < 1$.即$S_{n+1} < S_{n},\forall n \in \mathbb{N}, n > 10$.另一方面
 $S_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$收敛。
 \end{proof}
 \end{enumerate}
@@ -781,9 +781,7 @@ $S_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$�
 \end{example}
 \begin{proof}
 考虑函数$f(x) = (1-x)x, x\in (0,1)$, 我们有$$f(x) > 0, f(x) \leq \frac{1}{4}, x\in (0,1).$$
-所以$\displaystyle\frac{a_{n+1}}{a_n} \geq \frac{1}{4(1-a_n)a_n} \geq 1$，即$a_n$是单调递增的函数。由实数连续性命题(二)可知，$a_n$收敛。
-
-由递推公式可知，$\frac{1}{4}\geq a(1-a)\geq \frac{1}{4}$.所以$a=\frac{1}{2}$, 即$\displaystyle \lim_{n\to +\infty}a_n = \frac{1}{2}$。
+所以$\displaystyle\frac{a_{n+1}}{a_n} \geq \frac{1}{4(1-a_n)a_n} \geq 1$，即$a_n$是单调递增的函数。由实数连续性命题(二)可知，$a_n$收敛。由递推公式可知，$\frac{1}{4}\geq a(1-a)\geq \frac{1}{4}$.所以$a=\frac{1}{2}$, 即$\displaystyle \lim_{n\to +\infty}a_n = \frac{1}{2}$。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -796,8 +794,7 @@ $S_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$�
 于是：
 $$x_{n+1} = \sqrt{x_{n}y_{n}} \geq \sqrt{x_{n}x_{n}} = x_n,\quad\forall n = 1,2,\cdots,$$
 $$y_{n+1} = \frac{x_{n}+y_{n}}{2} \leq \frac{y_{n}+y_{n}}{2} = y_n, \quad\forall n = 1,2,\cdots.$$
-另一方面，$$x_n \leq \frac{a+b}{2}, \quad y_n \geq \sqrt{ab},\quad\forall n=1,2,\cdots.$$
-
+于是$$a = x_0 \leq x_1 \leq \cdots \leq x_n \leq\cdots \leq y_n \leq y_1 \leq y_0 = b.$$
 令$\displaystyle \lim_{n\to +\infty}x_n=A, \displaystyle \lim_{n\to +\infty}y_n=B$。由递推公式可知：$A=\sqrt{AB}$,从而$A = B$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
@@ -824,16 +821,14 @@ $\displaystyle \lim_{n\to +\infty}x_n=\frac{1}{2}$.
 \item 假设$x_k < \displaystyle\frac{1+\sqrt{1+4c}}{2}$。我们证明$x_{k+1} < \displaystyle\frac{1+\sqrt{1+4c}}{2}$.
 \begin{equation*}
 \begin{split}
-x_{k+1} &= \sqrt{c+x_{k}} < \sqrt{c+\frac{1+\sqrt{1+4c}}{2}}\\&=\sqrt{\frac{4c+2+2\sqrt{1+4c}}{4}}\\
+x_{k+1} &=\sqrt{c+x_{k}} \\&< \sqrt{c+\frac{1+\sqrt{1+4c}}{2}}\\&=\sqrt{\frac{4c+2+2\sqrt{1+4c}}{4}}\\
 &=\frac{1+\sqrt{1+4c}}{2}.
 \end{split}
 \end{equation*}
 \end{enumerate}
 
 现在考虑函数$f(x) =c+x-x^2$。很显然$$f(x) > 0, \quad x\in \left(0, \displaystyle\frac{1+\sqrt{1+4c}}{2}\right).$$
-于是$$x_{n+1}^2 -x_{n}^2 = c+ x_{n}-x_n^{2} > 0.$$即$\{x_n\}$是单调递增的数列。
-
-由实数连续性命题(二)可知，数列$\{x_n\}$收敛. 设$\displaystyle \lim_{n\to +\infty}x_n=a$. 对递归公式的取极限，$a=\sqrt{c+a}$,得
+于是$$x_{n+1}^2 -x_{n}^2 = c+ x_{n}-x_n^{2} > 0.$$即$\{x_n\}$是单调递增的数列。由实数连续性命题(二)可知，数列$\{x_n\}$收敛. 设$\displaystyle \lim_{n\to +\infty}x_n=a$. 对递归公式取极限得$a=\sqrt{c+a}$。从而
 $$\displaystyle \lim_{n\to +\infty}x_n=a =\frac{1+\sqrt{1+4c}}{2}.$$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%
@@ -904,7 +899,6 @@ $$a_{k+1} = \frac{c}{2} + \frac{a_{k}^2}{2} <\frac{c}{2} + \frac{1}{2}\left(1-\s
 \begin{proof}
 很显然$\{a_n-b_n\}$是单调增。又由于$\displaystyle \lim_{n\to +\infty}(a_n-b_n)=0$， 可知 $a_n \leq b_n,\forall n\in\mathbb{N}$, 从而
 $$a_1 \leq a_2 \leq\cdots\leq a_n \leq \cdots \leq b_n \leq \cdots \leq b_2\leq b_1.$$
-
 由实数连续性命题(二)可知, $\{a_n\}$与$\{b_n\}$都收敛. 再由$\displaystyle \lim_{n\to +\infty}(a_n-b_n)=0$知，$\displaystyle \lim_{n\to +\infty}a_n=\displaystyle \lim_{n\to +\infty}b_n$。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%
@@ -914,7 +908,7 @@ $$a_1 \leq a_2 \leq\cdots\leq a_n \leq \cdots \leq b_n \leq \cdots \leq b_2\leq 
 \end{example}
 \begin{proof}
 很显然数列$\{A_n\}$是单调增有界数列，由实数连续性命题(二)可知，$\{A_n\}$是收敛的。
-$$\{A_n\}\text{收敛}\Rightarrow \{A_n\}\text{是Cauchy列}\Rightarrow \{a_n\}\text{是Cauchy列} \Rightarrow \{a_n\}\text{收敛}。$$
+$$\{A_n\}\text{收敛}\Rightarrow \{A_n\}\text{是Cauchy列}\Rightarrow \{a_n\}\text{是Cauchy列} \Rightarrow \{a_n\}\text{收敛}.$$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -1185,14 +1179,11 @@ $$
 \begin{proof}
 由定义可知$$0< a_1< a_n \leq b_n \leq c_n < c_1, \quad\forall n >1.$$
 于是 $\{a_n\}$单调增，$\{c_n\}$单调减。
-由实数连续性命题(二)可知， 数列$\{a_n\}, \{c_n\}$收敛。
-
-设$\displaystyle  \lim_{n\to +\infty}a_n=a, \displaystyle  \lim_{n\to +\infty}c_n=c$。易知，$$0<a_1 \leq a\leq c\leq c_1.$$
+由实数连续性命题(二)可知， 数列$\{a_n\}, \{c_n\}$收敛。设$\displaystyle  \lim_{n\to +\infty}a_n=a, \displaystyle  \lim_{n\to +\infty}c_n=c$。易知，$$0<a_1 \leq a\leq c\leq c_1.$$
 因为$b_n = 3c_{n+1} - a_n - c_n$可知，数列$\{b_n\}$收敛。
-
 设$\displaystyle \lim_{n\to +\infty}b_n=b$。显然$a\leq b\leq c$, 且
 \begin{equation*}
-a = \displaystyle\frac{3}{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}},\quad
+a = \frac{3}{\displaystyle\frac{1}{a}+\frac{1}{b}+\frac{1}{c}},\quad
 b = \displaystyle\sqrt[3]{abc},\quad
 c = \displaystyle\frac{a+b+c}{3}
 \end{equation*}
@@ -1200,7 +1191,7 @@ c = \displaystyle\frac{a+b+c}{3}
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-设$a_n > 0$，$S_n=a_1+\cdots+a_n$，$T_n=\frac{a_1}{S_1}+\cdots+\frac{a_n}{S_n}$，且$\displaystyle  \lim_{n\to +\infty}S_n=+\infty$。证明:$\displaystyle  \lim_{n\to +\infty}T_n=+\infty.$
+设$a_n > 0$，$S_n=a_1+\cdots+a_n$，$T_n=\displaystyle\frac{a_1}{S_1}+\cdots+\frac{a_n}{S_n}$，且$\displaystyle  \lim_{n\to +\infty}S_n=+\infty$。证明:$\displaystyle  \lim_{n\to +\infty}T_n=+\infty.$
 \end{example}
 \begin{proof}
 由于$S_n \rightarrow  +\infty$, 我们可以找到一个子列$\{n_k\}$使得
@@ -1219,13 +1210,13 @@ T_{n_k} &= \left(\frac{a_1}{S_1}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\
 \end{proof}
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
-设$a_1=1$，$a_{n+1}=\frac{1}{1+a_n}$，$n=1,2,\cdots$.证明:$\displaystyle  \lim_{n\to +\infty}a_n=\frac{\sqrt{5}-1}{2}.$
+设$a_1=1$，$a_{n+1}=\displaystyle\frac{1}{1+a_n}$，$n=1,2,\cdots$.证明:$\displaystyle  \lim_{n\to +\infty}a_n=\frac{\sqrt{5}-1}{2}.$
 \end{example}
-\begin{proof}数列$\{a_n\}$是从左右两边振荡趋近于$\frac{\sqrt{5}-1}{2}$。所以要证明$\{a_n\}$收敛， 我们只需证明$\left|a_n -\frac{\sqrt{5}-1}{2}\right|$收敛于$0$.
+\begin{proof}我们只需证明$\left|a_n -\frac{\sqrt{5}-1}{2}\right|$收敛于$0$.
 \begin{equation*}
 \begin{split}
-\left|a_{n+1} - \frac{\sqrt{5}-1}{2}\right| &= \left|\frac{3-\sqrt{5} - (\sqrt{5}-1)a_n}{2(1+x_n)}\right|\\
-&=\left|\frac{-(\sqrt{5}-1)\left(a_n-\frac{\sqrt{5}-1}{2}\right)}{2(1+x_n)}\right|\\
+\left|a_{n+1} - \frac{\sqrt{5}-1}{2}\right| &= \left|\frac{3-\sqrt{5} - (\sqrt{5}-1)a_n}{2(1+a_n)}\right|\\
+&=\left|\frac{-(\sqrt{5}-1)\left(a_n-\displaystyle\frac{\sqrt{5}-1}{2}\right)}{2(1+a_n)}\right|\\
 &<\left|\frac{\sqrt{5}-1}{2}\right|\cdot\left|a_n-\frac{\sqrt{5}-1}{2}\right|.
 \end{split}
 \end{equation*}
@@ -1240,9 +1231,7 @@ T_{n_k} &= \left(\frac{a_1}{S_1}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\
 
 另一方面，
 $$b_n\leq \left(\frac{1}{n}\displaystyle\sum_{k=1}^n(1+a_k)\right)^n\leq \left(1+\frac{S}{n}\right)^n.$$
-
-数列$\{\left(1+\frac{S}{n}\right)^n\}$是单调增的，且$$\displaystyle  \lim_{n\to +\infty}\left(1+\frac{S}{n}\right)^n=e^{S}.$$
-
+数列$\left\{\left(1+\displaystyle\frac{S}{n}\right)^n\right\}$是单调增的，且$$\displaystyle  \lim_{n\to +\infty}\left(1+\frac{S}{n}\right)^n=e^{S}.$$
 于是
 $$b_n \leq e^{S}, \forall n\in\mathbb{N}.$$
 由实数连续性命题(二)可知， 数列$\{b_n\}$是收敛数列。
