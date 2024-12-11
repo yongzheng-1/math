@@ -28,6 +28,9 @@
 \renewcommand*{\thesolution}{\normalfont\bfseries 解}
 \renewcommand{\theexample}{\arabic{example}}
 
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
 \makeindex
 \bibliographystyle{plain}
 \begin{document}
@@ -890,8 +893,7 @@ $$a_{k+1} = \frac{c}{2} + \frac{a_{k}^2}{2} <\frac{c}{2} + \frac{1}{2}\left(1-\s
 考察函数$f(x) = x^2-2x+c$. $$f(x) > 0, \quad x\in(-\infty, 1-\sqrt{1-c}).$$
 因此 $$a_{k+1} - a_{k} = \frac{1}{2}(a_k^2-2a_k+c) > 0.$$
 即$\{a_n\}$是单调增的数列. 由实数连续性命题(二)可知， $\displaystyle \lim_{n\to +\infty}a_n$存在。设极限为$a$, 则$a=\frac{c}{2}+\frac{a^2}{2}\Rightarrow a = 1-\sqrt{1-c}$.
-\end{enumerate}
-\end{proof}
+\end{enumerate}\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设数列$\{a_n\}$单调增，$\{b_n\}$单调减，且$\displaystyle \lim_{n\to +\infty}(a_n-b_n)=0$。证明：$\{a_n\}$与$\{b_n\}$都收敛，且$\displaystyle \lim_{n\to +\infty}a_n=\displaystyle \lim_{n\to +\infty}b_n$.
@@ -1239,6 +1241,48 @@ $$b_n \leq e^{S}, \forall n\in\mathbb{N}.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{上极限与下极限}
 \subsection{练习题}
+\begin{example}求$\displaystyle\lowlim_{n\to +\infty}a_n$与$\displaystyle\uplim_{n\to +\infty}a_n$:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $a_n = \displaystyle\frac{(-1)^n}{n}+\displaystyle\frac{1+(-1)^n}{2}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty}a_n = 1$.
+\end{solution}
+\item $a_n = n^{(-1)^n}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty}a_n = +\infty$.
+\end{solution}
+\item $a_n = [1+2^{(-1)^nn}]^{\frac{1}{n}}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 1$, $\displaystyle\uplim_{n\to +\infty}a_n = 2$.
+\end{solution}
+\item $a_n = \frac{n^2}{1+n^2}\cos{\frac{2n\pi}{3}}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = -\frac{1}{2}$, $\displaystyle\uplim_{n\to +\infty}a_n = 1$.
+\end{solution}
+\item $a_n = \frac{n^2+1}{n^2}\sin\frac{\pi}{n}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty}a_n = 0$.
+\end{solution}
+\item $a_n=\displaystyle\sqrt[n]{\left|\cos\frac{n\pi}{3}\right|}$;
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 1$, $\displaystyle\uplim_{n\to +\infty}a_n = 1$.
+\end{solution}
+\item $a_n = 
+\begin{cases}
+0, \quad &\text{n为奇数},\\
+\frac{n}{\sqrt[n]{n!}},\quad &\text{n为偶数}.
+\end{cases}$
+\begin{solution}
+$\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty}a_n = e$.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明下面各式当两端有意义时成立：
+
+\end{example}
 \subsection{思考题}
 %\subsubsection{三级节标题}
 
