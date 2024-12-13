@@ -336,7 +336,7 @@ $$\displaystyle \lim_{n\to +\infty}(a_n + a_{n-1}q + \cdots + a_1q^{n-1}) = \fra
 $$\left | a_n - a \right | < M, \forall n\in\mathbb{N},$$
 $$\left | a_n - a \right | < \frac{(1-|q|)\varepsilon}{3}, \forall n > N_0.$$
 我们知道,当$\left| q\right| < 1$时，$\displaystyle \lim_{n\to +\infty}q^n = 0$。于是$\exists N_1 \in \mathbb {N}$使得
-$$\left|q^{n-k}\right| < \max\left \{\frac{1}{3MN_0}, \frac{1-|q|}{3(|a|+1)}\right\}\varepsilon, \forall n > N-1, k=0, 1, 2, \cdots, N_0.$$
+$$\left|q^{n-k}\right| < \max\left \{\frac{1}{3MN_0}, \frac{1-|q|}{3(|a|+1)}\right\}\varepsilon, \forall n > N_1, k=0, 1, 2, \cdots, N_0.$$
 我们现在取$N = \max\{N_0, N_1\}$。对任意的$n > N$时，有
 \begin{equation*}
 \begin{split}
@@ -411,11 +411,11 @@ $$\left | \frac{(a_0-a)b+(a_1 - a)b+\cdots+(a_n-a)b)}{n}\right| < \frac{\varepsi
 \begin{split}
 &\left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - aS \right | \\
 &= \left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - a(b_1+b_2+\cdots+b_n)+a(b_1+b_2+\cdots+b_n -S)\right| \\
-&< \left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n)\right| + \left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right|
+&< \left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n\right| + \left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right|
 \end{split}
 \end{equation*}
 由$\displaystyle \lim_{n\to +\infty}a_n = a$ 和 $\displaystyle \lim_{n\to +\infty}b_n = 0$得知
-$$\left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n)\right| < \frac{\varepsilon}{2}.$$
+$$\left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n\right| < \frac{\varepsilon}{2}.$$
 由$\displaystyle \lim_{n\to +\infty}(b_1+b_2+\cdots+b_n) = S$可得知
 $$\left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right| < \frac{\varepsilon}{2}.$$
 \end{enumerate}
@@ -1284,6 +1284,75 @@ $\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty
 
 \end{example}
 \subsection{思考题}
+\section{复习题1}
+\begin{example}
+设$a_0=1$,$a_{n+1}=a_n+\frac{1}{a_n}$,$n=0,1,2,\cdots$.证明：$\displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1$.
+\end{example}
+\begin{proof}
+\end{proof}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\displaystyle\lim_{n\to +\infty}x_n=\lim_{n\to +\infty}y_n=0$,并且存在常数$K$使得$\forall n\in\mathbb{N}$,有$$|y_1|+|y_2|+\cdots+|y_n|\leq K.$$
+令$$z_n=x_1y_n+x_2y_{n-1}+\cdots+x_ny_1,\quad n\in\mathbb{N}.$$证明:$\displaystyle\lim_{n\to +\infty}z_n=0$.
+\end{example}
+\begin{proof}
+由于$\displaystyle\lim_{n\to +\infty}x_n=0$，存在$M > 0$使得$|a_n| < M, \forall n\in\mathbb{N}$.
+
+对$\forall \varepsilon > 0$, 存在$N_1\in\mathbb{N}$,当$n>N_1$时有$$\left|x_n\right| < \frac{\varepsilon}{2K}, \quad\forall n > N_1.$$
+
+设$s_n=\displaystyle\sum_{k=1}^{n}\left|y_k\right|$.很显然$\{s_n\}$是一个收敛数列。于是,存在$N_2\in\mathbb{N}$,当$n>N_2$时有
+$$s_{n} - s_{n-N_1} <\frac{\varepsilon}{2MN_1}.$$
+
+综上，
+\begin{equation*}
+\begin{split}
+\left|z_n\right|&=\left|x_1y_n+x_2y_{n-1}+\cdots+x_ny_1\right|\\
+&<\left|x_1y_n+x_2y_{n-1}+\cdots+x_{N_1}y_{n-N_1+1}\right| + \left|x_{N_1+1}y_{n-N_1}+x_{N_1+2}y_{n-N_1-1}+\cdots+x_{n}y_1\right|\\
+&<MN_1(s_n-s_{n-N_1}) + \frac{\varepsilon}{2K}(|y_1|+|y_2|+\cdots +|y_{n-N_1}|)\\
+&<MN_1\frac{\varepsilon}{2MN_1}+K\frac{\varepsilon}{2K} \\&= \varepsilon
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%
+\begin{example}
+设数列$\{a_n\}$与$\{b_n\}$满足:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $b_n>0, b_0+b_1+\cdots+b_n\rightarrow +\infty(n\rightarrow+\infty)$;
+\item $\displaystyle\lim_{n\to +\infty}\frac{a_n}{b_n}=s$.
+\end{enumerate}
+应用Toeplitz定理证明:
+$$\displaystyle\lim_{n\to +\infty}\frac{a_0+a_1+\cdots+a_n}{b_0+b_1+\cdots+b_n}=s.$$
+\end{example}
+\begin{proof}
+我们只需证明$$\displaystyle\lim_{n\to +\infty}\frac{b_k}{b_0+b_1+\cdots+b_n}=0, \forall k = 1,2,\cdots, n.$$
+\end{proof}
+%%%%%%%%%%%%%%%%%
+\begin{example}
+设$p_k>0, k=1,2,\cdots$,且$\displaystyle\lim_{n\to +\infty}\frac{p_n}{p_1+p_2+\cdots+p_n}=0$,$\displaystyle\lim_{n\to +\infty}a_n=a$.证明:
+$$\displaystyle\lim_{n\to +\infty}\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a.$$
+\end{example}
+%%%%%%%%%%%%%%%
+\begin{example}
+设$\{a_n\}$为单调增的数列，令$\sigma_n=\displaystyle\frac{a_1+a_2+\cdots+a_n}{n}$,如果$\displaystyle\lim_{n\to +\infty}\sigma_n = a$,证明:$\displaystyle\lim_{n\to +\infty}a_n = a$.若“单调增”的条件删去，结论是否成立。
+\end{example}
+\begin{proof}
+存在$N > 0$,当$n>N$时，$\sigma_n < a+1$.于是
+$$\frac{a_1}{2}+\frac{a_n}{2} < \sigma_{2n} < a + 1.$$从而$$a_n < 2\left(a+1-\frac{a_1}{2}\right).$$
+单调增有上界的数列是收敛数列。即$\displaystyle\lim_{n\to +\infty}a_n$存在。
+设$\displaystyle\lim_{n\to +\infty}a_n=b$, 由例1.1.15可知，
+$$b=\displaystyle\lim_{n\to +\infty}\sigma_n = a.$$
+
+如果$\{a_n\}$不是单调增的，结论不成立。例如$a_n=(-1)^n$，$\sigma_n = 0 \text{或} -\frac{1}{n}$.所以$\displaystyle\lim_{n\to +\infty}\sigma_n = 0$.但是$\{a_n\}$不收敛。
+\end{proof}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\{S_n\}$为数列,$a_n=S_n-S_{n-1}$,$\sigma_n = \displaystyle\frac{S_0+S_1+\cdots+S_n}{n+1}$.如果$\displaystyle\lim_{n\to +\infty}na_n=0$且$\{\sigma_n\}$收敛，证明$\{S_n\}$也收敛，且$\displaystyle\lim_{n\to +\infty}S_n = \displaystyle\lim_{n\to +\infty}\sigma_n$.
+\end{example}
+\begin{proof}
+
+\end{proof}
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
