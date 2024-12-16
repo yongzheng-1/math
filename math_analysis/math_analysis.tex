@@ -1289,6 +1289,22 @@ $\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty
 设$a_0=1$,$a_{n+1}=a_n+\frac{1}{a_n}$,$n=0,1,2,\cdots$.证明：$\displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1$.
 \end{example}
 \begin{proof}
+由递归定义，
+$$a_{n-1}^2+2 < a_{n-1}^2+\frac{1}{a^2_{n-1}} + 2< a_{n}^2,\quad\forall n > 1\Rightarrow a^2_{n}\geq 2*(n-1) + a_1^2=2n-1.$$
+于是
+$$0\leq \frac{1}{a_n^2} < \frac{1}{2n-1}, \forall n > 1\Rightarrow \displaystyle\lim_{n\to +\infty}\frac{1}{a_n^2}= 0.$$
+算术平均
+$$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_n^2}}{n} = 0.$$
+现在计算
+\begin{equation*}
+\begin{split}
+\frac{a^2_n}{2n} &= \frac{2n-1}{2n} +\frac{\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{2n}\\
+&=\frac{2n-1}{2n} +\frac{\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{n-1}\cdot\frac{n-1}{2n}
+\end{split}
+\end{equation*}
+由此可知
+$$\displaystyle\lim_{n\to +\infty}\frac{a^2_n}{2n}= 1\Rightarrow \displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1.$$
+命题得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -1326,13 +1342,46 @@ $$s_{n} - s_{n-N_1} <\frac{\varepsilon}{2MN_1}.$$
 $$\displaystyle\lim_{n\to +\infty}\frac{a_0+a_1+\cdots+a_n}{b_0+b_1+\cdots+b_n}=s.$$
 \end{example}
 \begin{proof}
-我们只需证明$$\displaystyle\lim_{n\to +\infty}\frac{b_k}{b_0+b_1+\cdots+b_n}=0, \forall k = 1,2,\cdots, n.$$
+在这题里我们可以取$$t_{nk} = \displaystyle\frac{b_k}{b_0+b_1+b_2+\cdots+b_n}.$$ 
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $t_{nk} > 0, \forall n > 0, k=0,2,\cdots,n$;
+\item 给定$n$, $\displaystyle\sum_{k=0}^{n}t_{nk} = 1$;
+\item 由于$b_0+b_1+\cdots+b_n\rightarrow +\infty(n\rightarrow+\infty)$,给定$k$, $\displaystyle\lim_{n\to +\infty}t_{nk} = 0$;
+\end{enumerate}
+
+于是
+$$\frac{a_0+a_1+\cdots+a_n}{b_0+b_1+\cdots+b_n}=\displaystyle\sum_{k=0}^{n}t_{nk}\frac{a_k}{b_k}.$$
+由Toeplitz定理，命题可以得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%
 \begin{example}
 设$p_k>0, k=1,2,\cdots$,且$\displaystyle\lim_{n\to +\infty}\frac{p_n}{p_1+p_2+\cdots+p_n}=0$,$\displaystyle\lim_{n\to +\infty}a_n=a$.证明:
 $$\displaystyle\lim_{n\to +\infty}\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a.$$
 \end{example}
+\begin{proof}
+对于给定的正整数$k>0$,我们可以证明$\displaystyle\lim_{n\to +\infty}\frac{p_{n-k}}{p_1+p_2+\cdots+p_n}=0$.
+这是因为
+$$0\leq \frac{p_{n-k}}{p_1+p_2+\cdots+p_n} < \frac{p_{n-k}}{p_1+p_2+\cdots+p_{n-k}}.$$
+夹逼定理说明$\displaystyle\lim_{n\to +\infty}\frac{p_{n-k}}{p_1+p_2+\cdots+p_n}=0$。
+
+下面我们就可以用极限的定义来证明命题了。对于$\forall \varepsilon > 0$,存在$N_0$,当$n>N_0$时有$$\left|a_n-a\right| < \frac{\varepsilon}{2}.$$
+
+设$M = \max\{\left|a_0 -a\right|, \left|a_1 -a\right|, \cdots, \left|a_{N_0} -a\right|\}$.
+
+对于每一个$k, 1\leq k \leq N_0$, 存在$N_k$, 当$n>N_k$时有，
+$$\frac{p_{n-k-1}}{p_1+p_2+\cdots+p_n} \leq \frac{\varepsilon}{2MN_0}.$$
+
+取$N=\max\{N_0, N_1, \cdots, N_{N_0}\}$, 当$n>N$时
+\begin{equation*}
+\begin{split}
+\left|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n} - a\right| &= \left|\frac{p_1(a_n-a)+p_2(a_{n-1}-a)+\cdots+p_n(a_1-a)}{p_1+p_2+\cdots+p_n}\right|\\
+&<\sum_{k=1}^{N_0} \frac{p_{n-k-1}|a_k - a|}{p_1+p_2+\cdots+p_n} + \frac{p_1 + p_2 + \cdots + p_{n-N_0}}{p_1+p_2+\cdots+p_n}\cdot\frac{\varepsilon}{2} \\
+&<\sum_{k=1}^{N_0}\frac{M\varepsilon}{2MN_0} + \frac{\varepsilon}{2} = \varepsilon.
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
 %%%%%%%%%%%%%%%
 \begin{example}
 设$\{a_n\}$为单调增的数列，令$\sigma_n=\displaystyle\frac{a_1+a_2+\cdots+a_n}{n}$,如果$\displaystyle\lim_{n\to +\infty}\sigma_n = a$,证明:$\displaystyle\lim_{n\to +\infty}a_n = a$.若“单调增”的条件删去，结论是否成立。
@@ -1357,6 +1406,15 @@ $$b=\displaystyle\lim_{n\to +\infty}\sigma_n = a.$$
 \begin{example}
 设数列$\{x_n\}$满足:$\displaystyle\lim_{n\to +\infty}(x_n-x_{n-2})=0$.证明$\displaystyle\lim_{n\to +\infty}\frac{x_n-x_{n-1}}{n} = 0$.
 \end{example}
+\begin{proof}如果我们能证明$\displaystyle\lim_{n\to +\infty}\frac{\left(-1\right)^n\left(x_n-x_{n-1}\right)}{n} = 0$，则命题得证。
+
+通过简单的计算，我们有
+$$\left(-1\right)^n\left(x_n-x_{n-1}\right) = \sum_{k=1}^{n-2}(-1)^k(x_{k+2}-x_k)+x_2-x_1.$$
+由于$\displaystyle\lim_{n\to +\infty}(-1)^n(x_n-x_{n-2})=0$, 可知
+$$\lim_{n\to +\infty}\displaystyle\frac{\displaystyle\sum_{k=1}^{n-2}(-1)^k(x_{k+2}-x_k)}{n-2} = 0.$$
+于是
+$$\displaystyle\lim_{n\to +\infty}\frac{\left(-1\right)^n\left(x_n-x_{n-1}\right)}{n}=\lim_{n\to +\infty}\displaystyle\frac{\displaystyle\sum_{k=1}^{n-2}(-1)^k(x_{k+2}-x_k)}{n-2}\cdot \lim_{n\to +\infty}\frac{n-2}{n}+\lim_{n\to +\infty}\frac{x_2-x_1}{n} = 0.$$
+\end{proof}
 %%%%%%%%%%%%%%%%
 \begin{example}
 设$u_0,u_1,\cdots$为满足$u_n=\displaystyle\sum_{k=1}^{\infty}u^2_{n+k}(n=0,1,2,\cdots)$的实数列，且$\displaystyle\sum_{k=1}^{\infty}u_{n}$收敛。证明$\forall k\in\mathbb{N}$,有$u_k=0$.
