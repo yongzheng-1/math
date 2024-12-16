@@ -1421,7 +1421,109 @@ $$\displaystyle\lim_{n\to +\infty}\frac{\left(-1\right)^n\left(x_n-x_{n-1}\right
 \end{example}
 %%%%%%%%%%%%%%%%%
 \begin{example}
+设$\displaystyle\lim_{n\to +\infty}a_n =a$证明$\displaystyle\lim_{n\to +\infty}\frac{1}{2^n}\displaystyle\sum_{k=0}^nC_n^ka_k =a$
 \end{example}
+\begin{proof}
+取$t_{nk} = \frac{1}{2^n}C_n^k$, 我们有
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $t_{nk} > 0$且 $\displaystyle\sum_{k=0}^nt_{nk} = \frac{1}{2^n}(1+1)^n = 1$;
+\item 很容易验证$\displaystyle\lim_{n\to +\infty}t_{nk} = 0$. 因为$2^n=(1+1)^n > C_n^{k+1}$, 从而
+$$0\leq t_{nk} \leq \frac{C_n^k}{C_n^{k+1}} = \frac{k+1}{n-k}.$$
+由夹逼定理，$\displaystyle\lim_{n\to +\infty}t_{nk} = 0$。
+\end{enumerate}
+由Toeplitz定理知，$\displaystyle\lim_{n\to +\infty}\frac{1}{2^n}\displaystyle\sum_{k=0}^nC_n^ka_k =a$。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+给定实数$a_0,a_1$，并令$$a_n=\frac{a_{n-1}+a_{n-2}}{2}, \quad n = 2,3,\cdots.$$
+证明：数列$\{a_n\}$收敛，且$\displaystyle\lim_{n\to +\infty}a_n =\frac{a_0+2a_1}{3}$
+\end{example}
+\begin{proof}
+由递归公式有：
+$$a_n -a_{n-1} = \left(-\frac{1}{2}\right)\left(a_{n-1}-a_{n-2}\right)=\cdots= \left(-\frac{1}{2}\right)^{n-1}(a_1-a_0).$$
+于是：
+\begin{equation*}
+\begin{split}
+a_n-a_0 &= (a_n-a_{n-1}) + (a_{n-1}-a_{n-2}) +\cdots+(a_1-a_0)\\
+&=\left(-\frac{1}{2}\right)^{n-1}(a_1-a_0) + \left(-\frac{1}{2}\right)^{n-2}(a_1-a_0) + \cdots + (a_1-a_0)\\
+&=\frac{1-\left(-\frac{1}{2}\right)^{n}}{1+\frac{1}{2}}(a_1-a_0)
+\end{split}
+\end{equation*}
+从而$\displaystyle\lim_{n\to +\infty}a_n =a_0+\displaystyle\lim_{n\to +\infty}\left(\frac{1-\left(-\frac{1}{2}\right)^{n}}{1+\frac{1}{2}}(a_1-a_0)\right)=a_0+\frac{2}{3}(a_1-a_0) = \frac{a_0+2a_1}{3}$。
+\end{proof}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$x_1,x_2,\cdots, x_n$为任意给定的实数。令
+$$x_i^{(1)}=\frac{x_i+x_{i+1}}{2}, \quad i=1,2,\cdots, n,$$
+其中$x_{n+1}$应理解为$x_1$.归纳定义
+$$x_i^{(k)}=\frac{x_i^{(k-1)}+x_{i+1}^{(k-1)}}{2}, \quad i=1,2,\cdots, n,$$
+$x^{(k-1)}_{n+1}$应理解为$x_1^{(k-1)},k=2,3,\cdots$.证明：
+$$\displaystyle\lim_{k\to +\infty}x_i^{(k)}=\frac{x_1+x_2+\cdots+x_n}{n}, \quad \forall i = 1,2,\cdots,n.$$
+\end{example}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\{a_n\}$为一个数列，且$\displaystyle\lim_{n\to +\infty}(a_{n+1}-a_n) = l$。证明：$$\displaystyle\lim_{n\to +\infty}\frac{a_n}{n} = l; \quad \displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^na_k}{n^2} =\frac{l}{2}.$$
+\end{example}
+\begin{proof}
+$$a_n = (a_n - a_{n-1}) + (a_{n-1}-a_{n-2})+\cdots + (a_2 - a_1) + a_1.$$
+由于$\displaystyle\lim_{n\to +\infty}(a_{n+1}-a_n) = l$，易知
+$$\displaystyle\lim_{n\to +\infty}\frac{a_n}{n} = l.$$
+
+现在计算
+\begin{equation*}
+\begin{split}
+\displaystyle\sum_{k=1}^na_k - na_1 &= \displaystyle\sum_{k=2}^{n}(a_k - a_1)\\
+&=\displaystyle\sum_{k=2}^{n}\displaystyle\sum_{l=1}^{k-1}(a_{l+1}-a_l)\\
+&=\displaystyle\sum_{l=1}^{n-1}(n-l)(a_{l+1}-a_l)
+\end{split}
+\end{equation*}
+如果取$t_{nk}=\displaystyle\frac{2(n-k)}{(n-1)n}$，则
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $t_{nk} \geq 0, \forall n\in\mathbb{N}, k=1,2,\cdots, n$且$\displaystyle\sum_{k=1}^{n}t_{nk} = \displaystyle\sum_{k=1}^{n}\frac{2(n-k)}{(n-1)n}=1$;
+\item $\displaystyle\lim_{n\to +\infty}t_{nk} = 0, \quad\forall k$.
+\end{enumerate}
+由Toeplitz定理可知
+$$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^na_k - na_1}{(n-1)n}=\displaystyle\lim_{n\to +\infty}\displaystyle\sum_{k=1}^{n-1}\frac{2(n-k)}{(n-1)n}\frac{a_{k+1}-a_k}{2}=\displaystyle\lim_{n\to +\infty}\displaystyle\sum_{k=1}^{n-1}t_{nk}\frac{a_{k+1}-a_k}{2}=\frac{l}{2}.$$
+从而
+$$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^na_k}{n^2}=\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^na_k - na_1}{(n-1)n}\cdot\displaystyle\lim_{n\to +\infty}\frac{(n-1)n}{n^2}+\displaystyle\lim_{n\to +\infty}\frac{a_1}{n}=\frac{l}{2}.$$
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$x_1\in[0,1], \forall n\geq 2$，令
+\begin{equation*}
+x_n =
+\begin{cases}
+\frac{1}{2}x_{n-1}, \quad \text{n为偶数,}\\
+\frac{1+x_{n-1}}{2},\quad\text{n为奇数.}
+\end{cases}
+\end{equation*}
+证明：$\displaystyle\lim_{n\to +\infty}x_{2k}=\frac{1}{3};\displaystyle\lim_{n\to +\infty}x_{2k+1}=\frac{2}{3}$.
+\end{example}
+\begin{proof}
+由递推公式可知
+\begin{equation*}
+\begin{split}
+x_{2k} &= \frac{1}{2}\left(\frac{1+x_{2(k-1)}}{2}\right)\\&=\frac{1}{4}+\frac{1}{4}x_{2(k-1)}\\&= \displaystyle\sum_{l=1}^{k-1}\left(\frac{1}{4}\right)^l+\left(\frac{1}{4}\right)^{k-1}x_2 \\&= \frac{1}{3}-\frac{4}{3}\left(\frac{1}{4}\right)^k+\left(\frac{1}{4}\right)^{k-1}x_2.
+\end{split}
+\end{equation*}
+因此$\displaystyle\lim_{n\to +\infty}x_{2k}=\frac{1}{3}$.
+
+$$x_{2k+1}=\frac{1}{2}+\frac{1}{4}x_{2(k-1)+1}
+=\frac{1}{2}\displaystyle\sum_{l=0}^{k-1}\left(\frac{1}{4}\right)^{l} + \left(\frac{1}{4}\right)^{k}x_1
+=\frac{2}{3}-\frac{2}{3}\left(\frac{1}{4}\right)^{k}+\left(\frac{1}{4}\right)^{k}x_1.$$
+因此$\displaystyle\lim_{n\to +\infty}x_{2k+1}=\frac{2}{3}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%
+\begin{example}
+定初始值$a_0$，并递推定义$$a_n=2^{n-1}-3a_{n-1},\quad n=1,2,\cdots.$$
+求$a_0$的所有可能的值，使得数列$\{a_n\}$是严格增的。
+\end{example}
+\begin{solution}
+考虑数列$\left\{\displaystyle\frac{a_{n}}{3^{n}}\right\}$
+\end{solution}
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}

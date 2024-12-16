@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {1.5.1}练习题}{27}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}思考题}{28}{subsection.1.5.2}%
 \contentsline {section}{\numberline {1.6}复习题1}{28}{section.1.6}%
-\contentsline {chapter}{索~引}{31}{example.1.6.9}%
-\contentsline {chapter}{参考文献}{31}{example.1.6.9}%
-\contentsline {chapter}{后~~记}{33}{appendix*.3}%
+\contentsline {chapter}{索~引}{35}{solution.25}%
+\contentsline {chapter}{参考文献}{35}{solution.25}%
+\contentsline {chapter}{后~~记}{37}{appendix*.3}%
 \contentsfinish 
