@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  13 DEC 2024 08:01
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  15 DEC 2024 18:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -928,32 +928,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 1160--1165
 Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 
 
-[25] [26] [27] [28] [29]
+[25] [26] [27] [28] [29] [30]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[30
-
-
-
-
-]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [31
+(./math_analysis.ind) [31
+
+
+
+
 
 
 ] [32
 
-] [33] (./math_analysis.aux
-(./angiosperms.aux))
+] [33] (./math_analysis.aux (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: E6A5848B7F18E2F9B41AF4DB5A3BD0DD;2031.
+(rerunfilecheck)             Checksum: 4C0C3DC98492DDADCCA861BF46CAA885;2031.
  ) 
 Here is how much of TeX's memory you used:
  17460 strings out of 474773
