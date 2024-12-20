@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  19 DEC 2024 17:24
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  19 DEC 2024 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -931,23 +931,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 1161--1166
 Overfull \vbox (3.82388pt too high) has occurred while \output is active []
 
 
-[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
+[38
+
+
+
+
+]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
-(./math_analysis.ind) [37
+ (./math_analysis.ind) [39
 
 
+] [40
 
-
-
-
-] [38
-
-] [39] (./math_analysis.aux (./angiosperms.aux))
+] [41] (./math_analysis.aux
+(./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -964,4 +967,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (43 pages).
+Output written on math_analysis.pdf (45 pages).
