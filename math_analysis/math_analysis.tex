@@ -1344,7 +1344,43 @@ $$\displaystyle\lim_{n\to +\infty}n\left[\frac{\displaystyle\sum_{k=1}^n\sqrt{k}
 \begin{example}
 设$0<x_1<1$，$x_{n+1} = x_n(1-x_n), n =1,2,\cdots.$ 证明：$\displaystyle\lim_{n\to +\infty}nx_n=1$.进而设$0<x_1\leq\frac{1}{q}$，其中$0<q\leq 1$，并且$x_{n+1}=x_n(1-qx_n), n\in\mathbb{N}$.证明：$\displaystyle\lim_{n\to +\infty}nx_n=\frac{1}{q}.$
 \end{example}
-
+\begin{proof}
+如果我们能证明$\{x_n\}$单调减且$\displaystyle\lim_{n\to +\infty}x_n = 0$，则
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{n\to +\infty}nx_n&\xlongequal{\text{Stolz公式}}\displaystyle\lim_{n\to +\infty}\frac{n-(n-1)}{\frac{1}{x_n} - \frac{1}{x_{n-1}}}\\&=\displaystyle\lim_{n\to +\infty}\frac{x_{n-1}(1-qx_{n-1})}{qx_{n-1}}\\&=\frac{1}{q}.
+\end{split}
+\end{equation*}
+下面我们证明$\{x_n\}$单调减且$\displaystyle\lim_{n\to +\infty}x_n = 0$.
+由于$x_n-x_{n-1} = -qx^2_{n-1}, \forall n\in\mathbb{N}$可知,$\{x_n\}$是单调减的。
+很明显$x_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知, $\{x_n\}$是收敛的。
+设$\displaystyle\lim_{n\to +\infty}x_n = a$, 则$a=a(1-qa)\Rightarrow qa^2 = 0\Rightarrow a = 0$.命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+由Toeplitz定理导出$\frac{\infty}{\infty}$型的Stolz公式。
+\end{example}
+\begin{proof}
+取$$t_{nk} = \frac{x_k - x_{k-1}}{x_n-x_0}, \quad\forall k = 1,2,\cdots, n.$$
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 由于$\{x_n\}$是单调增数列，$t_{nk} > 0$. 
+\item 因为$\displaystyle\lim_{n\to +\infty}x_n=+\infty$, $\displaystyle\lim_{n\to +\infty}t_{nk} = 0$. 
+\item $\displaystyle\sum_{k=1}^{n}t_{nk} = \frac{x_n - x_0}{x_n-x_0}= 1$.
+\end{enumerate}
+由Toeplitz定理可知
+\begin{equation*}
+\begin{split}
+\lim_{n\to +\infty}\frac{y_n}{x_n} &= \lim_{n\to +\infty}\frac{y_0}{x_n} +\lim_{n\to +\infty}\frac{x_n - x_0}{x_n}\lim_{n\to +\infty}\frac{y_ n - y_0}{x_n-x_0}\\&=\lim_{n\to +\infty}\sum_{k=1}^{n-1}\frac{x_{k+1}-x_{k}}{x_n-x_0}\cdot\frac{y_{k+1}-y_k}{x_{k+1}-x_k}\\&\lim_{n\to +\infty}\sum_{k=1}^{n-1}t_{nk}\frac{y_{k+1}-y_k}{x_{k+1}-x_k}\\
+&\xlongequal{\text{Toeplitz公式}}\lim_{n\to +\infty}\frac{y_n-y_{n-1}}{x_{n}-x_{n-1}} = a.
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设数列$\{a_n\}$满足$\displaystyle\lim_{n\to +\infty}a_n \displaystyle\sum_{i=1}^na_i^2 = 1$。证明：$\displaystyle\lim_{n\to +\infty}\sqrt[3]{3n}a_n=1$.
+\end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{复习题1}
 \begin{example}
