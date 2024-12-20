@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{amsthm}
 \usepackage{amsmath,amssymb}
+\usepackage{extarrows}% http://ctan.org/pkg/extarrows
 
 %%%% 定理类环境的定义 %%%%
 \newtheorem{example}{}[section]             % 整体编号
@@ -1284,6 +1285,67 @@ $\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty
 
 \end{example}
 \subsection{思考题}
+\section{Stolz公式}
+\subsection{练习题}
+\begin{example}
+设$C_n^k=\displaystyle\frac{n!}{k!(n-k)!}$为组合数。应用Stolz公式证明：
+$$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=0}^n\ln{C_n^k}}{n^2}=\frac{1}{2}.$$
+\end{example}
+\begin{proof}我们先计算
+$$\ln{C_n^k}+\ln{C_n^{n-k}} = 2\ln{n!} - 2\ln{k!} - 2\ln{(n-k)!}, \quad\forall k\leq n.$$
+所以
+$$\displaystyle\sum_{k=0}^n\ln{C_n^k} = n\ln{n!} - 2\sum_{k=0}^n\ln{k!}.$$
+设$x_n=n^2, y_n=\displaystyle\sum_{k=0}^n\ln{C_n^k}$,于是
+\begin{equation*}
+\begin{split}
+\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=0}^n\ln{C_n^k}}{n^2}&\xlongequal{\text{Stolz公式}}\lim_{n\to +\infty}\frac{(n-1)\ln{n}-\ln{n!}}{2n-1}\\&=\lim_{n\to +\infty}\left(\ln{\frac{n}{\sqrt[n]{n!}}}\cdot\frac{n}{2n-1}\right) +\lim_{n\to +\infty}\frac{\ln{n}}{2n-1}\\
+&=\frac{1}{2}.
+\end{split}
+\end{equation*}
+命题得证
+\end{proof}
+%%%%%%%%%%%%%%%%%
+\begin{example}
+应用Stolz公式证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^n\sqrt{k}}{n^{\frac{3}{2}}}=\frac{2}{3}$;
+\begin{proof}
+设$y_n=\sum_{k=1}^n\sqrt{k}, x_n = n^{\frac{3}{2}}$，则
+\begin{equation*}
+\begin{split}
+\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^n\sqrt{k}}{n^{\frac{3}{2}}}&\xlongequal{\text{Stolz公式}}\lim_{n\to +\infty}\frac{\sqrt{n}}{n^{\frac{3}{2}}-(n-1)^{\frac{3}{2}}}\\&=
+\lim_{n\to +\infty}\frac{\sqrt{n}(\sqrt{n^3}+\sqrt{(n-1)^3})}{n^3-(n-1)^3}\\
+&=\lim_{n\to +\infty}\frac{n^2\left(1+\sqrt{(1-\frac{1}{n})^3}\right)}{3n^2-3n+1}\\
+&=\frac{2}{3}.
+\end{split}
+\end{equation*}
+\end{proof}
+\item $\displaystyle\lim_{n\to +\infty}n\left[\frac{\displaystyle\sum_{k=1}^n\sqrt{k}}{n^{\frac{3}{2}}}-\frac{2}{3}\right]=\frac{1}{2}$.
+\begin{proof}我们设$y_n = 3\displaystyle\sum_{k=1}^n\sqrt{k} -2n^{\frac{3}{2}}$, $x_n = 3\sqrt{n}$.于是
+\begin{equation*}
+\begin{split}
+\frac{y_n-y_{n-1}}{x_n-x_{n-1}}&=\frac{3\sqrt{n}-2n^{\frac{3}{2}}+2(n-1)^{\frac{3}{2}}}{3(\sqrt{n}-\sqrt{n-1})}\\
+&=\frac{3\sqrt{n}(\sqrt{n^3}+\sqrt{(n-1)^3})-6n^2+6n-2}{3(\sqrt{n}-\sqrt{n-1})(\sqrt{n^3}+\sqrt{(n-1)^3})}\\
+&=\frac{3n^2(\sqrt{(1-1/n)^3}-1)+6n-2}{3(\sqrt{n}-\sqrt{n-1})(\sqrt{n^3}+\sqrt{(n-1)^3})}\\
+&=\frac{-9n+9-3/n+(6n-2)(\sqrt{(1-1/n)^3}+1)}{3(\sqrt{n}-\sqrt{n-1})(\sqrt{n^3}+\sqrt{(n-1)^3})(\sqrt{(1-1/n)^3}+1)}\\
+&=\frac{(-9n+9-3/n+(6n-2)(\sqrt{(1-1/n)^3}+1))(\sqrt{n}+\sqrt{n-1})}{3(\sqrt{n^3}+\sqrt{(n-1)^3})(\sqrt{(1-1/n)^3}+1)}\\
+&=\frac{n^{\frac{3}{2}}(-9+9/n-3/n^2+(6-2/n)(\sqrt{(1-1/n)^3}+1))(1+\sqrt{1-1/n})}{3n^{\frac{3}{2}}(1+\sqrt{(1-1/n)^3})(\sqrt{(1-1/n)^3}+1)}
+\end{split}
+\end{equation*}
+于是：
+$$\displaystyle\lim_{n\to +\infty}n\left[\frac{\displaystyle\sum_{k=1}^n\sqrt{k}}{n^{\frac{3}{2}}}-\frac{2}{3}\right] \xlongequal{\text{Stolz公式}} \displaystyle\lim_{n\to +\infty}\frac{y_n-y_{n-1}}{x_n-x_{n-1}}=\frac{1}{2}.$$
+命题得证
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+\begin{example}
+设$0<x_1<1$，$x_{n+1} = x_n(1-x_n), n =1,2,\cdots.$ 证明：$\displaystyle\lim_{n\to +\infty}nx_n=1$.进而设$0<x_1\leq\frac{1}{q}$，其中$0<q\leq 1$，并且$x_{n+1}=x_n(1-qx_n), n\in\mathbb{N}$.证明：$\displaystyle\lim_{n\to +\infty}nx_n=\frac{1}{q}.$
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{复习题1}
 \begin{example}
 设$a_0=1$,$a_{n+1}=a_n+\frac{1}{a_n}$,$n=0,1,2,\cdots$.证明：$\displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1$.
