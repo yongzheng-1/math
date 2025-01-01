@@ -1282,9 +1282,72 @@ $\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
 证明下面各式当两端有意义时成立：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\lowlim_{n\to +\infty}b_n \leq \displaystyle\lowlim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n$,\\
+$\displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n \leq \displaystyle\uplim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\uplim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n$
+\begin{proof}
+有上，下极限的定义，我们可以得到两个简单的无需证明的事实：对于任何数列$\{a_n\}$, 
+$\{a_{n_k}\}$是一个任意一个子列， 则
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lowlim_{n\to +\infty}a_n \leq \displaystyle\lowlim_{k\to +\infty}a_{n_k}$
+\item $\displaystyle\uplim_{k\to +\infty}a_{n_k} \leq \displaystyle\uplim_{n\to +\infty}a_n$
+\end{enumerate}
+我们取子列$\{a_{n_k} + b_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}(a_{n_k} + b_{n_k}) = \displaystyle\lowlim_{n\to +\infty}(a_n + b_n).$$
+再在子列$\{a_{n_k}\}$中取子列$\{a_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}} = \displaystyle\lowlim_{k\to +\infty}a_{n_k}\geq \displaystyle\lowlim_{n\to +\infty}a_n.$$
+对于子列$\{b_{n_{k_l}}\}$，我们会有
+$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \geq \displaystyle\lowlim_{k\to +\infty}b_{n_k}\geq \displaystyle\lowlim_{n\to +\infty}b_n.$$
+
+从而
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\lowlim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}} + \displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \\&= \displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&= \displaystyle\lim_{k\to +\infty}(a_{n_k} + b_{n_k})  \\&= \displaystyle\lowlim_{n\to +\infty}(a_n + b_n).
+\end{split}
+\end{equation*}
+
+取子列$\{a_{n_k}\}$,使得
+$$\displaystyle\lim_{k\to +\infty}a_{n_k}=\displaystyle\lowlim_{n\to +\infty}a_n.$$
+考虑子列$\{a_{n_k}+b_{n_k}\}$，在其中取子列$\{a_{n_{k_l}} + b_{n_{k_l}}\}$,使得
+$$\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) = \displaystyle\lowlim_{k\to +\infty}(a_{n_k} + b_{n_k}) \geq \displaystyle\lowlim_{n\to +\infty}(a_n + b_n).$$
+对于同样下标的子列$\{b_{n_{k_l}}\}$, 我们有
+$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \leq \displaystyle\uplim_{k\to +\infty}b_{n_k}\leq \displaystyle\uplim_{n\to +\infty}b_n.$$
+
+由此可见
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}(a_n + b_n) &\leq \displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&= \displaystyle\lim_{l\to +\infty}a_{n_{k_l}}+\displaystyle\lim_{l\to +\infty}b_{n_{k_l}}\\&\leq \displaystyle\lim_{k\to +\infty}a_{n_k} + \displaystyle\uplim_{n\to +\infty}b_n\\&=\displaystyle\lowlim_{n\to +\infty}a_n+ \displaystyle\uplim_{n\to +\infty}b_n
+\end{split}
+\end{equation*}
+
+下面我们用类似的办法证明第二式亦成立。
+取子列$\{a_{n_k} + b_{n_k}\}$,使得
+$$\displaystyle\lim_{k\to +\infty}(a_{n_k} + b_{n_k}) =  \displaystyle\uplim_{n\to +\infty}(a_n + b_n).$$
+取子列$\{b_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} = \displaystyle\uplim_{k\to +\infty}b_{n_k} \geq \displaystyle\uplim_{n\to +\infty}b_n.$$
+对于子列$\{a_{n_{k_l}}\}$,我们有
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}} \geq \displaystyle\lowlim_{k\to +\infty}a_{n_k} \geq  \displaystyle\lowlim_{n\to +\infty}a_n.$$
+于是$$\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\uplim_{n\to +\infty}b_n \leq \displaystyle\uplim_{n\to +\infty}(a_n + b_n).$$
+另一方面
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\leq \displaystyle\uplim_{k\to +\infty}a_{n_k} \leq \displaystyle\uplim_{n\to +\infty}a_n.$$
+所以
+$$\displaystyle\uplim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\uplim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n.$$
+\end{proof}
+\item 设$\displaystyle\lim_{n\to +\infty}b_n = b$,则\\
+$\displaystyle\lowlim_{n\to +\infty}(a_n + b_n) = \displaystyle\lowlim_{n\to +\infty}a_n + b$,\\
+$\displaystyle\uplim_{n\to +\infty}(a_n + b_n) = \displaystyle\uplim_{n\to +\infty}a_n + b$
+\begin{proof}
+这题是上面一题的直接应用。
+\end{proof}
+\item 
+\end{enumerate}
 
 \end{example}
+%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stolz公式}
 \subsection{练习题}
 \begin{example}
@@ -1724,8 +1787,39 @@ $$\displaystyle\sum_{k=0}^n\frac{1}{k!}-\frac{3}{2n}<\left(1+\frac{1}{n}\right)^
 \end{example}
 %%%%%%%%%%%%%%%%
 \begin{example}
-
+设$a_1=1, a_n=n(a_{n-1}+1), n=2,3,\cdots$，且
+\[
+x_n = \prod_{k=1}^n\left(1+\frac{1}{a_k}\right).
+\]求$\displaystyle\lim_{n\to +\infty}x_n$（其中$\displaystyle\prod_{k=1}^n$表示从$k=1$到$k=n$的连乘积）.
 \end{example}
+\begin{solution}
+
+\end{solution}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$H_n=1+\frac{1}{2}+\cdots+\frac{1}{n}$，$n\in\mathbb{N}$，用$K_n$表示使得$H_k\geq n$的最小下标，求$\displaystyle\lim_{n\to +\infty}\frac{K_{n+1}}{K_n}$
+\end{example}
+\begin{solution}
+\end{solution}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$y_0\geq 2, y_n = y_{n-1}^2 - 2(n\in\mathbb{N})$,
+\[
+S_n=\frac{1}{y_0}+\frac{1}{y_0y_1} +\cdots + \frac{1}{y_0y_1\cdots y_n}.
+\]证明:$\displaystyle\lim_{n\to +\infty}S_n=\frac{y_0-\sqrt{y_0^2-4}}{2}$.
+\end{example}
+\begin{proof}
+首先$$y_n - y_{n-1} = y_{n-1}^2 - y_{n-1} - 2 = (y_{n-1}-2)(y_{n-1} + 1).$$
+由于$y_0\geq 2$, 由数学归纳法， 我们可知
+$$y_n \geq y_{n-1} \geq 2, \forall n \in\mathbb{N}.$$
+由此可见
+$$S_n \geq S_{n-1}, \forall n\in\mathbb{N}.$$
+另一方面，由于$$\frac{1}{y_0y_1\cdots y_n} < \frac{1}{2^{n+1}},$$
+可知$$S_n \leq 1 -\frac{1}{2^{n+1}}, \forall n = 0, 1, \cdots.$$
+由此可见，$\displaystyle\lim_{n\to +\infty}S_n$ 存在。
+
+假设$\displaystyle\lim_{n\to +\infty}S_n = a$.
+\end{proof}
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
