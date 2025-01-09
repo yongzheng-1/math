@@ -1323,13 +1323,23 @@ $$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \leq \displaystyle\uplim_{k\to +\i
 \end{equation*}
 
 下面我们用类似的办法证明第二式亦成立。
+取子列$\{b_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}b_{n_k} = \displaystyle\uplim_{n\to +\infty}b_n.$$
+对于相应的$\{a_{n_k}+b_{n_k}\}$可以取子列$\{a_{n_{k_l}}+b_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) = \displaystyle\uplim_{k\to +\infty}(a_{n_k}+b_{n_k}) \leq   \displaystyle\uplim_{n\to +\infty}(a_n+b_n).$$
+显然
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\geq \displaystyle\lowlim_{n\to +\infty}a_n.$$
+于是
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\uplim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}} + \displaystyle\lim_{l\to +\infty}b_{n_{k_l}}\\&=\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&=\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&\leq \displaystyle\uplim_{n\to +\infty}(a_n+b_n)
+\end{split}
+\end{equation*}
+
 取子列$\{a_{n_k} + b_{n_k}\}$,使得
 $$\displaystyle\lim_{k\to +\infty}(a_{n_k} + b_{n_k}) =  \displaystyle\uplim_{n\to +\infty}(a_n + b_n).$$
 取子列$\{b_{n_{k_l}}\}$使得
-$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} = \displaystyle\uplim_{k\to +\infty}b_{n_k} \geq \displaystyle\uplim_{n\to +\infty}b_n.$$
-对于子列$\{a_{n_{k_l}}\}$,我们有
-$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}} \geq \displaystyle\lowlim_{k\to +\infty}a_{n_k} \geq  \displaystyle\lowlim_{n\to +\infty}a_n.$$
-于是$$\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\uplim_{n\to +\infty}b_n \leq \displaystyle\uplim_{n\to +\infty}(a_n + b_n).$$
+$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} = \displaystyle\uplim_{k\to +\infty}b_{n_k} \leq \displaystyle\uplim_{n\to +\infty}b_n.$$
 另一方面
 $$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\leq \displaystyle\uplim_{k\to +\infty}a_{n_k} \leq \displaystyle\uplim_{n\to +\infty}a_n.$$
 所以
@@ -1341,12 +1351,174 @@ $\displaystyle\uplim_{n\to +\infty}(a_n + b_n) = \displaystyle\uplim_{n\to +\inf
 \begin{proof}
 这题是上面一题的直接应用。
 \end{proof}
-\item 
-\end{enumerate}
+\item $\displaystyle\lowlim_{n\to +\infty}(-a_n)=-\displaystyle\uplim_{n\to +\infty}a_n, \displaystyle\uplim_{n\to +\infty}(-a_n)=-\displaystyle\lowlim_{n\to +\infty}a_n$;
+\begin{proof}$\displaystyle\inf_{k\geq n}\{-a_k\} = -\displaystyle \sup_{k \geq n}\{a_k\} \Rightarrow \displaystyle\lowlim_{n\to +\infty}(-a_n)=-\displaystyle\uplim_{n\to +\infty}a_n$.\\
+$\displaystyle\sup_{k\geq n}\{-a_k\} = -\displaystyle \inf_{k \geq n}\{a_k\} \Rightarrow \displaystyle\uplim_{n\to +\infty}(-a_n)=-\displaystyle\lowlim_{n\to +\infty}a_n$
+\end{proof}
+\item 设$\{a_n\}$与$\{b_n\}$均为非负数列，则\\
+$\displaystyle\lowlim_{n\to +\infty}a_n\cdot \displaystyle\lowlim_{n\to +\infty}b_n \leq \displaystyle\lowlim_{n\to +\infty}a_nb_n\leq \displaystyle\lowlim_{n\to +\infty}a_n\cdot\displaystyle\uplim_{n\to +\infty}b_n$,\\
+$\displaystyle\lowlim_{n\to +\infty}a_n\cdot \displaystyle\uplim_{n\to +\infty}b_n \leq \displaystyle\uplim_{n\to +\infty}a_nb_n\leq \displaystyle\uplim_{n\to +\infty}a_n\cdot\displaystyle\uplim_{n\to +\infty}b_n$;
+\begin{proof}
+我们现证第一式。
+取子列$\{a_{n_k}b_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}a_{n_k}b_{n_k}=\displaystyle\lowlim_{n\to +\infty}a_nb_n.$$
+对于上述的$\{a_{n_k}\}$,我们再取子列$\{a_{n_{k_l}}\}$,使得
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}=\displaystyle\lowlim_{k\to +\infty}a_{n_k}\geq \displaystyle\lowlim_{n\to +\infty}a_n \geq 0.$$
+对于$\{b_{n_{k_l}}\}$, 我们会有
+$$\displaystyle\lowlim_{l\to +\infty}b_{n_{k_l}}\geq \displaystyle\lowlim_{k\to +\infty}b_{n_k}\geq \displaystyle\lowlim_{n\to +\infty}b_n \geq 0.$$
+所以
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}a_n\cdot \displaystyle\lowlim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\cdot \displaystyle\lowlim_{l\to +\infty}b_{n_{k_l}} \\&= \displaystyle\lim_{l\to +\infty}a_{n_{k_l}}b_{n_{k_l}} \\&= \displaystyle\lim_{k\to +\infty}a_{n_k}b_{n_k} \\&=
+\displaystyle\lowlim_{n\to +\infty}a_nb_n 
+\end{split}
+\end{equation*}
+取$\{a_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}a_{n_k}=\displaystyle\lowlim_{n\to +\infty}a_n.$$
+对于对应的子列$\{b_{n_k}\}$,我们再取子列$\{b_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} = \displaystyle\uplim_{k\to +\infty}b_{n_k} \leq \displaystyle\uplim_{n\to +\infty}b_n.$$
+所以
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}a_nb_n &\leq \displaystyle\lowlim_{k\to +\infty}a_{n_k}b_{n_k}\\
+&\leq \displaystyle\lowlim_{l\to +\infty}a_{n_{k_l}}b_{n_{k_l}} \\&= \displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\cdot \displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \\&\leq \displaystyle\lowlim_{n\to +\infty}a_n\cdot\displaystyle\uplim_{n\to +\infty}b_n
+\end{split}
+\end{equation*}
 
+现在我们来证明第二式。取子列$\{b_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}b_{n_k}=\displaystyle\uplim_{n\to +\infty}b_n.$$
+对于相对应的$\{a_{n_k}\}$, 我们再取子列$\{a_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}} = \displaystyle\lowlim_{k\to +\infty}a_{n_k}\geq \displaystyle\lowlim_{n\to +\infty}a_n.$$
+所以
+\begin{equation*}
+\begin{split}
+\displaystyle\lowlim_{n\to +\infty}a_n \cdot \displaystyle\uplim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\cdot \displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \\&=\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}b_{n_{k_l}} \\&\leq \displaystyle\uplim_{k\to +\infty}a_{n_k}b_{n_k}\\&\leq \displaystyle\uplim_{n\to +\infty}a_nb_n
+\end{split}
+\end{equation*}
+取子列$\{a_{n_k}b_{n_k}\}$使得
+$$\displaystyle\lim_{k\to +\infty}a_{n_k}b_{n_k}=\displaystyle\uplim_{n\to +\infty}a_nb_n.$$
+在$\{a_{n_k}\}$取收敛子列$\{a_{n_{k_l}}\}$使得
+$$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}} =\displaystyle\uplim_{k\to +\infty}a_{n_k}\leq \displaystyle\uplim_{n\to +\infty}a_n.$$
+另一方面
+$$\displaystyle\uplim_{l\to +\infty}b_{n_{k_l}}\leq \displaystyle\uplim_{k\to +\infty}b_{n_k}\leq \displaystyle\uplim_{n\to +\infty}b_n.$$
+所以
+\begin{equation*}
+\begin{split}
+\displaystyle\uplim_{n\to +\infty}a_nb_n &= \displaystyle\uplim_{l\to +\infty}a_{n_{k_l}}b_{n_{k_l}} \\&\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}} \cdot\displaystyle\uplim_{l\to +\infty}b_{n_{k_l}}\\&\leq \displaystyle\uplim_{n\to +\infty}a_n\cdot \displaystyle\uplim_{n\to +\infty}b_n
+\end{split}
+\end{equation*}
+\end{proof}
+\item 设$\{b_n\}$非负，且$\displaystyle\lim_{n\to +\infty}b_n=b$，则\\
+$\displaystyle\lowlim_{n\to +\infty}a_nb_n=b\displaystyle\lowlim_{n\to +\infty}a_n, \displaystyle\uplim_{n\to +\infty}a_nb_n=b\displaystyle\uplim_{n\to +\infty}a_n$;
+\begin{proof}
+直接用上一题的结论就可以得证。
+\end{proof}
+\item 设$a_n > 0(n\in\mathbb{N})$, $\displaystyle\lowlim_{n\to +\infty}a_n > 0$,则
+$$\displaystyle\uplim_{n\to +\infty}\frac{1}{a_n} = \frac{1}{\displaystyle\lowlim_{n\to +\infty}a_n}.$$
+\begin{proof}
+因为$a_n > 0, \forall n$, 从而
+$$\displaystyle\sup_{k \geq n}\left\{\frac{1}{a_k}\right\} = \frac{1}{\displaystyle\inf_{k \geq n}\{a_k\}}.$$
+由上，下极限的定义，命题得证。
+\end{proof}
+\end{enumerate}
 \end{example}
 %%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$a_n>0(n\in\mathbb{N})$，且$\displaystyle\uplim_{n\to +\infty}a_n\cdot\displaystyle\uplim_{n\to +\infty}\frac{1}{a_n}=1$，证明：数列$\{a_n\}$收敛。
+\end{example}
+\begin{proof}
+由题可知$\displaystyle\uplim_{n\to +\infty}a_n > 0$。我们可以证明
+$$\displaystyle\lowlim_{n\to +\infty}\frac{1}{a_n} = \frac{1}{\displaystyle\uplim_{n\to +\infty}a_n}.$$
+由此可知$$\displaystyle\lowlim_{n\to +\infty}\frac{1}{a_n} = \displaystyle\uplim_{n\to +\infty}\frac{1}{a_n}.$$
+故$\left\{\frac{1}{a_n}\right\}$是收敛数列。当然$\{a_n\}$收敛。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设数列$\{a_n\}, a_n\leq 1,n=1,2,\cdots$，且满足：
+$$a_m+a_n-1<a_{m+n}<a_m+a_n+1.$$
+证明: (1) $\displaystyle\lim_{n\to +\infty}\frac{a_n}{n}=\omega$,其中$\omega$为有限数；(2) $n\omega -1 \leq a_n \leq n\omega+1$.
+\end{example}
+\begin{proof}
+先证明(1).
+$$a_1 -\frac{1}{n}< \frac{a_n}{n} < a_1 +\frac{1}{n}.$$
+由此得证(1),且$\omega=a_1$。
+由此(2)得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$a_n\geq 0,n\in\mathbb{N}$。证明：
+$$\displaystyle\lim_{n\to +\infty}\sqrt[n]{a_n}\leq 1 \iff \text{对任何}l > 1,\text{有} \displaystyle\uplim_{n\to +\infty}\frac{a_n}{l^n} = 0.$$
+如果删去“任何”两字，结论如何？
+\end{example}
+\begin{remark}
+这个题目的结论是不对的。比如
+\begin{equation*}
+a_n  = \begin{cases} \frac{1}{2^n}, &\quad n\text{是奇数}\\
+1, &\quad n\text{是偶数}
+\end{cases}
+\end{equation*}
+于是
+$$\displaystyle\uplim_{n\to +\infty}\frac{a_n}{l^n} \leq \displaystyle\uplim_{n\to +\infty}\frac{1}{l^n}  = 0,$$
+但是，$\displaystyle\lim_{n\to +\infty}\sqrt[n]{a_n}$ 不存在。所以下面我们证明：
+$$\displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n}\leq 1 \iff \text{对任何}l > 1,\text{有} \displaystyle\uplim_{n\to +\infty}\frac{a_n}{l^n} = 0.$$
+\end{remark}
+\begin{proof}
+($\Rightarrow$): 对于任何的$l > 1$, 取$\varepsilon=\frac{l-1}{2} > 0$，我们可以找到
+$N>0$,使得$$\sqrt[n]{a_n} \leq 1 + \frac{l -1}{2} = \frac{l + 1}{2} < l,\quad\forall n > N.$$ 
+于是 $$\frac{a_n}{l^n} < \left(\frac{l + 1}{2l}\right)^n, \quad\forall n > N.$$
+由$\frac{l + 1}{2l} < 1$可知，$$\displaystyle\uplim_{n\to +\infty}\frac{a_n}{l^n} = 0.$$
+
+($\Leftarrow$): 由定义可知，对任意的$l > 1$, 存在$N > 0$, 当$n>N$时有，
+$$\frac{a_n}{l^n} < 1 \Rightarrow a_n < l^n\Rightarrow \sqrt[n]{a_n} < l.$$
+从而$$\displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n} \leq l\Rightarrow \displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n} \leq 1.$$
+
+如果删去“任何”两字, 结论不成立。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设数列$\{x_n\}$有界，且$\displaystyle\lim_{n\to +\infty}(x_{n+1}-x_n) = 0$, 令
+$$l=\displaystyle\lowlim_{n\to +\infty}x_n, \quad L=\displaystyle\uplim_{n\to +\infty}x_n.$$
+证明：$\{a\in\mathbb{R} | \text{有子列}x_{n_k}\rightarrow a(k\rightarrow \infty)\}=[l,L]$.如果删去条件$\displaystyle\lim_{n\to +\infty}(x_{n+1}-x_n) = 0$，结论如何？
+\end{example}
+\begin{proof}
+对于$a\in (l, L)$和任意的$\varepsilon < \frac{1}{2}\min\{a-l, L-a\}$, 我们有存在$N$
+使得：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$n>N$时，$-\varepsilon \leq a_{n+1} - a_n \leq \varepsilon$.
+\item 存在子列$n_{k}$, 使得$a_{n_k} \leq l +\varepsilon, \quad\forall k$
+\item 存在子列$n_{l}$, 使得$a_{n_l}\geq L -\varepsilon,\quad\forall l$
+\end{enumerate}
+选择子列$n_{t}$，并且重新标记下标，使得
+\begin{equation*}
+a_{n_{t}}
+\begin{cases} 
+\leq l + \varepsilon, &\quad \text{当t是奇数}\\
+\geq L -\varepsilon, &\quad \text{当t是偶数}
+\end{cases}
+\end{equation*}
+对于任意上述子列的任意两个相邻的数$a_{n_{2t}}, a_{n_{2t+1}}$, 在院数列中一定有至少一个$a_{n_{t'}}$落在区间$(a-\varepsilon, a+\varepsilon)$. 从而由极限的定义知这个子列收敛到$a$.命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$0\leq a_{n+m}\leq a_n\cdot a_m(n,m=1,2,\cdots)$.证明$\displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n} = \displaystyle\lowlim_{n\to +\infty}\sqrt[n]{a_n}$且$\sqrt[n]{a_n}$收敛。
+\end{example}
+\begin{proof}
+设$\displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n} 
+=a > b=\displaystyle\lowlim_{n\to +\infty}\sqrt[n]{a_n}$
+取$N > 0$使得 $$a_N < b +\frac{a-b}{3}.$$
+又取子列$a_{n_k}$使得
+$$\displaystyle\uplim_{k\to +\infty}\sqrt[n_{k}]{a_{n_k}} = a.$$
+当$k$充分大后，$n_k > N$,且$n_k = m_kN + l$,其中$l = 0, 1, \cdots, N - 1$.
+于是$$a_{n_k} \leq a_{m_kN}\cdot a_l = a_N^{m_k}\cdot a_l = a_N^{n_k}\cdot \frac{a_l}{a_N^{l}}.$$
+由此可知
+$$0 \leq \sqrt[n_k]{a_{n_k}}\leq \sqrt[n_k]{a_N^{n_k}}\sqrt[n_k]{\frac{a_l}{a_N^{l}}}= a_N\cdot\sqrt[n_k]{\frac{a_l}{a_N^{l}}}.$$
+于是
+$$\displaystyle\uplim_{n\to +\infty}\sqrt[n_k]{a_{n_k}} \leq a_N \leq b+\frac{a-b}{3} < a.$$
+这与$\{a_{n_k}\}$的选择矛盾。从而知$a=b$.命题得证。
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Stolz公式}
 \subsection{练习题}
@@ -1444,8 +1616,29 @@ $$\displaystyle\lim_{n\to +\infty}n\left[\frac{\displaystyle\sum_{k=1}^n\sqrt{k}
 \begin{example}
 设数列$\{a_n\}$满足$\displaystyle\lim_{n\to +\infty}a_n \displaystyle\sum_{i=1}^na_i^2 = 1$。证明：$\displaystyle\lim_{n\to +\infty}\sqrt[3]{3n}a_n=1$.
 \end{example}
+\begin{proof}
+记$S_n = \displaystyle\sum_{i=1}^na_i^2.$我们很容易证明以下结论：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\{S_n\}$是单增的, 且$\displaystyle\lim_{n\to +\infty}S_n=+\infty$
+\item $\displaystyle\lim_{n\to +\infty}a_n = 0$
+\end{enumerate}
+现在计算
+\begin{equation*}
+\begin{split}
+S_n^3 - S_{n-1}^3 &= (S_n-S_{n-1})(S_n^2+S_nS_{n-1}+S_{n-1}^2) \\
+&=a_n^2(S_n^2+S_n(S_n - a_n^2)) +(S_n-a_n^2)^2)\\
+&=3(a_nS_n)^2-3a_n^3(a_nS_n) +a_n^6
+\end{split}
+\end{equation*}
+从而
+$$\displaystyle\lim_{n\to +\infty}\frac{S_n^3}{3n}\xlongequal{\text{Stolz公式}}\displaystyle\lim_{n\to +\infty}\frac{S_n^3-S_{n-1}^3}{3} = 1.$$
+于是$$\displaystyle\lim_{n\to +\infty}\frac{1}{3na^3_n} = \displaystyle\lim_{n\to +\infty}\frac{1}{(a_nS_n)^3}\displaystyle\lim_{n\to +\infty}\frac{S^3_n}{3n} = 1.$$
+由此可知$\displaystyle\lim_{n\to +\infty}\sqrt[3]{3n}a_n=1$。命题得证。
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{复习题1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$a_0=1$,$a_{n+1}=a_n+\frac{1}{a_n}$,$n=0,1,2,\cdots$.证明：$\displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1$.
 \end{example}
@@ -1561,7 +1754,15 @@ $$b=\displaystyle\lim_{n\to +\infty}\sigma_n = a.$$
 设$\{S_n\}$为数列,$a_n=S_n-S_{n-1}$,$\sigma_n = \displaystyle\frac{S_0+S_1+\cdots+S_n}{n+1}$.如果$\displaystyle\lim_{n\to +\infty}na_n=0$且$\{\sigma_n\}$收敛，证明$\{S_n\}$也收敛，且$\displaystyle\lim_{n\to +\infty}S_n = \displaystyle\lim_{n\to +\infty}\sigma_n$.
 \end{example}
 \begin{proof}
-
+我们直接计算
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{n\to +\infty}(S_n - \sigma_n) &= \displaystyle\lim_{n\to +\infty}\frac{nS_n - S_0 -S_1-\cdots-S_{n-1}}{n+1}\\
+&\xlongequal{\text{Stolz公式}}\displaystyle\lim_{n\to +\infty}(nS_n-nS_{n-1})\\
+&=\displaystyle\lim_{n\to +\infty}a_n = 0.
+\end{split}
+\end{equation*}
+于是$\displaystyle\lim_{n\to +\infty}S_n=\displaystyle\lim_{n\to +\infty}(S_n - \sigma_n) +\displaystyle\lim_{n\to +\infty}\sigma_n = \displaystyle\lim_{n\to +\infty}\sigma_n.$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
