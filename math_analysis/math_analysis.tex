@@ -1938,7 +1938,19 @@ $$\frac{y_{n+1}}{y_n} = 2-Ay_n\geq 2-AA^{-1}=1\Rightarrow y_{n+1} \geq y_n.$$
 设数列$\{a_n\}$满足$(2-a_n)a_{n+1} = 1$。证明：$\displaystyle\lim_{n\to +\infty}a_{n}=1$。
 \end{example}
 \begin{proof}
-
+由于$(2-a_n)a_{n+1} = 1$,则$a_n \neq 2$,从而$a_1\neq \frac{3}{2}$.
+我们现证无论$a_1$取何值，都存在$N$使得$a_N \leq 1$.
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$a_1 \leq 1$, 取$N=1$, $a_N = a_1 \leq 1$
+\item 如果$a_1 > \frac{3}{2}$, 则$a_2 > 2$, $a_3 < 0$. 于是取$N=3$, $a_N = a_3 < 0 \leq 1$.
+\item 如果$1< a_1 < \frac{3}{2}$.记$a_1 = 1 + h$, 则$$a_k = 1 + \frac{h}{1-(k-1)h}, \quad k = 2, 3\cdots.$$取$k=\left[\frac{1}{h}\right]$, 我们有
+$$1-(k-1)h \geq h > 0, \quad \frac{h}{1-(k-1)h}\geq\frac{1}{2}.$$
+从而取$N = k+2 = \left[\frac{1}{h}\right]$，我们有$a_{N-2}=a_k\geq \frac{3}{2}, a_{N}< 0\leq 1$.
+\end{enumerate}
+综上，我们不妨假设$a_1 \leq 1$. 下面我们可以用数学归纳法证明$\{a_n\}$是单调增的，且$a_n \leq 1,\forall n$.
+由于$$a_{n+1}- a_n = \frac{(a_n - 1)^2}{2-a_n},$$
+我们可知当$a_n < 1$时，$a_{n+1} > a_n$. 又因为$2-a_{n} > 1\rightarrow a_{n+1} \leq 1$. 到此我们证明了$\displaystyle\lim_{n\to +\infty}a_{n}$存在。设$\displaystyle\lim_{n\to +\infty}a_{n}=a$，则$(2-a)a=1$.解方程知$a=1$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -2021,6 +2033,14 @@ $$S_n \geq S_{n-1}, \forall n\in\mathbb{N}.$$
 
 假设$\displaystyle\lim_{n\to +\infty}S_n = a$.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+令数列$\{b_n\}$满足
+$$b_n=\displaystyle\sum_{k=0}^n\frac{1}{C^k_n}, \quad n =1,2,\cdots.$$
+证明:(1)当$n\geq 2$时，$b_n=\displaystyle\frac{n+1}{2n}b_{n-1} + 1;$\\
+(2)$\displaystyle\lim_{n\to +\infty}b_n = 2.$
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
