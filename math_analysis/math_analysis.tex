@@ -1803,7 +1803,7 @@ $$0\leq t_{nk} \leq \frac{C_n^k}{C_n^{k+1}} = \frac{k+1}{n-k}.$$
 \end{example}
 \begin{proof}
 由递归公式有：
-$$a_n -a_{n-1} = \left(-\frac{1}{2}\right)\left(a_{n-1}-a_{n-2}\right)=\cdots= \left(-\frac{1}{2}\right)^{n-1}(a_1-a_0).$$
+$$a_n-a_{n-1} = \left(-\frac{1}{2}\right)\left(a_{n-1}-a_{n-2}\right)=\cdots= \left(-\frac{1}{2}\right)^{n-1}(a_1-a_0).$$
 于是：
 \begin{equation*}
 \begin{split}
@@ -1885,7 +1885,30 @@ $$x_{2k+1}=\frac{1}{2}+\frac{1}{4}x_{2(k-1)+1}
 \end{example}
 \begin{solution}
 考虑数列$\left\{\displaystyle\frac{a_{n}}{3^{n}}\right\}$.显然
-$$\frac{a_n}{3^n} = \frac{2^{n-1}}{3^n}-\frac{a_{n-1}}{3^{n-1}}$$
+\begin{equation*}
+\begin{split}
+\frac{a_n}{3^n} &=\frac{1}{2}\left(\frac{2}{3}\right)^n - \frac{a_{n-1}}{3^{n-1}} \\&= \frac{1}{2}\left(\frac{2}{3}\right)^n - \frac{1}{2}\left(\frac{2}{3}\right)^{n-1}  + \frac{a_{n-2}}{3^{n-2}}\\
+&=\frac{1}{2}\sum_{k=0}^{n-1}(-1)^k\left(\frac{2}{3}\right)^{n-k}+(-1)^na_0\\
+&=\frac{1}{5}\left[\left(\frac{2}{3}\right)^n+(-1)^n(5a_0-1)\right]
+\end{split}
+\end{equation*}
+于是
+$$a_n=\frac{1}{5}\left[2^n+(-1)^n(5a_0-1)3^n\right].$$
+由此
+\begin{equation*}
+\begin{split}
+a_{2n}-a_{2n-1}&=\frac{1}{5}[2^{2n}+(5a_0-1)3^{2n} - 2^{2n-1}+(5a_0-1)3^{2n-1}]\\&=\frac{1}{5}[2^{2n-1}+4(5a_0-1)3^{2n-1}].
+\end{split}
+\end{equation*}
+只有当$a_0\geq\frac{1}{5}$时，$a_{2n}>a_{2n-1},\quad\forall n\in\mathbb{N}.$
+\begin{equation*}
+\begin{split}
+a_{2n-1}-a_{2n-2}&=\frac{1}{5}[2^{2n-1}-(5a_0-1)3^{2n-1} - 2^{2n-2}-(5a_0-1)3^{2n-2}]\\&=\frac{1}{5}[2^{2n-2}-4(5a_0-1)3^{2n-2}].
+\end{split}
+\end{equation*}
+只有当$a_0\leq\frac{1}{5}$时，$a_{2n-1}>a_{2n-2},\quad\forall n\in\mathbb{N}.$
+
+综上，只有$a_0=\frac{1}{5}$时，$\{a_n\}$是严格递增的。
 \end{solution}
 %%%%%%%%%%%%%%
 \begin{example}
@@ -1956,6 +1979,21 @@ $$1-(k-1)h \geq h > 0, \quad \frac{h}{1-(k-1)h}\geq\frac{1}{2}.$$
 \begin{example}
 设数列$\{a_n\}$满足不等式$0\leq a_k\leq 100a_n(n\leq k\leq 2n, n=1,2,\cdots)$，且无穷级数$\displaystyle\sum_{n=1}^{\infty}a_n$收敛。证明$\displaystyle\lim_{n\to +\infty}na_n=0$
 \end{example}
+\begin{proof}
+显然
+$a_{2n} \leq 100a_n, \quad a_{2n} \leq 100a_{n+1}, \cdots, a_{2n} \leq 100a_{2n-1}.$
+从而
+$$0 \leq 2na_{2n} \leq 200\sum_{k=n}^{2n-1}a_k.$$
+由于$\displaystyle\sum_{n=1}^{\infty}a_n$收敛，知$\displaystyle\lim_{n\to +\infty}200\sum_{k=n}^{2n-1}a_k=0$. 由夹逼定理知，$\displaystyle\lim_{n\to +\infty}2na_{2n}=0$.
+
+同理，
+$a_{2n-1} \leq 100a_n, \quad a_{2n-1}\leq 100a_{n+1}, \cdots, a_{2n-1} \leq 100 a_{2n-2}.$
+将所有的不等式加起来，我们有
+$$0 \leq (2n-1) a_{2n-1} = a_{2n-1} + 2(n-1)a_{2n-1} \leq 2*100\sum_{k=n}^{2n-2}a_k + a_{2n-1} \leq 200 \sum_{k=n}^{2n-1}a_k.$$
+由于$\displaystyle\sum_{n=1}^{\infty}a_n$收敛，知$\displaystyle\lim_{n\to +\infty}200\sum_{k=n}^{2n-1}a_k=0$. 由夹逼定理知，$\displaystyle\lim_{n\to +\infty}(2n-1)a_{2n-1}=0$.
+
+综上所述， 我们有$\displaystyle\lim_{n\to +\infty}na_{n}=0$
+\end{proof}
 %%%%%%%%%%%%%
 \begin{example}
 证明:$\displaystyle\lim_{n\to +\infty}\left(1+\frac{1}{n^2}\right)\left(1+\frac{2}{n^2}\right)\cdots\left(1+\frac{n}{n^2}\right)=e^{\frac{1}{2}}$
