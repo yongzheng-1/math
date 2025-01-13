@@ -1779,8 +1779,23 @@ $$\displaystyle\lim_{n\to +\infty}\frac{\left(-1\right)^n\left(x_n-x_{n-1}\right
 \end{proof}
 %%%%%%%%%%%%%%%%
 \begin{example}
-设$u_0,u_1,\cdots$为满足$u_n=\displaystyle\sum_{k=1}^{\infty}u^2_{n+k}(n=0,1,2,\cdots)$的实数列，且$\displaystyle\sum_{k=1}^{\infty}u_{n}$收敛。证明$\forall k\in\mathbb{N}$,有$u_k=0$.
+设$u_0,u_1,\cdots$为满足$u_n=\displaystyle\sum_{k=1}^{\infty}u^2_{n+k}(n=0,1,2,\cdots)$的实数列，且$\displaystyle\sum_{n=1}^{\infty}u_{n}$收敛。证明$\forall k\in\mathbb{N}$,有$u_k=0$.
 \end{example}
+\begin{proof}
+由$u_n$的定义可知，
+$$u_n \geq u_{n+1}\geq 0, \quad\forall n.$$
+记$S_n = \displaystyle\sum_{k=1}^{n}u_{k}$. 由于$\{S_n\}$收敛，则存在$N > 0$，使得当$n>N$时
+$\displaystyle\sum_{k=n}^{\infty}u_{k} < 1$.
+\begin{equation*}
+\begin{split}
+u_{n+1} &\leq u_{n}= \displaystyle\sum_{k=1}^{\infty}u^2_{n+k} \\
+&= u_{n+1}\left(u_{n+1} + \frac{u_{n+2}}{u_{n+1}}u_{n+2} +\cdots\right)\\
+&\leq u_{n+1}(u_{n+1} + u_{n+2}+\cdots)\\
+&\leq u_{n+1}
+\end{split}
+\end{equation*}
+从而，$u_{N+1}=u_{N+2}=u_{N+3}=\cdots = c$. 由于$\displaystyle\sum_{k=N+1}^{\infty}u_{k} < 1$可知，$c=0$.又由$u_{N+1}=u_{N+2}=u_{N+3}=\cdots = 0$，可知$u_N = u_{N-1} = \cdots = u_1 = 0$.
+\end{proof}
 %%%%%%%%%%%%%%%%%
 \begin{example}
 设$\displaystyle\lim_{n\to +\infty}a_n =a$证明$\displaystyle\lim_{n\to +\infty}\frac{1}{2^n}\displaystyle\sum_{k=0}^nC_n^ka_k =a$
@@ -1823,6 +1838,7 @@ $$x_i^{(k)}=\frac{x_i^{(k-1)}+x_{i+1}^{(k-1)}}{2}, \quad i=1,2,\cdots, n,$$
 $x^{(k-1)}_{n+1}$应理解为$x_1^{(k-1)},k=2,3,\cdots$.证明：
 $$\displaystyle\lim_{k\to +\infty}x_i^{(k)}=\frac{x_1+x_2+\cdots+x_n}{n}, \quad \forall i = 1,2,\cdots,n.$$
 \end{example}
+
 %%%%%%%%%%%%%%%%%%
 \begin{example}
 设$\{a_n\}$为一个数列，且$\displaystyle\lim_{n\to +\infty}(a_{n+1}-a_n) = l$。证明：$$\displaystyle\lim_{n\to +\infty}\frac{a_n}{n} = l; \quad \displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^na_k}{n^2} =\frac{l}{2}.$$
@@ -1944,8 +1960,26 @@ $$a_{n+1}\leq a_{n}, \quad a_n\geq 1-\sqrt{1-c}, \quad\forall n.$$
 \end{proof}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
-数列$\{u_n\}$定义如下:$u_1=b,u_{n+1}=u_n^2+(1-2a)u_n+a^2$，$n\in\mathbb{N}$.问: $a,b$为何值时$\{u_n\}$收敛，并求出其极限值。
+数列$\{u_n\}$定义如下: $u_1=b,u_{n+1}=u_n^2+(1-2a)u_n+a^2$，$n\in\mathbb{N}$.问: $a,b$为何值时$\{u_n\}$收敛，并求出其极限值。
 \end{example}
+\begin{solution}
+由递归定义可知：
+$$u_{n+1}-a = (u_n-a)^2 + (u_n-a).$$
+记$v_n = u_n-a$， 则$v_1 = b -a$.如果$\{u_n\}$收敛，则$\{v_n\}$收敛且$\displaystyle\lim_{n\to +\infty}v_n = 0$.
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 由于$v_{n+1}-v_{n} = v_n^2 \geq 0$, $\{v_n\}$是单调增的。
+\item 如果$\displaystyle\lim_{n\to +\infty}v_n = 0$，则$v_n \leq 0, \forall n$.
+\end{enumerate}
+下面我们用归纳法来证明，当$v_1 \leq 0, v_1 + 1 \geq 0$时，$v_n \leq 0$且$v_n + 1 \geq 0，\forall n$.
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$n=1$时，成立。
+\item 假设$n=k$时，我们也有$v_k \leq 0$且$v_k + 1 \geq 0$.
+\item 我们证明$n=k+1$时也成立。因为$$v_{k+1} =v_k\cdot(v_k + 1),$$ 所以$v_{k+1} \leq 0$.另一方面$$v_{k+1} +1 = v^2_k + v_k + 1 = \left(v_k + \frac{1}{2}\right)^2 + \frac{3}{4} \geq \frac{3}{4} > 0.$$ 
+\end{enumerate}
+由此可见，当$b\in[a-1, a]$时，$\{u_n\}$收敛。
+\end{solution}
 %%%%%%%%%%%%%%%%
 \begin{example}
 设$A > 0, 0< y_0 < A^{-1}, y_{n+1} = y_n(2-Ay_n), n\in\mathbb{N}$. 证明：$\displaystyle\lim_{n\to +\infty}y_{n}=A^{-1}$.
