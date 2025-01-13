@@ -2070,6 +2070,42 @@ $$a_n=\displaystyle\frac{a_{n-1}+b_{n-1}}{2}\Rightarrow a=\frac{a+b}{2}\Rightarr
 当$n\geq 3$时，证明：
 $$\displaystyle\sum_{k=0}^n\frac{1}{k!}-\frac{3}{2n}<\left(1+\frac{1}{n}\right)^n < \displaystyle\sum_{k=0}^n\frac{1}{k!}.$$
 \end{example}
+\begin{proof}
+在证明该题之前，我们先证明如下结论：数列$a_1, a_2, \cdots a_n$满足$n \geq 2$, $a_k \geq -1, k=1,2,\cdots, n$且它们有相同的符号，则
+$$\displaystyle\prod_{k=1}^n(1+a_k) \geq 1+\sum_{k=1}^na_k.$$
+我们用归纳法来证明此命题：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$n=2$时，$(1+a_1)\cdot(1+a_2) = 1 + a_1 + a_2 + a_1a_2 \geq 1 + a_1+a_2$,命题成立。
+\item 假设$n=k$时，命题亦成立， i.e. $\displaystyle\prod_{n=1}^k(1+a_n) \geq 1+\sum_{n=1}^ka_n.$
+\item 下面证明当$n=k+1$时，命题亦成立。 
+\begin{equation*}
+\begin{split}
+\displaystyle\prod_{n=1}^{k+1}(1+a_n) &= \left(\displaystyle\prod_{n=1}^{k}(1+a_n)\right)\cdot(1+a_{k+1})\\&\geq(1+a_1+\cdots +a_k)\cdot(1+a_{k+1}) ({\text{因为$1+a_{k+1} \geq 0$}})\\
+&=1+\sum_{n=1}^{k+1}a_n + \sum_{n=1}^{k}a_na_{k+1}\\
+&\geq 1+\sum_{n=1}^{k+1}a_n
+\end{split}
+\end{equation*}
+命题得证。
+\end{enumerate}
+
+下面我们用上述命题来证明此题。
+\begin{equation*}
+\begin{split}
+\left(1+\frac{1}{n}\right)^n &=1+\frac{1}{1!} + \sum_{k=2}^n\frac{1}{k!}\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots\left(1-\frac{k-1}{n}\right) 
+\end{split}
+\end{equation*}
+
+首先，由$\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots\left(1-\frac{k-1}{n}\right) < 1,\forall k \leq n$，我们可知$$\left(1+\frac{1}{n}\right)^n<\displaystyle\sum_{k=0}^n\frac{1}{k!}.$$
+右边的不等式的得证。
+
+另一方面，应用上面证明的结论，可知
+$$\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right)\cdots\left(1-\frac{k-1}{n}\right) 
+\geq 1 -\sum_{l=1}^{k-1}\frac{l}{n} = 1-\frac{(k-1)k}{2n}.$$
+于是
+$$\left(1+\frac{1}{n}\right)^n \geq \displaystyle\sum_{k=0}^n\frac{1}{k!} - \frac{1}{2n}\displaystyle\sum_{k=0}^{n-2}\frac{1}{k!} > \displaystyle\sum_{k=0}^n\frac{1}{k!}-\frac{3}{2n}$$
+左边的不等式得证。
+\end{proof}
 %%%%%%%%%%%%%%%%
 \begin{example}
 设$a_1=1, a_n=n(a_{n-1}+1), n=2,3,\cdots$，且
@@ -2140,6 +2176,42 @@ $$b_n=\displaystyle\sum_{k=0}^n\frac{1}{C^k_n}, \quad n =1,2,\cdots.$$
 (2)$\displaystyle\lim_{n\to +\infty}b_n = 2.$
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$S_n=1+2^2+3^3+\cdots+n^n$.证明：
+$$n^n\left[1+\frac{1}{4(n-1)}\right] < S_n < n^n\left[1+\frac{2}{e(n-1)}\right].$$
+\end{example}
+\begin{proof}
+提取$n^n$可得
+$$S_n = n^n\left[1 + \frac{1}{n^n} + \frac{2^2}{n^n}+\cdots + \frac{(n-1)^{n-1}}{n^n}\right].$$
+显然
+\begin{equation*}
+\begin{split}
+\frac{1}{n-1}\left(1-\frac{1}{n}\right)^n &= \frac{(n-1)^{n-1}}{n^n} \\ &< \frac{1}{n^n} + \frac{2^2}{n^n}+\cdots + \frac{(n-1)^{n-1}}{n^n} \\
+&< \frac{(n-2)^{n-1}}{n^n} + \frac{(n-1)^{n-1}}{n^n} < \frac{2(n-1)^{n-1}}{n^n}\\
+&<\frac{2}{n-1}\left(1-\frac{1}{n}\right)^n.
+\end{split}
+\end{equation*}
+我们不难证明$\{\left(1-\frac{1}{n}\right)^n\}$是单调增且$\displaystyle\lim_{n\to +\infty}\left(1-\frac{1}{n}\right)^n = \frac{1}{e}$. 所以
+$$\frac{1}{4}=\left(1-\frac{1}{2}\right)^2 < \left(1-\frac{1}{n}\right)^n < \frac{1}{e}.$$
+将上述不等式综合起来，我们就证明了此题。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$x_n > 0$.证明:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\right)^n\geq e$;
+\item 上式中的$e$为最佳常数。
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$a_n>0$.证明：$\displaystyle\uplim_{n\to +\infty}n\left(\frac{1+a_{n+1}}{a_n}-1\right)\geq 1$.
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$2a_{n+1}=1+b_n^2, 2b_{n+1}=2a_n-a_n^2, 0\leq b_n \leq \frac{1}{2}\leq a_n, n = 1,2,\cdots$.证明：数列$\{a_n\}, \{b_n\}$均收敛，并求其极限之值。
+\end{example}
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
