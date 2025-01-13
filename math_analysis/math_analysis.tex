@@ -2104,6 +2104,14 @@ a_n &= n!\left(1+ \frac{1}{1!} + \frac{1}{2!}+\cdots+\frac{1}{(n-1)!}\right)
 设$H_n=1+\frac{1}{2}+\cdots+\frac{1}{n}$，$n\in\mathbb{N}$，用$K_n$表示使得$H_k\geq n$的最小下标，求$\displaystyle\lim_{n\to +\infty}\frac{K_{n+1}}{K_n}$
 \end{example}
 \begin{solution}
+我们记$x_n = H_n - \ln{n}$, 则$\displaystyle\lim_{n\to +\infty}x_n=C(\text{Euler常数})$.
+现在我们计算
+$$x_{K_{n+1}} - x_{K_n} = \left(\frac{1}{K_n+1} + \cdots + \frac{1}{K_{n+1}}\right) -\ln{K_{n+1}} + \ln{K_n}.$$
+另一方面
+$$1-\frac{1}{K_n}\leq \left(\frac{1}{K_n+1} + \cdots + \frac{1}{K_{n+1}}\right) < 1 + \frac{1}{K_{n+1}}.$$
+从而由夹逼定理知
+$$0=\displaystyle\lim_{n\to +\infty}(x_{K_{n+1}} - x_{K_n}) = \displaystyle\lim_{n\to +\infty}\left(1 -\ln{K_{n+1}} + \ln{K_n}\right).$$
+即$\displaystyle\lim_{n\to +\infty}\frac{K_{n+1}}{K_n}=e$.
 \end{solution}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
