@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  13 JAN 2025 03:37
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  13 JAN 2025 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -938,12 +938,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [35] [36] [37] [38] [39] [40] [41] [42]
 Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[43] [44] [45] [46] [47]
+[43] [44] [45] [46] [47] [48] [49]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[48
+[50
 
 
 
@@ -951,19 +951,19 @@ No file angiosperms.tex.
 ]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [49
+ (./math_analysis.ind) [51
 
 
-] [50
+] [52
 
-] [51] (./math_analysis.aux
+] [53] (./math_analysis.aux
 (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: D4FA932BDB1A26A7D17B6A60DA1CBD04;2301.
+(rerunfilecheck)             Checksum: A8DDD6795442BC61018702EB91E00456;2301.
  ) 
 Here is how much of TeX's memory you used:
  17545 strings out of 474773
@@ -974,4 +974,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (55 pages).
+Output written on math_analysis.pdf (57 pages).
