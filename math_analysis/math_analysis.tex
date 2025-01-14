@@ -55,70 +55,62 @@
 \section{数列极限的概念}
 \subsection{练习题}
 \begin{example}用数列极限定义证明：
-\begingroup
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
         \item $\displaystyle \lim_{n\to +\infty} 0.\underbrace{99\cdots9}_{n} = 1;$
         \begin{proof}
-        对于 $\forall \varepsilon > 0$, 取 $N = \left [ \frac{-\ln\varepsilon}{\ln 10}\right ] + 1$, 当 $n > N$时，
+        对$\forall \varepsilon > 0$, 取$N = \left [ \frac{-\ln\varepsilon}{\ln 10}\right ] + 1$, 当 $n > N$时，
         $$\left | 0.\underbrace{99\cdots9}_{n} - 1\right | = \frac{1}{10^n} < \varepsilon.$$
-        所以， $$\lim_{n\to +\infty} 0.\underbrace{99\cdots9}_{n} = 1.$$
+        由极限的定义知，$\displaystyle\lim_{n\to +\infty} 0.\underbrace{99\cdots9}_{n} = 1$。
         \end{proof}
-       
+        
         \item $\displaystyle \lim_{n\to +\infty}\frac{3n+4}{7n-3} = \frac{3}{7};$
         \begin{proof}
-        对于 $\forall \varepsilon > 0$, 取 $N = \left [ \frac{6}{\varepsilon}\right ] + 1$, 当 $n > N$时，
+        对$\forall \varepsilon > 0$, 取 $N = \left [ \frac{6}{\varepsilon}\right ] + 1$, 当 $n > N$时，
         $$\left | \frac{3n+4}{7n-3} - \frac{3}{7}\right | = \frac{37}{7(7n-3)} < \frac{37}{7n} < \frac{6}{n} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}\frac{3n+4}{7n-3} = \frac{3}{7}.$$
+        由极限定义知，$\displaystyle\lim_{n\to +\infty}\frac{3n+4}{7n-3} = \frac{3}{7}$。
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{5n+6}{n^2-n-1000} = 0;$
         \begin{proof}
-        对于 $\forall \varepsilon > 0$, 取 $N = \max\{50, \left [ \frac{12}{\varepsilon}\right ] + 1\}$, 当 $n > N$时，
-        $$\frac{1}{2}n^2 - n - 1000 > 1$$ 且
+        对$\forall \varepsilon > 0$, 取 $N = \max\{50, \left [ \frac{12}{\varepsilon}\right ] + 1\}$, 当 $n > N$时，$\frac{1}{2}n^2 - n - 1000 > 1$ 且
         $$\left | \frac{5n+6}{n^2-n-1000} - 0\right | < \frac{5n + 6}{\frac{1}{2}n^2 + (\frac{1}{2}n^2 - n - 1000)} < \frac{6n}{\frac{1}{2}n^2} < \frac{12}{n} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}\frac{5n+6}{n^2-n-1000} = 0.$$  
+        由极限定义知，$\displaystyle\lim_{n\to +\infty}\frac{5n+6}{n^2-n-1000} = 0$。  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{8}{2^n+5} = 0;$
         \begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \left [ \frac{-\ln\varepsilon}{\ln2}\right ] + 4$, 当 $n > N$时，
+         对$\forall \varepsilon > 0$, 取 $N = \left [ \frac{-\ln\varepsilon}{\ln2}\right ] + 4$, 当 $n > N$时，
         $$\left | \frac{8}{2^n+5} - 0\right | < \frac{8}{2^n} = \frac{1}{2^{n-3}} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}\frac{8}{2^n+5} = 0.$$  
+        由极限定义知$\lim_{n\to +\infty}\frac{8}{2^n+5} = 0$.  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{\sin n!}{n^{1/2}} = 0;$
         \begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \left [ \left(\frac{1}{\varepsilon}\right)^2\right ] + 1$, 当 $n > N$时，
+         对$\forall \varepsilon > 0$, 取 $N = \left [\frac{1}{\varepsilon^2}\right ] + 1$, 当 $n > N$时，
         $$\left | \frac{\sin n!}{n^{1/2}} - 0\right | < \frac{1}{n^{1/2}} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}\frac{\sin n!}{n^{1/2}} = 0.$$  
+        由极限定义知，$\displaystyle\lim_{n\to +\infty}\frac{\sin n!}{n^{1/2}} = 0$。  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}(\sqrt{n+2}-\sqrt{n-2}) = 0;$
         \begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \max\{2, \left [ \left(\frac{4}{\varepsilon}\right)^2\right ] + 1\}$, 当 $n > N$时，
+         对$\forall \varepsilon > 0$, 取 $N = \max\left\{2, \left [ \left(\frac{4}{\varepsilon}\right)^2\right ] + 1\right\}$, 当 $n > N$时，
         $$\left | \sqrt{n+2}-\sqrt{n-2}\right | = \frac{4}{\sqrt{n+2}+\sqrt{n-2}} < \frac{4}{\sqrt{n}} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}(\sqrt{n+2}-\sqrt{n-2}) = 0.$$  
+        由极限定义知，$\displaystyle\lim_{n\to +\infty}(\sqrt{n+2}-\sqrt{n-2}) = 0$。  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}(\sqrt[3]{n+2}-\sqrt[3]{n-2}) = 0;$
         \begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \max\{2, \left [ \sqrt{\left(\frac{4}{\varepsilon}\right)^3}\right ]\}$, 当 $n > N$时，
-         \begin{equation*}
-         \begin{split}
-		\left | \sqrt[3]{n+2}-\sqrt[3]{n-2}\right | &= \frac{4}{\sqrt[3]{(n+2)^2}+\sqrt[3]{(n+2)(n-2)} + \sqrt[3]{(n-2)^2}} \\
- 													 &< \frac{4}{\sqrt[3]{(n+2)^2}} \\
-													 &< \varepsilon
-		\end{split}
-		\end{equation*}
-        所以， $$\lim_{n\to +\infty}(\sqrt[3]{n+2}-\sqrt[3]{n-2}) = 0.$$  
+         对 $\forall \varepsilon > 0$, 取 $N = \max\left\{2, \left [ \sqrt{\left(\frac{4}{\varepsilon}\right)^3}\right ]\right\}$, 当 $n > N$时，
+$$\left|\sqrt[3]{n+2}-\sqrt[3]{n-2}\right| = \frac{4}{\sqrt[3]{(n+2)^2}+\sqrt[3]{(n+2)(n-2)} + \sqrt[3]{(n-2)^2}} < \frac{4}{\sqrt[3]{(n+2)^2}}< \varepsilon.$$
+        由极限定义知,$\displaystyle\lim_{n\to +\infty}(\sqrt[3]{n+2}-\sqrt[3]{n-2}) = 0$.  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{n^{3/2}\arctan{n}}{1+n^2} = 0;$
         \begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \left [ \left(\frac{\pi}{2\varepsilon}\right)^2\right ] + 1$, 当 $n > N$时，
+         对$\forall \varepsilon > 0$, 取 $N = \left [ \left(\frac{\pi}{2\varepsilon}\right)^2\right ] + 1$, 当 $n > N$时，
          $$\left | \frac{n^{3/2}\arctan{n}}{1+n^2} \right | < \frac{\frac{\pi}{2}n^{3/2}}{n^2} < \frac{\pi / 2}{\sqrt{n}} < \varepsilon$$
-        所以， $$\lim_{n\to +\infty}\frac{n^{3/2}\arctan{n}}{1+n^2} = 0.$$  
+        由极限定义知,$\displaystyle\lim_{n\to +\infty}\frac{n^{3/2}\arctan{n}}{1+n^2} = 0$.  
         \end{proof} 
         
         \item $\displaystyle \lim_{n\to +\infty}a_n = 1,$ 其中 
@@ -129,7 +121,7 @@
 		\end{cases}$      
 		
 		\begin{proof}
-         对于 $\forall \varepsilon > 0$, 取 $N = \left [ \frac{1}{\varepsilon}\right ] + 1$, 当 $n > N$时，
+         对$\forall \varepsilon > 0$, 取 $N = \left [ \frac{1}{\varepsilon}\right ] + 1$, 当 $n > N$时，
          \begin{equation*}
          \begin{aligned}
          \left | a_n - 1\right | &<
@@ -137,22 +129,19 @@
          \displaystyle\frac{1}{n}, \text{n 为偶数，}\\
          \displaystyle\frac{1}{\sqrt{n^2 + n} + n} , \text{n 为奇数}
 		\end{cases}\\
-		&< \frac{1}{n} \\
-		&< \varepsilon
+		&< \frac{1}{n} < \varepsilon
 		\end{aligned}
 		\end{equation*}
-        所以， $$\lim_{n\to +\infty}a_n = 1.$$  
+        由极限定义知,$\displaystyle\lim_{n\to +\infty}a_n = 1$.  
         \end{proof} 
         
         \item $\displaystyle \lim_{n\to +\infty}(n^3 - 4n - 5) = +\infty.$		
 		\begin{proof}
-         对于 $\forall A > 0$, 取 $N = \max\{5, \left [ \sqrt[3]{2A}\right ] + 1\}$, 当 $n > N$时，
-         $$1 - \frac{4}{n^2} - \frac{5}{n^3} > 1 - \frac{9}{n^2} > \frac{1}{2}$$且
-         $$n^3 - 4n - 5 = n^3(1 - \frac{4}{n^2} - \frac{5}{n^3}) > \frac{1}{2}n^3 > A$$
-        所以， $$\lim_{n\to +\infty}(n^3 - 4n - 5) = +\infty.$$  
+         对$\forall A > 0$, 取 $N = \max\left\{5, \left [ \sqrt[3]{2A}\right ] + 1\right\}$, 当 $n > N$时，
+         $1 - \frac{4}{n^2} - \frac{5}{n^3} > 1 - \frac{9}{n^2} > \frac{1}{2}$且 $$n^3 - 4n - 5 = n^3(1 - \frac{4}{n^2} - \frac{5}{n^3}) > \frac{1}{2}n^3 > A$$
+        由极限定义知,$\displaystyle\lim_{n\to +\infty}(n^3 - 4n - 5) = +\infty$。  
         \end{proof}  
 \end{enumerate}
-\endgroup
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -1956,7 +1945,36 @@ $$a_{n+1}\leq a_{n}, \quad a_n\geq 1-\sqrt{1-c}, \quad\forall n.$$
 于是$\displaystyle\lim_{n\to +\infty}a_{n}=1-\sqrt{1-c}$.
 
 现考虑$-3\leq c < 0$的情形。
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 我们先证明$a_n$是有界的。$\frac{c}{2} < a_1 = \frac{c}{2} \leq 0$.假设$\frac{c}{2} \leq a_k\leq 0$, 则$0 \leq a_k^2 \leq \frac{c^2}{4}$。从而
+$$\frac{c}{2} < \frac{c}{2} + \frac{a_k^2}{2} = a_{k+1} \leq \frac{c}{2} + \frac{c^2}{8} = \frac{c}{8}(4 - c) < 0$$
+由数学归纳法知，$a_n\in\left[\frac{c}{2}, 0\right], \forall n$.
+\item \begin{equation*}
+\begin{split}
+a_n - a_{n-2} &= \frac{1}{2}\left(a_{n-1}+a_{n-3}\right)\left(a_{n-1}-a_{n-3}\right) \\&= \frac{1}{4}\left(a_{n-1}+a_{n-3}\right)\left(a_{n-2}+a_{n-4}\right)(a_{n-2}-a_{n-4})
+\end{split}
+\end{equation*}
+由于$\frac{1}{4}\left(a_{n-1}+a_{n-3}\right)\left(a_{n-2}+a_{n-4}\right) > 0$， $a_n - a_{n-2}$和$a_{n-2}-a_{n-4}$同号。即$\{a_{2k-1}| k \geq 1\}$
+和$\{a_{2k}| k \geq 1\}$是单调数列。
+因为$$a_3 - a_1 = \frac{c}{2}+\frac{a_2^2}{2} - \frac{c}{2} = \frac{a_2^2}{2} > 0，$$所以$\{a_{2k-1}| k \leq 1\}$是单调递增的。
+又因为
+$$a_4-a_2 = \frac{a_3+a_1}{2}\left(a_3 - a_1\right) < 0,$$
+所以$\{a_{2k}| k \geq 1\}$是单调递减的。
+\end{enumerate}
+假设当$k\rightarrow+\infty$时，$a_{2k-1}\rightarrow p, a_{2k}\rightarrow q$。在递推公式两端取极限，我们有
+\begin{equation*}
+\begin{split}
+p&=\frac{c}{2}+\frac{q^2}{2}\\
+q&=\frac{c}{2}+\frac{p^2}{2}
+\end{split}
+\end{equation*}
+两式相减可得
+$$p-q=\frac{1}{2}(q-p)(p+q)\Rightarrow (p-q)(p+q+2) = 0.$$
 
+如果$p-q = 0$, i.e. $p=q$,则$p=q= 1-\sqrt{1-c}$.
+
+如果$p+q+2 = 0$,则将$p=-2-q$代入第一个方程，我们有$(q+1)^2 =-(c+3)$.所以如果$c>-3$, 则$(q+1)^2 < 0$,从而无解。当$c=-3$时，$q=-1$,从而$p=q=-1$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -2157,16 +2175,33 @@ S_n=\frac{1}{y_0}+\frac{1}{y_0y_1} +\cdots + \frac{1}{y_0y_1\cdots y_n}.
 \]证明:$\displaystyle\lim_{n\to +\infty}S_n=\frac{y_0-\sqrt{y_0^2-4}}{2}$.
 \end{example}
 \begin{proof}
-首先$$y_n - y_{n-1} = y_{n-1}^2 - y_{n-1} - 2 = (y_{n-1}-2)(y_{n-1} + 1).$$
-由于$y_0\geq 2$, 由数学归纳法， 我们可知
-$$y_n \geq y_{n-1} \geq 2, \forall n \in\mathbb{N}.$$
-由此可见
-$$S_n \geq S_{n-1}, \forall n\in\mathbb{N}.$$
-另一方面，由于$$\frac{1}{y_0y_1\cdots y_n} < \frac{1}{2^{n+1}},$$
-可知$$S_n \leq 1 -\frac{1}{2^{n+1}}, \forall n = 0, 1, \cdots.$$
-由此可见，$\displaystyle\lim_{n\to +\infty}S_n$ 存在。
+如果$y_0=2$, 则$y_n = 2, \forall n > 0$。 从而$S_n = \displaystyle\sum_{k=1}^{n+1}\frac{1}{2^k} = 1 - \frac{1}{2^{n+1}}$.于是
+$$\displaystyle\lim_{n\to +\infty}S_n = 1 =\frac{y_0-\sqrt{y_0^2 - 4}}{2}.$$
 
-假设$\displaystyle\lim_{n\to +\infty}S_n = a$.
+下面证明当$y_0 > 2$时结论亦成立。取$a =\frac{y_0-\sqrt{y_0^2 - 4}}{2}$. 简单计算可知
+$$y_0 = a + \frac{1}{a}.$$
+由此
+\begin{equation*}
+\begin{split}
+y_1 &= y_0^2 - 2 =\left(a+\frac{1}{a}\right)^2 - 2 = a^2 +\frac{1}{a^2}\\
+y_2 &= y_1^2 - 2 = \left(a^2 +\frac{1}{a^2}\right)^2 -2 = a^4 + \frac{1}{a^4}\\ 
+ &\cdots\\
+y_n &=y^2_{n-1} -2  = \left(a^{2^{n-1}} +\frac{1}{a^{2^{n-1}}}\right)^2 - 2 = a^{2^n} + \frac{1}{a^{2^n}}
+\end{split}
+\end{equation*}
+于是
+\begin{equation*}
+\begin{split}
+y_0y_1\cdots y_n &= \frac{1}{a-\frac{1}{a}}\left[\left(a-\frac{1}{a}\right)\left(a+\frac{1}{a}\right)\left(a^2 +\frac{1}{a^2}\right)\cdots\left(a^{2^n} + \frac{1}{a^{2^n}}\right)\right] \\
+&=\frac{a}{a^2-1}\left[\left(a^{2^n}\right)^2 - \left(\frac{1}{a^{2^n}}\right)^2\right]\\
+&=\frac{a}{a^2-1}\frac{a^{2^{n+2}} - 1}{a^{2^{n+1}}}
+\end{split}
+\end{equation*}
+从而
+$$\frac{1}{y_0y_1\cdots y_n} = \frac{a^2-1}{a}\frac{a^{2^{n+1}}}{a^{2^{n+2}} -1} =\frac{a^2-1}{a}\left(\frac{1}{a^{2^{n+1}} -1} - \frac{1}{a^{2^{n+2}}-1}\right).$$
+由此可知
+$$S_n = \frac{a^2-1}{a}\left(\frac{1}{a^2 -1} - \frac{1}{a^{2^{n+2}}-1}\right).$$
+进而$\displaystyle\lim_{n\to +\infty}S_n = \frac{a^2-1}{a}\left(\frac{1}{a^2 -1} + 1\right) = a$.命题得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -2175,6 +2210,26 @@ $$b_n=\displaystyle\sum_{k=0}^n\frac{1}{C^k_n}, \quad n =1,2,\cdots.$$
 证明:(1)当$n\geq 2$时，$b_n=\displaystyle\frac{n+1}{2n}b_{n-1} + 1;$\\
 (2)$\displaystyle\lim_{n\to +\infty}b_n = 2.$
 \end{example}
+\begin{proof}
+(1). 直接计算
+\begin{equation*}
+\begin{split}
+\frac{n+1}{n}b_{n-1}&=\displaystyle\sum_{k=0}^{n-1}\frac{k!(n-1-k)!}{(n-1)!}\cdot\frac{n+1}{n}\\
+&=\displaystyle\sum_{k=0}^{n-1}\frac{k!(n-k)!}{n!}\left(1 + \frac{k+1}{n-k}\right)\\
+&=\displaystyle\sum_{k=0}^{n-1}\frac{k!(n-k)!}{n!} + \displaystyle\sum_{k=1}^{n}\frac{k!(n-k)!}{n!}\\
+&=\displaystyle\sum_{k=0}^{n-1}\frac{k!(n-k)!}{n!} + \frac{n!(n-n)!}{n!} + \displaystyle\sum_{k=1}^{n}\frac{k!(n-k)!}{n!} + \frac{0!(n-0)!}{n!} -2\\
+&=2\cdot\displaystyle\sum_{k=0}^{n}\frac{k!(n-k)!}{n!} - 2\\
+&=2b_n - 2
+\end{split}
+\end{equation*}
+所以，$b_n=\displaystyle\frac{n+1}{2n}b_{n-1} + 1$。
+
+（2）当$n > 4$,我们有$b_{n-1} > 2\left(1 + \frac{1}{n-1}\right) = \frac{2n}{n-1}$,从而
+$$\frac{b_n}{b_{n-1}} = \frac{n+1}{2n} + \frac{1}{b_{n-1}} < \frac{n+1}{2n} + \frac{n-1}{2n} = 1.$$
+即从$n > 4$起，数列$\{b_n\}$单调递减。
+另一方面，显然$b_n \geq 2, \forall n \geq 2$.
+由此可知$\{b_n\}$是收敛的。对（1）中的等式取极限可知，$\displaystyle\lim_{n\to +\infty}b_n = 2$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$S_n=1+2^2+3^3+\cdots+n^n$.证明：
@@ -2203,15 +2258,81 @@ $$\frac{1}{4}=\left(1-\frac{1}{2}\right)^2 < \left(1-\frac{1}{n}\right)^n < \fra
 \item $\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\right)^n\geq e$;
 \item 上式中的$e$为最佳常数。
 \end{enumerate}
+\begin{proof}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\right)^n\geq e$等价于$\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\cdot\frac{n}{1+n}\right)^{n}\geq 1$.我们用反证法来证明该命题。如果
+$$\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\cdot\frac{n}{1+n}\right)^{n} < 1,$$则存在$N>0$,当$n > N$时，我们有
+$$\frac{x_1+x_{n+1}}{x_n}\cdot\frac{n}{1+n} < 1,\forall n > N.$$
+于是
+\begin{equation*}
+\begin{split}
+\frac{x_{N+1}}{N+1}-\frac{x_{N+2}}{N+2} &> \frac{x_1}{N+2}\\
+\frac{x_{N+2}}{N+2}-\frac{x_{N+3}}{N+3} &> \frac{x_1}{N+3}, \\
+&\cdots\\
+\frac{x_{n-1}}{n-1}-\frac{x_{n}}{n} &> \frac{x_1}{n}
+\end{split}
+\end{equation*}
+把以上的不等式加起来，我们有
+$$\frac{x_{N+1}}{N+1} > \frac{x_{N+1}}{N+1} - \frac{x_{n}}{n} > \displaystyle\sum_{k=N+1}^n\frac{x_1}{k}\rightarrow+\infty.$$
+这显然与$\frac{x_{N+1}}{N+1}$是个有限数矛盾。从而假设不成立，命题得证。
+\item 现证明对于任意的$\varepsilon>0$，存在数列$\{x_n\}$使得$$\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\right)^n< e^{1+\varepsilon}.$$我们取$x_1 = \frac{\varepsilon}{2}, x_n = n$,则
+$$\displaystyle\uplim_{n\to +\infty}\left(\frac{x_1+x_{n+1}}{x_n}\right)^n = \displaystyle\lim_{n\to +\infty}\left(\frac{\frac{\varepsilon}{2}+n+1}{n}\right)^n=e^{1+\frac{\varepsilon}{2}} < e^{1+\varepsilon}.$$
+这说明$e^{1+\varepsilon}$不是下确界。命题得证。
+\end{enumerate}
+\end{proof}
 \end{example}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
 设$a_n>0$.证明：$\displaystyle\uplim_{n\to +\infty}n\left(\frac{1+a_{n+1}}{a_n}-1\right)\geq 1$.
 \end{example}
+\begin{proof}
+如果$\displaystyle\uplim_{n\to +\infty}n\left(\frac{1+a_{n+1}}{a_n}-1\right) < 1$, 
+则，存在$N>0$,当$n>N$时有，
+$$n\left(\frac{1+a_{n+1}}{a_n}-1\right) < 1\Rightarrow \frac{a_n}{n} - \frac{a_{n+1}}{n+1}>\frac{1}{n+1}.$$
+于是:
+$$\frac{a_{N+1}}{N+1} > \frac{a_{N+1}}{N+1} - \frac{a_n}{n} > \displaystyle\sum_{k=N+2}^n\frac{1}{k}.$$
+当$n\to +\infty$时，$\displaystyle\sum_{k=N+2}^n\frac{1}{k}\to+\infty.$ 这与$\frac{a_{N+1}}{N+1}$是个有限数矛盾。从而假设不成立。
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$2a_{n+1}=1+b_n^2, 2b_{n+1}=2a_n-a_n^2, 0\leq b_n \leq \frac{1}{2}\leq a_n, n = 1,2,\cdots$.证明：数列$\{a_n\}, \{b_n\}$均收敛，并求其极限之值。
 \end{example}
+\begin{proof}
+很容易证得：$a_n\leq \frac{5}{8},\forall n$. 
+\begin{equation*}
+\begin{split}
+a_{n+1} - a_{n} &= \frac{1}{2}(b_n + b_{n-1})(b_n - b_{n-1})\\
+b_{n+1} - b_n &= \frac{1}{2}\left(2-a_n-a_{n-1}\right)\left(a_n - a_{n-1}\right)
+\end{split}
+\end{equation*}
+由此可得
+\begin{equation*}
+\begin{split}
+\left|a_{n+1} - a_{n}\right| &\leq \frac{1}{2^2}\left|a_{n-1} - a_{n-2}\right|\\
+\left|b_{n+1} - b_n\right| &\leq \frac{1}{2^2}\left|b_{n-1} - b_{n-2}\right|
+\end{split}
+\end{equation*}
+取$A = \max\{\left|a_{2} - a_{1}\right|, \left|a_{3} - a_{2}\right|\}$, 
+$B = \max\{\left|b_{2} - b_{1}\right|, \left|b_{3} - b_{2}\right|\}$, 则
+\begin{equation*}
+\begin{split}
+\left|a_{n} - a_{n-1}\right| &\leq \frac{1}{2^{2[\frac{n}{2}]-2}}A\\
+\left|b_{n} - b_{n-1}\right| &\leq \frac{1}{2^{2[\frac{n}{2}]-2}}B
+\end{split}
+\end{equation*}
+由此可见，数列$\{a_n\}$和$\{b_n\}$都是Cauchy列。从而都收敛。
+
+假设$\displaystyle\lim_{n\to +\infty}a_n = a, \displaystyle\lim_{n\to +\infty}b_n = b$, 则
+\begin{equation*}
+\begin{split}
+2a&=1+b^2,\\
+2b&=2a-a^2.
+\end{split}
+\end{equation*}
+解方程组可知,$(b^2+2b-1)(b^2-2b+3)=0$.解得$b=\sqrt{2} - 1, a = 2-\sqrt{2}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
