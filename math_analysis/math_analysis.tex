@@ -73,8 +73,8 @@
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{5n+6}{n^2-n-1000} = 0;$
         \begin{proof}
-        对$\forall \varepsilon > 0$, 取 $N = \max\{50, \left [ \frac{12}{\varepsilon}\right ] + 1\}$, 当 $n > N$时，$\frac{1}{2}n^2 - n - 1000 > 1$ 且
-        $$\left | \frac{5n+6}{n^2-n-1000} - 0\right | < \frac{5n + 6}{\frac{1}{2}n^2 + (\frac{1}{2}n^2 - n - 1000)} < \frac{6n}{\frac{1}{2}n^2} < \frac{12}{n} < \varepsilon$$
+        对$\forall \varepsilon > 0$, 取 $N = \max\left\{50, \left [ \frac{12}{\varepsilon}\right ] + 1\right\}$, 当 $n > N$时，$\frac{1}{2}n^2 - n - 1000 > 1$ 且
+        $$\left|\frac{5n+6}{n^2-n-1000} - 0\right| < \frac{5n + 6}{\frac{1}{2}n^2 + (\frac{1}{2}n^2 - n - 1000)} < \frac{6n}{\frac{1}{2}n^2} < \frac{12}{n} < \varepsilon$$
         由极限定义知，$\displaystyle\lim_{n\to +\infty}\frac{5n+6}{n^2-n-1000} = 0$。  
         \end{proof}
         
@@ -82,7 +82,7 @@
         \begin{proof}
          对$\forall \varepsilon > 0$, 取 $N = \left [ \frac{-\ln\varepsilon}{\ln2}\right ] + 4$, 当 $n > N$时，
         $$\left | \frac{8}{2^n+5} - 0\right | < \frac{8}{2^n} = \frac{1}{2^{n-3}} < \varepsilon$$
-        由极限定义知$\lim_{n\to +\infty}\frac{8}{2^n+5} = 0$.  
+        由极限定义知$\displaystyle\lim_{n\to +\infty}\frac{8}{2^n+5} = 0$.  
         \end{proof}
         
         \item $\displaystyle \lim_{n\to +\infty}\frac{\sin n!}{n^{1/2}} = 0;$
@@ -116,8 +116,8 @@ $$\left|\sqrt[3]{n+2}-\sqrt[3]{n-2}\right| = \frac{4}{\sqrt[3]{(n+2)^2}+\sqrt[3]
         \item $\displaystyle \lim_{n\to +\infty}a_n = 1,$ 其中 
         $a_n = 
          \begin{cases}
-         \displaystyle\frac{n-1}{n}, \text{n 为偶数，}\\
-         \displaystyle\frac{\sqrt{n^2+ n}}{n}, \text{n 为奇数；}
+         \displaystyle\frac{n-1}{n}, &\text{n 为偶数，}\\
+         \displaystyle\frac{\sqrt{n^2+ n}}{n}, &\text{n 为奇数；}
 		\end{cases}$      
 		
 		\begin{proof}
@@ -126,8 +126,8 @@ $$\left|\sqrt[3]{n+2}-\sqrt[3]{n-2}\right| = \frac{4}{\sqrt[3]{(n+2)^2}+\sqrt[3]
          \begin{aligned}
          \left | a_n - 1\right | &<
          \begin{cases}
-         \displaystyle\frac{1}{n}, \text{n 为偶数，}\\
-         \displaystyle\frac{1}{\sqrt{n^2 + n} + n} , \text{n 为奇数}
+         \displaystyle\frac{1}{n}, &\text{n 为偶数，}\\
+         \displaystyle\frac{1}{\sqrt{n^2 + n} + n} , &\text{n 为奇数}
 		\end{cases}\\
 		&< \frac{1}{n} < \varepsilon
 		\end{aligned}
@@ -145,50 +145,42 @@ $$\left|\sqrt[3]{n+2}-\sqrt[3]{n-2}\right| = \frac{4}{\sqrt[3]{(n+2)^2}+\sqrt[3]
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-设$\displaystyle \lim_{n\to +\infty}a_n = a.$，证明: $\forall k \in \mathbb{N}$，有 $\displaystyle \lim_{n\to +\infty}a_{n+k} = a.$
-\begin{proof}
-我们分以下几种情况证明此命题：
+设$\displaystyle \lim_{n\to +\infty}a_n = a$,证明: $\forall k \in \mathbb{N}$，有 $\displaystyle \lim_{n\to +\infty}a_{n+k} = a.$
+\begin{proof}按$a$分类讨论：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item 当 $a\in \mathbb{R}$时。由于$\displaystyle \lim_{n\to +\infty}a_n = a$，对$\forall \varepsilon > 0, \exists N \in \mathbb{N}$，当$n > N$时，有$\left | a_n - a\right | < \varepsilon$。显然 $n+k > n > N$, 从而 $\left | a_{n + k} - a\right | < \varepsilon$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = a$.
-\item 当 $a$ 是 $+\infty$时。由于$\displaystyle \lim_{n\to +\infty}a_n = +\infty$, 对$\forall A > 0, \exists N \in \mathbb{N}$, 当$n > N$时， $a_n > A$. 显然 $n+k > n > N$, 从而 $a_{n + k} > A$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = +\infty$.
-\item 当 $a$ 是 $-\infty$时。由于$\displaystyle \lim_{n\to +\infty}a_n = -\infty$, 对$\forall A < 0, \exists N \in \mathbb{N}$, 当$n > N$时， $a_n < A$. 显然 $n+k > n > N$, 从而 $a_{n + k} < A$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = -\infty$.
+\item $a\in \mathbb{R}$：由极限定义，对$\forall \varepsilon > 0, \exists N \in \mathbb{N}$，当$n > N$时，$\left|a_n - a\right| < \varepsilon$。显然 $n+k > n > N$, 从而$\left| a_{n + k} - a\right| < \varepsilon$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = a$.
+\item $a = +\infty$：由极限定义, 对$\forall A > 0, \exists N \in \mathbb{N}$, 当$n > N$时，$a_n > A$. 显然 $n+k > n > N$, 从而 $a_{n + k} > A$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = +\infty$.
+\item $a=-\infty$：由极限定义，对$\forall A < 0, \exists N \in \mathbb{N}$, 当$n > N$时， $a_n < A$. 显然 $n+k > n > N$, 从而 $a_{n + k} < A$. 即 $\displaystyle \lim_{n\to +\infty}a_{n+k} = -\infty$.
 \end{enumerate}
+命题得证。
 \end{proof}
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{example}
 设$\displaystyle \lim_{n\to +\infty}a_n = a$，证明$\displaystyle \lim_{n\to +\infty}\left |a_n\right | = \left |a\right |$：举例说明，这个命题的逆命题不真。
-\begin{proof}
-我们只证明$a$是有限实数的情况。当$a$是$+\infty$和$-\infty$时也成立。
-由极限的定义有：对$\forall \varepsilon > 0, \exists N \in \mathbb{N}$，当$n > N$时，$$\left|a_n - a\right| < \varepsilon.$$
-从而
+\begin{proof}当$a\in\mathbb{R}, a=+\infty, a=-\infty$时，此命题都是成立。我们只证$a\in\mathbb{R}$的情况。
+
+由极限的定义，对$\forall \varepsilon > 0, \exists N \in \mathbb{N}$，当$n > N$时，$\left|a_n - a\right| < \varepsilon$. 于是：
 $$\left| \left|a_n \right| - \left|a\right| \right | < \left|a_n - a\right| < \varepsilon.$$
-所以 $$\lim_{n\to +\infty}\left |a_n\right | = \left |a\right |.$$
+再由极限定义，$\displaystyle\lim_{n\to +\infty}\left |a_n\right | = \left |a\right |$。
 
-如果我们取$a_n = (-1)^n$, 则$\left | a_n\right | = 1$, 从而 $\displaystyle \lim_{n\to +\infty}\left |a_n\right | = \left |a\right |$。 但是很显然$a_n$是发散的。
-
+如果我们取$a_n = (-1)^n$, 则$\left | a_n\right | = 1$, 从而 $\displaystyle \lim_{n\to +\infty}\left |a_n\right | = \left |a\right |$。 但$\{a_n\}$是发散的。
 \end{proof}
-
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{example}
-
 设$x_n \leq a \leq y_n, n \in \mathbb{N}$，且$\displaystyle \lim_{n\to +\infty}(y_n-x_n) = 0$。证明：
 $$\displaystyle \lim_{n\to +\infty}x_n = \lim_{n\to +\infty}y_n = a$$
-
+\end{example}
 \begin{proof}
-$\forall \varepsilon > 0, \exists N \in \mathbb{N}$, s.t. $y_n-x_n = \left | y_n - x_n\right | < \varepsilon$. 从而
+对$\forall \varepsilon > 0, \exists N \in \mathbb{N}$, 当$n> N$时，$y_n-x_n = \left|y_n - x_n\right| < \varepsilon$. 从而
 $$\left| y_n - a\right| = y_n - a = y_n - x_n + x_n - a < y_n - x_n < \varepsilon.$$
-即 $\displaystyle \lim_{n\to +\infty}y_n = a.$
+i.e.$\displaystyle \lim_{n\to +\infty}y_n = a.$
 
 同理可证
-$$-\varepsilon < x_n - y_n < x_n - a < 0 < \varepsilon.$$ 即$\displaystyle \lim_{n\to +\infty}x_n = a.$
-
+$$-\varepsilon < x_n - y_n < x_n - a < 0 < \varepsilon.$$ i.e.$\displaystyle \lim_{n\to +\infty}x_n = a.$
 \end{proof}
-\end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$\{a_n\}$为一个收敛数列。证明：数列$\{a_n\}$中或者有最大的数，或者有最小的数。 举出两者都有的例子； 再举出只有一个的例子。
@@ -198,29 +190,26 @@ $$-\varepsilon < x_n - y_n < x_n - a < 0 < \varepsilon.$$ 即$\displaystyle \lim
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item 如果$a_n = a,\forall n\in \mathbb{N}$. 此时，数列$\{a_n\}$既有最小值也有最大值,且相等
-\item 如果$\exists n_{0} \in \mathbb{N}$，使得$a_{n_{0}} \neq a$. 不妨假设$a_{n_{0}} < a$. 对于$\varepsilon = \frac{a - a_{n_{0}}}{2}$, $\exists N\in \mathbb {N}, 
+\item 如果$\exists n_{0} \in \mathbb{N}$，使得$a_{n_{0}} \neq a$. 不妨假设$a_{n_{0}} < a$. 对于$\varepsilon = \displaystyle\frac{a - a_{n_{0}}}{2}$, $\exists N\in \mathbb {N}, 
 N > n_{0}$使得
 $a_n - a > a - \varepsilon = \frac{a + a_{n_{0}}}{2} > a_{n_{0}}, \forall n > N$. 取
-$$m = \min\{a_{1}, a_{2}, \cdots, a_{N}\}.$$
-我们有：
-\renewcommand\labelenumi{\normalfont(\theenumi)}
-\begin{enumerate}
-\item $m \in \{a_n\}_{n = 1}^{+\infty},$
-\item $a_n >= m, \forall n.$
-\end{enumerate}
-即，$m$ 是数列$\{a_n\}$的最小值. \\
-如果$a_{n_{0}} > a$. 我们可以证明$\{a_n\}$有最大值。
+$m = \min\left\{a_{1}, a_{2}, \cdots, a_{N}\right\}$，则
+$$m \in \{a_n | n\geq 1\}, \quad a_n \geq m, \forall n.$$
+即$m$是数列$\{a_n\}$的最小值. 如果$a_{n_{0}} > a$，类似地，我们可以证明$\{a_n\}$有最大值。
 \end{enumerate}
 
 考虑下列收敛数列：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item 如果$a_n = \frac{1}{n}$, 则该数列有最大值$a_n \leq a_1 = 1$, 没有最小值。
-\item 如果$a_n = -\frac{1}{n}$, 该数列有最小值$-1 = a_1 <= a_n$， 没有最大值。
-\item 如果$a_n =(-1)^n \frac{1}{n}$, 则$-1 = a_1 <= a_n <= a_2 = \frac{1}{2}$ 
+\item 如果$a_n = -\frac{1}{n}$, 该数列有最小值$-1 = a_1 \leq a_n$， 没有最大值。
+\item 如果$a_n =(-1)^n \frac{1}{n}$, 则$-1 = a_1 \leq a_n \leq a_2 = \frac{1}{2}$ 
 \end{enumerate}
-
+命题得证。
 \end{proof}
+\begin{remark}
+如果$\displaystyle \lim_{n\to +\infty}a_n = +\infty$,则$\{a_n\}$有最小值。如果$\displaystyle \lim_{n\to +\infty}a_n = -\infty$，则$\{a_n\}$有最大值。
+\end{remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 证明下列数列发散：
@@ -229,15 +218,15 @@ $$m = \min\{a_{1}, a_{2}, \cdots, a_{N}\}.$$
 \item $\{n^{(-1)^n}\}$
 \begin{proof}
 该数列发散，因为：
-$$0 = \displaystyle \lim_{n\to +\infty}(2n-1)^{(-1)^{2n-1}} \neq \displaystyle \lim_{n\to +\infty}(2n)^{(-1)^{2n}} = +\infty$$
+$0 = \displaystyle \lim_{n\to +\infty}(2n-1)^{(-1)^{2n-1}} \neq \displaystyle \lim_{n\to +\infty}(2n)^{(-1)^{2n}} = +\infty$.
 \end{proof}
 \item $\{\cos n\}$
 \begin{proof}
 取两个整数子列$\{k_n\}, \{l_n\}$使得
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item $k_n \in (2m\pi - \frac{\pi}{6},2m\pi + \frac{\pi}{6})$,
-\item $l_n \in (2m\pi + \frac{5\pi}{6}, (2m+1)\pi + \frac{\pi}{6})$.
+\item $k_n \in (2n\pi - \frac{\pi}{6},2n\pi + \frac{\pi}{6})$,
+\item $l_n \in (2n\pi + \frac{5\pi}{6}, (2n+1)\pi + \frac{\pi}{6})$.
 \end{enumerate}
 显然，我们有
 \renewcommand\labelenumi{\normalfont(\theenumi)}
@@ -265,14 +254,12 @@ $(\Leftarrow)$假设三个子列的极限都是$a$。由极限的定义， 对�
 即 $\displaystyle \lim_{n\to +\infty}a_n = a.$
 \end{proof}
 \begin{remark}
-这个命题对于$a = +\infty. -\infty, \infty$也成立。
+这个命题当$a = +\infty$或者$-\infty$时，该命题也成立。
 \end{remark}
 \begin{remark}
 对于$\forall p \in \mathbb{N}$, $$\displaystyle \lim_{n\to +\infty}a_n = a \Leftrightarrow \lim_{k\to +\infty}a_{pk-p+1} = \lim_{k\to +\infty}a_{pk-p+2} 
 =\cdots = \lim_{k\to +\infty}a_{pk} = a.$$
-
 \end{remark}
-
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -280,20 +267,16 @@ $(\Leftarrow)$假设三个子列的极限都是$a$。由极限的定义， 对�
 \begin{proof}
 $$\frac{a_n - a_1}{n} = \frac{(a_n - a_{n-1}) + (a_{n-1} - a_{n-2}) + \cdots + (a_2 - a_1)}{n}.$$
 由例1.1.15知：
-$$\displaystyle \lim_{n\to +\infty}\frac{a_n - a_1}{n} = d.$$
-由于$\displaystyle \lim_{n\to +\infty}\frac{a_1}{n} = 0$, 易知
-$$\displaystyle \lim_{n\to +\infty}\frac{a_n}{n} = d.$$
+$\displaystyle \lim_{n\to +\infty}\frac{a_n}{n}=\displaystyle \lim_{n\to +\infty}\frac{a_n - a_1}{n} = d.$
 \end{proof}
 \end{example}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$\displaystyle \lim_{n\to +\infty}a_n = a$。用$\varepsilon-N$法，$A-N$法证明：
 $$\displaystyle \lim_{n\to +\infty}\frac{a_1+2a_2+\cdots+na_n}{n^2} = \frac{a}{2}, (a \text{为实数}， +\infty, -\infty).$$
-
 \end{example}
 \begin{proof}
-我们只证$a$为实数的情形。其他的情况证明类似。
+我们只证$a$为实数的情形。其他情况证明类似。
 由极限的定义，对于$\varepsilon > 0$, $\exists N_0\in \mathbb{N}$, 使得$$\left|a_n - a\right| < \frac{\varepsilon}{3}, \forall n > N_0.$$
 \begin{equation*}
 \begin{split}
@@ -312,12 +295,30 @@ $$\frac{(N_0+1+n)(n-N_0)}{2n^2}\frac{\varepsilon}{3} < \frac{\varepsilon}{3}, \f
 最后, 取$N = \max\{N_0, N_1, N_2, N_3\}$, $\forall n > N$, 我们有
 $$\left | \frac{a_1+2a_2+\cdots+na_n}{n^2}  - \frac{a}{2} \right | < \varepsilon.$$
 即$$\displaystyle \lim_{n\to +\infty}\frac{a_1+2a_2+\cdots+na_n}{n^2} = \frac{a}{2}.$$
-\end{proof}
+命题得证。\end{proof}
+\begin{remark}
+考虑如下数列
+\begin{equation*}
+b_k=
+\begin{cases}
+a_k,\quad&k=1;\\
+a_n,\quad&k\in \left[\frac{(n-1)n}{2}+ 1,\frac{n(n+1)}{2}\right], \forall n\geq 2.
+\end{cases}
+\end{equation*}
+显然$\displaystyle \lim_{n\to +\infty}b_n = a$.
+记$$S_n = \frac{b_1+b_2+\cdots+b_{\frac{n(n+1)}{2}}}{\frac{n(n+1)}{2}},$$ 则
+\begin{equation*}
+\begin{split}
+\frac{a_1+2a_2+\cdots+na_n}{n^2} &= \frac{b_1+b_2+\cdots+b_{\frac{n(n+1)}{2}}}{n^2}\\&=\frac{b_1+b_2+\cdots+b_{\frac{n(n+1)}{2}}}{\frac{n(n+1)}{2}}\cdot\frac{n(n+1)}{2n^2}\\&=\frac{S_n}{2}+\frac{S_n}{2n^2}
+\end{split}
+\end{equation*}
+由例1.1.15知，$\displaystyle \lim_{n\to +\infty}S_n = a$, 从而$$\displaystyle \lim_{n\to +\infty}\frac{a_1+2a_2+\cdots+na_n}{n^2} = \frac{a}{2}.$$
+\end{remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-设$\displaystyle \lim_{n\to +\infty}a_n = a$，$\left |q \right | < 1$。用$\varepsilon-N$法证明：
+设$\displaystyle \lim_{n\to +\infty}a_n = a$，$\left |q \right | < 1$. 用$\varepsilon-N$法证明：
 $$\displaystyle \lim_{n\to +\infty}(a_n + a_{n-1}q + \cdots + a_1q^{n-1}) = \frac{a}{1-q}.$$
 \end{example}
 \begin{proof}
@@ -327,13 +328,13 @@ $$\left | a_n - a \right | < M, \forall n\in\mathbb{N},$$
 $$\left | a_n - a \right | < \frac{(1-|q|)\varepsilon}{3}, \forall n > N_0.$$
 我们知道,当$\left| q\right| < 1$时，$\displaystyle \lim_{n\to +\infty}q^n = 0$。于是$\exists N_1 \in \mathbb {N}$使得
 $$\left|q^{n-k}\right| < \max\left \{\frac{1}{3MN_0}, \frac{1-|q|}{3(|a|+1)}\right\}\varepsilon, \forall n > N_1, k=0, 1, 2, \cdots, N_0.$$
-我们现在取$N = \max\{N_0, N_1\}$。对任意的$n > N$时，有
+取$N = \max\left\{N_0, N_1\right\}$。当$n > N$时，有
 \begin{equation*}
 \begin{split}
 &\left | (a_n + a_{n-1}q + \cdots + a_1q^{n-1}) - \frac{a}{1-q} \right | \\
-&= \left | (a_n + a_{n-1}q + \cdots + a_1q^{n-1}) - a\frac{1-q^n}{1-q} + \frac{aq^n}{1-q}\right|\\
+&= \left | (a_n + a_{n-1}q + \cdots + a_1q^{n-1}) - a\frac{1-q^n}{1-q} - \frac{aq^n}{1-q}\right|\\
 &< \left | (a_n - a) + (a_{n-1} - a)q + \cdots + (a_1- a)q^{n-1} \right | + \frac{\left|a\right|\left|q\right|^n}{\left|1-q\right|} \\
-&<\frac{(1-|q|)\varepsilon}{3}(1 + |q| + \cdots + |q|^{n-N_0}) + \left(MN_0+\frac{a}{1-|q|}\right)\max\left \{\frac{1}{3MN_0}, \frac{1-|q|}{3(|a|+1)}\right\}
+&<\frac{(1-|q|)\varepsilon}{3}(1 + |q| + \cdots + |q|^{n-N_0}) + \left(MN_0+\frac{|a|}{1-|q|}\right)\max\left \{\frac{1}{3MN_0}, \frac{1-|q|}{3(|a|+1)}\right\}
 \varepsilon\\&< \varepsilon.
 	\end{split}
 \end{equation*}
@@ -354,7 +355,7 @@ $$\displaystyle \lim_{n\to +\infty}\frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_n
 \item 由于$|a_n| < M$, 对上述的$\varepsilon > 0$, $\exists N_1 \in \mathbb{N}$使得
 $$\left|\frac{a_{n - N_0}b_{N_0} + a_{n - N_0 + 1}b_{N_0 - 1}+\cdots + a_nb_0}{n}\right| < \frac{\varepsilon}{2}.$$
 \end{enumerate}
-取$N = \max\{N_0, N_1\}$, 对于上述的$\varepsilon > 0$, 当$n > N$, 有
+取$N = \max\{N_0, N_1\}$。对于上述的$\varepsilon > 0$, 当$n > N$时,
 \begin{equation*}
 \begin{split}
 &\left | \frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n} \right | \\
@@ -364,27 +365,23 @@ $$\left|\frac{a_{n - N_0}b_{N_0} + a_{n - N_0 + 1}b_{N_0 - 1}+\cdots + a_nb_0}{n
 &< \varepsilon.
 	\end{split}
 \end{equation*}
-即$$\displaystyle \lim_{n\to +\infty}\frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n}= 0.$$
-
-下面证明命题在$b\neq 0$时也成立。
+由极限的定义知，命题成立在$b=0$时成立。下面证明命题在$b\neq 0$时也成立。
 \begin{enumerate}
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \item 由于$\displaystyle \lim_{n\to +\infty}a_n = a$收敛，则$\displaystyle \lim_{n\to +\infty}(a_n - a)b = 0$. 由此可知
 $$\displaystyle \lim_{n\to +\infty}\frac{(a_0-a)b+(a_1-a)b+\cdots+(a_{n-1}-a)b+(a_n-a)b}{n}= 0.$$
 \item 由于$\displaystyle \lim_{n\to +\infty}a_n = a$和$\displaystyle \lim_{n\to +\infty}(b_n - b) = 0$, 则
 $$\displaystyle \lim_{n\to +\infty}\frac{a_0(b_n-b)+a_1(b_{n-1} - b)+\cdots+a_{n-1}(b_1 - b)+a_n(b_n-b)}{n}= 0.$$
-\item 
-\begin{equation*}
-\begin{split}
-&\left | \frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n} - ab \right | \\
-&= \left | \frac{a_0(b_n-b)+a_1(b_{n-1}-b)+\cdots+a_n(b_0-b)}{n} + \frac{(a_0-a)b+(a_1 - a)b+\cdots+(a_n-a)b)}{n}\right|
-\end{split}
-\end{equation*}
 \item 对于$\forall \varepsilon > 0$, $\exists N \in \mathbb {N}$，使得当$n > N$时， 
 $$\left | \frac{a_0(b_n-b)+a_1(b_{n-1}-b)+\cdots+a_n(b_0-b)}{n}\right| < \frac{\varepsilon}{2},$$
 $$\left | \frac{(a_0-a)b+(a_1 - a)b+\cdots+(a_n-a)b)}{n}\right| < \frac{\varepsilon}{2}.$$
-从而 $$\left | \frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n} - ab \right | < \varepsilon.$$
-即$$\displaystyle \lim_{n\to +\infty}\frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n}= ab.$$
+从而 
+\begin{equation*}
+\begin{split}
+&\left | \frac{a_0b_n+a_1b_{n-1}+\cdots+a_{n-1}b_1+a_nb_0}{n} - ab \right | \\
+&\leq \left | \frac{a_0(b_n-b)+a_1(b_{n-1}-b)+\cdots+a_n(b_0-b)}{n}\right| + \left|\frac{(a_0-a)b+(a_1 - a)b+\cdots+(a_n-a)b)}{n}\right|\\&\leq \varepsilon
+\end{split}
+\end{equation*}
 \end{enumerate}
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -395,25 +392,23 @@ $$\left | \frac{(a_0-a)b+(a_1 - a)b+\cdots+(a_n-a)b)}{n}\right| < \frac{\varepsi
 我们分以下步骤证明该命题。
 \begin{enumerate}
 \renewcommand\labelenumi{\normalfont(\theenumi)}
-\item 首先我们证明$\displaystyle \lim_{n\to +\infty}b_n = 0$.
+\item 显然$\displaystyle \lim_{n\to +\infty}b_n = 0$.
 \item 
-\begin{equation*}
-\begin{split}
-&\left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - aS \right | \\
-&= \left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - a(b_1+b_2+\cdots+b_n)+a(b_1+b_2+\cdots+b_n -S)\right| \\
-&< \left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n\right| + \left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right|
-\end{split}
-\end{equation*}
 由$\displaystyle \lim_{n\to +\infty}a_n = a$ 和 $\displaystyle \lim_{n\to +\infty}b_n = 0$得知
 $$\left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n\right| < \frac{\varepsilon}{2}.$$
 由$\displaystyle \lim_{n\to +\infty}(b_1+b_2+\cdots+b_n) = S$可得知
 $$\left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right| < \frac{\varepsilon}{2}.$$
+于是
+\begin{equation*}
+\begin{split}
+&\left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - aS \right | \\
+&= \left | (a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) - a(b_1+b_2+\cdots+b_n)+a(b_1+b_2+\cdots+b_n -S)\right| \\
+&< \left | (a_n-a)b_1+(a_{n-1}-a)b_2+\cdots+(a_1-a)b_n\right| + \left|a\right|\left|(b_1 + b_2+\cdots + b_n) -S\right|\\&<\varepsilon
+\end{split}
+\end{equation*}
 \end{enumerate}
-综上，$$\displaystyle \lim_{n\to +\infty}(a_nb_1+a_{n-1}b_2+\cdots+a_1b_n) = aS.$$
+由极限的定义，命题得证。
 \end{proof}
-\begin{remark}
-这题里的条件$b_m \geq 0 (n\in\mathbb{N})$不是必须的。只要$\displaystyle \lim_{n\to +\infty}(|b_1|+|b_2|+\cdots+|b_n|) = S$就够了。
-\end{remark}
 \begin{remark}
 这题是第10题的推广。如果$b_n = q^{n-1}, 0 < q < 1$，则
 $$\displaystyle \lim_{n\to +\infty}(b_1 + b_2 + \cdots + b_n) = \lim_{n\to +\infty}\frac{1-q^n}{1-q}=\frac{1}{1-q}.$$ 
@@ -437,11 +432,12 @@ $$\displaystyle \lim_{n\to +\infty}(b_1 + b_2 + \cdots + b_n) = \lim_{n\to +\inf
 &\left | \displaystyle \sum_{k=1}^nt_{nk}a_k - a \right | \\
 &= \displaystyle \sum_{k=1}^{N_0}t_{nk}\left |(a_k-a)\right| + \displaystyle \sum_{k=N_{0}}^{n}t_{nk}\left |(a_k-a)\right|\\
 &< \displaystyle \sum_{k=1}^{N_0}\frac{\varepsilon}{2N_0M}M + \displaystyle \sum_{k=N_{0}}^{n}t_{nk}\frac{\varepsilon}{2}\\
-&=\varepsilon
+&\leq\varepsilon
 \end{split}
 \end{equation*}
 \end{enumerate}
-所以$$\displaystyle \lim_{n\to +\infty}\sum_{k=1}^nt_{nk}a_k = a.$$
+由极限定义知，$\displaystyle \lim_{n\to +\infty}\sum_{k=1}^nt_{nk}a_k = a$.
+
 如果我们取$b_{nk} = \frac{1}{n}$, 则例1.1.15就可以由这题得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -449,16 +445,15 @@ $$\displaystyle \lim_{n\to +\infty}(b_1 + b_2 + \cdots + b_n) = \lim_{n\to +\inf
 设$a,b,c$为三个给定的实数，令$a_0=a,b_0=b,c_0=c$，并归纳定义
 \begin{equation*}
 \begin{cases}
-a_n = \frac{b_{n-1}+c_{n-1}}{2},\\
-b_n = \frac{a_{n-1}+c_{n-1}}{2}, \quad n=1,2,\cdots.\\
-c_n = \frac{a_{n-1}+b_{n-1}}{2},
+a_n = \displaystyle\frac{b_{n-1}+c_{n-1}}{2},\\
+b_n = \displaystyle\frac{a_{n-1}+c_{n-1}}{2}, \quad n=1,2,\cdots.\\
+c_n = \displaystyle\frac{a_{n-1}+b_{n-1}}{2},
 \end{cases}
 \end{equation*}
 证明：$\displaystyle \lim_{n\to +\infty}a_n = \lim_{n\to +\infty}b_n=\lim_{n\to +\infty}c_n = \frac{a+b+c}{3}$.
 \end{example}
-
 \begin{proof}
-我们通过以下结论去证明该命题：
+我们通过以下结论证明该命题：
 \begin{enumerate}
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \item $\displaystyle \lim_{n\to +\infty}(a_n + b_n + c_n) = a+b+c$. 这是因为$a_n + b_n + c_n = a_{n-1}+b_{n-1}+c_{n-1} = \cdots = a+b+c$.
@@ -466,11 +461,10 @@ c_n = \frac{a_{n-1}+b_{n-1}}{2},
 这是因为$$a_n - b_n = \left(-\frac{1}{2}\right)(a_{n-1}-b_{n-1}) = \cdots = \left(-\frac{1}{2}\right)^n(a-b),$$
 $$a_n - c_n = \left(-\frac{1}{2}\right)(a_{n-1}-c_{n-1}) = \cdots = \left(-\frac{1}{2}\right)^n(a-c),$$
 $$c_n - b_n = \left(-\frac{1}{2}\right)(c_{n-1}-b_{n-1}) = \cdots = \left(-\frac{1}{2}\right)^n(c-b).$$
-\item $$\displaystyle \lim_{n\to +\infty}3a_n = \lim_{n\to +\infty}(a_n+b_n+c_n +(a_n-b_n) + (a_n-c_n))=a+b+c,$$
-从而， $$\displaystyle \lim_{n\to +\infty}a_n  = \frac{a+b+c}{3}.$$
-\item 同理可证，$\displaystyle \lim_{n\to +\infty}b_n=\lim_{n\to +\infty}c_n = \frac{a+b+c}{3}$.
+\item $\displaystyle \lim_{n\to +\infty}a_n =\frac{1}{3}\displaystyle \lim_{n\to +\infty}3a_n = \lim_{n\to +\infty}(a_n+b_n+c_n +(a_n-b_n) + (a_n-c_n))=\frac{a+b+c}{3}.$
 \end{enumerate}
 
+类似可证，$\displaystyle \lim_{n\to +\infty}b_n=\lim_{n\to +\infty}c_n = \frac{a+b+c}{3}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -481,7 +475,7 @@ $$c_n - b_n = \left(-\frac{1}{2}\right)(c_{n-1}-b_{n-1}) = \cdots = \left(-\frac
 由递推公式，我们可以证明$$a_n-a_{n-1} =\left(-q\right)^{n-2}(a_2 - a_1), \forall n \geq 3.$$
 由此我们可以得出$a_n$的通项公式
 $$a_n = a_2 + \displaystyle \sum_{k=1}^{n-2}\left(-q\right)^k(a_2 - a_1) = a_2 - \frac{q+(-q)^{n-1}}{1+q}(a_2-a_1).$$
-从而，$$\displaystyle \lim_{n\to +\infty}a_n = a_2 - \frac{q}{1+q}(a_2-a_1) = \frac{a_2+qa_1}{1+q}.$$
+从而，$\displaystyle \lim_{n\to +\infty}a_n = a_2 - \frac{q}{1+q}(a_2-a_1) = \frac{a_2+qa_1}{1+q}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -492,13 +486,11 @@ $$a_n = a_2 + \displaystyle \sum_{k=1}^{n-2}\left(-q\right)^k(a_2 - a_1) = a_2 -
 由通项公式定义有$$0\leq a_n \leq \frac{5\sqrt 2}{8}a_{n-1} \leq \cdots \leq \left(\frac{5\sqrt 2}{8}\right)^{n-1}a_1.$$
 由$\displaystyle\frac{5\sqrt 2}{8} < 1$知$\displaystyle \lim_{n\to +\infty}a_n=0$。
 \end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{数列极限的基本性质}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{练习题}
 \begin{example}应用数列极限的基本性质求下列极限：
-\begingroup
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item $\displaystyle \lim_{n\to +\infty}\frac{4n^2-n +5}{3n^2 -2n -7}$
@@ -515,12 +507,12 @@ $1 = \displaystyle \lim_{n\to +\infty}\frac{1}{\sqrt[n]2} \leq \lim_{n\to +\inft
 \end{solution}
 \item $\displaystyle \lim_{n\to +\infty}(2\sin^2n+\cos^2n)^{\frac{1}{n}}$
 \begin{solution}
-$1 \leq \displaystyle \lim_{n\to +\infty}(2\sin^2n+\cos^2n)^{\frac{1}{n}}\leq \lim_{n\to +\infty}\sqrt[n]2 \leq 1$. 
+$1 \leq \displaystyle \lim_{n\to +\infty}(2\sin^2n+\cos^2n)^{\frac{1}{n}}\leq \lim_{n\to +\infty}\sqrt[n]2 = 1$. 
 于是 $\displaystyle \lim_{n\to +\infty}(2\sin^2n+\cos^2n)^{\frac{1}{n}} = 1$.
 \end{solution}
 \item $\displaystyle \lim_{n\to +\infty}(\arctan n)^{\frac{1}{n}}$
 \begin{solution}
-$1 \leq \displaystyle \lim_{n\to +\infty}(\arctan n)^{\frac{1}{n}}\leq \lim_{n\to +\infty}\sqrt[n]{\frac{\pi}{2}} \leq 1$. 
+$1 \leq \displaystyle \lim_{n\to +\infty}(\arctan n)^{\frac{1}{n}}\leq \lim_{n\to +\infty}\sqrt[n]{\frac{\pi}{2}} = 1$. 
 于是 $\displaystyle \lim_{n\to +\infty}(\arctan n)^{\frac{1}{n}} = 1$.
 \end{solution}
 \item $\displaystyle \lim_{n\to +\infty}\frac{1+a+\cdots+a^{n-1}}{1+b+\cdots +b^{n-1}}, |a| < 1, |b| < 1$
@@ -583,12 +575,10 @@ $\displaystyle \lim_{n\to +\infty}(1+x)(1+x^2)(1+x^4)\cdots(1+x^{2^{n - 1}}) = \
 
 \item $\displaystyle \lim_{n\to +\infty}(\sqrt{n+2}-2\sqrt{n+1}+\sqrt{n})$
 \begin{solution}
-
-\end{solution}
 $\displaystyle \lim_{n\to +\infty}(\sqrt{n+2}-2\sqrt{n+1}+\sqrt{n})=
 \lim_{n\to +\infty}\left(\frac{1}{\sqrt{n+2}+\sqrt{n+1}}-\frac{1}{\sqrt{n+1}+\sqrt{n}}\right)=0$.
+\end{solution}
 \end{enumerate}
-\endgroup
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -604,39 +594,35 @@ $$\sqrt[n]{a_n} = \sqrt[n]{\frac{a_n}{a_{n-1}}\cdot \frac{a_{n-1}}{a_{n-2}}\cdot
 设$\displaystyle \lim_{n\to +\infty}a_n = a$。应用夹逼定理证明：$\displaystyle \lim_{n\to +\infty}\frac{[na_n]}{n} = a$，其中$[x]$表示不超过的最大整数。
 \end{example}
 \begin{proof}
-$$a=\displaystyle \lim_{n\to +\infty}\frac{na_n-1}{n} \leq \displaystyle \lim_{n\to +\infty}\frac{[na_n]}{n} \leq 
-\displaystyle \lim_{n\to +\infty}\frac{na_n}{n} = a.$$
+$a=\displaystyle \lim_{n\to +\infty}\frac{na_n-1}{n} \leq \displaystyle \lim_{n\to +\infty}\frac{[na_n]}{n} \leq 
+\displaystyle \lim_{n\to +\infty}\frac{na_n}{n} = a.$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
-
 \begin{example}
 设$a_n \neq 0$且$\displaystyle \lim_{n\to +\infty}\left|\frac{a_{n+1}}{a_n}\right| = r > 1$。证明：$\displaystyle \lim_{n\to +\infty}a_n = \infty$.
 \end{example}
 \begin{proof}
 取$\varepsilon = \frac{r - 1}{2}$.由极限的定义，存在$N\in\mathbb{N}$使得$\left|\frac{a_{n+1}}{a_n}\right| > r - \varepsilon = \frac{r + 1}{2} > 1$. 
-于是 $$\left|a_n\right| > \left(\frac{r+1}{2}\right)^{n_N}\left|a_N\right|.$$
+于是$$\left|a_n\right| > \left(\frac{r+1}{2}\right)^{n_N}\left|a_N\right|.$$
 即$\displaystyle \lim_{n\to +\infty}a_n = \infty$。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item 应用数学归纳法或$\displaystyle\frac{2k-1}{2k}<\frac{2k}{2k+1}$证明不等式：
 $$\frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}.$$
 \begin{proof}
-记$S_n = \frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n}$. 利用不等式$\displaystyle\frac{2k-1}{2k}<\frac{2k}{2k+1}$， 我们有
-$$S_n < \frac{2}{3}\cdot\frac{4}{5}\cdot\cdots\cdot\frac{2n}{2n+1} = \frac{1}{S_n(2n+1)}.$$
-于是$S_n < \frac{1}{\sqrt{2n+1}}$
-
+记$S_n = \displaystyle\frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n}$. 利用不等式$\displaystyle\frac{2k-1}{2k}<\frac{2k}{2k+1}$， 我们有
+$$S_n < \frac{2}{3}\cdot\frac{4}{5}\cdot\cdots\cdot\frac{2n}{2n+1} =\frac{1}{S_n(2n+1)}.$$
+于是$S_n < \displaystyle\frac{1}{\sqrt{2n+1}}$.
 \end{proof}
 
 \item 证明：$\displaystyle \lim_{n\to +\infty}\left(\frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n}\right) = 0$
 \begin{proof}
-$$0<\displaystyle \lim_{n\to +\infty}\left(\frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n}\right) \leq \lim_{n\to +\infty}\frac{1}{\sqrt{2n+1}}=0.$$
+$0<\displaystyle \lim_{n\to +\infty}\left(\frac{1}{2}\cdot\frac{3}{4}\cdot\cdots\cdot\frac{2n-1}{2n}\right) \leq \lim_{n\to +\infty}\frac{1}{\sqrt{2n+1}}=0$.
 \end{proof}
 \end{enumerate}
-
 \end{example}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -644,32 +630,21 @@ $$0<\displaystyle \lim_{n\to +\infty}\left(\frac{1}{2}\cdot\frac{3}{4}\cdot\cdot
 设$a_n > 0 (n\in\mathbb{N})$且$\displaystyle \lim_{n\to +\infty}a_n = a > 0$。应用夹逼定理证明：$\displaystyle \lim_{n\to +\infty}\sqrt[n]{a_n} = 1$
 \end{example}
 \begin{proof}
-由于$\displaystyle \lim_{n\to +\infty}a_n = a > 0$,我们有一下结论：
-$$\displaystyle \lim_{n\to +\infty}\frac{a_n}{n} = 0, \displaystyle \lim_{n\to +\infty}\frac{\frac{1}{a_n}}{n} = 0.$$
-同时，我们有
-\begin{equation*}
-\begin{split}
-1&=\lim_{n\to +\infty}\left(\frac{1}{\left(1 + 1 +\cdots+1+\frac{1}{a_n}\right)/n}\right)\\
-&=\left(\frac{1}{\displaystyle\lim_{n\to +\infty}\left(n- 1 +\frac{1}{a_n}\right)/n}\right)\\
-&\leq \lim_{n\to +\infty}\sqrt[n]{a_n} =\lim_{n\to +\infty}\sqrt[n]{\left(1\cdot 1\cdot \cdots \cdot 1\cdot a_n\right)}\\
-&\leq \lim_{n\to +\infty}\frac{\left(1 + 1 +\cdots+1+a_n\right)}{n} \\
-&=\lim_{n\to +\infty}\frac{\left(n-1+a_n\right)}{n}\\
-&=1.
-\end{split}
-\end{equation*}
+由极限的定义知，存在$N>0$使得$$\frac{a}{2}\leq a_n \leq \frac{3a}{2},\quad\forall n > N.$$
+于是$1=\displaystyle \lim_{n\to +\infty}\sqrt[n]{\frac{a}{2}}\leq \displaystyle \lim_{n\to +\infty}\sqrt[n]{a_n} \leq \displaystyle \lim_{n\to +\infty}\sqrt[n]{\frac{3a}{2}}=1$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-证明$\displaystyle \lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^nk!}{n!} = 1$：$\left(\text{提示}: 1+\frac{1}{n}\leq\frac{\displaystyle\sum_{k=1}^nk!}{n!}\leq 1+ \frac{2}{n}\right)$
+证明$\displaystyle \lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^nk!}{n!} = 1$：$\left(\text{提示}: 1+\displaystyle\frac{1}{n}\leq\frac{\displaystyle\sum_{k=1}^nk!}{n!}\leq 1+ \displaystyle\frac{2}{n}\right)$
 \end{example}
 \begin{proof}
 \begin{equation*}
 \begin{split}
 1+\frac{1}{n} &= \frac{(n-1)!+n!}{n!} \\&< \frac{\displaystyle\sum_{k=1}^nk!}{n!} \\&< \frac{(n-1)(n-2)!+(n-1)!+n!}{n!} \\
-&= 1 + \frac{1}{n} + \frac{n-1}{n\cdot(n-1)} \\&= 1 +\frac{2}{n}
+&= 1 +\frac{2}{n}
 \end{split}
 \end{equation*}
-于是$\displaystyle \lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^nk!}{n!} = 1$。
+于是$\displaystyle \lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^nk!}{n!} = 1$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -693,20 +668,15 @@ $$\displaystyle \lim_{n\to +\infty}\frac{1+\sqrt{2}+\sqrt[3]{3}+\cdots+\sqrt[n]{
 \end{example}
 \begin{proof}
 取$a_n = \sqrt[n]{n}$,显然$$\displaystyle \lim_{n\to +\infty}a_n=1.$$于是
-$$\displaystyle \lim_{n\to +\infty}\frac{1+\sqrt{2}+\sqrt[3]{3}+\cdots+\sqrt[n]{n}}{n} = \displaystyle \lim_{n\to +\infty}\frac{a_1+a_2+\cdots+a_n}{n} = 1.$$
+$\displaystyle \lim_{n\to +\infty}\frac{1+\sqrt{2}+\sqrt[3]{3}+\cdots+\sqrt[n]{n}}{n} = \displaystyle \lim_{n\to +\infty}\frac{a_1+a_2+\cdots+a_n}{n} = 1$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-证明：$\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 2}{2}+\sin\frac{\ln 3}{3} +\cdots+\sin\frac{\ln n}{n}\right) = 1$
+证明：$\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 2}{2}+\sin\frac{\ln 3}{3} +\cdots+\sin\frac{\ln n}{n}\right)^{\frac{1}{n}} = 1$
 \end{example}
 \begin{proof}
-考虑数列$\sqrt[n]{n}$.这个数列在$n=3$是取得最大值且$\displaystyle \sqrt[n+1]{n+1} < \sqrt[n]{n}, \forall n \geq 3$。
-这就是说数列$\{\sin\frac{\ln n}{n}\}$在$n=3$时取得最大值且$$\displaystyle \sin\frac{\ln{(n+1)}}{n+1} < \sin\frac{\ln{n}}{n}, \forall n \geq 3.$$
-从而，
-$$\left(\sin\frac{\ln 3}{3}\right)^{\frac{1}{n}} < \left(\sin\frac{\ln 2}{2}+\sin\frac{\ln 3}{3} +\cdots+\sin\frac{\ln n}{n}\right)^{\frac{1}{n}} < \left((n-1)\sin\frac{\ln 3}{3}\right)^{\frac{1}{n}}.$$
-由于$$\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 3}{3}\right)^{\frac{1}{n}} = 1, \quad\displaystyle \lim_{n\to +\infty}\left((n-1)\sin\frac{\ln 3}{3}\right)^{\frac{1}{n}} = 1,$$我们有
-$$\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 2}{2}+\sin\frac{\ln 3}{3} +\cdots+\sin\frac{\ln n}{n}\right) = 1.$$ 
-\end{proof}
+$1=\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 2}{2}\right)^{\frac{1}{n}}\leq\displaystyle \lim_{n\to +\infty}\left(\sin\frac{\ln 2}{2}+\sin\frac{\ln 3}{3} +\cdots+\sin\frac{\ln n}{n}\right)^{\frac{1}{n}}\leq \displaystyle \lim_{n\to +\infty}\sqrt[n]{n} = 1.
+$\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 证明：$\displaystyle \lim_{n\to +\infty}\displaystyle\sum_{k=n^2}^{(n+1)^2}\frac{1}{\sqrt k}= 2$.
@@ -721,12 +691,11 @@ $$\frac{2n+2}{n+1} = \displaystyle\sum_{k=n^2}^{(n+1)^2}\frac{1}{\sqrt{(n+1)^2}}
 用$p(n)$表示能整除$n$的素数的个数。证明：$\displaystyle \lim_{n\to +\infty}\frac{p(n)}{n} = 0.$
 \end{example}
 \begin{proof}
-假设$n=p_1^{m_1}p_2^{m_2}\cdots p_l^{m_l}$, 其中$p_1 < p_2 <\cdots < p_l$是互异的素数，$m_k \geq 1, k=1,2,\cdots, l$。这里$l=p(n)$.
+假设$n=p_1^{m_1}p_2^{m_2}\cdots p_l^{m_l}$, 其中$p_1 < p_2 <\cdots < p_l$是互异的素数，$m_k \geq 1, k=1,2,\cdots, l$。于是$p(n)=\displaystyle\sum_{k=1}^{l}m_k$.
 $$\ln{n} = \displaystyle\sum_{k=1}^{l}m_k\ln{p_k} \geq \displaystyle\sum_{k=1}^{p(n)}\ln{2}=p(n)\ln{2}.$$
 因此
 $$0 \leq \frac{p(n)}{n} \leq \frac{\ln{n}}{n\ln{2}}.$$
 由夹逼定理可知，$\displaystyle \lim_{n\to +\infty}\frac{p(n)}{n} = 0.$
-
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -754,16 +723,14 @@ $$0 \leq \frac{p(n)}{n} \leq \frac{\ln{n}}{n\ln{2}}.$$
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item $\displaystyle\left(1-\frac{1}{2}\right)\left(1-\frac{1}{2^2}\right)\cdots\left(1-\frac{1}{2^n}\right), n\in\mathbb{N}$;
-
 \begin{proof}
 记$S_n = \left(1-\frac{1}{2}\right)\left(1-\frac{1}{2^2}\right)\cdots\left(1-\frac{1}{2^n}\right)$， 我们有$S_{n+1} = S_n\left(1-\frac{1}{2^{n+1}}\right) < 
 S_n$.很显然$S_n > 0,\forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$收敛。
 \end{proof}
 
 \item $\displaystyle\frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}, n\in\mathbb{N}$.
-
 \begin{proof}
-记$S_n = \frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}$. 当$n>10$时，$\frac{n+9}{2n-1} < 1$.即$S_{n+1} < S_{n},\forall n \in \mathbb{N}, n > 10$.另一方面
+记$S_n = \displaystyle\frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}$. 当$n>10$时，$\frac{n+9}{2n-1} < 1$.即$S_{n+1} < S_{n},\forall n \in \mathbb{N}, n > 10$.另一方面
 $S_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$收敛。
 \end{proof}
 \end{enumerate}
@@ -774,10 +741,9 @@ $S_n > 0, \forall n\in\mathbb{N}$. 由实数连续性命题(二)可知，$S_n$�
 \end{example}
 \begin{proof}
 考虑函数$f(x) = (1-x)x, x\in (0,1)$, 我们有$$f(x) > 0, f(x) \leq \frac{1}{4}, x\in (0,1).$$
-所以$\displaystyle\frac{a_{n+1}}{a_n} \geq \frac{1}{4(1-a_n)a_n} \geq 1$，即$a_n$是单调递增的函数。由实数连续性命题(二)可知，$a_n$收敛。由递推公式可知，$\frac{1}{4}\geq a(1-a)\geq \frac{1}{4}$.所以$a=\frac{1}{2}$, 即$\displaystyle \lim_{n\to +\infty}a_n = \frac{1}{2}$。
+所以$\displaystyle\frac{a_{n+1}}{a_n} \geq \frac{1}{4(1-a_n)a_n} \geq 1$，即$\{a_n\}$是单调递增。由实数连续性命题(二)可知，$a_n$收敛。由递推公式可知，$\frac{1}{4}\geq a(1-a)\geq \frac{1}{4}$.所以$a=\frac{1}{2}$, 即$\displaystyle \lim_{n\to +\infty}a_n = \frac{1}{2}$。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
-
 \begin{example}
 给定两正数$x_0=a$与$y_0=b$，归纳定义$$x_n=\sqrt{x_{n-1}y_{n-1}}, \quad y_n=\frac{x_{n-1}+y_{n-1}}{2},$$ $n=1,2,\cdots$。证明：数列$\{x_n\}$与$\{y_n\}$收敛，
 且$\displaystyle \lim_{n\to +\infty}x_n=\displaystyle \lim_{n\to +\infty}y_n$，并称此极限为与的算术-几何平均数。
@@ -821,22 +787,21 @@ x_{k+1} &=\sqrt{c+x_{k}} \\&< \sqrt{c+\frac{1+\sqrt{1+4c}}{2}}\\&=\sqrt{\frac{4c
 \end{enumerate}
 
 现在考虑函数$f(x) =c+x-x^2$。很显然$$f(x) > 0, \quad x\in \left(0, \displaystyle\frac{1+\sqrt{1+4c}}{2}\right).$$
-于是$$x_{n+1}^2 -x_{n}^2 = c+ x_{n}-x_n^{2} > 0.$$即$\{x_n\}$是单调递增的数列。由实数连续性命题(二)可知，数列$\{x_n\}$收敛. 设$\displaystyle \lim_{n\to +\infty}x_n=a$. 对递归公式取极限得$a=\sqrt{c+a}$。从而
-$$\displaystyle \lim_{n\to +\infty}x_n=a =\frac{1+\sqrt{1+4c}}{2}.$$
+于是$x_{n+1}^2 -x_{n}^2 = c+ x_{n}-x_n^{2} > 0$.即$\{x_n\}$是单调递增的数列。由实数连续性命题(二)知，数列$\{x_n\}$收敛. 设$\displaystyle \lim_{n\to +\infty}x_n=a$,则
+$$a=\sqrt{c+a}.$$解方程得$\displaystyle \lim_{n\to +\infty}x_n=a =\frac{1+\sqrt{1+4c}}{2}.$
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$x_1=c>0$，令$\displaystyle x_{n+1} = c + \frac{1}{x_n}$，$n\in\mathbb{N}$。求极限$\displaystyle \lim_{n\to +\infty}x_n$.
 \end{example}
 \begin{solution}
-由递推公式，我们有
-$$x_{n+1}-x_{n} = \frac{x_{n-1}- x_n}{x_n\cdot x_{n-1}}.$$
-下面我们证明：
+我们首先证明：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
 \item $x_{2k-1} < x_{2k+1},\quad\forall k\in\mathbb{N}$;
 \item $x_{2k} > x_{2(k+1)},\quad\forall k\in\mathbb{N}$.
 \end{enumerate}
+由递推公式可知
 $$x_{n}-x_{n-2} = \frac{x_{n-3} - x_{n-1}}{x_{n-1}\cdot x_{n-3}} = \frac{x_{n-2} - x_{n-4}}{x_{n-1}\cdot x_{n-2}\cdot x_{n-3}\cdot x_{n-4}}.$$
 由于$x_3-x_1 = \displaystyle\frac{1}{x_2} > 0$, 从而知$(1)$成立。由于$x_4-x_2 = \displaystyle\frac{x_1-x_3}{x_1\cdot x_3} < 0$,从而知$(2)$成立。
 
@@ -861,7 +826,7 @@ $$x_{2k+2} =c+\frac{1}{c+\frac{1}{x_{2k}}}\Rightarrow b^2-bc-1 = 0\Rightarrow b 
 \end{proof}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
-设$c>0$，$a_1=\frac{c}{2}$，$a_{n+1}=\frac{c}{2}+\frac{a_n^2}{2}$，$n=1,2,\cdots$。证明：
+设$c>0$，$a_1=\frac{c}{2}$，$a_{n+1}=\displaystyle\frac{c}{2}+\frac{a_n^2}{2}$，$n=1,2,\cdots$。证明：
 \begin{equation*}
 \displaystyle \lim_{n\to +\infty}a_n=
 \begin{cases}
@@ -872,18 +837,19 @@ $$x_{2k+2} =c+\frac{1}{c+\frac{1}{x_{2k}}}\Rightarrow b^2-bc-1 = 0\Rightarrow b 
 \end{example}
 \begin{proof}
 当$c>1$时，由递推公式可知，$$a_{n+1}\geq 2\displaystyle\sqrt{\frac{c}{2}{\frac{a_n^2}{2}}}=\sqrt{c}a_n\geq \cdots\geq c^{\frac{n}{2}}a_1.$$
-所以$$+\infty \geq \displaystyle \lim_{n\to +\infty}a_n \geq \displaystyle \lim_{n\to +\infty}(c^{\frac{n}{2}}a_1) = +\infty.$$
+所以$+\infty \geq \displaystyle \lim_{n\to +\infty}a_n \geq \displaystyle \lim_{n\to +\infty}\left(c^{\frac{n}{2}}a_1\right) = +\infty.$
 
-当$0<c\leq 1$时，我们可以证明数列$\{a_n\}$是单调递增有界。
+当$0<c\leq 1$时，我们证明数列$\{a_n\}$是单调递增且有界。
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item $a_1 = \frac{c}{2} < 1-\sqrt{1-c}$.
+\item $a_1 = \displaystyle\frac{c}{2} < 1-\sqrt{1-c}$.
 \item 设$a_k < 1-\sqrt{1-c}$.下面我们证明$a_{k+1} \geq a_{k}$且$a_{k+1} < 1-\sqrt{1-c}$.
 $$a_{k+1} = \frac{c}{2} + \frac{a_{k}^2}{2} <\frac{c}{2} + \frac{1}{2}\left(1-\sqrt{1-c}\right)^2 = 1-\sqrt{1-c}.$$
 考察函数$f(x) = x^2-2x+c$. $$f(x) > 0, \quad x\in(-\infty, 1-\sqrt{1-c}).$$
 因此 $$a_{k+1} - a_{k} = \frac{1}{2}(a_k^2-2a_k+c) > 0.$$
-即$\{a_n\}$是单调增的数列. 由实数连续性命题(二)可知， $\displaystyle \lim_{n\to +\infty}a_n$存在。设极限为$a$, 则$a=\frac{c}{2}+\frac{a^2}{2}\Rightarrow a = 1-\sqrt{1-c}$.
-\end{enumerate}\end{proof}
+即$\{a_n\}$是单调增的数列. 由实数连续性命题(二)可知， $\displaystyle \lim_{n\to +\infty}a_n$存在。设极限为$a$, 则$$a=\frac{c}{2}+\frac{a^2}{2}\Rightarrow a = 1-\sqrt{1-c}.$$
+\end{enumerate}
+命题在$0<c\leq$也得证了。\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设数列$\{a_n\}$单调增，$\{b_n\}$单调减，且$\displaystyle \lim_{n\to +\infty}(a_n-b_n)=0$。证明：$\{a_n\}$与$\{b_n\}$都收敛，且$\displaystyle \lim_{n\to +\infty}a_n=\displaystyle \lim_{n\to +\infty}b_n$.
@@ -901,6 +867,7 @@ $$a_1 \leq a_2 \leq\cdots\leq a_n \leq \cdots \leq b_n \leq \cdots \leq b_2\leq 
 \begin{proof}
 很显然数列$\{A_n\}$是单调增有界数列，由实数连续性命题(二)可知，$\{A_n\}$是收敛的。
 $$\{A_n\}\text{收敛}\Rightarrow \{A_n\}\text{是Cauchy列}\Rightarrow \{a_n\}\text{是Cauchy列} \Rightarrow \{a_n\}\text{收敛}.$$
+Cauchy数列必收敛，从而知$\{a_n\}$收敛。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -967,7 +934,7 @@ $\forall n\in\mathbb{N}$，证明：
 \begin{enumerate}
 \item $0<e-\left(1+\frac{1}{n}\right)^n <\frac{3}{n}$
 \begin{proof}
-由不等式$\left(1+\frac{1}{n}\right)^n<e<\left(1+\frac{1}{n}\right)^{n+1}$可知：
+由不等式$\left(1+\frac{1}{n}\right)^n<e<\left(1+\frac{1}{n}\right)^{n+1}$知：
 $$0<e-\left(1+\frac{1}{n}\right)^n < \left(1+\frac{1}{n}\right)^{n+1} - \left(1+\frac{1}{n}\right)^{n}=\left(1+\frac{1}{n}\right)^{n}\frac{1}{n}<\frac{3}{n}.$$
 \end{proof}
 \item $\displaystyle \lim_{n\to +\infty}\left[e-\left(1+\frac{1}{n}\right)^n\right]=0$.
@@ -983,7 +950,7 @@ $$0<e-\left(1+\frac{1}{n}\right)^n < \left(1+\frac{1}{n}\right)^{n+1} - \left(1+
 \begin{enumerate}
 \item $\displaystyle  0< n^{\alpha}\left[e-\left(1+\frac{1}{n}\right)^n\right] < \frac{e}{n^{1-\alpha}}.$
 \begin{proof}
-由不等式$\left(1+\frac{1}{n}\right)^n<e<\left(1+\frac{1}{n}\right)^{n+1}$可知：
+由不等式$\left(1+\frac{1}{n}\right)^n<e<\left(1+\frac{1}{n}\right)^{n+1}$知：
 \begin{equation*}
 \begin{split}
 0 &< n^{\alpha}\left[e-\left(1+\frac{1}{n}\right)^n\right] \\
@@ -998,6 +965,10 @@ $$0<e-\left(1+\frac{1}{n}\right)^n < \left(1+\frac{1}{n}\right)^{n+1} - \left(1+
 \end{proof}
 \end{enumerate}
 \end{example}
+\begin{remark}
+由上两题可知$\left[e-\left(1+\frac{1}{n}\right)^n\right]$比$\frac{1}{n^{\alpha}}，\forall \alpha < 1$.
+高阶的无穷小量。
+\end{remark}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 \renewcommand\labelenumi{\normalfont(\theenumi)}
@@ -1010,15 +981,15 @@ $$b^{n+1}-a^{n+1}=(b-a)(b^{n}+b^{n-1}a+\cdots+a^n) < (n+1)b^n(b-a).$$
 由此式可知：
 $$a^{n+1} > b^{n+1}-(n+1)b^n(b-a) = b^n\left[b-(n+1)b +(n+1)a\right] = b^n\left[(n+1)a -nb\right].$$
 \end{proof}
-\item 在(1)中，令$a=1+\frac{1}{n+1}$，$b=1+\frac{1}{n}$推出$\left(1+\frac{1}{n}\right)^n$为严格增的数列；
+\item 在(1)中，令$a=1+\displaystyle\frac{1}{n+1}$，$b=1+\displaystyle\frac{1}{n}$推出$\left(1+\frac{1}{n}\right)^n$为严格增的数列；
 \begin{proof}
-将$a=1+\frac{1}{n+1}, b = 1+\frac{1}{n}$代入（1）中的第二式，可知 
+将$a=1+\displaystyle\frac{1}{n+1}, b = 1+\displaystyle\frac{1}{n}$代入（1）中的第二式，可知 
 $$\left(1+\frac{1}{n+1}\right)^{n+1} > \left(1+\frac{1}{n}\right)^n\left[(n+1)\left(1+\frac{1}{n+1}\right)
 -n\left(1+\frac{1}{n}\right)\right]=\left(1+\frac{1}{n}\right)^n.$$
 \end{proof}
 \item 在（1）中，令$a=1$，$b=1+\frac{1}{2n}$推出当$n$为偶数时，有$\left(1+\frac{1}{n}\right)^n<4$；由此得到$\forall n\in\mathbb{N}$，有$\left(1+\frac{1}{n}\right)^n<4$，即$4$为该数列的上界，从而$\left(1+\frac{1}{n}\right)^n$收敛。
 \begin{proof}
-将$a=1, b=1+\frac{1}{2n}$代入（1）的第二个不等式，我们有：
+将$a=1, b=1+\displaystyle\frac{1}{2n}$代入（1）的第二个不等式，我们有：
 $$1\geq \left(1+\frac{1}{2n}\right)^n\left[(n+1) - n\left(1+\frac{1}{2n}\right)\right],$$
 即
 $$\left(1+\frac{1}{2n}\right)^n \leq 2\Rightarrow \left(1+\frac{1}{2n}\right)^{2n} \leq 4.$$
@@ -1028,12 +999,12 @@ $$\left(1+\frac{1}{2n}\right)^n \leq 2\Rightarrow \left(1+\frac{1}{2n}\right)^{2
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
-应用不等式$b^{n+1}-a^{n+1}>(n+1)a^n(b-a)$，$0<a<b$，证明：数列$\left(1+\frac{1}{n}\right)^{n+1}$是严格单减的，并由此推出$\left(1+\frac{1}{n}\right)^{n+1}$为有界数列。
+应用不等式$b^{n+1}-a^{n+1}>(n+1)a^n(b-a)$，$0<a<b$，证明：数列$\left(1+\frac{1}{n}\right)^{n+1}$是严格单减的，并由此推出$\left(1+\frac{1}{n}\right)^{n}$为有界数列。
 \end{example}
 \begin{proof}
 $$b^{n+1}-a^{n+1}=(b-a)(b^{n}+b^{n-1}a+\cdots+a^n) > (n+1)a^n(b-a).$$
 即$$b^{n+1}> a^n\left[(n+1)b-na\right].$$
-取$a=1+\frac{1}{n+1}, b = 1+\frac{1}{n}$,我们有
+取$a=1+\displaystyle\frac{1}{n+1}, b = 1+\displaystyle\frac{1}{n}$,我们有
 \begin{equation*}
 \begin{split}
 \left(1+\frac{1}{n}\right)^{n+1} &> \left(1+\frac{1}{n+1}\right)^n\left[(n+1)\frac{n+1}{n}-n\frac{n+2}{n+1}\right]\\
@@ -1043,7 +1014,10 @@ $$b^{n+1}-a^{n+1}=(b-a)(b^{n}+b^{n-1}a+\cdots+a^n) > (n+1)a^n(b-a).$$
 &>\left(1+\frac{1}{n+1}\right)^{n+2}
 \end{split}
 \end{equation*}
-由此可见$\{\left(1+\frac{1}{n}\right)^{n+1}\}$是严格单调减，且有界。
+由此可见$\left\{\left(1+\frac{1}{n}\right)^{n+1}\right\}$是严格单调减.
+另外
+$$\left(1+\frac{1}{n}\right)^{n}< \left(1+\frac{1}{n}\right)^{n+1}<\left(1+\frac{1}{1}\right)^{1+1}=4.$$
+即$\left(1+\frac{1}{n}\right)^{n}$为有界数列。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -1077,12 +1051,18 @@ $$\underline{a}_1 \leq \underline{a}_2\leq \cdots\leq \underline{a}_n \cdots \le
 \end{proof}
 \item $\{a_n\}$收敛$\Leftrightarrow \overline{a}=\underline{a}$.
 \begin{proof}
-(反证法)假设$\overline{a} > \underline{a}$.对于$\forall \varepsilon > 0, \varepsilon < \frac{\overline{a} - \underline{a}}{3}$, 存在$N\in\mathbb{N}$, 当$n>N$有
-$$\underline{a}_n < \underline{a} +\varepsilon < \underline{a} + \frac{\overline{a}-\underline{a}}{3} < \overline{a} - \frac{\overline{a}-\underline{a}}{3} < \overline{a}-\varepsilon < \overline{a}_n.$$
-于是在$\{a_n\}$存在两个子列$\{a_{k_n}\}$和
-$\{a_{l_n}\}$使得
-$$a_{k_n} < \underline{a} + \frac{\overline{a}-\underline{a}}{3} < \overline{a} - \frac{\overline{a}-\underline{a}}{3} < a_{l_n}, \quad \forall n\in\mathbb{N}.$$
-从而$\{a_n\}$发散。矛盾。
+($\Rightarrow$): 由极限定义，对$\forall \varepsilon>0$, 存在$N$使得
+$$|a_n-a|<\varepsilon,\forall n>N.$$
+于是
+$$|\overline{a}_n-a|<\varepsilon, |\underline{a}_n-a|<\varepsilon\forall n>N.$$
+由此可知
+$$|\overline{a}-a|<\varepsilon, |\underline{a}-a|<\varepsilon.$$
+由$\varepsilon$的任意性知，$\overline{a}=\underline{a}=a$.
+
+($\Leftarrow$): 记$\overline{a}=\underline{a}=a$. 再次由极限定义知，对$\forall \varepsilon > 0$,存在$N$使得
+$$|\overline{a}- a|<\varepsilon, |\underline{a}-a|<\varepsilon, \forall n> N.$$
+从而$$|a_n-a|<\varepsilon,\forall n>N.$$
+由极限的定义知，$\displaystyle  \lim_{n\to +\infty}a_n = a$.
 \end{proof}
 \end{enumerate}
 \end{example}
@@ -1091,89 +1071,70 @@ $$a_{k_n} < \underline{a} + \frac{\overline{a}-\underline{a}}{3} < \overline{a} 
 \begin{example}
 设$a_1\geq 0$，$a_{n+1} = \displaystyle\frac{3(1+a_n)}{3+a_n}$，$n=1,2,\cdots$.证明：$\{a_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}a_n=\sqrt{3}$.
 \begin{proof}
-首先我们证明，如果$a_n < \sqrt{3}$,则 $a_{n+1} > a_{n}$.如果$a_n > \sqrt{3}$,则$a_{n+1} < a_{n}$. 
-$$\displaystyle \frac{a_{n+1}}{a_n} = \frac{3 + 3a_n}{3a_n + a_n^2}.$$
-于是我们有
-\renewcommand\labelenumi{\normalfont(\theenumi)}
-\begin{enumerate}
-\item $a_n < \sqrt{3}\Rightarrow 3 + 3a_n > 3a_n + a_n^2 \Rightarrow  a_{n+1}>a_{n}$;
-\item $a_n > \sqrt{3}\Rightarrow 3 + 3a_n < 3a_n + a_n^2 \Rightarrow  a_{n+1}< a_{n}$;
-\item $a_n = \sqrt{3}\Rightarrow 3 + 3a_n = 3a_n + a_n^2 \Rightarrow  a_{n+1}= a_{n}$.
-\end{enumerate}
-基于以上的计算，不管$a_1$取何值，我们都有
+很显然$a_n > 0, \forall n$.我们现在计算$\left|a_{n+1}-\sqrt{3}\right|$:
 $$\left|a_{n+1}-\sqrt{3}\right| = \left|\frac{3+3a_n - 3\sqrt{3} -\sqrt{3}a_n}{a_n+3}\right|=\left|\frac{(3-\sqrt{3})(a_n-\sqrt{3})}{a_n+3}\right|<\left(\frac{3-\sqrt{3}}{3}\right)\left| a_n-\sqrt{3}\right|.$$
-因为$\displaystyle \frac{3-\sqrt{3}}{3} < 1$,所以$(a_n-\sqrt{3})\rightarrow 0 \Rightarrow a_n\rightarrow \sqrt{3}.$
+因为$\displaystyle \frac{3-\sqrt{3}}{3} < 1$,所以$\displaystyle  \lim_{n\to +\infty}(a_n-\sqrt{3})=0 \Rightarrow \displaystyle  \lim_{n\to +\infty}a_n=\sqrt{3}.$
 \end{proof}
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$a>0$，$x_1>0$，$x_{n+1} = \displaystyle\frac{x_n(x_n^2+3a)}{3x_n^2+a}$，$n=1,2,\cdots$。证明：$\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$
 \end{example}
-\begin{proof}这题和上一题类似。我们计算
-$$x_{n+1}-x_{n} = \frac{2x_n(\sqrt{a}-x_n)(\sqrt{a}+x_n)}{3x_n^2+a},$$
-所以：
+\begin{proof}我们证明如下结论：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item 如果$x_1\leq \sqrt{a}$,则$\{x_n\}$是单调增且有上界$\sqrt{a}$的数列;
-\item 如果$x_1 > \sqrt{a}$, 则$\{x_n\}$是单调减且有下界$\sqrt{a}$的数列;
+\item 如果$x_1\leq \sqrt{a}$,则$\{x_n\}$是单调增且$x_n\leq \sqrt{a}, \quad\forall n$;
+\item 如果$x_1 > \sqrt{a}$, 则$\{x_n\}$是单调减且$x_n\geq\sqrt{a}, \quad\forall n$;
 \end{enumerate}
-无论那种情况发生，由实数连续性命题(二)可知，$\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$。
+无论哪种情况发生，由实数连续性命题(二)可知，$\{x_n\}$收敛. 记$\displaystyle  \lim_{n\to +\infty}x_n=b$, 则
+$$b=\frac{b(b^2+3a)}{3b^2+a}.$$
+解方程得$b=\sqrt{a}$. 即$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$.
 
-\noindent 对于以上两种情况我们可以分别用数学归纳法讨论：\\
-\noindent(1): 当$x_1 \leq \sqrt{a}$时：\\
-$x_2 - x_1 \geq 0\Rightarrow x_2 \geq x_1$且
-$x_2 - \sqrt{a} = \displaystyle\frac{(x_1-\sqrt{a})^3}{3x_1^2+a} \leq 0\Rightarrow x_2 \leq \sqrt{a}.$\\
-假设$n=k$时也有$x_{k}\geq x_{k-1}$且$x_k \leq \sqrt{a}$.\\
-现证$n=k+1$时也有这些。$x_{k+1} \geq x_{k}$是显然的。$x_{k+1} - \sqrt{a} = \displaystyle\frac{(x_{k}-\sqrt{a})^3}{3x_k^2+a} \leq 0\Rightarrow x_{k+1} \leq \sqrt{a}.$\\
-\noindent(2)： 当$x_1 > \sqrt{a}$时：\\
-$x_2 - x_1 < 0\Rightarrow x_2 < x_1$且
-$x_2 - \sqrt{a} = \displaystyle\frac{(x_1-\sqrt{a})^3}{3x_1^2+a} > 0\Rightarrow x_2 > \sqrt{a}.$\\
-假设$n=k$时也有$x_{k}< x_{k-1}$且$x_k > \sqrt{a}$.\\
-现证$n=k+1$时也有这些。$x_{k+1} < x_{k}$是显然的。$x_{k+1} - \sqrt{a} = \displaystyle\frac{(x_{k}-\sqrt{a})^3}{3x_k^2+a} > 0\Rightarrow x_{k+1} > \sqrt{a}.$
+注意到$x_n > 0,\forall n$且
+$$x_{n+1}-x_{n} = \frac{2x_n(\sqrt{a}-x_n)(\sqrt{a}+x_n)}{3x_n^2+a}, \quad x_{k+1} - \sqrt{a} = \displaystyle\frac{(x_{k}-\sqrt{a})^3}{3x_k^2+a}.$$
+我们很容易看出上述的两个结论都是成立的。
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%
 \begin{example}
-设$a> 0$，$x_1 =  \sqrt[3]{a}$，$x_n=\sqrt[3]{ax_{n-1}}(n> 1)$。证明： $\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$
+设$a> 0$，$x_1 = \sqrt[3]{a}$，$x_n=\sqrt[3]{ax_{n-1}}(n> 1)$。证明： $\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$
 \end{example}
 \begin{proof}
 我们只需要证明：
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
-\item 如果$a\geq 1$,则数列$\{x_n\}$是单调递增，且有上界$\sqrt{a}$.
-\item 如果$a<1$,则数列$\{x_n\}$是单调递减，且有下界$\sqrt{a}$.
+\item 如果$a\geq 1$,则数列$\{x_n\}$是单调递增且$x_n \leq \sqrt{a}, \forall n$
+\item 如果$a<1$,则数列$\{x_n\}$是单调递减且$x_n\geq\sqrt{a},\forall n$.
 \end{enumerate}
-无论上述那种情况发生，由实数连续性命题(二)可知， $\{x_n\}$收敛，且$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$。
+无论上述哪种情况发生，由实数连续性命题(二)可知， $\{x_n\}$收敛. 记$\displaystyle  \lim_{n\to +\infty}x_n=b$, 则
+$$b=\sqrt[3]{ab}.$$
+解方程得$b=\sqrt{a}$. 即$\displaystyle  \lim_{n\to +\infty}x_n=\sqrt{a}$.
 
-$$x_n - x_{n-1} = \displaystyle\frac{x_{n-1}(\sqrt{a}-x_{n-1})(\sqrt{a}+x_{n-1})}{\left(\sqrt[3]{ax_{n-1}}\right)^2 + \sqrt[3]{ax_{n-1}}x_{n-1}+x_{n-1}^2}.$$
-
-\noindent(1):当$a\geq1$时：\\
-$\sqrt[3]{a} \leq \sqrt{a}$.\\
-当$n=2$时，$\sqrt{a}-x_1 = \sqrt{a}-\sqrt[3]{a} \geq 0 \Rightarrow x_2-x_1 \geq  0$且$x_2 = \sqrt[3]{ax_1} \leq \sqrt[3]{a \sqrt{a}} = \sqrt{a}$.\\
-假设$n=k$时,$x_k \geq x_{k-1}$且$x_k \leq \sqrt{a}$.\\
-由归纳法可得知，$n=k+1$时有，$x_{k+1} \geq x_k$且$x_{k+1}\leq \sqrt{a}$.\\
-
-\noindent(2):当$a<1$时：\\
-$\sqrt[3]{a} > \sqrt{a}$.\\
-当$n=2$时，$\sqrt{a}-x_1 = \sqrt{a}-\sqrt[3]{a} < 0 \Rightarrow x_2-x_1 < 0$且$x_2 = \sqrt[3]{ax_1} > \sqrt[3]{a \sqrt{a}} = \sqrt{a}$.\\
-假设$n=k$时,$x_k < x_{k-1}$且$x_k > \sqrt{a}$.\\
-由归纳法可得知，$n=k+1$时有，$x_{k+1} < x_k$且$x_{k+1} > \sqrt{a}$.
+注意到$x_n > 0, \forall n$且
+\begin{equation*}
+\begin{split}
+x_n - x_{n-1} &= \displaystyle\frac{x_{n-1}(\sqrt{a}-x_{n-1})(\sqrt{a}+x_{n-1})}{\left(\sqrt[3]{ax_{n-1}}\right)^2 + \sqrt[3]{ax_{n-1}}x_{n-1}+x_{n-1}^2},\\
+x_n - \sqrt{a} &=\sqrt[3]{ax_{n-1}}-\sqrt{a}=\frac{a(x_{n-1}-\sqrt{a})}{\left(\sqrt[3]{ax_{n-1}}\right)^2 + \sqrt[3]{a^{5/2}x_{n-1}}+a}
+\end{split}
+\end{equation*}
+当$a\geq1$, $x_1 = \sqrt[3]{a} \leq \sqrt{a}$.由上两式知，结论(1)成立.\\
+当$a < 1$, $x_1 = \sqrt[3]{a} > \sqrt{a}$.由上两式知，结论(2)成立.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$0<a_1<b_1<c_1$。令
-$$a_{n+1}=\frac{3}{\frac{1}{a_n}+\frac{1}{b_n}+\frac{1}{c_n}},\quad
-b_{n+1} =  \sqrt[3]{a_nb_nc_n},\quad
-c_{n+1}= \frac{a_n+b_n+c_n}{3}
+$$a_{n+1}=\frac{3}{\displaystyle\frac{1}{a_n}+\frac{1}{b_n}+\frac{1}{c_n}},\quad
+b_{n+1} =  \displaystyle\sqrt[3]{a_nb_nc_n},\quad
+c_{n+1}= \displaystyle\frac{a_n+b_n+c_n}{3}
 $$
 证明：$\{a_n\}$，$\{b_n\}$，$\{c_n\}$收敛于同一实数。
 \end{example}
 \begin{proof}
 由定义可知$$0< a_1< a_n \leq b_n \leq c_n < c_1, \quad\forall n >1.$$
 于是 $\{a_n\}$单调增，$\{c_n\}$单调减。
-由实数连续性命题(二)可知， 数列$\{a_n\}, \{c_n\}$收敛。设$\displaystyle  \lim_{n\to +\infty}a_n=a, \displaystyle  \lim_{n\to +\infty}c_n=c$。易知，$$0<a_1 \leq a\leq c\leq c_1.$$
-因为$b_n = 3c_{n+1} - a_n - c_n$可知，数列$\{b_n\}$收敛。
-设$\displaystyle \lim_{n\to +\infty}b_n=b$。显然$a\leq b\leq c$, 且
+由实数连续性命题(二)可知， 数列$\{a_n\}, \{c_n\}$收敛。因为$b_n = 3c_{n+1} - a_n - c_n$可知，数列$\{b_n\}$收敛。
+
+设$\displaystyle  \lim_{n\to +\infty}a_n=a, \displaystyle  \lim_{n\to +\infty}c_n=c, \displaystyle \lim_{n\to +\infty}b_n=b$。易知，$0<a_1 \leq a\leq b\leq c\leq c_1$且
 \begin{equation*}
 a = \frac{3}{\displaystyle\frac{1}{a}+\frac{1}{b}+\frac{1}{c}},\quad
 b = \displaystyle\sqrt[3]{abc},\quad
@@ -1187,8 +1148,7 @@ c = \displaystyle\frac{a+b+c}{3}
 \end{example}
 \begin{proof}
 由于$S_n \rightarrow  +\infty$, 我们可以找到一个子列$\{n_k\}$使得
-$$\frac{S_{n_{k-1}}}{S_{n_k}} < \frac{1}{2}, \quad\forall k\in\mathbb{N}.$$
-现在我们计算$T_{n_k}$:
+$$\frac{S_{n_{k-1}}}{S_{n_k}} < \frac{1}{2}, \quad\forall k\in\mathbb{N}.$$于是
 \begin{equation*}
 \begin{split}
 T_{n_k} &= \left(\frac{a_1}{S_1}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\frac{a_{n_1+1}}{S_{n_1+1}}+\cdots \frac{a_{n_2}}{S_{n_2}}\right) +\cdots+\left(\frac{a_{n_{k-1}+1}}{S_{n_{k-1}+1}}+\cdots \frac{a_{n_k}}{S_{n_k}}\right) \\
@@ -1218,14 +1178,15 @@ T_{n_k} &= \left(\frac{a_1}{S_1}+\cdots \frac{a_{n_1}}{S_{n_1}}\right) + \left(\
 \begin{example}
 设$a_n\geq 0$，$S_n=\displaystyle\sum_{k=1}^na_k$收敛于$S$。证明：$b_n=(1+a_1)(1+a_2)\cdots(1+a_n)$收敛。
 \end{example}
-\begin{proof}很显然，$\{b_n\}$是单调增数列。下面我们证明$\{b_n\}$是有界数列。
-由于$a_n\geq 0$且$S_n\rightarrow S$, 则$S_n$是单调增的收敛于$S$.从而$$\displaystyle\sum_{k=1}^na_k < S,\quad\forall n\in \mathbb{N}.$$
+\begin{proof}
+很显然，$\{b_n\}$是单调增数列。下面证明$\{b_n\}$是有界数列。
+由于$a_n\geq 0$且$S_n\rightarrow S$, 则$S_n$是单调增收敛于$S$,所以$$\displaystyle\sum_{k=1}^na_k < S,\quad\forall n\in \mathbb{N}.$$
 
 另一方面，
-$$b_n\leq \left(\frac{1}{n}\displaystyle\sum_{k=1}^n(1+a_k)\right)^n\leq \left(1+\frac{S}{n}\right)^n.$$
-数列$\left\{\left(1+\displaystyle\frac{S}{n}\right)^n\right\}$是单调增的，且$$\displaystyle  \lim_{n\to +\infty}\left(1+\frac{S}{n}\right)^n=e^{S}.$$
+$$b_n\leq \left(\frac{1}{n}\displaystyle\sum_{k=1}^n(1+a_k)\right)^n\leq \left(1+\frac{S}{n}\right)^n <\left(1+\frac{[S]+1}{n}\right)^n.$$
+数列$\left\{\left(1+\displaystyle\frac{[S]+1}{n}\right)^n\right\}$是单调增的，且$$\displaystyle  \lim_{n\to +\infty}\left(1+\frac{[S]+1}{n}\right)^n=e^{[S]+1}.$$
 于是
-$$b_n \leq e^{S}, \forall n\in\mathbb{N}.$$
+$$b_n \leq e^{[S]+1}, \forall n\in\mathbb{N}.$$
 由实数连续性命题(二)可知， 数列$\{b_n\}$是收敛数列。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1276,7 +1237,7 @@ $\displaystyle\lowlim_{n\to +\infty}a_n = 0$, $\displaystyle\uplim_{n\to +\infty
 \item $\displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\lowlim_{n\to +\infty}b_n \leq \displaystyle\lowlim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n$,\\
 $\displaystyle\lowlim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n \leq \displaystyle\uplim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\uplim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n$
 \begin{proof}
-有上，下极限的定义，我们可以得到两个简单的无需证明的事实：对于任何数列$\{a_n\}$, 
+由上，下极限的定义，我们可以得到两个简单的无需证明的事实：对于任何数列$\{a_n\}$, 
 $\{a_{n_k}\}$是一个任意一个子列， 则
 \renewcommand\labelenumi{\normalfont(\theenumi)}
 \begin{enumerate}
@@ -1311,8 +1272,7 @@ $$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} \leq \displaystyle\uplim_{k\to +\i
 \end{split}
 \end{equation*}
 
-下面我们用类似的办法证明第二式亦成立。
-取子列$\{b_{n_k}\}$使得
+下面我们用类似的办法证明第二式。取子列$\{b_{n_k}\}$使得
 $$\displaystyle\lim_{k\to +\infty}b_{n_k} = \displaystyle\uplim_{n\to +\infty}b_n.$$
 对于相应的$\{a_{n_k}+b_{n_k}\}$可以取子列$\{a_{n_{k_l}}+b_{n_{k_l}}\}$使得
 $$\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) = \displaystyle\uplim_{k\to +\infty}(a_{n_k}+b_{n_k}) \leq   \displaystyle\uplim_{n\to +\infty}(a_n+b_n).$$
@@ -1321,7 +1281,7 @@ $$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\geq \displaystyle\lowlim_{n\to +\i
 于是
 \begin{equation*}
 \begin{split}
-\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\uplim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}} + \displaystyle\lim_{l\to +\infty}b_{n_{k_l}}\\&=\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&=\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&\leq \displaystyle\uplim_{n\to +\infty}(a_n+b_n)
+\displaystyle\lowlim_{n\to +\infty}a_n+\displaystyle\uplim_{n\to +\infty}b_n &\leq \displaystyle\lim_{l\to +\infty}a_{n_{k_l}} + \displaystyle\lim_{l\to +\infty}b_{n_{k_l}}\\&=\displaystyle\lim_{l\to +\infty}(a_{n_{k_l}}+b_{n_{k_l}}) \\&=\displaystyle\lim_{k\to +\infty}(a_{n_{k}}+b_{n_{k}}) \\&\leq \displaystyle\uplim_{n\to +\infty}(a_n+b_n)
 \end{split}
 \end{equation*}
 
@@ -1332,7 +1292,7 @@ $$\displaystyle\lim_{l\to +\infty}b_{n_{k_l}} = \displaystyle\uplim_{k\to +\inft
 另一方面
 $$\displaystyle\lim_{l\to +\infty}a_{n_{k_l}}\leq \displaystyle\uplim_{k\to +\infty}a_{n_k} \leq \displaystyle\uplim_{n\to +\infty}a_n.$$
 所以
-$$\displaystyle\uplim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\uplim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n.$$
+$\displaystyle\uplim_{n\to +\infty}(a_n + b_n) \leq \displaystyle\uplim_{n\to +\infty}a_n + \displaystyle\uplim_{n\to +\infty}b_n.$
 \end{proof}
 \item 设$\displaystyle\lim_{n\to +\infty}b_n = b$,则\\
 $\displaystyle\lowlim_{n\to +\infty}(a_n + b_n) = \displaystyle\lowlim_{n\to +\infty}a_n + b$,\\
@@ -1488,7 +1448,7 @@ a_{n_{t}}
 \geq L -\varepsilon, &\quad \text{当t是偶数}
 \end{cases}
 \end{equation*}
-对于任意上述子列的任意两个相邻的数$a_{n_{2t}}, a_{n_{2t+1}}$, 在院数列中一定有至少一个$a_{n_{t'}}$落在区间$(a-\varepsilon, a+\varepsilon)$. 从而由极限的定义知这个子列收敛到$a$.命题得证。
+对于任意上述子列的任意两个相邻的数$a_{n_{2t}}, a_{n_{2t+1}}$, 在原数列中一定有至少一个$a_{n_{t'}}$落在区间$(a-\varepsilon, a+\varepsilon)$. 从而由极限的定义知这个子列收敛到$a$.命题得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -1496,7 +1456,7 @@ a_{n_{t}}
 \end{example}
 \begin{proof}
 设$\displaystyle\uplim_{n\to +\infty}\sqrt[n]{a_n} 
-=a > b=\displaystyle\lowlim_{n\to +\infty}\sqrt[n]{a_n}$
+=a > b=\displaystyle\lowlim_{n\to +\infty}\sqrt[n]{a_n}$。
 取$N > 0$使得 $$a_N < b +\frac{a-b}{3}.$$
 又取子列$a_{n_k}$使得
 $$\displaystyle\uplim_{k\to +\infty}\sqrt[n_{k}]{a_{n_k}} = a.$$
@@ -1516,14 +1476,13 @@ $$\displaystyle\uplim_{n\to +\infty}\sqrt[n_k]{a_{n_k}} \leq a_N \leq b+\frac{a-
 $$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=0}^n\ln{C_n^k}}{n^2}=\frac{1}{2}.$$
 \end{example}
 \begin{proof}我们先计算
-$$\ln{C_n^k}+\ln{C_n^{n-k}} = 2\ln{n!} - 2\ln{k!} - 2\ln{(n-k)!}, \quad\forall k\leq n.$$
+$\ln{C_n^k}+\ln{C_n^{n-k}} = 2\ln{n!} - 2\ln{k!} - 2\ln{(n-k)!}, \quad\forall k\leq n$.
 所以
-$$\displaystyle\sum_{k=0}^n\ln{C_n^k} = n\ln{n!} - 2\sum_{k=0}^n\ln{k!}.$$
+$\displaystyle\sum_{k=0}^n\ln{C_n^k} = n\ln{n!} - 2\sum_{k=0}^n\ln{k!}$.
 设$x_n=n^2, y_n=\displaystyle\sum_{k=0}^n\ln{C_n^k}$,于是
 \begin{equation*}
 \begin{split}
-\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=0}^n\ln{C_n^k}}{n^2}&\xlongequal{\text{Stolz公式}}\lim_{n\to +\infty}\frac{(n-1)\ln{n}-\ln{n!}}{2n-1}\\&=\lim_{n\to +\infty}\left(\ln{\frac{n}{\sqrt[n]{n!}}}\cdot\frac{n}{2n-1}\right) +\lim_{n\to +\infty}\frac{\ln{n}}{2n-1}\\
-&=\frac{1}{2}.
+\lim_{n\to +\infty}\frac{\displaystyle\sum_{k=0}^n\ln{C_n^k}}{n^2}&\xlongequal{\text{Stolz公式}}\lim_{n\to +\infty}\frac{(n-1)\ln{n}-\ln{n!}}{2n-1}\\&=\lim_{n\to +\infty}\left(\ln{\frac{n}{\sqrt[n]{n!}}}\cdot\frac{n}{2n-1}\right) +\lim_{n\to +\infty}\frac{\ln{n}}{2n-1}=\frac{1}{2}.
 \end{split}
 \end{equation*}
 命题得证
@@ -1540,8 +1499,7 @@ $$\displaystyle\sum_{k=0}^n\ln{C_n^k} = n\ln{n!} - 2\sum_{k=0}^n\ln{k!}.$$
 \begin{split}
 \lim_{n\to +\infty}\frac{\displaystyle\sum_{k=1}^n\sqrt{k}}{n^{\frac{3}{2}}}&\xlongequal{\text{Stolz公式}}\lim_{n\to +\infty}\frac{\sqrt{n}}{n^{\frac{3}{2}}-(n-1)^{\frac{3}{2}}}\\&=
 \lim_{n\to +\infty}\frac{\sqrt{n}(\sqrt{n^3}+\sqrt{(n-1)^3})}{n^3-(n-1)^3}\\
-&=\lim_{n\to +\infty}\frac{n^2\left(1+\sqrt{(1-\frac{1}{n})^3}\right)}{3n^2-3n+1}\\
-&=\frac{2}{3}.
+&=\lim_{n\to +\infty}\frac{n^2\left(1+\sqrt{(1-\frac{1}{n})^3}\right)}{3n^2-3n+1}=\frac{2}{3}.
 \end{split}
 \end{equation*}
 \end{proof}
