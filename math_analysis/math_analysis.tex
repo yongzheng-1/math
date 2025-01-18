@@ -31,6 +31,9 @@
 
 \DeclareMathOperator*\lowlim{\underline{lim}}
 \DeclareMathOperator*\uplim{\overline{lim}}
+\DeclareMathOperator{\sign}{sign}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
 
 \makeindex
 \bibliographystyle{plain}
@@ -1586,6 +1589,7 @@ $$\displaystyle\lim_{n\to +\infty}\frac{S_n^3}{3n}\xlongequal{\text{Stolz公式}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{复习题1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+未解决的题：11\\
 \begin{example}
 设$a_0=1$,$a_{n+1}=a_n+\frac{1}{a_n}$,$n=0,1,2,\cdots$.证明：$\displaystyle\lim_{n\to +\infty}\frac{a_n}{\sqrt{2n}}= 1$.
 \end{example}
@@ -1599,8 +1603,8 @@ $$\displaystyle\lim_{n\to +\infty}\frac{\displaystyle\frac{1}{a_1^2}+\frac{1}{a_
 现在计算
 \begin{equation*}
 \begin{split}
-\frac{a^2_n}{2n} &= \frac{2n-1}{2n} +\frac{\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{2n}\\
-&=\frac{2n-1}{2n} +\frac{\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{n-1}\cdot\frac{n-1}{2n}
+\frac{a^2_n}{2n} &= \frac{2n-1}{2n} +\frac{\displaystyle\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{2n}\\
+&=\frac{2n-1}{2n} +\frac{\displaystyle\frac{1}{a_1^2}+\frac{1}{a_2^2} +\cdots +\frac{1}{a_{n-1}^2}}{n-1}\cdot\frac{n-1}{2n}
 \end{split}
 \end{equation*}
 由此可知
@@ -1668,16 +1672,16 @@ $$0\leq \frac{p_{n-k}}{p_1+p_2+\cdots+p_n} < \frac{p_{n-k}}{p_1+p_2+\cdots+p_{n-
 
 下面我们就可以用极限的定义来证明命题了。对于$\forall \varepsilon > 0$,存在$N_0$,当$n>N_0$时有$$\left|a_n-a\right| < \frac{\varepsilon}{2}.$$
 
-设$M = \max\{\left|a_0 -a\right|, \left|a_1 -a\right|, \cdots, \left|a_{N_0} -a\right|\}$.
+设$M = \max\left\{\left|a_0 -a\right|, \left|a_1 -a\right|, \cdots, \left|a_{N_0} -a\right|\right\}$.
 
 对于每一个$k, 1\leq k \leq N_0$, 存在$N_k$, 当$n>N_k$时有，
-$$\frac{p_{n-k-1}}{p_1+p_2+\cdots+p_n} \leq \frac{\varepsilon}{2MN_0}.$$
+$$\frac{p_{n-k+1}}{p_1+p_2+\cdots+p_n} \leq \frac{\varepsilon}{2MN_0}.$$
 
 取$N=\max\{N_0, N_1, \cdots, N_{N_0}\}$, 当$n>N$时
 \begin{equation*}
 \begin{split}
 \left|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n} - a\right| &= \left|\frac{p_1(a_n-a)+p_2(a_{n-1}-a)+\cdots+p_n(a_1-a)}{p_1+p_2+\cdots+p_n}\right|\\
-&<\sum_{k=1}^{N_0} \frac{p_{n-k-1}|a_k - a|}{p_1+p_2+\cdots+p_n} + \frac{p_1 + p_2 + \cdots + p_{n-N_0}}{p_1+p_2+\cdots+p_n}\cdot\frac{\varepsilon}{2} \\
+&<\sum_{k=1}^{N_0} \frac{p_{n-k+1}|a_k - a|}{p_1+p_2+\cdots+p_n} + \frac{p_1 + p_2 + \cdots + p_{n-N_0}}{p_1+p_2+\cdots+p_n}\cdot\frac{\varepsilon}{2} \\
 &<\sum_{k=1}^{N_0}\frac{M\varepsilon}{2MN_0} + \frac{\varepsilon}{2} = \varepsilon.
 \end{split}
 \end{equation*}
@@ -1698,7 +1702,7 @@ $$b=\displaystyle\lim_{n\to +\infty}\sigma_n = a.$$
 \end{proof}
 %%%%%%%%%%%%%%%%%%
 \begin{example}
-设$\{S_n\}$为数列,$a_n=S_n-S_{n-1}$,$\sigma_n = \displaystyle\frac{S_0+S_1+\cdots+S_n}{n+1}$.如果$\displaystyle\lim_{n\to +\infty}na_n=0$且$\{\sigma_n\}$收敛，证明$\{S_n\}$也收敛，且$\displaystyle\lim_{n\to +\infty}S_n = \displaystyle\lim_{n\to +\infty}\sigma_n$.
+设$\{S_n\}$为数列,$a_n=S_n-S_{n-1}$, $\sigma_n = \displaystyle\frac{S_0+S_1+\cdots+S_n}{n+1}$.如果$\displaystyle\lim_{n\to +\infty}na_n=0$且$\{\sigma_n\}$收敛，证明$\{S_n\}$也收敛，且$\displaystyle\lim_{n\to +\infty}S_n = \displaystyle\lim_{n\to +\infty}\sigma_n$.
 \end{example}
 \begin{proof}
 我们直接计算
@@ -2290,7 +2294,352 @@ $B = \max\{\left|b_{2} - b_{1}\right|, \left|b_{3} - b_{2}\right|\}$, 则
 \end{equation*}
 解方程组可知,$(b^2+2b-1)(b^2-2b+3)=0$.解得$b=\sqrt{2} - 1, a = 2-\sqrt{2}$.
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
+\chapter{函数极限与连续}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\section{函数极限的概念}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{练习题}
+\begin{example}
+在定义2.1.3中就24种情形给出函数极限的定义。并配出相应的图形。
+\end{example}
+\begin{solution}
+不在此赘述。用到的时候在写。
+\end{solution}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+按函数极限的定义证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to +\infty}\frac{6x+5}{x} = 6$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\Delta >\frac{1}{\varepsilon}$,当$x > \Delta$时，有
+$$\left|\frac{6x+5}{x} - 6 \right| = \left|\frac{5}{6x}\right| < \frac{1}{x} <\frac{1}{\Delta}< \varepsilon.$$
+所以，$\displaystyle\lim_{x\to +\infty}\frac{6x+5}{x} = 6$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 2}(x^2-6x+10) = 2$；
+\begin{proof}对$\varepsilon > 0$, 取$\delta = \min\{1, \frac{\varepsilon}{3}\}$, 当$0<|x-2|<\delta$时，有
+$$\left|(x^2-6x+10) - 2\right| = \left|x - 2\right|\cdot\left|x - 4\right| < 3\cdot\left|x - 2\right| <\varepsilon.$$
+所以，$\displaystyle\lim_{x\to +\infty}(x^2-6x+10) = 2$.
+\end{proof}
+\item $\displaystyle\lim_{x\to +\infty}\frac{x^2-5}{x^2-1} = 1$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\Delta = \max\left\{2+ \sqrt{5}, \frac{1}{\varepsilon}\right\}$, 当$x >\Delta$时，有
+$$\left|\frac{x^2-5}{x^2-1} - 1\right| = \left|\frac{-4}{x^2-1}\right| <\frac{4}{4x} <\frac{1}{x}<\frac{1}{\Delta}<\varepsilon.$$
+所以，$\displaystyle\lim_{x\to +\infty}\frac{x^2-5}{x^2-1} = 1$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 2^{-}}\sqrt{4-x^2} = 0$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\delta = \min\left\{1, \frac{\varepsilon^2}{4}\right\}$, 当$2-\delta < x < 2$时，有
+$$\left|\sqrt{4-x^2}\right| = \left|\sqrt{(2-x)(2+x)}\right| < 2\sqrt{2-x}<\varepsilon$$
+所以，$\displaystyle\lim_{x\to 2^{-}}\sqrt{4-x^2} = 0$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 1}\frac{x^4-1}{x-1} = 4$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\delta = \min\left\{1, \frac{\varepsilon}{11}\right\}$, 当$0<\left|x-1\right| < \delta$时，有
+$$\left|\frac{x^4-1}{x-1} - 4\right| = \left|x^3 + x^2 + x - 3\right| = \left|x-1\right|\cdot \left|x^2+2x+3\right|< 11\cdot\left|x-1\right| < \varepsilon$$
+所以，$\displaystyle\lim_{x\to 1}\frac{x^4-1}{x-1} = 4$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 3}\frac{x-3}{x^2-9} = \frac{1}{6}$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\delta=\min\left\{1, 30\varepsilon\right\}$, 当$0<\left|x-3\right| < \delta$时，有
+$$\left|\frac{x-3}{x^2-9} - \frac{1}{6}\right| =\left|\frac{x-3}{6(x+3)}\right| <\frac{\left|x-3\right|}{30} < \varepsilon$$
+所以，$\displaystyle\lim_{x\to 3}\frac{x-3}{x^2-9} = \frac{1}{6}$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 1^{+}}\frac{x-1}{\sqrt{x^2-1}} = 0$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\delta=2\varepsilon^2$, 当$0< x-1<\delta$时，有
+$$\left|\frac{x-1}{\sqrt{x^2-1}}\right| =\left|\frac{\sqrt{x-1}}{\sqrt{x+1}}\right|<\frac{\sqrt{x-1}}{\sqrt{2}}<\varepsilon$$
+所以，$\displaystyle\lim_{x\to 1^{+}}\frac{x-1}{\sqrt{x^2-1}} = 0$.
+\end{proof}
+\item $\displaystyle\lim_{x\to +\infty}(\sqrt{x+1}-\sqrt{x-1}) = 0$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\Delta = \max\left\{1, \frac{4}{\varepsilon^2}\right\}$, 当$x > \Delta$时，有
+$$\left|\sqrt{x+1}-\sqrt{x-1}\right| = \frac{2}{\sqrt{x+1}+\sqrt{x-1}}<\frac{2}{\sqrt{x}} < \frac{2}{\Delta} < \varepsilon$$
+所以，$\displaystyle\lim_{x\to +\infty}(\sqrt{x+1}-\sqrt{x-1}) = 0$.
+\end{proof}
+\item $\displaystyle\lim_{x\to \infty}\sqrt{\frac{x^2+2}{x^2-2}}= 1$；
+\begin{proof}对$\forall \varepsilon > 0$, 取$\Delta = \max\left\{\frac{1}{\varepsilon}, 2+ \sqrt{6}\right\}$, 当$|x| > \Delta$时，有
+$$\left|\sqrt{\frac{x^2+2}{x^2-2}}- 1\right| = \frac{4}{\sqrt{x^4-4} +(x^2 - 2)}<\frac{4}{4|x|}<\frac{1}{\Delta}<\varepsilon$$
+所以，$\displaystyle\lim_{x\to \infty}\sqrt{\frac{x^2+2}{x^2-2}}= 1$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%$$$$$
+\begin{example}
+设$\displaystyle\lim_{x\to x_0}f(x) =a$. 用$\varepsilon-\delta$法证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to x_0}f^2(x)=a^2$;
+\begin{proof}对$\forall \varepsilon > 0$, 存在$\delta > 0$, 当$0<|x-x_0| < \delta$时， $$|f(x)| < |a|+ 1, \quad|f(x)- a| < \frac{\varepsilon}{2|a|+1}.$$
+于是，
+$$\left|f^2(x) - a^2\right| = (|f(x)| + |a|)\cdot\left|f(x) - a\right|< (2|a|+1)\left|f(x) - a\right| < \varepsilon$$
+所以，$\displaystyle\lim_{x\to x_0}f^2(x)=a^2$.
+\end{proof}
+\item $\displaystyle\lim_{x\to x_0}\sqrt{f(x)}=\sqrt{a}(a > 0)$;
+\begin{proof}
+对$\forall \varepsilon > 0$, 存在$\delta > 0$, 当$0<|x-x_0| < \delta$时，
+$$f(x) > \frac{a}{4}, \quad |f(x) - a|<\frac{3\sqrt{a}}{2}\varepsilon.$$
+于是，
+$$\left|\sqrt{f(x)}-\sqrt{a}\right| = \frac{\left|f(x)-a\right|}{\sqrt{f(x)}+\sqrt{a}} < \frac{2}{3\sqrt{a}}\left|f(x)-a\right| < \varepsilon$$
+所以，$\displaystyle\lim_{x\to x_0}\sqrt{f(x)}=\sqrt{a}(a > 0)$.
+\end{proof}
+\item $\displaystyle\lim_{x\to x_0}\sqrt[3]{f(x)}=\sqrt[3]{a}$.
+\begin{proof}我们分两种情况证明此命题。
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$a=0$. 对$\forall \varepsilon > 0$, 取$\delta > 0$, 当$0 < |x-x_0| < \delta$时，有 $|f(x)| < \varepsilon^3$.
+于是，$$\left|\sqrt[3]{f(x)}\right| < \varepsilon.$$
+所以，$\displaystyle\lim_{x\to x_0}\sqrt[3]{f(x)}=\sqrt[3]{a}$.
+\item 当$a\neq 0$. 对$\forall \varepsilon > 0$, 取$\delta > 0$, 当$0 < |x-x_0| < \delta$时，
+$$|f(x) -a| < \min\left\{\frac{|a|}{2}, \sqrt[3]{a^2}\varepsilon\right\}.$$
+于是，$f(x)a \geq 0, f^2(x)\geq 0$且
+$$\left|\sqrt[3]{f(x)}-\sqrt[3]{a}\right|=\frac{|f(x)-a|}{\sqrt[3]{f^2(x)} + \sqrt[3]{f(x)a}+\sqrt[3]{a^2}}<\frac{|f(x)-a|}{\sqrt[3]{a^2}}<\varepsilon.$$
+所以，$\displaystyle\lim_{x\to x_0}\sqrt[3]{f(x)}=\sqrt[3]{a}$.
+\end{enumerate}
+命题得证。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\displaystyle\lim_{x\to x_0}f(x)=a$。证明：$\displaystyle\lim_{x\to x_0}|f(x)|=|a|$。举例说明反之不成立。问：当且仅当$a$为何值时反之也成立？
+\end{example}
+\begin{proof}对$\forall \varepsilon > 0$, 取$\delta > 0$, 当$0 < |x-x_0| < \delta$时，有 $|f(x)-a| < \varepsilon$. 于是，
+$$\displaystyle\left||f(x)| - |a|\right| \leq |f(x) - a|<\varepsilon.$$
+所以，$\displaystyle\lim_{x\to x_0}|f(x)|=|a|$。
+
+设
+\begin{equation*}
+f(x) = 
+\begin{cases}
+1, \quad&x\geq 0;\\
+-1 \quad&x<0.
+\end{cases}
+\end{equation*}
+则，$\displaystyle\lim_{x\to 0}|f(x)|=1$.但$\displaystyle\lim_{x\to 0^{-}}f(x)=-1$, $\displaystyle\lim_{x\to 0^{+}}f(x)=1$, 所以$\displaystyle\lim_{x\to 0}f(x)$不存在。
+
+当$a=0$时，$\displaystyle\lim_{x\to x_0}|f(x)|=0\Rightarrow\displaystyle\lim_{x\to x_0}f(x)=0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+讨论下列函数在点$0$处的极限或左，右极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f(x)=\frac{|x|}{x}$；
+\begin{solution}
+$\displaystyle\lim_{x\to 0^{-}}f(x)=\displaystyle\lim_{x\to 0^{-}}\frac{x}{-x} = -1$, $\displaystyle\lim_{x\to 0^{+}}f(x)=\displaystyle\lim_{x\to 0^{+}}\frac{x}{x} = 1$.
+\end{solution}
+\item $f(x)=[x]$；
+\begin{solution}
+$\displaystyle\lim_{x\to 0^{-}}f(x)=\displaystyle\lim_{x\to 0^{-}}(-1) = -1$, $\displaystyle\lim_{x\to 0^{+}}f(x)=\displaystyle\lim_{x\to 0^{+}}0= 0$.
+\end{solution}
+\item $f(x)=
+\begin{cases}
+2^x, \quad&x>0,\\
+0, \quad&x=0,\\
+1+x^2,\quad&x<0.
+\end{cases}
+$
+\begin{solution}
+$\displaystyle\lim_{x\to 0^{-}}f(x)=\displaystyle\lim_{x\to 0^{-}}(1+x^2) = 1$, $\displaystyle\lim_{x\to 0^{+}}f(x)=\displaystyle\lim_{x\to 0^{+}}2^x= 1$. 
+从而$\displaystyle\lim_{x\to 0}f(x) = 1$.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f(x)=
+\begin{cases}
+x^2, \quad&x\geq2,\\
+-ax, \quad&x<2.
+\end{cases}
+$
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 求$f(2^{+}), f(2^{-})$；
+\begin{solution}对$\forall \varepsilon > 0$, 取$\delta=\min\{1, \frac{\varepsilon}{5}\}$, 当$2 < x < 2+\delta$时，有
+$$|f(x)-4| = |x^2-4|=(x+2)(x-2)<5(x-2)< \varepsilon.$$
+所以，$\displaystyle\lim_{x\to 2^{+}}f(x) = 4$. 
+
+对$\forall \varepsilon > 0$, 取$\delta=\frac{\varepsilon}{|a|+1}$, 当$2-\delta < x < 2$时，有
+$$|f(x) + 2a| = |-ax+2a| = |a|(2-x)<\frac{|a|\varepsilon}{|a|+ 1} < \varepsilon.$$
+所以，$\displaystyle\lim_{x\to 2^{-}}f(x) = -2a$.
+\end{solution}
+\item 若$\displaystyle\lim_{x\to 2}f(x)$存在，$a$应为何值。
+\begin{solution}
+$\displaystyle\lim_{x\to 2}f(x)$存在$\iff \displaystyle\lim_{x\to 2^{+}}f(x) = \displaystyle\lim_{x\to 2^{-}}f(x)$. 所以$a=-2$.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f(x_0^-)<f(x_0^+)$.证明: $\exists \delta > 0, s.t.$当$x_0-\delta<x<x_0<y<x_0+\delta$时,有$f(x)<f(y)$.
+\end{example}
+\begin{proof}取$\varepsilon < \displaystyle\frac{f(x_0^+)-f(x_0^-)}{2}$, 存在$\delta_1 > 0$, 当$x_0-\delta_1 < x < x_0$时，有
+$$f(x) - f(x_0^-) < \varepsilon \Rightarrow f(x) < \frac{f(x_0^+)+f(x_0^-)}{2}.$$
+对上述的$\varepsilon$, 存在$\delta_2 > 0$, 当$x_0 < y < x_0+\delta_2$时, 有
+$$f(y) - f(x_0^+) >-\varepsilon \Rightarrow f(y) > \frac{f(x_0^+)+f(x_0^-)}{2}.$$
+取$\delta = \min\{\delta_1,\delta_2\}$, 当$x_0-\delta<x<x_0<y<x_0+\delta$时,有$f(x)<\displaystyle\frac{f(x_0^+)+f(x_0^-)}{2}<f(y)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$(-\infty, x_0)$内单调增，且有一数列$\{x_n\}$，适合$x_n<x_0(n\in\mathbb{N})$，$x_n\to x^-_0$及$\displaystyle\lim_{n\to +\infty}f(x_n)=a$。证明：$f(x_0^-)=a=\displaystyle\sup_{x\in U_{-}^o(x_0)}f(x)$。
+\end{example}
+\begin{proof}对$\forall \varepsilon>0$, 取$N\in\mathbb{N}$, 当$n>N$时，有
+$$a -\varepsilon < f(x_n) < a+\varepsilon.$$
+取$\delta = \min\{x_0 - x_1, x_0-x_2,\cdots,x_0-x_{N+1}\}$, 我们现在考虑$x$满足$x_0-\delta < x < x_0$.
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 由于$\displaystyle\lim_{n\to +\infty}x_n=x^-_0$且$x_n < x_0$, 则存在$N_1 > N$使得$$x_0 - x_{N_1} < \frac{x_0-x}{2}\Rightarrow x_{N_1}>\frac{x_0+x}{2}>x.$$
+\item 从而$x_{N+1} < x < x_{N_1}$. 由于$f(x)$单调增，$f(x_{N+1}) \leq f(x) \leq f(x_{N_1})$.
+\end{enumerate}
+于是，
+$$a-\varepsilon < f(x) < a + \varepsilon$$
+所以，$f(x_0^-)=a$. 类似地，我们也可以证明$a=\displaystyle\sup_{x\in U_{-}^o(x_0)}f(x)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+用肯定的语气表示$\displaystyle\lim_{x\to x_0}f(x)\neq a$.
+\end{example}
+\begin{solution}
+存在$\varepsilon_0 > 0$, 对$\forall \delta > 0$, 存在$x'$满足$0<|x'-x_0|<\delta, |f(x') - a| > \varepsilon_0.$
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+$\forall n\in\mathbb{N}$,$A_n\subset[0,1]$为有限集，且$A_i\bigcap A_j=\emptyset(i\neq j)$，$i$，$j\in \mathbb{N}$。定义函数
+\begin{equation*}
+f(x)=
+\begin{cases}
+\frac{1}{n}, \quad &x\in A_n,\\
+0, \quad &x\in [0,1]-\displaystyle\bigcup_{n=1}^{\infty}A_n.
+\end{cases}
+\end{equation*}
+$\forall x_0\in[0,1]$，求$\displaystyle\lim_{x\to x_0}f(x)$。
+\end{example}
+\begin{solution}对$\forall \varepsilon > 0$, 取$N=\left[\displaystyle\frac{1}{\varepsilon}\right]$, 
+当$n>N$时，有$$\frac{1}{n} < \varepsilon.$$
+对于给定的$x_0\in[0,1]$, 取$\delta = \min\left\{\displaystyle\frac{|x_0 - x'|}{2}\Bigg| x'\in \displaystyle\bigcup_{n=1}^{N}A_n\right\}$,当$0<|x-x_0|<\delta$时，有
+$$x\in[0,1]-\displaystyle\bigcup_{n=1}^{N}A_n.$$
+于是，$$|f(x)| <\frac{1}{N+1} < \varepsilon.$$
+所以，$\displaystyle\lim_{x\to x_0}f(x)=0$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+叙述函数极限$\displaystyle\lim_{x\to +\infty}f(x)$的归结原理，并应用它证明：$\displaystyle\lim_{x\to +\infty}\sin{x}$与$\displaystyle\lim_{x\to +\infty}\cos{x}$都不存在。
+\end{example}
+\begin{solution}归结原理：对任意的数列$\{x_n\}$满足$$\displaystyle\lim_{n\to +\infty}x_n=+\infty, \quad \displaystyle\lim_{n\to +\infty}f(x_n)=a,$$
+则$\displaystyle\lim_{x\to +\infty}f(x)=a$。
+
+对于$\sin{x}$,我们考察子列$a_n = (2n+\frac{1}{2})\pi, n\in \mathbb{N}$和$b_n=(2n+\frac{3}{2})\pi, n\in \mathbb{N}$.显然$$1=\displaystyle\lim_{n\to +\infty}\sin(a_n)\neq \displaystyle\lim_{n\to +\infty}\sin(b_n)=-1.$$
+所以，$\displaystyle\lim_{x\to +\infty}\sin{x}$不存在。
+
+对于$\cos{x}$,我们考察子列$a_n = 2n\pi, n\in \mathbb{N}$和$b_n=(2n+1)\pi, n\in \mathbb{N}$.显然$$1=\displaystyle\lim_{n\to +\infty}\cos(a_n)\neq \displaystyle\lim_{n\to +\infty}\cos(b_n)=-1.$$
+所以，$\displaystyle\lim_{x\to +\infty}\cos{x}$不存在。
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 叙述极限$\displaystyle\lim_{x\to +\infty}f(x)$的Cauchy准则；
+\begin{solution}
+对$\forall \varepsilon >0$, 存在$\Delta > 0$,当$x_1>\Delta, x_2>\Delta$时，有$$|f(x_1)-f(x_2)| < \varepsilon.$$
+\end{solution}
+\item 根据Cauchy准则叙述$\displaystyle\lim_{x\to +\infty}f(x)$不存在的充要条件，并应用它证明$\displaystyle\lim_{x\to +\infty}\sin{x}$与$\displaystyle\lim_{x\to +\infty}\cos{x}$不存在。
+\begin{solution}
+$\displaystyle\lim_{x\to +\infty}f(x)$不存在$\iff$存在$\varepsilon_0 > 0$, 
+对$\forall \Delta > 0$,存在$x_1 > \Delta, x_2>\Delta$使得
+$$|f(x_1)-f(x_2)| > \varepsilon_0.$$
+
+取$\varepsilon_0 = 1$, 对$\forall \Delta>0$, 取$N = \left[\displaystyle\frac{\Delta}{2\pi}\right]$, $x_1 = (2N+\frac{1}{2})\pi > \Delta, x_2 = (2N+\frac{3}{2})\pi > \Delta$.
+于是$$|\sin(x_1) -\sin(x_2)| = 2 >\varepsilon_0.$$
+所以，$\displaystyle\lim_{x\to +\infty}\sin{x}$不存在。
+
+同理可以证明$\displaystyle\lim_{x\to +\infty}\cos{x}$不存在。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$为周期函数，且$\displaystyle\lim_{x\to +\infty}f(x)=0$。证明$f(x)\equiv 0$。
+\end{example}
+\begin{proof}
+假设$f$的周期为$T$,我们只需证明$f(x)\equiv 0,\forall x\in [0，T)$.我们用反证法来证明此命题。
+
+设$\exists x_0\in[0,T)$使得$f(x_0)\neq 0$.考虑数列$\{x_0+nT\}$, 有
+$$\displaystyle\lim_{n\to +\infty}(x_0+nT)=+\infty, \quad \displaystyle\lim_{n\to +\infty}f(x_0+nT)=f(x_0)\neq 0.$$
+由归结原理，$\displaystyle\lim_{x\to +\infty}f(x)\neq 0$.这与假设矛盾，从而$f(x)\equiv 0,\forall x\in [0，T)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$U^o(x_0)$内有定义。证明: $\forall \{x_n\}\subset U^o(x_0)$且$\displaystyle\lim_{n\to +\infty}x_n=x_0$，极限$\displaystyle\lim_{n\to +\infty}f(x_n)$都存在(实数，或$+\infty$，或$-\infty$)，则所有这些极限都相等。
+\end{example}
+\begin{proof}(反证法):
+假设$\{x^1_n\subset U^o(x_0)\}, \displaystyle\lim_{n\to +\infty}x^1_n=x_0$和$\{x^2_n\subset U^o(x_0)\}, \displaystyle\lim_{n\to +\infty}x^2_n=x_0$，但$\displaystyle\lim_{n\to +\infty}f(x^1_n)\neq \displaystyle\lim_{n\to +\infty}f(x^2_n)$. 我们考虑数列$x^3_n=
+\begin{cases}
+x^1_k,\quad&n=2k-1，\\
+x^2_k,\quad&n=2k.
+\end{cases}$
+显然数列$\{x^3_n\}$满足条件
+$$\{x^3_n\subset U^o(x_0)\}, \displaystyle\lim_{n\to +\infty}x^3_n=x_0,$$
+但是由归结原理，$\displaystyle\lim_{n\to +\infty}f(x^3_n)$不存在。这与命题假设矛盾。从而
+$\displaystyle\lim_{n\to +\infty}f(x^1_n) = \displaystyle\lim_{n\to +\infty}f(x^2_n)$。命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$为定义$[a,+\infty)$在上的增(减)函数。证明$\displaystyle\lim_{x\to +\infty}f(x)$存在有限的充要条件是$f$在$[a,+\infty)$上有上(下)界。
+\end{example}
+\begin{proof}我们只证明$f$是单增函数的情形。
+
+($\Rightarrow$)设$\displaystyle\lim_{x\to +\infty}f(x) = b$. 我们证明$f(x) \leq a$。假设存在$x_0$使得$f(x_0) > b$. 考察子列$\{x_0+n\}$.由于$f$是单增的，有
+$$f(x_0+n) \geq f(x_0), \forall n\in\mathbb{N}.$$
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$\displaystyle\lim_{n\to +\infty}f(x_0+n)$不存在，则由归结原理，$\displaystyle\lim_{x\to +\infty}f(x)$不存在。这与假设矛盾。
+\item 如果$\displaystyle\lim_{n\to +\infty}f(x_0+n)$存在,则
+$$\displaystyle\lim_{n\to +\infty}f(x_0+n) \geq f(x_0) > b.$$
+这与$\displaystyle\lim_{x\to +\infty}f(x)=b$矛盾。
+\end{enumerate}
+于是，$f(x) \leq b,\forall x\in[a,+\infty)$.
+
+($\Leftarrow$)设$f(x) < M,\forall x\in [0, +\infty)$.取一个子列$\{x_n\}$满足条件
+$$\displaystyle\lim_{n\to +\infty}x_n=+\infty.$$我们可以从中取一个单调增的子列$\{x_{n_k}\}$满足条件$$\displaystyle\lim_{k\to +\infty}x_{n_k}=+\infty.$$ 
+由于$f$是单调增的，$f(x_{n_k})$也是单调增。从而$\displaystyle\lim_{k\to +\infty}f(x_{n_k})$存在。设$\displaystyle\lim_{k\to +\infty}f(x_{n_k})=b$. 由此我们可以推出
+$\displaystyle\lim_{n\to +\infty}f(x_{n})=b$。
+同理，另取一个子列$\{x'_n\}$满足条件
+$$\displaystyle\lim_{n\to +\infty}x'_n=+\infty.$$从中取一个单调增的子列$\{x'_{n_k}\}$满足条件$$\displaystyle\lim_{k\to +\infty}x'_{n_k}=+\infty$$且 
+$$\displaystyle\lim_{k\to +\infty}f(x'_{n_k})=b',\quad \displaystyle\lim_{n\to +\infty}f(x'_{n})=b'$$
+将$\{x_{n_k}\}$和$\{x'_{n_k}\}$合起来，组成一个新的递增列,记作$\{y_n\}$。于是，$\{f(y_n)\}$收敛。由归结原理知，$b=b'$. 
+
+自此我们证明了任何数列$\{x_n\}$，如果满足$x_n\rightarrow+\infty$，则$f(x_n)\rightarrow b$.再次利用归结原理，$\displaystyle\lim_{x\to +\infty}f(x)$存在。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$为$U^o(x_0)$上的单调增函数，证明：$f(x_0^-)$与$f(x_0^+)$均存在且有限，且
+$$f(x^-_0)=\displaystyle\sup_{x\in U^o_-(x_0)}f(x), \quad f(x^+_0)=\displaystyle\inf_{x\in U^o_+(x_0)}f(x).$$
+\end{example}
+\begin{proof}
+取$x_1\in U^o_-(x_0), x_2\in U^o_+(x_0)$,由$f$是单增函数知，
+$$f(x) \leq f(x_2), \forall x\in U^o_-(x_0),$$ $$f(x)\geq f(x_1),\forall x\in U^o_+(x_0).$$
+所以,$$f(x_1) \leq \displaystyle\sup_{x\in U^o_-(x_0)}f(x)\leq \displaystyle\inf_{x\in U^o_+(x_0)}f(x) \leq f(x_2).$$
+
+取单调增数列$\{a_n\subset U^o_-(x_0)\}$使得$\displaystyle\lim_{n\to +\infty}a_n = x^-_0$.于是,$\{f(a_n)\}$单调增，且有上界。从而它收敛。记$\displaystyle\lim_{n\to +\infty}f(a_n) = A$.由上确界的定义知，$A \leq \displaystyle\sup_{x\in U^o_-(x_0)}f(x)$. 
+设$\{b_n\subset U^o_-(x_0)\}$是一个满足条件$\displaystyle\lim_{n\to +\infty}b_n = x^-_0$的子列。对$\forall \varepsilon > 0$, 存在$N > 0$,当$n>N$时，有
+$$A-\varepsilon < f(a_n) < A+\varepsilon.$$
+另一方面取$\varepsilon'=x_0 - a_{N+1}$, 
+存在$N'$，当$n>N'$时，有$$x_0-b_n < \varepsilon'.$$
+又由于$a_n\to x^-_0$，则对任意满足上式的$b_n$， 存在$m > N+1$使得
+$$a_{N+1} < b_n < a_m.$$
+于是$$A - \varepsilon < f(a_{N+1}) \leq f(b_n) \leq f(a_m) < A + \varepsilon.$$
+有极限的定义知，$$\displaystyle\lim_{n\to +\infty}f(b_n)\leq A.$$
+有归结原理和上确界的定义知，$$f(x^-_0)=\displaystyle\sup_{x\in U^o_-(x_0)}f(x).$$
+
+类似的办法可证$f(x^+_0)=\displaystyle\inf_{x\in U^o_+(x_0)}f(x)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
