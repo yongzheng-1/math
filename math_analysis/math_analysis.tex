@@ -2633,13 +2633,77 @@ $$A-\varepsilon < f(a_n) < A+\varepsilon.$$
 $$a_{N+1} < b_n < a_m.$$
 于是$$A - \varepsilon < f(a_{N+1}) \leq f(b_n) \leq f(a_m) < A + \varepsilon.$$
 有极限的定义知，$$\displaystyle\lim_{n\to +\infty}f(b_n)\leq A.$$
-有归结原理和上确界的定义知，$$f(x^-_0)=\displaystyle\sup_{x\in U^o_-(x_0)}f(x).$$
+由归结原理和上确界的定义知，$$f(x^-_0)=\displaystyle\sup_{x\in U^o_-(x_0)}f(x).$$
 
 类似的办法可证$f(x^+_0)=\displaystyle\inf_{x\in U^o_+(x_0)}f(x)$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 设函数$f$在$(0,+\infty)$上满足方程$f(2x)=f(x)$，且$\displaystyle\lim_{x\to +\infty}f(x)=a$。证明:$f(x)=a$.
+\begin{proof}(反证法)设$x_0\in (0,+\infty), f(x_0) \neq a$.由函数方程式知，
+$$f(nx_0) = f(x_0).$$
+于是，$$\displaystyle\lim_{n\to +\infty}f(nx_0)=f(x_0).$$
+由归结原理知，这与假设$\displaystyle\lim_{x\to +\infty}f(x)=a$矛盾。
+所以，$f(x)=a,\forall x\in(0,+\infty)$.
+\end{proof}
+\item 设函数$f$在$(0,+\infty)$上满足方程$f(x^2)=f(x)$，且$$\displaystyle\lim_{x\to 0^+}f(x)=\displaystyle\lim_{x\to +\infty}f(x)=f(1)$$证明：$f(x)\equiv f(1), x\in (0,+\infty)$.
+\begin{proof}
+如果$x_0<1$, $$\displaystyle\lim_{n\to +\infty}x_0^{2^n}=0.$$
+由函数方程式和归结原理知；
+$$f(x_0) = \displaystyle\lim_{n\to +\infty}f(x_0) = \displaystyle\lim_{n\to +\infty}f(x_0^{2^n})=f(1).$$
 
+如果$x_0>1$, $$\displaystyle\lim_{n\to +\infty}x_0^{2^n}=+\infty.$$
+由函数方程式和归结原理知；
+$$f(x_0) = \displaystyle\lim_{n\to +\infty}f(x_0) = \displaystyle\lim_{n\to +\infty}f(x_0^{2^n})=f(1).$$
+所以，$f(x)\equiv f(1), x\in(0,+\infty)$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f:(a, +\infty)\rightarrow \mathbb{R}$在任意有限区间$(a,b)$内有界，且$$\displaystyle\lim_{x\to +\infty}[f(x+1)-f(x)]=A.$$证明：$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{x}=A$.
+\end{example}
+\begin{proof}设$|f(x)|< M, \forall x\in(a,a+1)$。记$r=x-[x]$.
+$$f(x) - f([a] + r) = \displaystyle\sum_{k=[a]}^{[x]-1}(f(k+1+r)-f(k+r)).$$
+于是，
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to +\infty}\frac{f(x)}{x} &= \displaystyle\lim_{x\to +\infty}\frac{f(x)-f([a]+r)}{x}\\&=\displaystyle\lim_{x\to +\infty}\frac{f(x)-f([a]+r)}{[x]-[a]}\cdot\displaystyle\lim_{x\to +\infty}\frac{[x]-[a]}{x} \\&= 
+A
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$a>1,b>1$为两个常数，函数$f:\mathbb{R}\rightarrow \mathbb{R}$在$x=0$的近旁有界，且$\forall x\in\mathbb{R}$，有$f(ax)=bf(x)$。证明:$\displaystyle\lim_{x\to 0}f(x)=f(0)$.
+\end{example}
+\begin{proof}
+由函数的定义可知$f(0) = 0$.设$f$在$(-\delta_0, \delta_0)$上有界。记$|f(x)| < M, \forall x\in (-\delta_0, \delta_0)$.对$\forall x \to 0$, 存在$N$
+使得$$a^nx\in (-\delta_0, \delta_0), n=1,2,\cdots, N. \quad a^{N+1}x\notin (-\delta_0, \delta_0).$$
+显然当$x\to 0$时，$N\to +\infty$.
+于是
+$$\displaystyle\lim_{x\to 0}f(x) = \displaystyle\lim_{N\to +\infty}\frac{f(a^Nx)}{b^{N}} = 0.$$
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{函数极限的性质}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{练习题}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
