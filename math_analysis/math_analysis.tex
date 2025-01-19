@@ -2699,6 +2699,404 @@ $$\displaystyle\lim_{x\to 0}f(x) = \displaystyle\lim_{N\to +\infty}\frac{f(a^Nx)
 %%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{练习题}
 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+计算下列极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to 0}\frac{1+x-2x^3}{1+x^4}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{1+x-2x^3}{1+x^4} = \frac{\displaystyle\lim_{x\to 0}(1+x-2x^3)}{\displaystyle\lim_{x\to 0}(1+x^4)} =1$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{x^2-2x+1}{x^3-x}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 1}\frac{x^2-2x+1}{x^3-x}=\displaystyle\lim_{x\to 1}\frac{(x-1)^2}{x(x-1)(x+1)}=\displaystyle\lim_{x\to 1}\frac{x-1}{x(x+1)}=0$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-1}{x-1}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-1}{x-1}=\frac{\displaystyle\lim_{x\to 0}(\sqrt{1+x}-1)}{\displaystyle\lim_{x\to 0}(x-1)} = 0$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}=\displaystyle\lim_{x\to 0}\frac{2}{\sqrt{1+x}+\sqrt{1-x}} = 1$
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{x^m-1}{x-1}$;
+\begin{solution}
+\begin{equation*}
+\displaystyle\lim_{x\to 1}\frac{x^m-1}{x-1}=
+\begin{cases}
+\displaystyle\lim_{x\to 1}\frac{x^{-m-1} + \cdots +1}{x^{-m}}=-m, \quad&m<0;\\
+0,\quad&m=0;\\
+1,\quad&m=1;\\
+\displaystyle\lim_{x\to 1}(x^{m-1} + \cdots +1)=m, \quad&m>1.
+\end{cases}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{x^m-1}{x^n-1}$;
+\begin{solution}
+\begin{equation*}
+\displaystyle\lim_{x\to 1}\frac{x^m-1}{x^n-1}=
+\begin{cases}
+\text{无定义}, \quad&n=0;\\
+0,\quad&m=0;\\
+\displaystyle\frac{m}{n},\quad&m\neq 0, n\neq 0.
+\end{cases}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{(1+x)^{\frac{1}{m}}-1}{x}$;
+\begin{solution}
+\begin{equation*}
+\displaystyle\lim_{x\to 0}\frac{(1+x)^{\frac{1}{m}}-1}{x}=
+\begin{cases}
+\displaystyle\lim_{x\to 0}\frac{1-(1+x)^{\frac{1}{|m|}}}{x}=-\frac{1}{|m|}=\frac{1}{m}, \quad&m<0;\\
+\displaystyle\lim_{x\to 0}\frac{1}{\sqrt[m]{(1+x)^{m-1}}+\cdots + 1}=\frac{1}{m},\quad&m>0
+\end{cases}
+\end{equation*}
+所以，$\displaystyle\lim_{x\to 0}\frac{(1+x)^{\frac{1}{m}}-1}{x}=\frac{1}{m}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{x+x^2+\cdots+x^m-m}{x-1}$
+\begin{solution}
+$\displaystyle\lim_{x\to 1}\frac{x+x^2+\cdots+x^m-m}{x-1}=\displaystyle\lim_{x\to 1}\left[1+(x+1)+\cdots+(x^{m-1}+x^{m-2}+\cdots+1)\right]=\frac{m(m+1)}{2}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{(1+mx)^n-(1+nx)^m}{x^2}$
+\begin{solution}我们对$n,m$分情况讨论：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$m=0$或者$n=0$时，分子为$0$，于是极限为$0$.
+\item 当$m=n=1$或者$m=n=-1$是，分子为$0$,于是极限为$0$.
+\item 当$m=1,n=-1$时，$$(1+x)^{-1}-(1-x)=\frac{x^2}{1+x}.$$于是，$\displaystyle\lim_{x\to 0}\frac{(1+x)^{-1}-(1-x)}{x^2}=1$.
+\item 当$m=-1,n=1$时，$$(1-x)-(1+x)^{-1} = \frac{-x^2}{1+x}.$$于是，$\displaystyle\lim_{x\to 0}\frac{(1-x)-(1+x)^{-1}}{x^2}=-1$.
+\item 当$m>0, n<0$时，$$(1+mx)^n-(1+nx)^m =\frac{1-(1+mx)^{|n|}(1+nx)^m}{(1+mx)^{|n|}}.$$于是，
+$\displaystyle\lim_{x\to 0}\frac{(1+mx)^n-(1+nx)^m}{x^2}=n^2m^2-C^2_{|n|}m^2-C^2_mn^2$.
+\item 当$m<0, n>0$时，$$(1+mx)^n-(1+nx)^m =\frac{(1+mx)^n(1+nx)^{|m|}-1}{(1+nx)^{|m|}}.$$于是，
+$\displaystyle\lim_{x\to 0}\frac{(1+mx)^n-(1+nx)^m}{x^2}=C^2_{n}m^2+C^2_{|m|}n^2-n^2m^2$.
+\item 当$m>0,n>0$时，$$(1+mx)^n-(1+nx)^m = (C^2_nm^2-C^2_mn^2)x^2+\cdots.$$于是，
+$\displaystyle\lim_{x\to 0}\frac{(1+mx)^n-(1+nx)^m}{x^2}=C^2_nm^2-C^2_mn^2$.
+\item 当$m<0,n<0$时，$$(1+mx)^n-(1+nx)^m =\frac{(1+nx)^{|m|}-(1+mx)^{|n|}}{(1+mx)^{|n|}(1+nx)^{|m|}}=\frac{(C^2_{|m|}n^2-C^2_{|n|}m^2)x^2+\cdots}{(1+mx)^{|n|}(1+nx)^{|m|}}.$$于是，
+$\displaystyle\lim_{x\to 0}\frac{(1+mx)^n-(1+nx)^m}{x^2}=C^2_{|m|}n^2-C^2_{|n|}m^2$.
+\end{enumerate}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{(1+nx)^{\frac{1}{m}}-(1+mx)^{\frac{1}{n}}}{x}$
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{(1+nx)^{\frac{1}{m}}-1}{x}=
+\begin{cases}
+\displaystyle\lim_{x\to 0}\frac{1-\sqrt[|m|]{1+nx}}{x\cdot\sqrt[|m|]{1+nx}}=-\frac{n}{|m|},\quad&m<0,\\
+\displaystyle\lim_{x\to 0}\frac{nx}{\sqrt[m]{(1+nx)^{m-1}}+\sqrt[m]{(1+nx)^{m-2}}+\cdots + 1}=\frac{n}{m},\quad&m>0.
+\end{cases}$
+即，$\displaystyle\lim_{x\to 0}\frac{(1+nx)^{\frac{1}{m}}-1}{x}=\frac{n}{m}$.
+
+同理，$\displaystyle\lim_{x\to 0}\frac{(1+mx)^{\frac{1}{n}}-1}{x}=\frac{m}{n}$.
+所以，
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to 0}\frac{(1+nx)^{\frac{1}{m}}-(1+mx)^{\frac{1}{n}}}{x}&=\displaystyle\lim_{x\to 0}\frac{(1+nx)^{\frac{1}{m}}-1}{x}-\displaystyle\lim_{x\to 0}\frac{(1+mx)^{\frac{1}{n}}-1}{x}\\&=\frac{n}{m}-\frac{m}{n}\\&=\frac{n^2-m^2}{nm}.
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{a^2+x}-a}{x}(a>0)$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{a^2+x}-a}{x}=\displaystyle\lim_{x\to 0}\frac{x}{x(\sqrt{a^2+x}+a)}=\frac{1}{2a}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to +\infty}\frac{(3x+1)^{70}(8x-5)^{20}}{(5x-1)^{90}}$;
+\begin{solution}
+$\displaystyle\lim_{x\to +\infty}\frac{(3x+1)^{70}(8x-5)^{20}}{(5x-1)^{90}}=\frac{3^{70}8^{20}}{5^{90}}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{\sqrt[m]{x}-1}{\sqrt[n]{x}-1}(m,n\in\mathbb{N})$;
+\begin{solution}
+$\displaystyle\lim_{x\to 1}\frac{\sqrt[m]{x}-1}{\sqrt[n]{x}-1}=\displaystyle\lim_{x\to 1}\frac{(x-1)(\sqrt[n]{x^{n-1}}+\cdots+1)}{(x-1)(\sqrt[m]{x^{m-1}}+\cdots+1)}=\frac{n}{m}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt[m]{1+\alpha x}\sqrt[n]{1+\beta x} -1}{x}$;
+\begin{solution}无论$m>0$或者$m<0$，$$\displaystyle\lim_{x\to 0}\frac{\sqrt[m]{1+\alpha x}-1}{x}=\frac{\alpha}{m}.$$
+同理可知，$$\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+\beta x}-1}{x}=\frac{\beta}{n}.$$
+于是，
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to 0}\frac{\sqrt[m]{1+\alpha x}\sqrt[n]{1+\beta x} -1}{x}&=
+\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+\beta x}(\sqrt[m]{1+\alpha x} -1)}{x}
++\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+\beta x}-1}{x}\\&=\frac{\alpha}{m}+\frac{\beta}{n}\\&=\frac{n\alpha+m\beta}{mn}.
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{\sqrt[3]{1+x}-\sqrt[3]{1-x}}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{\sqrt[3]{1+x}-\sqrt[3]{1-x}}=\displaystyle\lim_{x\to 0}\frac{\sqrt[3]{(1+x)^2}+\sqrt[3]{(1+x)(1-x)}+\sqrt[3]{(1-x)^2}}{\sqrt{1+x}+\sqrt{1-x}}=\frac{3}{2}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to \infty}(\sqrt{(a+x)(b+x)}-\sqrt{(a-x)(b-x)})$;
+\begin{solution}
+$\displaystyle\lim_{x\to \infty}(\sqrt{(a+x)(b+x)}-\sqrt{(a-x)(b-x)})=\displaystyle\lim_{x\to \infty}\frac{2(a+b)x}{\sqrt{(a+x)(b+x)}+\sqrt{(a-x)(b-x)}}=a+b$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\left(\frac{m}{1-x^m}-\frac{n}{1-x^n}\right)(m,n\in\mathbb{N})$;
+\begin{solution}
+记$A=\displaystyle\sum_{k=0}^{n-1}x^k, B=\displaystyle\sum_{k=0}^{m-1}x^k$.
+显然
+$$A-n=\displaystyle\sum_{k=1}^{n-1}(x^k-1)=\displaystyle\sum_{k=1}^{n-1}\displaystyle\sum_{j=0}^{k-1}x^j,$$
+$$B-m=\displaystyle\sum_{k=1}^{m-1}(x^k-1)=\displaystyle\sum_{k=1}^{m-1}\displaystyle\sum_{j=0}^{k-1}x^j.$$
+于是，
+\begin{equation*}
+\begin{split}
+\frac{m}{1-x^m}-\frac{n}{1-x^n}&=\frac{1}{(1-x)AB}(mA-nB)\\
+&=\frac{1}{(1-x)AB}(m(A-n)-n(B-m))\\
+&=\frac{1}{AB}\left(m\displaystyle\sum_{k=1}^{n-1}\displaystyle\sum_{j=0}^{k-1}x^j-n\displaystyle\sum_{k=1}^{m-1}\displaystyle\sum_{j=0}^{k-1}x^j\right).
+\end{split}
+\end{equation*}
+所以，
+$\displaystyle\lim_{x\to 1}\left(\frac{m}{1-x^m}-\frac{n}{1-x^n}\right)=\frac{1}{mn}\left(m\frac{n(n-1)}{2}-n\frac{m(m-1)}{2}\right)=\frac{n-m}{2}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to a}\frac{(x^n-a^n)-na^{n-1}(x-a)}{(x-a)^2}(n\in\mathbb{N})$;
+\begin{solution}
+当$n=1$时，分子为$0$,所以极限为$0$. 当$n>1$时，
+\begin{equation*}
+\begin{split}
+(x^n-a^n)-na^{n-1}(x-a)&=(x-a)\displaystyle\sum_{k=0}^{n-2}a^k(x^{n-1-k}-a^{n-1-k})\\
+&=(x-a)^2\displaystyle\sum_{k=0}^{n-2}a^k\displaystyle\sum_{j=0}^{n-2-k}a^jx^{n-2-k-j}.
+\end{split}
+\end{equation*}
+于是，
+$\displaystyle\lim_{x\to a}\frac{(x^n-a^n)-na^{n-1}(x-a)}{(x-a)^2}=a^{n-2}\displaystyle\sum_{k=0}^{n-2}(n-1-k)=\frac{n(n-1)}{2}a^{n-2}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{x^{n+1}-(n+1)x+n}{(x-1)^2}(n\in\mathbb{N})$;
+\begin{solution}我们先计算分子：
+\begin{equation*}
+\begin{split}
+x^{n+1}-(n+1)x+n&=x(x^{n}-1)-n(x-1)\\&=
+(x-1)\displaystyle\sum_{k=1}^{n}(x^k-1)\\&=
+(x-1)^2\displaystyle\sum_{k=1}^{n}\displaystyle\sum_{j=0}^{k-1}x^j.
+\end{split}
+\end{equation*}
+于是，$\displaystyle\lim_{x\to 1}\frac{x^{n+1}-(n+1)x+n}{(x-1)^2}=\displaystyle\sum_{k=1}^{n}\displaystyle\sum_{j=0}^{k-1}1=\frac{n(n+1)}{2}.$
+\end{solution}
+\item $\displaystyle\lim_{x\to 1}\frac{(1-\sqrt{x})(1-\sqrt[3]{x})\cdots(1-\sqrt[n]{x})}{(1-x)^{n-1}}(n\in\mathbb{N})$;
+\begin{solution}分子有理化，$$1-\sqrt[l]{x}=\frac{1-x}{\displaystyle\sum_{j=0}^{l-1}\sqrt[l]{x^j}}.$$
+所以，
+$$\frac{(1-\sqrt{x})(1-\sqrt[3]{x})\cdots(1-\sqrt[n]{x})}{(1-x)^{n-1}}=\frac{1}{\displaystyle\prod_{l=2}^{n}\left(\displaystyle\sum_{j=0}^{l-1}\sqrt[l]{x^j}\right)}.$$
+于是，$\displaystyle\lim_{x\to 1}\frac{(1-\sqrt{x})(1-\sqrt[3]{x})\cdots(1-\sqrt[n]{x})}{(1-x)^{n-1}}=\frac{1}{n!}.$
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\displaystyle\lim_{x\to x_0}f(x)=a$，$\displaystyle\lim_{x\to x_0}g(x)=b$。
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 若$a>b$，则在某$U^o(x_0)$内有$f(x)>g(x)$；
+\begin{proof}取$\varepsilon = \displaystyle\frac{a-b}{2}$.由函数极限定义知，存在一个空心邻域$U^o(x_0,\delta_1)$使得
+$$g(x)-b < \varepsilon \Rightarrow g(x) < \frac{a+b}{2}, \quad\forall x\in U^o(x_0,\delta_1).$$
+取$U^o(x_0,\delta)\subset U^o(x_0,\delta_1)$使得
+$$f(x)-a > -\varepsilon\Rightarrow f(x)>\frac{a+b}{2}, \quad\forall x\in U^o(x_0,\delta).$$
+所以，$f(x)>g(x),\forall x\in U^o(x_0,\delta)$.
+\end{proof}
+\item 若在某$U^o(x_0)$内有$f(x)<g(x)$，问：是否必有$a<b$？说明理由。
+\begin{solution}不会是严格$a<b$. 例如在$0$的空心邻域$U^0(0,\frac{1}{2})$, $1+\frac{x^2}{3}=f(x) < g(x) = 1+\frac{x^2}{2}$. 但是$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}g(x)=1$.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+求下列极限($n\in\mathbb{N}$):
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to 2^+}\frac{[x]^2-4}{x^2-4}$;
+\begin{solution}取$\delta = \frac{1}{2}$,当$2<x < 2+\delta$时，$[x]=2$.所以，$\displaystyle\lim_{x\to 2^+}\frac{[x]^2-4}{x^2-4}=0$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 2^-}\frac{[x]^2+4}{x^2+4}$;
+\begin{solution}$\displaystyle\lim_{x\to 2^-}\frac{[x]^2+4}{x^2+4}=\frac{\displaystyle\lim_{x\to 2^-}([x]^2+4)}{\displaystyle\lim_{x\to 2^-}(x^2+4)}=\frac{5}{8}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 1^-}\frac{[4x]}{1+x}$;
+\begin{proof}显然$[4x]=3,\forall x\in (1-\frac{1}{4}, 1)$.所以，$\displaystyle\lim_{x\to 1^-}\frac{[4x]}{1+x}=\frac{3}{2}.$
+\end{proof}
+\item $\displaystyle\lim_{x\to 0^-}\frac{|x|}{x}\cdot\frac{1}{1+x^n}$;
+\begin{proof}
+$\displaystyle\lim_{x\to 0^-}\frac{|x|}{x}\cdot\frac{1}{1+x^n}=-1$
+\end{proof}
+\item $\displaystyle\lim_{x\to 0^+}\frac{|x|}{x}\cdot\frac{1}{1+x^n}$;
+\begin{proof}
+$\displaystyle\lim_{x\to 0^+}\frac{|x|}{x}\cdot\frac{1}{1+x^n}=1$.
+\end{proof}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+x}-1}{x}$;
+\begin{proof}
+$\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+x}-1}{x}=\displaystyle\lim_{x\to 0}\frac{1}{\sqrt[n]{(1+x)^{n-1}}+\sqrt[n]{(1+x)^{n-2}}+\cdots + 1}=\frac{1}{n}$.
+\end{proof}
+\item $\displaystyle\lim_{x\to \infty}\frac{[x]}{x}$;
+\begin{proof}由于$x-1\leq[x]\leq x$，$\displaystyle\lim_{x\to \infty}\frac{[x]}{x}=1$.
+\end{proof}
+\item $\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x+\sqrt{x+\sqrt{x}}}}{\sqrt{x+1}}$;
+\begin{proof}
+$\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x+\sqrt{x+\sqrt{x}}}}{\sqrt{x+1}}=1$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$p(x)=a_1x+a_2x^2+\cdots+a_nx^n$。证明：
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt[m]{1+p(x)}-1}{x}=\frac{a_1}{m},$$
+其中$n,m\in\mathbb{N}$.
+\end{example}
+\begin{proof}
+分子有理化，
+$$\frac{\sqrt[m]{1+p(x)}-1}{x}=\frac{a_1+a_2x+\cdots+a_nx^{n-1}}{\sqrt[m]{(1+p(x))^{m-1}+\sqrt[m]{(1+p(x))^{m-2}}+\cdots + 1}}.$$
+于是，$\displaystyle\lim_{x\to 0}\frac{\sqrt[m]{1+p(x)}-1}{x}=\frac{a_1}{m}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+定出常数$a$与$b$，使得下列等式成立：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to \infty}\left(\frac{x^2+1}{x+1}-ax-b\right)=0$;
+\begin{solution}
+$\displaystyle\frac{x^2+1}{x+1}-ax-b = \frac{(1-a)x-(a+b)+\displaystyle\frac{1-b}{x}}{1+\displaystyle\frac{1}{x}}$.如果极限为$0$,则$1-a = 0, a+b = 0$.于是,$a=1,b=-1$.
+\end{solution} 
+\item $\displaystyle\lim_{x\to +\infty}\left(\sqrt{x^2-x+1}-ax-b\right)=0$;
+\begin{proof}分子有理化
+$$\sqrt{x^2-x+1}-ax-b=\frac{(1-a^2)x^2-(1+2ab)x+(1-b^2)}{\sqrt{x^2-x+1}+ax+b}.$$
+如果极限为$0$,则$1+a\neq 0, 1-a^2 = 0， 1+2ab=0$.于是，$a=1, b=-\frac{1}{2}$.
+\end{proof}
+\item $\displaystyle\lim_{x\to -\infty}\left(\sqrt{x^2-x+1}-ax-b\right)=0$;
+\begin{proof}分子有理化
+$$\sqrt{x^2-x+1}-ax-b=\frac{(1-a^2)x^2-(1+2ab)x+(1-b^2)}{\sqrt{x^2-x+1}+ax+b}.$$
+如果极限为$0$,则$1-a\neq 0, 1-a^2 = 0， 1+2ab=0$.于是，$a=-1, b=\frac{1}{2}$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+求下列极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to 0}\frac{\sin{ax}}{\sin{bx}}(b\neq 0)$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sin{ax}}{\sin{bx}}=\frac{a}{b}\displaystyle\lim_{x\to 0}\frac{\sin{ax}}{ax}\cdot\displaystyle\lim_{x\to 0}\frac{bx}{\sin{bx}}=\frac{a}{b}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sin(\sin{x})}{x}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sin(\sin{x})}{x}=\displaystyle\lim_{x\to 0}\frac{\sin(\sin{x})}{\sin{x}}\cdot\displaystyle\lim_{x\to 0}\frac{\sin{x}}{x}=1$
+\end{solution}
+\item $\displaystyle\lim_{h\to 0}\frac{\sin(x+h)-\sin{x}}{h}$;
+\begin{solution}利用三角函数性质，有
+$$\sin(x+h)-\sin{x}=\sin{x}(\cos{h}-1)+\cos{x}\sin{h}=-2
+\sin^2{\frac{h}{2}}\sin{x}+\cos{x}\sin{h}.$$
+所以，$\displaystyle\lim_{h\to 0}\frac{\sin(x+h)-\sin{x}}{h}=\cos{x}$
+\end{solution}
+\item $\displaystyle\lim_{x\to +\infty}\left(\frac{1+x}{3+x}\right)^x$;
+\begin{solution}
+$\displaystyle\lim_{x\to +\infty}\left(\frac{1+x}{3+x}\right)^x=\displaystyle\lim_{x\to +\infty}\left(1-\frac{2}{3+x}\right)^{-\frac{3+x}{2}\cdot\frac{-2x}{3+x}}=e^{-2}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sin{x^3}}{\sin^2{x}}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sin{x^3}}{\sin^2{x}}=\displaystyle\lim_{x\to 0}\frac{\sin{x^3}}{x^3}\cdot\displaystyle\lim_{x\to 0}\frac{x^2}{\sin^2{x}}\cdot\displaystyle\lim_{x\to 0}x=0$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\arctan{x}}{x}$;
+\begin{solution}
+令$y=\arctan{x}$, 则$x\to 0\Rightarrow y\to 0$.
+$\displaystyle\lim_{x\to 0}\frac{\arctan{x}}{x}=\displaystyle\lim_{y\to 0}\frac{y\cos{y}}{\sin{y}}=1$.
+\end{solution}
+\item $\displaystyle\lim_{x\to +\infty}x\sin{\frac{1}{x}}$;
+\begin{solution}
+$\displaystyle\lim_{x\to +\infty}x\sin{\frac{1}{x}}=\displaystyle\lim_{y\to 0^+}\frac{\sin{y}}{y}=1$.
+\end{solution}
+\item $\displaystyle\lim_{x\to a}\frac{\sin^2{x}-\sin^2{a}}{x-a}$;
+\begin{solution}利用三角函数性质：
+\begin{equation*}
+\begin{split}
+\sin^2{x}-\sin^2{a}&=(\sin{x}+\sin{a})(\sin{x}-\sin{a})\\
+&=(\sin{x}+\sin{a})\left[\sin(x-a)\cos{a}-2\sin{a}\sin^2\left(\frac{x-a}{2}\right)\right].
+\end{split}
+\end{equation*}
+所以，$\displaystyle\lim_{x\to a}\frac{\sin^2{x}-\sin^2{a}}{x-a}=2\sin{a}\cos{a}$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sin{4x}}{\sqrt{x+1}-1}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}\frac{\sin{4x}}{\sqrt{x+1}-1}=\displaystyle\lim_{x\to 0}\frac{\sin{4x}}{4x}\cdot\displaystyle\lim_{x\to 0}\frac{4x\left(\sqrt{x+1}+1\right)}{x}=2$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1-\cos{x^2}}}{1-\cos{x}}$.
+\begin{proof}
+利用三角函数性质：$1-\cos{x}=2\sin^2{\displaystyle\frac{x}{2}}$.于是，
+$$\frac{\sqrt{1-\cos{x^2}}}{1-\cos{x}}=\frac{\sqrt{2}\sin{\frac{x^2}{2}}}{2\sin^2{\frac{x}{2}}}=\sqrt{2}\cdot\frac{\sin{\frac{x^2}{2}}}{\frac{x^2}{2}}\cdot\left(\frac{\frac{x}{2}}{\sin{\frac{x}{2}}}\right)^2.$$
+所以，$\displaystyle\lim_{x\to 0}\frac{\sqrt{1-\cos{x^2}}}{1-\cos{x}}=\sqrt{2}$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+求下列极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{n\to +\infty}\sin(\pi\sqrt{n^2+1})$;
+\begin{solution}利用三角函数性质：
+$$\sin(\pi\sqrt{n^2+1}-n\pi)=\sin(\pi\sqrt{n^2+1})\cos{n\pi}\Rightarrow \sin(\pi\sqrt{n^2+1})=\frac{\sin(\pi\sqrt{n^2+1}-n\pi)}{\cos{n\pi}}.$$
+所以，
+ $\displaystyle\lim_{n\to +\infty}\left|\sin(\pi\sqrt{n^2+1})\right| = \displaystyle\lim_{n\to +\infty}\left|\frac{\sin(\pi\sqrt{n^2+1}-n\pi)}{\frac{\pi}{\sqrt{n^2+1}+n}}\right|\cdot\displaystyle\lim_{n\to +\infty}\frac{\pi}{(\sqrt{n^2+1}+n)}=0$.
+于是，$\displaystyle\lim_{n\to +\infty}\sin(\pi\sqrt{n^2+1})=0$。
+\end{solution}
+\item $\displaystyle\lim_{n\to +\infty}\sin^2(\pi\sqrt{n^2+n})$;
+\begin{solution}利用三角函数性质，
+$\sin^2(\pi\sqrt{n^2+n})=\sin^2(\pi\sqrt{n^2+n}-n\pi)=\sin^2\left(\pi\displaystyle\frac{n}{\sqrt{n^2+n}+n}\right)$.
+所以，$\displaystyle\lim_{n\to +\infty}\sin^2(\pi\sqrt{n^2+n})=1.$
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 证明：$\forall k\in\mathbb{N}$，有$\displaystyle\lim_{x\to +\infty}\left[\sin{\sqrt{x+k}}-\sin\sqrt{x}\right]$；
+\begin{proof}利用三角函数性质，
+$$\sin{\sqrt{x+k}}-\sin\sqrt{x}=\sin\left(\frac{k}{\sqrt{x+k}+\sqrt{x}}\right)\cos\sqrt{x}-2\sin\sqrt{x}\sin^2\left(\frac{k}{2(\sqrt{x+1}+\sqrt{x}}\right).$$
+于是，$\displaystyle\lim_{x\to +\infty}\left[\sin{\sqrt{x+k}}-\sin\sqrt{x}\right]=0$.
+\end{proof}
+\item 设常数$a_1,a_2,\cdots,a_n$满足$a_1+a_2+\cdots+a_n=0$，证明：
+$$\displaystyle\lim_{x\to +\infty}\displaystyle\sum_{k=1}^na_k\sin{\sqrt{x+k}}=0.$$
+\begin{proof}显然
+$$\displaystyle\sum_{k=1}^na_k\sin{\sqrt{x+k}}=\displaystyle\sum_{k=2}^na_k\left[\sin{\sqrt{x+k}}-\sin\sqrt{x+1}\right].$$
+由上题知，这里和的每一项都收敛于$0$.所以，$\displaystyle\lim_{x\to +\infty}\displaystyle\sum_{k=1}^na_k\sin{\sqrt{x+k}}=0$。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明：$$\displaystyle\lim_{x\to +\infty}\left(\cos{\frac{x}{2}}\cos{\frac{x}{4}}\cdots\cos{\frac{x}{2^n}}\right)=
+\begin{cases}
+\displaystyle\frac{\sin{x}}{x},\quad&x\neq 0,\\
+1,\quad&x=0.
+\end{cases}
+$$
+\end{example}
+\begin{proof}
+当$x=0$时，$\cos{\frac{x}{2^k}}=\cos{0}=1$.所以，极限为$1$.下面证$x\neq 0$的情形。
+$$\cos{\frac{x}{2}}\cos{\frac{x}{4}}\cdots\cos{\frac{x}{2^n}}=\sin{x}\Big{/}\frac{\sin{\frac{x}{2^n}}}{2^n}=\left(\frac{x}{2^n}\Big{/}\sin{\frac{x}{2^n}}\right)\cdot\left(\frac{\sin{x}}{x}\right).$$
+所以，$\displaystyle\lim_{x\to +\infty}\left(\cos{\frac{x}{2}}\cos{\frac{x}{4}}\cdots\cos{\frac{x}{2^n}}\right)=\frac{\sin{x}}{x}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+计算极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to 0}(1-2x)^{\frac{1}{x}}$;
+\begin{solution}
+$\displaystyle\lim_{x\to 0}(1-2x)^{\frac{1}{x}}=\displaystyle\lim_{x\to 0}(1-2x)^{\frac{-1}{2x}\cdot(-2)}=e^{-2}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to +\infty}\left(\frac{x+a}{x-a}\right)^x$;
+\begin{solution}
+$\displaystyle\lim_{x\to +\infty}\left(\frac{x+a}{x-a}\right)^x=\displaystyle\lim_{x\to +\infty}\left(1+\frac{2a}{x-a}\right)^{\frac{x-a}{2a}\cdot\frac{2ax}{x-a}}=e^{2a}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\left(\frac{1+\tan{x}}{1+\sin{x}}\right)^{\frac{1}{\sin{x}}}$;
+\begin{solution}利用三角函数性质，
+\begin{equation*}
+\begin{split}
+\left(\frac{1+\tan{x}}{1+\sin{x}}\right)^{\frac{1}{\sin{x}}}&=\left(1+\frac{2\sin{x}\sin^2{\frac{x}{2}}}{(1+\sin{x})\cos{x}}\right)^{\frac{1}{\sin{x}}}\\&=
+\left(1+\frac{2\sin{x}\sin^2{\frac{x}{2}}}{(1+\sin{x})\cos{x}}\right)^{\displaystyle\frac{(1+\sin{x})\cos{x}}{2\sin{x}\sin^2{\frac{x}{2}}}\cdot\frac{2\sin^2{\frac{x}{2}}}{(1+\sin{x})\cos{x}}}.
+\end{split}
+\end{equation*}
+所以，$\displaystyle\lim_{x\to 0}\left(\frac{1+\tan{x}}{1+\sin{x}}\right)^{\frac{1}{\sin{x}}}=1$。
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\left(\frac{\cos{x}}{\cos{2x}}\right)^{\frac{1}{x^2}}$;
+\begin{solution}利用三角函数性质，
+$$\displaystyle\frac{\cos{x}-\cos{2x}}{\cos{2x}}=\displaystyle\frac{2\cos{x}\sin^2{\frac{x}{2}}+\sin^2{x}}{\cos{2x}}.$$
+于是，
+$$\displaystyle\lim_{x\to 0}\displaystyle\frac{\cos{x}-\cos{2x}}{\cos{2x}}=\displaystyle\frac{2\cos{x}\sin^2{\frac{x}{2}}+\sin^2{x}}{x^2\cos{2x}}=\frac{3}{2}.$$
+所以，$\displaystyle\lim_{x\to 0}\left(\frac{\cos{x}}{\cos{2x}}\right)^{\frac{1}{x^2}}=e^{\frac{3}{2}}$.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
