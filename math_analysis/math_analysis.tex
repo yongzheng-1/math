@@ -3094,14 +3094,174 @@ $$\displaystyle\frac{\cos{x}-\cos{2x}}{\cos{2x}}=\displaystyle\frac{2\cos{x}\sin
 $$\displaystyle\lim_{x\to 0}\displaystyle\frac{\cos{x}-\cos{2x}}{\cos{2x}}=\displaystyle\frac{2\cos{x}\sin^2{\frac{x}{2}}+\sin^2{x}}{x^2\cos{2x}}=\frac{3}{2}.$$
 所以，$\displaystyle\lim_{x\to 0}\left(\frac{\cos{x}}{\cos{2x}}\right)^{\frac{1}{x^2}}=e^{\frac{3}{2}}$.
 \end{solution}
+\item  $\displaystyle\lim_{x\to \frac{\pi}{4}}\left(\tan{x}\right)^{\tan{2x}}$；
+\begin{solution}
+利用三角函数性质：
+$$\tan{2x}=\frac{\sin{2x}}{\cos{2x}}=\frac{2\sin{x}\cos{x}}{(\sin{x}+\cos{x})(\cos{x}-\sin{x})}.$$
+\begin{equation*}
+\begin{split}
+(\tan{x})^{\tan{2x}}&=\left(1+\frac{\sin{x}-\cos{x}}{\cos{x}}\right)^{\displaystyle\frac{2\sin{x}\cos{x}}{(\sin{x}+\cos{x})(\cos{x}-\sin{x})}}\\
+&=\left[\left(1+\frac{\sin{x}-\cos{x}}{\cos{x}}\right)^{\displaystyle\frac{\cos{x}}{(\sin{x}-\cos{x})}}\right]^{\displaystyle\frac{-2\sin{x}}{(\sin{x}+\cos{x})}}
+\end{split}
+\end{equation*}
+所以，$\displaystyle\lim_{x\to \frac{\pi}{4}}\left(\tan{x}\right)^{\tan{2x}}=e^{-1}$.
+\end{solution}
+\item $\displaystyle\lim_{x\to \frac{\pi}{2}}\left(\sin{x}\right)^{\tan{x}}$；
+\begin{solution}令$x=\frac{\pi}{2}+y$.
+\begin{equation*}
+\begin{split}
+\left(\sin{x}\right)^{\tan{x}}&=\left[\left(1+(\cos{y} - 1)\right)^{\displaystyle\frac{1}{\cos{y} - 1}}\right]^{\displaystyle\frac{(1-\cos{y})\cos{y}}{\sin{y}}}\\
+&=\left[\left(1+(\cos{y} - 1)\right)^{\displaystyle\frac{1}{\cos{y} - 1}}\right]^{\displaystyle\frac{\sin{\frac{y}{2}}\cos{y}}{\cos{\frac{y}{2}}}}
+\end{split}
+\end{equation*}
+所以，$\displaystyle\lim_{x\to \frac{\pi}{2}}\left(\sin{x}\right)^{\tan{x}}=e^{0}=1$.
+\end{solution}
+\item $\displaystyle\lim_{x\to +\infty}\left(\sin{\frac{1}{x}}+\cos{\frac{1}{x}}\right)^{x}$；
+\begin{solution}
+令$y=\frac{1}{x}$.
+$$\displaystyle\lim_{y\to 0^+}\frac{\sin{y}+\cos{y} - 1}{y}=\displaystyle\lim_{y\to 0^+}\frac{\sin{y}}{y}+\displaystyle\lim_{y\to 0^+}\frac{\cos{y} - 1}{y}= 1.$$
+于是，
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to +\infty}\left(\sin{\frac{1}{x}}+\cos{\frac{1}{x}}\right)^{x}&=\displaystyle\lim_{y\to 0^+}\left(\sin{y}+\cos{y}\right)^{\frac{1}{y}}\\
+&=\displaystyle\lim_{y\to 0^+}\left[(1+\sin{y}+\cos{y}-1)^{\frac{1}{\sin{y}+\cos{y}-1}}\right]^{\frac{\sin{y}+\cos{y}-1}{y}}\\
+&=e
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0^+}\left(\cos{\sqrt{x}}\right)^{\frac{1}{x}}$；
+\begin{solution}
+利用三角函数公式$\cos{\sqrt{x}}-1 = -2\sin^2{\frac{\sqrt{x}}{2}}$.
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to 0^+}\left(\cos{\sqrt{x}}\right)^{\frac{1}{x}}&=
+\displaystyle\lim_{x\to 0^+}\left[(1+\cos{\sqrt{x}}-1)^{\frac{1}{\cos{\sqrt{x}}-1}}\right]^{\frac{\cos{\sqrt{x}}-1}{x}}\\&=
+\displaystyle\lim_{x\to 0^+}\left[(1+\cos{\sqrt{x}}-1)^{\frac{1}{\cos{\sqrt{x}}-1}}\right]^{-\frac{1}{2}\cdot\left(\frac{\sin{\frac{\sqrt{x}}{2}}}{\frac{\sqrt{x}}{2}}\right)^2}=e^{-\frac{1}{2}}
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{n\to +\infty}\cos^n{\frac{x}{\sqrt{n}}}$；
+\begin{solution}
+和上题类似，
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{n\to +\infty}\cos^n{\frac{x}{\sqrt{n}}}&=
+\displaystyle\lim_{n\to +\infty}\left[(1+\cos{\frac{x}{\sqrt{n}}}-1)^{\cos{\frac{x}{\sqrt{n}}}-1}\right]^{n(\cos{\frac{x}{\sqrt{n}}}-1)}\\&=
+\displaystyle\lim_{n\to +\infty}\left[(1+\cos{\frac{x}{\sqrt{n}}}-1)^{\cos{\frac{x}{\sqrt{n}}}-1}\right]^{-\frac{x^2}{2}\cdot\left(\frac{\sin{\frac{x}{2\sqrt{n}}}}{\frac{x}{2\sqrt{n}}}\right)^2}=e^{-\frac{x^2}{2}}
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}(2e^{\frac{x}{1+x}}-1)^{\frac{x^2+1}{x}}$；
+\begin{solution}由例2.2.13(2)知，
+$$\displaystyle\lim_{x\to 0}\frac{e^{\frac{x}{1+x}}-1}{\frac{x}{1+x}} = 1.$$
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{x\to 0}(2e^{\frac{x}{1+x}}-1)^{\frac{x^2+1}{x}}
+&=\displaystyle\lim_{x\to 0}(1+2(e^{\frac{x}{1+x}}-1))^{\frac{1}{2(e^{\frac{x}{1+x}}-1)}2(e^{\frac{x}{1+x}}-1)\frac{x^2+1}{x}}\\
+&=\displaystyle\lim_{x\to 0}(1+2(e^{\frac{x}{1+x}}-1))^{\frac{1}{2(e^{\frac{x}{1+x}}-1)}\frac{2(e^{\frac{x}{1+x}}-1)}{\frac{x}{1+x}}\left(\frac{x^2+1}{1+x}\right)}\\
+&=e^2
+\end{split}
+\end{equation*}
+\end{solution}
+\item $\displaystyle\lim_{x\to a}\left(\frac{\sin{x}}{\sin{a}}\right)^{\frac{1}{x-a}}, a\neq k\pi,k\in\mathbb{Z}$；
+\begin{solution}利用三角函数的性质，
+\begin{equation*}
+\begin{split}
+\left(\frac{\sin{x}}{\sin{a}}\right)^{\frac{1}{x-a}}&=\left(1+\frac{\sin{x}-\sin{a}}{\sin{a}}\right)^{\frac{\sin{a}}{\sin{x}-\sin{a}}\cdot \frac{\sin{x}-\sin{a}}{(x-a)\sin{a}}}\\
+&=\left(1+\frac{\sin{x}-\sin{a}}{\sin{a}}\right)^{\frac{\sin{a}}{\sin{x}-\sin{a}}\cdot \frac{\sin(x-a)\cos{a}}{(x-a)\sin{a}}\cdot\frac{\sin{a}(\cos(x-a)-1)}{(x-a)\sin{a}}}.
+\end{split}
+\end{equation*}
+于是，$\displaystyle\lim_{x\to a}\left(\frac{\sin{x}}{\sin{a}}\right)^{\frac{1}{x-a}}=e^{\frac{\cos{a}}{\sin{a}}}$.
+\end{solution}
+\item $\displaystyle\lim_{n\to +\infty}\sqrt{2}\cdot\sqrt[4]{2}\cdot\sqrt[8]{2}\cdots\sqrt[2^n]{2}$；
+\begin{solution}记$A=\sqrt{2}\cdot\sqrt[4]{2}\cdot\sqrt[8]{2}\cdots\sqrt[2^n]{2}$,则$$\sqrt[2^n]{2}A=2\Rightarrow A = \frac{2}{\sqrt[2^n]{2}}.$$
+于是，$\displaystyle\lim_{n\to +\infty}\sqrt{2}\cdot\sqrt[4]{2}\cdot\sqrt[8]{2}\cdots\sqrt[2^n]{2} = \displaystyle\lim_{n\to +\infty}\frac{2}{\sqrt[2^n]{2}} = 2$.
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{(1+x)^{\mu} - 1}{x}$.
+\begin{solution}
+令$(1+x)^{\mu} = e^y$, 则$x\to 0\iff y\to 0$.
+于是，
+$$\displaystyle\lim_{x\to 0}\frac{(1+x)^{\mu} - 1}{x}=\displaystyle\lim_{y\to 0}\frac{e^y-1}{(\sqrt[\mu]{e})^y-1}=\mu.$$
+\end{solution}
 \end{enumerate}
 \end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$x_n=\underbrace{\sin\cdots\sin}_{\text{n次}}{a}$.证明：$\displaystyle\lim_{n\to +\infty}x_n=0$.
+\end{example}
+\begin{proof}对$\forall a\in\mathbb{R}$, $$0\leq\underbrace{\sin\cdots\sin}_{\text{(n+1)次}}{a}=x_{n+1} \leq x_{n}=\underbrace{\sin\cdots\sin}_{\text{n次}}{a},\quad \forall n\geq 2.$$
+即$\{x_n\}$是单调减有下界的数列，故收敛。设$\displaystyle\lim_{n\to +\infty}x_n=b$,则
+$$b=\sin{b},\quad 0\leq b\leq \sin{1}.$$
+解方程得$b=0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明：$\displaystyle\lim_{n\to +\infty}n\sin(2\pi e n!)=2\pi$.（提示：$e=1+\displaystyle\sum_{k=1}^n\frac{1}{k!}+\frac{\theta_n}{n!n}, \quad\frac{n}{n+1}<\theta_n<1$）
+\end{example}
+\begin{proof}根据提示，计算
+$$en!=m+\frac{\theta_n}{n}.$$
+所以，$\displaystyle\lim_{n\to +\infty}n\sin(2\pi e n!)=\displaystyle\lim_{n\to +\infty}n\sin{2\pi\frac{\theta_n}{n}}=\displaystyle\lim_{n\to +\infty}2\pi\theta_n\cdot\frac{\sin{2\pi\frac{\theta_n}{n}}}{2\pi\frac{\theta_n}{n}}=2\pi.$
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明：$\displaystyle\lim_{n\to +\infty}\left\{\left[(n+1)!\right]^{\frac{1}{n+1}}-(n!)^{\frac{1}{n}}\right\}=\frac{1}{e}$.
+\end{example}
+\begin{proof}记
+$$A=n\cdot\left(\displaystyle\sqrt[n+1]{\frac{n+1}{\sqrt[n]n!}}-1\right), \quad B = \frac{1}{n+1}\left(\ln{\displaystyle\frac{n}{\sqrt[n]{n!}}}+\ln{\frac{n+1}{n}}\right).$$
+简单计算可以
+$$A=nB\cdot\displaystyle\frac{e^{B}-1}{B}.$$
+于是，$\displaystyle\lim_{n\to +\infty}A = \displaystyle\lim_{n\to +\infty}nB\cdot\displaystyle\frac{e^{B}-1}{B}=1$.
+所以，
+$$\displaystyle\lim_{n\to +\infty}\left\{\left[(n+1)!\right]^{\frac{1}{n+1}}-(n!)^{\frac{1}{n}}\right\}=\displaystyle\lim_{n\to +\infty}\frac{\sqrt[n]{n!}}{n}\cdot A=\frac{1}{e}.$$
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$|x| < 1$.证明：
+$$\displaystyle\lim_{n\to +\infty}\left(1+\displaystyle\frac{1+x+x^2+\cdots+x^n}{n}\right)^n=e^{\frac{1}{1-x}}.$$
+\end{example}
+\begin{proof}因为$|x|< 1$, 级数$\displaystyle\sum_{k=0}^{+\infty}x^k = \frac{1}{1-x}$.于是
+\begin{equation*}
+\begin{split}
+\displaystyle\lim_{n\to +\infty}\left(1+\displaystyle\frac{1+x+x^2+\cdots+x^n}{n}\right)^n&=\displaystyle\lim_{n\to +\infty}\left(1+\frac{1-x^{n+1}}{n(1-x)}\right)^{\frac{n(1-x)}{1-x^{n+1}}\frac{1-x^{n+1}}{1-x}}\\&=e^{\frac{1}{1-x}}.
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$与$g$为两个周期函数，且$\displaystyle\lim_{x\to +\infty}[f(x)-g(x)]=0$，证明$f=g$。
+\end{example}
+\begin{proof}设$f$和$g$的周期分别为$T_f$和$T_g$，则$f(x) = f(x+nT_f)$, $g(x) = g(x+nT_g)$.
+考虑子列$\{x+nT_f\}$和$x+nT_g$，有
+$$\displaystyle\lim_{n\to +\infty}[f(x+nT_f)-g(x+nT_f)]=0\Rightarrow f(x)=\displaystyle\lim_{n\to +\infty}g(x+nT_f).$$ 
+$$\displaystyle\lim_{n\to +\infty}[f(x+nT_g)-g(x+nT_g)]=0\Rightarrow g(x)=\displaystyle\lim_{n\to +\infty}f(x+nT_g).$$
+于是，
+\begin{equation*}
+\begin{split}
+f(x)-g(x)&=\displaystyle\lim_{n\to +\infty}(g(x+nT_f)-f(x+nT_g))\\&=\displaystyle\lim_{n\to +\infty}(g(x+nT_f+nT_g)-f(x+nT_g+nT_f))\\&= 0.
+\end{split}
+\end{equation*}
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{无穷小(大)量的数量级}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{练习题}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}

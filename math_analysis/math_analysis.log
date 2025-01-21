@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  19 JAN 2025 03:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  21 JAN 2025 00:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -958,40 +958,44 @@ Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=
 ex-text;!
 Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
 ex-text;!
-[66] [67] [68] [69]
+[66] [67] [68] [69] [70] [71] [72]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[70
-
-
-
-
-]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [71
+(./math_analysis.ind) [73
 
 
-] [72
 
-] [73] (./math_analysis.aux
-(./angiosperms.aux))
+
+
+
+] [74
+
+] [75] (./math_analysis.aux (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: 5BEAF1B5DA45E7F4F9B54E5E4C4AF9D1;2971.
+
+
+Package rerunfilecheck Warning: File `math_analysis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `math_analysis.out':
+(rerunfilecheck)             Before: D6A18BCAFECB578FBE86DDE540A63872;2967
+(rerunfilecheck)             After:  F85C52E8952A279F75159764D02AAAF1;3286.
  ) 
 Here is how much of TeX's memory you used:
  17563 strings out of 474773
  395971 string characters out of 5757724
- 1947839 words of memory out of 5000000
+ 1950839 words of memory out of 5000000
  39416 multiletter control sequences out of 15000+600000
  571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (77 pages).
+Output written on math_analysis.pdf (79 pages).
