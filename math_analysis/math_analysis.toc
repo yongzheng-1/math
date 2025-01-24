@@ -27,8 +27,8 @@
 \contentsline {subsection}{\numberline {2.2.2}思考题}{71}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}无穷小(大)量的数量级}{72}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}练习题}{72}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}思考题}{72}{subsection.2.3.2}%
-\contentsline {chapter}{索~引}{73}{subsection.2.3.2}%
-\contentsline {chapter}{参考文献}{73}{subsection.2.3.2}%
-\contentsline {chapter}{后~~记}{75}{appendix*.3}%
+\contentsline {subsection}{\numberline {2.3.2}思考题}{76}{subsection.2.3.2}%
+\contentsline {chapter}{索~引}{77}{subsection.2.3.2}%
+\contentsline {chapter}{参考文献}{77}{subsection.2.3.2}%
+\contentsline {chapter}{后~~记}{79}{appendix*.3}%
 \contentsfinish 

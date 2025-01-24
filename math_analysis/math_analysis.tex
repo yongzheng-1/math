@@ -3258,6 +3258,169 @@ f(x)-g(x)&=\displaystyle\lim_{n\to +\infty}(g(x+nT_f)-f(x+nT_g))\\&=\displaystyl
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{练习题}
 %%%%%%%%%%%%%%%%%%%%%%
+\begin{example}证明下列各式：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $2x-x^2=O^*(x)(x\to 0)$;
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0}\frac{2x-x^2}{x} = \displaystyle\lim_{x\to 0}(2-x)=2.$$
+所以，$2x-x^2=O^*(x)(x\to 0)$.
+\end{proof}
+\item $x\sin{\sqrt{x}}\sim x^{\frac{3}{2}}(x\to 0^+)$;
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0^+}\frac{x\sin{\sqrt{x}}}{x^{\frac{3}{2}}} =\displaystyle\lim_{x\to 0^+}\frac{\sin{\sqrt{x}}}{\sqrt{x}}=1.$$
+所以，$x\sin{\sqrt{x}}\sim x^{\frac{3}{2}}(x\to 0^+)$.
+\end{proof}
+\item $2x^3+x^2=O^*(x^3)(x\to \infty)$;
+\begin{proof}因为
+$$\displaystyle\lim_{x\to \infty}\frac{2x^3+x^2}{x^3} =\displaystyle\lim_{x\to \infty}2+\frac{1}{x} = 2.$$
+所以，$2x^3+x^2=O^*(x^3)(x\to \infty)$.
+\end{proof}
+\item $x\sin{\sqrt{x}}=o(x^{\frac{5}{4}})(x\to 0^+)$；
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0^+}\frac{x\sin{\sqrt{x}}}{x^{\frac{5}{4}}} =\displaystyle\lim_{x\to 0^+}\frac{\sin{\sqrt{x}}}{\sqrt[4]{x}}=\displaystyle\lim_{x\to 0^+}\sqrt[4]{x}=0.$$
+所以，$x\sin{\sqrt{x}}=o(x^{\frac{5}{4}})(x\to 0)$.
+\end{proof}
+\item $\sqrt{1+x}-1=o(1)(x\to 0)$；
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0}(\sqrt{1+x}-1)=\displaystyle\lim_{x\to 0}\frac{x}{\sqrt{1+x}+1}=0.$$
+所以，$\sqrt{1+x}-1=o(1)(x\to 0)$.
+\end{proof}
+\item $\sqrt{1+x}-1\sim \frac{x}{2}(x\to 0)$；
+\begin{proof}因为，
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-1}{\frac{x}{2}}=\displaystyle\lim_{x\to 0}\frac{2}{\sqrt{1+x}+1}=1.$$
+所以，$\sqrt{1+x}-1\sim \frac{x}{2}(x\to 0)$.
+\end{proof}
+\item $\displaystyle\frac{1}{1+\alpha(x)}=1-\alpha(x)+o(\alpha(x))(x\to x_0)$,其中$\alpha(x)=o(1)(x\to x_0)$；
+\begin{proof}因为，
+$$\displaystyle\lim_{x\to x_0}\frac{\displaystyle\frac{1}{1+\alpha(x)}-1+\alpha(x)}{\alpha(x)}=\displaystyle\lim_{x\to x_0}\frac{\alpha(x)}{1+\alpha(x)}=0.$$
+所以，$\displaystyle\frac{1}{1+\alpha(x)}=1-\alpha(x)+o(\alpha(x))(x\to x_0)$.
+\end{proof}
+\item $\displaystyle(1+x)^n=1+nx+o(x)(x\to 0), n\in\mathbb{N}$；
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0}\frac{(1+x)^n-1-nx}{x} = \displaystyle\lim_{x\to 0}\displaystyle\sum_{k=2}^nC^k_nx^{k-1} = 0.$$
+所以，$\displaystyle(1+x)^n=1+nx+o(x)(x\to 0)$
+\end{proof}
+\item $\displaystyle(1+x)^n=1+nx+O^*(x^2)(x\to 0), n\in\mathbb{N}$；
+\begin{proof}因为
+$$\displaystyle\lim_{x\to 0}\frac{(1+x)^n-1-nx}{x^2} = \displaystyle\lim_{x\to 0}\displaystyle\sum_{k=2}^nC^k_nx^{k-2} = C^2_n + \displaystyle\lim_{x\to 0}\displaystyle\sum_{k=3}^nC^k_nx^{k-1} = C^2_n.$$
+所以，$\displaystyle(1+x)^n=1+nx+O^*(x^2)(x\to 0)$.
+\end{proof}
+\item $\sqrt{x+\sqrt{x+\sqrt{x}}}\sim \sqrt{x}(x\to +\infty)$.
+\begin{proof}因为，
+$$\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x+\sqrt{x+\sqrt{x}}}}{\sqrt{x}}=\displaystyle\lim_{x\to +\infty}\sqrt{1+\sqrt{\frac{1}{x}+\sqrt{\frac{1}{x^3}}}}=1.$$
+所以，$\sqrt{x+\sqrt{x+\sqrt{x}}}\sim \sqrt{x}(x\to +\infty)$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}确定$\alpha$的值，使下列函数与$x^{\alpha}$当$x\to 0$时为同阶无穷小量：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\sin{2x}-2\sin{x}$;
+\begin{solution}因为
+$\sin{2x}-2\sin{x}=2\sin{x}(\cos{x}-1) = -4\sin{x}\sin^2{\frac{x}{2}}$,
+于是，$$\displaystyle\lim_{x\to 0}\frac{\sin{2x}-2\sin{x}}{x^3} = -1.$$
+所以，$\sin{2x}-2\sin{x}$与$x^3$当$x\to 0$时为同阶无穷小量.
+\end{solution}
+\item $\displaystyle\frac{1}{1+x}-(1-x)$;
+\begin{solution}因为$\displaystyle\frac{1}{1+x}-(1-x)=\frac{x^2}{1+x}$,
+于是, $$\displaystyle\lim_{x\to 0}\frac{\displaystyle\frac{1}{1+x}-(1-x)}{x^2} = 1.$$
+所以，$\displaystyle\frac{1}{1+x}-(1-x)$与$x^2$当$x\to 0$时为同阶无穷小量.
+\end{solution}
+\item $\sqrt{1+\tan{x}}-\sqrt{1-\sin{x}}$;
+\begin{solution}因为$\sqrt{1+\tan{x}}-\sqrt{1-\sin{x}}=\displaystyle\frac{\sin{x}(1+\cos{x})}{\cos{x}(\sqrt{1+\tan{x}}+\sqrt{1-\sin{x}})}$,
+于是$$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+\tan{x}}-\sqrt{1-\sin{x}}}{x} = \displaystyle\lim_{x\to 0}\displaystyle\frac{1+\cos{x}}{\cos{x}(\sqrt{1+\tan{x}}+\sqrt{1-\sin{x}})}=1.$$
+所以，$\sqrt{1+\tan{x}}-\sqrt{1-\sin{x}}$与$x$当$x\to 0$时为同阶无穷小量.
+\end{solution}
+\item $\sqrt[5]{3x^2-4x^3}$.
+\begin{solution}因为$\sqrt[5]{3x^2-4x^3}=\sqrt[5]{x^2}\sqrt[5]{3-4x}$,
+于是，$$\displaystyle\lim_{x\to 0}\frac{\sqrt[5]{3x^2-4x^3}}{\sqrt[5]{x^2}} = \displaystyle\lim_{x\to 0}\sqrt[5]{3-4x}=\sqrt[5]{3}.$$
+所以，$\sqrt[5]{3x^2-4x^3}$与$x^{\frac{2}{5}}$当$x\to 0$时为同阶无穷小量.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+确定$\alpha$的值，使下列函数与$x^{\alpha}$当$x\to \infty$时为同阶无穷大量：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\sqrt{x^2+x^5}$;
+\begin{solution}因为$\sqrt{x^2+x^5}=\sqrt{x^5}\sqrt{1+\frac{1}{x^3}}$,
+于是，
+$$\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x^2+x^5}}{\sqrt{x^5}} = \displaystyle\lim_{x\to +\infty}\sqrt{1+\frac{1}{x^3}}=1.$$
+所以，$\sqrt{x^2+x^5}$与$x^{\frac{5}{2}}$当$x\to +\infty$时为同阶无穷大量.
+\end{solution}
+\item $x+x^2(2+x^{-1}\sin{x})$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to \infty}\frac{x+x^2(2+x^{-1}\sin{x})}{x^2}=\displaystyle\lim_{x\to \infty}\left(\frac{1}{x}+2 +\frac{\sin{x}}{x}\right)=2.$$
+所以，$x+x^2(2+x^{-1}\sin{x})$与$x^2$当$x\to \infty$时为同阶无穷大量.
+\end{solution}
+\item $\sqrt{x+\sqrt{x+\sqrt{x}}}$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x+\sqrt{x+\sqrt{x}}}}{\sqrt{x}}=\displaystyle\lim_{x\to +\infty}\sqrt{1+\sqrt{\frac{1}{x}}+\sqrt{\frac{1}{x^3}}}=1.$$
+所以，$\sqrt{x+\sqrt{x+\sqrt{x}}}$与$\sqrt{x}$当$x\to +\infty$时为同阶无穷大量.
+\end{solution}
+\item $\displaystyle\frac{2x^5}{x^3-3x+1}$.
+\begin{solution}因为
+$$\displaystyle\lim_{x\to \infty}\frac{2x^5}{x^2(x^3-3x+1)}=\displaystyle\lim_{x\to \infty}\frac{2}{1-\displaystyle\frac{3}{x^2}+\frac{1}{x^3}}=2.$$
+所以，$\displaystyle\frac{2x^5}{x^3-3x+1}$与$x^2$当$x\to \infty$时为同阶无穷大量.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}求下列无穷小或无穷大的阶：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $x-5x^3+x^{10}(x\to 0)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 0}\frac{x-5x^3+x^{10}}{x}=1,$$
+所以，$x-5x^3+x^{10}$当$x\to 0$时为1阶无穷小量.
+\end{solution}
+\item $x-5x^3+x^{10}(x\to +\infty)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{x-5x^3+x^{10}}{x^{10}}=1,$$
+所以，$x-5x^3+x^{10}$当$x\to +\infty$时为10阶无穷大量.
+\end{solution}
+\item $x^3-3x+2(x\to 1)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{x^3-3x+2}{(x-1)^2}=\displaystyle\lim_{x\to 1}(x+2) = 3.$$
+所以，$x^3-3x+2$当$x\to 1$时为2阶无穷小量.
+\end{solution}
+\item $\sqrt{x\sin{x}}(x\to 0)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt{x\sin{x}}}{x}= 1.$$
+所以，$\sqrt{x\sin{x}}$当$x\to 0$时为1阶无穷小量.
+\end{solution}
+\item $\sqrt{1+x}-\sqrt{1-x}(x\to 0)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}= 2.$$
+所以，$\sqrt{1+x}-\sqrt{1-x}$当$x\to 0$时为1阶无穷小量.
+\end{solution}
+\item $\sqrt{x^2+\sqrt[3]{x}}$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{\sqrt{x^2+\sqrt[3]{x}}}{x}=\displaystyle\lim_{x\to +\infty}\sqrt{1+\sqrt{\frac{1}{x^5}}}=1.$$
+所以，$\sqrt{x^2+\sqrt[3]{x}}$当$x\to +\infty$时为1阶无穷大量.
+\end{solution}
+\item $\displaystyle\frac{x+1}{x^4+1}(x\to +\infty)$；
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{\displaystyle\frac{x+1}{x^4+1}}{\frac{1}{x^3}}=\displaystyle\lim_{x\to +\infty}\frac{1+\frac{1}{x}}{1+\frac{1}{x^4}}=1.$$
+所以，$\displaystyle\frac{x+1}{x^4+1}$当$x\to +\infty$时为3阶无穷小量.
+\end{solution}
+\item $\displaystyle\frac{2x^5}{x^3-3x+1}(x\to +\infty)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{2x^5}{x^2(x^3-3x+1)}=2.$$
+所以，$\displaystyle\frac{2x^5}{x^3-3x+1}$当$x\to +\infty$时为2阶无穷大量.
+\end{solution}
+\item $\displaystyle\frac{1}{\sin{\pi x}}(x\to 1)$;
+\end{enumerate}
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{\displaystyle\frac{1}{\sin{\pi x}}}{\displaystyle\frac{1}{x-1}}=\displaystyle\lim_{x\to 1}-\frac{x-1}{\sin{\pi(x-1)}}=-\frac{1}{\pi}.$$
+所以，$\displaystyle\frac{1}{\sin{\pi x}}$当$x\to 1$时为1阶无穷大量.
+\end{solution}
+
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
