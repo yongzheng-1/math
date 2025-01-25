@@ -3413,17 +3413,125 @@ $$\displaystyle\lim_{x\to +\infty}\frac{2x^5}{x^2(x^3-3x+1)}=2.$$
 所以，$\displaystyle\frac{2x^5}{x^3-3x+1}$当$x\to +\infty$时为2阶无穷大量.
 \end{solution}
 \item $\displaystyle\frac{1}{\sin{\pi x}}(x\to 1)$;
-\end{enumerate}
 \begin{solution}因为
 $$\displaystyle\lim_{x\to 1}\frac{\displaystyle\frac{1}{\sin{\pi x}}}{\displaystyle\frac{1}{x-1}}=\displaystyle\lim_{x\to 1}-\frac{x-1}{\sin{\pi(x-1)}}=-\frac{1}{\pi}.$$
 所以，$\displaystyle\frac{1}{\sin{\pi x}}$当$x\to 1$时为1阶无穷大量.
 \end{solution}
-
+\item $\sin\left(\sqrt{1+\sqrt{1+\sqrt{x}}}-\sqrt{2}\right)(x\to 0^+)$
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 0^+}\frac{\sin\left(\sqrt{1+\sqrt{1+\sqrt{x}}}-\sqrt{2}\right)}{\sqrt{x}}=\displaystyle\lim_{x\to 0^+}\frac{\sin\left(\frac{\sqrt{x}}{\left(\sqrt{1+\sqrt{1+\sqrt{x}}}+\sqrt{2}\right)\left(\sqrt{1+\sqrt{x}}+1\right)}\right)}{\sqrt{x}}=\frac{\sqrt{2}}{8}.$$
+所以，$\sin\left(\sqrt{1+\sqrt{1+\sqrt{x}}}-\sqrt{2}\right)$当$x\to 0^+$时为$\frac{1}{2}$阶无穷小量.
+\end{solution}
+\item $\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}\quad(x\to +\infty)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}}{\sqrt{x}}=\displaystyle\lim_{x\to +\infty}\displaystyle\sqrt{1+\sqrt{\frac{1}{x}+\sqrt{\frac{1}{x^3}}+\sqrt{\frac{1}{x^7}}}}=1.$$
+所以，$\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}$当$x\to +\infty$时为$\frac{1}{2}$阶无穷大量.
+\end{solution}
+\item $\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}\quad(x\to 0^+)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 0^+}\frac{\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}}{\sqrt[16]{x}}=\displaystyle\lim_{x\to 0^+}\displaystyle\sqrt{x^{\frac{7}{8}}+\sqrt{x^{\frac{3}{4}}+\sqrt{x^{\frac{1}{2}}+1}}}=1.$$
+所以，$\displaystyle\sqrt{x+\sqrt{x+\sqrt{x+\sqrt{x}}}}$当$x\to 0^+$时为$\frac{1}{16}$阶无穷小量.
+\end{solution}
+\item $(1+x)(1+x^2)\cdots(1+x^n)(x\to +\infty)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to +\infty}\frac{(1+x)(1+x^2)\cdots(1+x^n)}{x^{\frac{n(n+1)}{2}}}=\displaystyle\lim_{x\to +\infty}\left(1+\frac{1}{x}\right)\left(1+\frac{1}{x^2}\right)\cdots\left(1+\frac{1}{x^n}\right)=1.$$
+所以，$(1+x)(1+x^2)\cdots(1+x^n)$当$x\to +\infty$时为$\frac{n(n+1)}{2}$阶无穷大量.
+\end{solution}
+\item $x^3-3x+2(x\to 1)$;
+\begin{solution}和(3)一样
+\end{solution}
+\item $\ln{x}\quad(x\to 1)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{\ln{x}}{x-1}=\displaystyle\lim_{x\to 1}\ln\left(1+(x-1)\right)^{\frac{1}{x-1}}=1.$$
+所以，$\ln{x}$当$x\to 1$时为$1$阶无穷小量.
+\end{solution}
+\item $e^x-e,\quad(x\to 1)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{e^x-e}{x-1}=\displaystyle\lim_{x\to 1}e\frac{e^{x-1}-1}{x-1}=e.$$
+所以，$e^x-e$当$x\to 1$时为$1$阶无穷小量.
+\end{solution}
+\item $\sqrt[3]{1-\sqrt{x}}\quad(x\to 1)$;
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{\sqrt[3]{1-\sqrt{x}}}{\sqrt[3]{1-x}}=\displaystyle\lim_{x\to 1}\sqrt[3]{\frac{1}{1+\sqrt{x}}}=\frac{1}{\sqrt[3]{2}}.$$
+所以，$\sqrt[3]{1-\sqrt{x}}$当$x\to 1$时为$\frac{1}{3}$阶无穷小量.
+\end{solution}
+\item $x^x-1\quad(x\to 1)$.
+\begin{solution}因为
+$$\displaystyle\lim_{x\to 1}\frac{x^x-1}{x-1}=\displaystyle\lim_{x\to 1}\left[x\ln(1+(x-1))^{\frac{1}{x-1}}\right]\frac{e^{x\ln{x}}-1}{x\ln{x}}=1.$$
+所以，$x^x-1$当$x\to 1$时为$1$阶无穷小量.
+\end{solution}
+\end{enumerate}
 \end{example}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}用等价无穷小替换求下列极限：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to +\infty}\frac{x\arctan{\frac{1}{x}}}{x-\cos{x}}$;
+\begin{solution}因为$\arctan{\frac{1}{x}}\sim \frac{1}{x}, \quad(x\to+\infty)$.于是，
+$$\displaystyle\lim_{x\to +\infty}\frac{x\arctan{\frac{1}{x}}}{x-\cos{x}}=\displaystyle\lim_{x\to +\infty}\frac{1}{x-\cos{x}}=0.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x^2}-1}{1-\cos{x}}$;
+\begin{solution}当$x\to 0$时，$\sqrt{1+x^2}-1\sim\displaystyle\frac{x^2}{2}, 1-\cos{x}\sim\displaystyle\frac{x^2}{2}$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x^2}-1}{1-\cos{x}}=1.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{x\tan^4{x}}{\sin^3{x}(1-\cos{x})}$;
+\begin{solution}当$x\to 0$时，$\tan{x}\sim x, 1-\cos{x}\sim\displaystyle\frac{x^2}{2}, \sin{x} \sim x$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{x\tan^4{x}}{\sin^3{x}(1-\cos{x})}=\displaystyle\lim_{x\to 0}\frac{x^5}{x^3\cdot\frac{x^2}{2}}=2.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x^4}-1}{1-\cos^2{x}}$;
+\begin{solution}当$x\to 0$时，$\sqrt{1+x^4}-1\sim \frac{x^4}{2}, 1-\cos^2{x}=\sin^2{x}\sim x^2$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt{1+x^4}-1}{1-\cos^2{x}}=\displaystyle\lim_{x\to 0}\frac{x^4}{2x^2}=0.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\tan{(\tan{x}})}{\sin{x}}$;
+\begin{solution}当$x\to 0$时，$\tan{(\tan{x})}\sim x, \sin{x}\sim x$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{\tan{(\tan{x}})}{\sin{x}}=1.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{(e^x-1)^2(\sqrt{1+x^2}-1)^3}{x^5\sin^3{x}}$;
+\begin{solution}当$x\to 0$时，$e^x-1\sim x, \sqrt{1+x^2}-1\sim \frac{x^2}{2}, \sin{x}\sim x$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{(e^x-1)^2(\sqrt{1+x^2}-1)^3}{x^5\sin^3{x}}=\frac{1}{8}.$$
+\end{solution}
+\item $\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+x+x^2}-1}{\sin{2x}},n\in\mathbb{N}$.
+\begin{solution}当$x\to 0$时，$\sqrt[n]{1+x+x^2}-1\sim \frac{x}{n},  \sin{2x}\sim 2x$.于是，
+$$\displaystyle\lim_{x\to 0}\frac{\sqrt[n]{1+x+x^2}-1}{\sin{2x}}=\frac{1}{2n}.$$
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f(x)\neq 0, g(x)\neq 0, f(x)\sim g(x)(x\to x_0)$.证明：$$f(x)-g(x)=o(f(x))(x\to x_0);\quad f(x)-g(x)=o(g(x))(x\to x_0).$$
+\end{example}
+\begin{proof}因为$f(x)\sim g(x)(x\to x_0)$,所以
+$$\displaystyle\lim_{x\to x_0}\frac{f(x)}{g(x)}=\displaystyle\lim_{x\to x_0}\frac{g(x)}{f(x)}=1.$$
+从而，
+$$\displaystyle\lim_{x\to x_0}\frac{f(x)-g(x)}{g(x)}=\displaystyle\lim_{x\to x_0}\frac{f(x)-g(x)}{f(x)}=0.$$
+即，$f(x)-g(x)=o(f(x)),\quad f(x)-g(x)=o(g(x))(x\to x_0)$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\displaystyle\lim_{x\to 0}f(x)=0$，且$f(x)-f(\frac{x}{2})=o(x)(x\to 0)$。证明:$f(x)=o(x)(x\to 0)$.
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f,g:[a,+\infty)\rightarrow \mathbb{R}$满足:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $g(x+T)>g(x)$,$\forall x\geq a$,其中$T>0$为常数；
+\item 函数$f,g$在$[a,+\infty)$的任何有限子区间上有界；
+\item $\displaystyle\lim_{x\to +\infty}g(x)=+\infty$.
+\end{enumerate}
+证明：若$$\displaystyle\lim_{x\to +\infty}\frac{f(x+T)-f(x)}{g(x+T)-g(x)}=A,$$
+那么$$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{g(x)}=A.$$
+\end{example}
+\begin{proof}对$\forall \varepsilon > 0$, 存在$M > 0$,当$x>M$时，有
+$$A-\varepsilon\leq\frac{f(x+T)-f(x)}{g(x+T) - g(x)}\leq A+\varepsilon.$$
+即，$$(A-\varepsilon)(g(x+T) - g(x))\leq f(x+T)-f(x)\leq (A+\varepsilon)(g(x+T) - g(x)).$$
+
+
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
