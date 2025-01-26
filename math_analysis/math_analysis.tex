@@ -3514,6 +3514,17 @@ $$\displaystyle\lim_{x\to x_0}\frac{f(x)-g(x)}{g(x)}=\displaystyle\lim_{x\to x_0
 \begin{example}
 设$\displaystyle\lim_{x\to 0}f(x)=0$，且$f(x)-f(\frac{x}{2})=o(x)(x\to 0)$。证明:$f(x)=o(x)(x\to 0)$.
 \end{example}
+\begin{proof}对$\forall \varepsilon >0$, 存在$\delta>0$, 当$|x| < \delta$时，
+$$\left|\frac{f(x)-f(\frac{x}{2})}{x}\right| < \varepsilon.$$
+现考察$\displaystyle\frac{f(x)-f(\frac{x}{2^n})}{x}$. 当$|x| < \delta$时，
+\begin{equation*}
+\begin{split}
+\left|\displaystyle\frac{f(x)-f(\frac{x}{2^n})}{x}\right|&=\left|\displaystyle\sum_{k=0}^{n-1}\frac{f(\frac{x}{2^k})-f(\frac{x}{2^{k+1}})}{x}\right|\\&\leq\displaystyle\sum_{k=0}^{n-1}\left|\frac{f(\frac{x}{2^k})-f(\frac{x}{2^{k+1}})}{x}\right|\\&\leq\displaystyle\sum_{k=0}^{n-1}\frac{\varepsilon}{2^k}\\&\leq 2\varepsilon.
+\end{split}
+\end{equation*}
+于是，$$\left|\frac{f(x)}{x}\right|=\displaystyle\lim_{n\to +\infty}\left|\displaystyle\frac{f(x)-f(\frac{x}{2^n})}{x}\right|\leq 2\varepsilon.$$
+所以，$\displaystyle\lim_{x\to 0}\frac{f(x)}{x} = 0$. i.e. $f(x)=o(x)(x\to 0)$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设函数$f,g:[a,+\infty)\rightarrow \mathbb{R}$满足:
@@ -3526,13 +3537,40 @@ $$\displaystyle\lim_{x\to x_0}\frac{f(x)-g(x)}{g(x)}=\displaystyle\lim_{x\to x_0
 证明：若$$\displaystyle\lim_{x\to +\infty}\frac{f(x+T)-f(x)}{g(x+T)-g(x)}=A,$$
 那么$$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{g(x)}=A.$$
 \end{example}
-\begin{proof}对$\forall \varepsilon > 0$, 存在$M > 0$,当$x>M$时，有
-$$A-\varepsilon\leq\frac{f(x+T)-f(x)}{g(x+T) - g(x)}\leq A+\varepsilon.$$
-即，$$(A-\varepsilon)(g(x+T) - g(x))\leq f(x+T)-f(x)\leq (A+\varepsilon)(g(x+T) - g(x)).$$
+\begin{proof}
+对$\forall \varepsilon > 0$, 存在$M_1 > 0$,当$y>M_1$时，有
+$$A-\varepsilon\leq\frac{f(y+T)-f(y)}{g(y+T) - g(y)}\leq A+\varepsilon.$$
+如果限定$y\in[M_1, M_1+T)$，则对$\forall n\in\mathbb{N}$
+$$(A-\varepsilon)g(y+nT)-(A-\varepsilon)g(y) \leq f(y+nT) - f(y) \leq (A+\varepsilon)g(y+nT)-(A+\varepsilon)g(y).$$
+由题设，存在$M_2 > 0$使得
+$$\left|f(y)\right| < M_2, \left|g(y)\right| < M_2, \forall y\in[M_1, M_1+T).$$
+由于$\displaystyle\lim_{x\to +\infty}g(x)=+\infty$, 则存在$N > 0$,当$n>N$时,
+$$\frac{\left|(A-\varepsilon)g(y) + f(y)\right|}{g(y+nT)} < \varepsilon, \forall y\in [M_1, M_1+T),$$
+$$\frac{\left|(A+\varepsilon)g(y) + f(y)\right|}{g(y+nT)} < \varepsilon,\forall y\in[M_1, M_1+T).$$
+由此可知
+$$A-2\varepsilon \leq \frac{f(y+nT)}{g(y+nT)} \leq A+2\varepsilon, \forall y\in[M_1, M_1+T).$$
 
-
+取$M = NT+M_1$, 当$x>M$时，存在$y\in[M_1, M_1+T)$和$n> N$使得$x=y+nT$。于是，
+$$A-2\varepsilon \leq \frac{f(x)}{g(x)} \leq A+2\varepsilon.$$
+所以，$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{g(x)}=A$.
 \end{proof}
+\begin{remark}
+这题可以看做是函数版的Stolz公式。
+\end{remark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+函数列$f_n:(0,+\infty)\rightarrow\mathbb{R}$，$n=1,2,3,\cdots$,对$\forall n\in\mathbb{N}$，$f_n$都是无穷大$(x\to +\infty)$。证明：存在$(0,+\infty)$上的一个函数$f$，当$x\to +\infty$时，$f$是$f_n$比更高阶的无穷大，$n\in\mathbb{N}$。
+\end{example}
+\begin{proof}定义一个函数
+$$f(x) = \displaystyle\sum_{k=1}^nf_k^2(x), \quad x\in(0, n].$$
+由此定义，对于函数$f_n$, 当$x>n$时，$f(x) \geq f^2_n(x)$.于是
+$$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{f_n(x)} \geq \displaystyle\lim_{x\to +\infty}f_n(x) = +\infty.$$
+即， 当$x\to +\infty$时，$f(x)$是比$f_n(x)$更高阶的无穷大量。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{}
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
