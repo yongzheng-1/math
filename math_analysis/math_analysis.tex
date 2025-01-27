@@ -3818,6 +3818,126 @@ $$|f(x)-f(x_0)| < \varepsilon\Rightarrow f(x) > f(x_0)-\varepsilon = \frac{f(x_0
 命题得证。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 设$f(x)\equiv g(x)$，$x\neq 0$，且$f(0)\neq g(0)$。证明：$f$与$g$两者中至多有一个在$x=0$处连续
+\begin{proof}由于$f(x)\equiv g(x)$，$x\neq 0$, 有
+$$\displaystyle\lim_{x\to 0^-}f(x)=\displaystyle\lim_{x\to 0^-}g(x)\xlongequal{\text{记作}}A.$$
+$$\displaystyle\lim_{x\to 0^+}f(x)=\displaystyle\lim_{x\to 0^+}g(x)\xlongequal{\text{记作}}B.$$
+
+如果$A\neq B$，则$f$和$g$在$x=0$处都不连续。
+
+如果$f$在$x=0$处连续，则$f(0)=A=B$, 从而$g(0)\neq A$和$g(0)\neq B$.即$g$在$x=0$处不连续。同理，如果$g$在$x=0$处连续，则$f$在$x=0$处不连续。
+\end{proof}
+\item 设$f$与$g$都为$\mathbb{R}$上的连续函数，且$f(x)\equiv g(x),\forall x\in\mathbb{Q}$. 证明: $f(x)\equiv g(x)$，$\forall x\in\mathbb{R}$。
+\begin{proof}因为$f$和$g$在$\mathbb{R}$上连续，则$\forall x_0\in\mathbb{R}$,
+$$\displaystyle\lim_{x\to x_0}f(x)=f(x_0),\quad \displaystyle\lim_{x\to x_0}g(x)=g(x_0).$$
+由归结原理，有
+$$\displaystyle\lim_{x\to x_0}f(x)=f(x_0),\forall x\in\mathbb{Q},\quad \displaystyle\lim_{x\to x_0}g(x)=g(x_0), \forall x\in\mathbb{Q}.
+$$
+由于$f(x)\equiv g(x), \forall x\in\mathbb{Q}$知，
+$$\displaystyle\lim_{x\to x_0}f(x)=\displaystyle\lim_{x\to x_0}g(x), \forall x\in\mathbb{Q}.$$
+所以，$f(x_0)=g(x_0)$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+举出定义在$[0,1]$上分别符合下述要求的函数：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 只在$\frac{1}{2},\frac{1}{3}$与$\frac{1}{4}$三点不连续的函数；
+\begin{solution}考虑函数
+$$f(x)=
+\begin{cases}
+x, \quad &x\in[0,\frac{1}{4})\cup(\frac{1}{4},\frac{1}{3})\cup(\frac{1}{3},\frac{1}{2})\cup(\frac{1}{2},1],\\
+2x, \quad&x=\frac{1}{4},\frac{1}{3},\frac{1}{2}.
+\end{cases}$$
+显然此函数满足要求。
+\end{solution}
+\item 只在$\frac{1}{2},\frac{1}{3}$与$\frac{1}{4}$三点连续的函数；
+\begin{solution}考虑如下函数
+$$
+f_1(x)=
+\begin{cases}
+x-\frac{1}{4},\quad &x\in\mathbb{Q}, 0\leq x < \frac{7}{24},\\
+-x+\frac{1}{4}, \quad &x\in\mathbb{R}\setminus\mathbb{Q}, 0\leq x< \frac{7}{24},\\
+1, \quad &\frac{7}{24}\leq x\leq 1.
+\end{cases}
+$$
+$$
+f_2(x)=
+\begin{cases}
+1,\quad &0\leq x <\frac{7}{24},\\
+x-\frac{1}{3},\quad &x\in\mathbb{Q}, \frac{7}{24}\leq x < \frac{5}{12},\\
+-x+\frac{1}{3}, \quad &x\in\mathbb{R}\setminus\mathbb{Q}, \frac{7}{24}\leq x < \frac{5}{12},\\
+1, \quad &\frac{5}{12}\leq x\leq 1.
+\end{cases}
+$$
+$$
+f_3(x)=
+\begin{cases}
+1,\quad &0\leq  x < \frac{5}{12},\\
+x-\frac{1}{2},\quad &x\in\mathbb{Q},  \frac{5}{12}\leq x \leq 1,\\
+-x+\frac{1}{2}, \quad &x\in\mathbb{R}\setminus\mathbb{Q}, \frac{5}{12}\leq x\leq 1.
+\end{cases}
+$$
+
+$f_1$在$x=\frac{1}{4}$和$x>\frac{7}{24}$上连续。
+
+$f_2$在$x=\frac{1}{3}$, $x<\frac{7}{24}$和$x>\frac{5}{12}$上连续。
+
+$f_3$在$x=\frac{1}{2}$和$x < \frac{5}{12}$上连续。
+
+考虑三个函数的乘积$f=f_1\cdot f_2\cdot f_3$. 此函数只在$\frac{1}{2},\frac{1}{3},\frac{1}{4}$上连续。
+\end{solution}
+\item 只在$\frac{1}{n}(n\in\mathbb{N})$上不连续的函数；
+\begin{solution}考虑函数
+$$
+f(x) = 
+\begin{cases}
+x, \quad &x\in[0,1]\setminus\{\frac{1}{n}| n\in\mathbb{N}\},\\
+2x, \quad &x\in \{\frac{1}{n}| n\in\mathbb{N}\}.
+\end{cases}
+$$
+$\{\frac{1}{n}| n\in\mathbb{N}\}$是函数$f$仅有的间断点。
+\end{solution}
+\item 只在$x=0$右连续，而在其他点都不连续的函数。
+\begin{solution}考虑函数
+$$
+f(x) = 
+\begin{cases}
+x, \quad &x\in\mathbb{Q}, 0\leq x\leq 1,\\
+-x, \quad &x\in\mathbb{R}\setminus\mathbb{Q}, 0\leq x\leq 1
+\end{cases}
+$$
+这个函数只有在$x=0$右连续。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f,g$在$(a,b)$上连续。证明:
+$$F(x)=\max\{f(x),g(x)\},\quad x\in(a,b),$$
+$$G(x)=\min\{f(x),g(x)\},\quad x\in(a,b)$$
+在$(a,b)$上都为连续函数.
+\end{example}
+\begin{proof}重新表述$F,G$为
+$$F(x) = \frac{f(x)+g(x) + |f(x)-g(x)|}{2},$$
+$$G(x) = \frac{f(x)+g(x) - |f(x)-g(x)|}{2}.$$
+$f,g$在$(a,b)$上连续，则$|f(x)-g(x)|$在$(a,b)$上连续。从而， $F,G$在$(a,b)$
+上连续。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$(a,b)$内连续。证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$f(a^+)$与$f(b^-)$为有限值，则$f$在$(a,b)$内有界；又若$\exists \xi\in(a,b), s.t.f(\xi)\geq \max\{f(a^+), f(b^-)\}$，则$f$在$(a,b)$内能达到最大值；
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
