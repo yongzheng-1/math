@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  26 JAN 2025 15:06
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  26 JAN 2025 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,12 +957,12 @@ ex-text;!
 Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
 ex-text;!
 [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
-[81]
+[81] [82] [83]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[82
+[84
 
 
 
@@ -970,27 +970,27 @@ No file angiosperms.tex.
 ]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [83
+ (./math_analysis.ind) [85
 
 
-] [84
+] [86
 
-] [85] (./math_analysis.aux
+] [87] (./math_analysis.aux
 (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: AB2F3D37B6BBF89AB26FC8A9ECF1AEEB;3323.
+(rerunfilecheck)             Checksum: DDDB2B0F7B3E4637C83E48BDA1424170;3710.
  ) 
 Here is how much of TeX's memory you used:
- 17564 strings out of 474773
- 395984 string characters out of 5757724
+ 17565 strings out of 474773
+ 395995 string characters out of 5757724
  1950839 words of memory out of 5000000
- 39417 multiletter control sequences out of 15000+600000
+ 39418 multiletter control sequences out of 15000+600000
  571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (89 pages).
+Output written on math_analysis.pdf (91 pages).

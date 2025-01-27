@@ -31,7 +31,7 @@
 
 \DeclareMathOperator*\lowlim{\underline{lim}}
 \DeclareMathOperator*\uplim{\overline{lim}}
-\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sgn}{sgn}
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
@@ -3570,7 +3570,139 @@ $$\displaystyle\lim_{x\to +\infty}\frac{f(x)}{f_n(x)} \geq \displaystyle\lim_{x\
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
-\section{}
+\section{函数的连续,单调函数的不连续点集，初等函数的连续性}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{练习题}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+研究下列函数在$x=0$处的连续性：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f(x)=[x]$;
+\begin{solution}取$1 > \delta > 0$,考虑$x\in (-\delta, \delta)$.
+$$f(x) = -1\neq f(0),\forall x\in(-\delta, 0),\quad f(x) =0=f(0),\forall x\in[0, \delta).$$
+所以，$f(x)$在$x=0$是右连续，但不左连续。故，$f(x)$在$x=0$处不连续。
+\end{solution}
+\item $f(x) =\sgn{|x|}$;
+\begin{solution}取$1 > \delta > 0$,考虑$x\in (-\delta, \delta)$,则
+$$f(x) = 1\neq f(0) = 0,\forall 0\neq x\in (-\delta, \delta ).$$
+所以，$f(x)$在$x=0$处不连续。
+\end{solution}
+\item $f(x)=|x|$;
+\begin{solution}显然$f(0) = 0$, 且
+$$\displaystyle\lim_{x\to 0}f(x) = \displaystyle\lim_{x\to 0}|x| = 0 =f(0).$$
+所以，$f(x)$在$x=0$处连续。
+\end{solution}
+\item $f(x)=\sgn({\cos{x}})$;
+\begin{solution}由$\cos$的连续性知，$\displaystyle\lim_{x\to 0}\cos{x} = \cos{0} =1$.所以，$\displaystyle\lim_{x\to 0}f(x) = 1=f(0)$. 即，$f(x)$在$x=0$处连续。
+\end{solution}
+\item $f(x)=[|\cos{x}|]$;
+\begin{solution}当$x=0$时，$f(0) = [|\cos{0}|] = [1]=1$。取$0< \delta < 1$, 当$x\neq 0,x\in (-\delta, \delta)$时， $$|\cos{x}| < 1, \quad f(x) = 0\neq f(1).$$
+所以，$f(x)$在$x=0$处不连续。
+\end{solution}
+\item $f(x)=\sgn({\sin{x}})$;
+\begin{solution}取$0< \delta < 1$.当$x\in(-\delta, 0)$时，$\sin{x} < 0$. 当$x\in(0,\delta)$时，$\sin{x} > 0$.于是，
+$$f(x) = -1, \forall x\in(-\delta,0), \quad f(x) = 1, \forall x\in (0, \delta), \quad f(0) = 0.$$
+所以，$f(x)$在$x=0$处不连续。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+e^{-\frac{1}{x^2}}, \quad &x\neq 0,\\
+0,\quad&x=0;
+\end{cases}
+$
+\begin{solution}很显然$\displaystyle\lim_{x\to 0}\frac{1}{x^2} = +\infty$.于是，
+$$\displaystyle\lim_{x\to 0}f(x) = 0=f(0).$$
+所以，$f(x)$在$x=0$处连续。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+\frac{\sin{x}}{|x|}, \quad &x\neq 0,\\
+1,\quad&x=0;
+\end{cases}$
+\begin{solution}我们计算
+$$\displaystyle\lim_{x\to 0^+}f(x)=\displaystyle\lim_{x\to 0^+}\frac{\sin{x}}{x}=1=f(0),$$
+$$\displaystyle\lim_{x\to 0^-}f(x)=\displaystyle\lim_{x\to 0^-}\frac{\sin{x}}{-x}=-1,$$
+所以，$f(x)$在$x=0$处右连续，但不左连续。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+(1+x^2)^{\frac{1}{x^2}},\quad &x\neq 0,\\
+2.718, \quad &x=0;
+\end{cases}
+$
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}(1+x^2)^{\frac{1}{x^2}} = e\neq f(0).$$
+所以，$f(x)$在$x=0$处不连续。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+x, \quad &x\text{为有理数},\\
+-x,\quad &x\text{为无理数}.
+\end{cases}
+$
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 0}|f(x)| = \displaystyle\lim_{x\to 0}|x| =0=f(0).$$
+所以，$f$在$x=0$处连续。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+指出下列函数的间断点，并说明其类型：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f(x)=
+\begin{cases}
+\frac{1}{x+7},\quad&-\infty < x< -7,\\
+x, \quad & -7 \leq x\leq 1,\\
+(x-1)\sin{\frac{1}{x-1}}, \quad&1< x <+\infty;
+\end{cases}
+$
+\begin{solution}
+函数$f(x)$在$(-\infty, -7)\cup (-7,1)\cup (1,+\infty)$上是连续的。
+
+因为$\displaystyle\lim_{x\to -7^-}f(x)=\displaystyle\lim_{x\to -7^-}\frac{1}{x+7} = +\infty$和 $\displaystyle\lim_{x\to -7^+}f(x)=\displaystyle\lim_{x\to -7^+}x=-7$。
+所以，$x=-7$是$f$的第二类间断点。
+
+因为$\displaystyle\lim_{x\to 1^-}f(x)=\displaystyle\lim_{x\to 1^-}x=1$
+和$\displaystyle\lim_{x\to 1^+}f(x)=\displaystyle\lim_{x\to 1^+}(x-1)\sin{\frac{1}{x-1}} = 0$.所以$x=1$是函数$f$的跳跃间断点。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+x, \quad &x\text{为有理数},\\
+-x,\quad &x\text{为无理数}.
+\end{cases}
+$
+\begin{solution}$f(x)$在$x=0$处连续。$\forall x\in \mathbb{R}, x\neq 0$, 由归结原理，$f$在$x$的左右极限都不存在。所以$x\in \mathbb{R}, x\neq 0$是函数$f$的第二类间断点。
+\end{solution}
+\item $D(x)=
+\begin{cases}
+1,\quad&x\text{为有理数},\\
+0,\quad&x\text{为无理数};
+\end{cases}$
+\begin{solution}$\forall x_0\in\mathbb{R}$,由归结原理知，$f(x)$在$x=x_0$处的极限不存在。故，$x_0$为函数$f(x)$的第二类间断点。
+\end{solution}
+\item $f(x)=
+\begin{cases}
+\frac{1}{x^2},\quad &x\neq 0,\\
+0,\quad &x=0.
+\end{cases}
+$
+\begin{solution}函数在$x\neq 0$时是连续的。另外
+$$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}\frac{1}{x^2}=+\infty.$$
+所以，$x=0$是函数$f$的第二类间断点。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
 %\begin{multicols}{2}
