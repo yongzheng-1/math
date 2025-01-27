@@ -3699,6 +3699,125 @@ $$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}\frac{1}{x^2}=+\infty
 \end{enumerate}
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}延拓下列函数，使其在$\mathbb{R}$上连续:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f(x)=\frac{x^3-8}{x-2}$;
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 2}f(x)=\displaystyle\lim_{x\to 2}\frac{x^3-8}{x-2}=\displaystyle\lim_{x\to 2}(x^2+2x+4)=12.$$
+定义函数 $$\tilde{f}(x)=
+\begin{cases}
+f(x),\quad&x\neq 2,\\
+12,\quad&x=2.
+\end{cases}$$
+$\tilde{f}(x)$在$\mathbb{R}$上连续。
+\end{solution}
+\item $f(x)=\displaystyle\frac{1-\cos{x}}{x^2}$;
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}\frac{1-\cos{x}}{x^2}=\frac{1}{2}.$$
+定义函数
+$$
+\tilde{f}(x)=
+\begin{cases}
+f(x),\quad&x\neq 0,\\
+\frac{1}{2},\quad&x=0.
+\end{cases}
+$$
+$\tilde{f}(x)$在$\mathbb{R}$上连续。
+\end{solution}
+\item $f(x)=x\cos{\frac{1}{x}}$.
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}x\cos{\frac{1}{x}}=0.$$
+定义函数
+$$
+\tilde{f}(x)=
+\begin{cases}
+f(x),\quad&x\neq 0,\\
+0,\quad&x=0.
+\end{cases}
+$$
+$\tilde{f}(x)$在$\mathbb{R}$上连续。
+\end{solution}
+\item $f(x)=(1+x)^{\frac{1}{x}}$;
+\begin{solution}计算极限
+$$\displaystyle\lim_{x\to 0}f(x)=\displaystyle\lim_{x\to 0}(1+x)^{\frac{1}{x}}=e.$$
+定义函数
+$$
+\tilde{f}(x)=
+\begin{cases}
+f(x),\quad&x\neq 0,\\
+e,\quad&x=0.
+\end{cases}
+$$
+$\tilde{f}(x)$在$\mathbb{R}$上连续。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}定出$a,b$与$c$,使得函数
+$$f(x)=
+\begin{cases}
+-1,\quad&x\leq -1,\\
+ax^2+bx+c,\quad&0<|x|<1,\\
+0,\quad&x=0,\\
+1,\quad&x\geq1
+\end{cases}$$
+在$(-\infty,+\infty)$上连续
+\end{example}
+\begin{solution}函数要在$x=-1$处连续，则
+$$a-b+c=-1$$
+函数要在$x=0$处连续，则$$c=0.$$
+函数要在$x=1$处连续，则$$a+b+c=1$$
+于是，解方程组可知$a=0,b=1,c=0$
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在点$x_0$处连续，则$|f|$与$f^2$也在点$x_0$处连续。反之是否成立？
+\end{example}
+\begin{proof}由连续的定义知，对$\forall \varepsilon > 0$,存在$\delta>0$,当$|x-x_0|<\delta$时，有
+$$|f(x)-f(x_0)|<\varepsilon,\quad |f(x)| < |f(x_0)| + 1.$$
+从而，
+$$\left||f(x)|-|f(x_0)|\right|\leq \left|f(x)-f(x_0)\right| < \varepsilon,$$
+$$|f^2(x)-f^2(x_0)|\leq (|f(x)|+|f(x_0)|)\left|f(x)-f(x_0)\right|\leq  (1+2|f(x_0)|)\varepsilon.$$
+所以，$|f|$和$f^2$在$x_0$处也连续。
+反过来不成立。例如函数
+$$f(x) = 
+\begin{cases}
+1,\quad &x\geq 0,\\
+-1,\quad &x < 0.
+\end{cases}$$
+$|f|\equiv 1, f^2\equiv 1$，所以他们在$x=0$处连续。但$f$在$x=0$处右连续但不左连续。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}讨论函数$f+g$与$fg$在点$x_0$处的连续性，如果：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f$在点$x_0$处连续，但$g$在点$x_0$处不连续；
+\begin{solution}
+$f+g$在$x_0$处肯定不连续，不然$g=(f+g)-f$就在$x_0$处连续了。$fg$在$x_0$可能连续，不如$f\equiv 0$, 则对任何的$g$, $fg$都是连续的。但是如果$f(x_0)\neq 0$,则$fg$在$x_0$处不连续。否则$$\displaystyle\lim_{x\to x_0}g(x)=\displaystyle\lim_{x\to x_0}\frac{fg}{f}=\frac{f(x_0)g(x_0)}{f(x_0)}=g(x_0).$$
+即，$g$在$x_0$处连续了。
+\end{solution}
+\item $f$与$g$在点$x_0$处都不连续。
+\begin{solution}考虑函数$$f(x) = 
+\begin{cases}
+1,\quad &x\geq 0,\\
+-1,\quad &x < 0.
+\end{cases}$$
+设$g=-f$. 显然$f$和$g$在$x=0$处都不连续，但是$f+g\equiv 0$, $fg\equiv -1$。所以，$f+g$和$fg$在$x=0$处连续。
+
+当然也有例子说明$f+g$和$fg$不连续.
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在点$x_0$处连续，$f(x_0) > 0$，则当$x$充分靠近点$x_0$时，应有$f(x)>\frac{f(x_0)}{2}$.
+\end{example}
+\begin{proof}取$\varepsilon = \displaystyle\frac{f(x_0)}{2}$, 存在$\delta > 0$, 当$|x-x_0| < \delta$时，有
+$$|f(x)-f(x_0)| < \varepsilon\Rightarrow f(x) > f(x_0)-\varepsilon = \frac{f(x_0)}{2}.$$
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{思考题}
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
