@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  27 JAN 2025 01:26
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  30 JAN 2025 03:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -975,40 +975,54 @@ OT1/cmr/m/n/10.53937 )\OML/cmm/m/it/10.53937 ; f\OT1/cmr/m/n/10.53937 (\OML/cmm
 ight(0)/m/it/10.53937 ，|
  []
 
-[87]
+[87] [88]
+Overfull \hbox (6.24863pt too wide) detected at line 4022
+[]
+ []
+
+
+Overfull \hbox (25.0pt too wide) detected at line 4022
+[]
+ []
+
+[89] [90]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
-[88
-
-
-
-
-]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
- (./math_analysis.ind) [89
+(./math_analysis.ind) [91
 
 
-] [90
 
-] [91] (./math_analysis.aux
-(./angiosperms.aux))
+
+
+
+] [92
+
+] [93] (./math_analysis.aux (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: DDDB2B0F7B3E4637C83E48BDA1424170;3710.
+
+
+Package rerunfilecheck Warning: File `math_analysis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `math_analysis.out':
+(rerunfilecheck)             Before: EB06CD2FA6B6B3B4056CA0EA2EC58779;3706
+(rerunfilecheck)             After:  CA486B40B1E9F09C932BB12473298E33;3706.
  ) 
 Here is how much of TeX's memory you used:
- 17565 strings out of 474773
- 395995 string characters out of 5757724
+ 17574 strings out of 474773
+ 396684 string characters out of 5757724
  1950839 words of memory out of 5000000
- 39418 multiletter control sequences out of 15000+600000
+ 39427 multiletter control sequences out of 15000+600000
  571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (95 pages).
+Output written on math_analysis.pdf (97 pages).
