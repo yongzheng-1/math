@@ -30,8 +30,8 @@
 \contentsline {subsection}{\numberline {2.3.2}思考题}{79}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}函数的连续,单调函数的不连续点集，初等函数的连续性}{81}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}练习题}{81}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}思考题}{85}{subsection.2.4.2}%
-\contentsline {chapter}{索~引}{87}{subsection.2.4.2}%
-\contentsline {chapter}{参考文献}{87}{subsection.2.4.2}%
-\contentsline {chapter}{后~~记}{89}{appendix*.3}%
+\contentsline {subsection}{\numberline {2.4.2}思考题}{90}{subsection.2.4.2}%
+\contentsline {chapter}{索~引}{91}{example.2.4.19}%
+\contentsline {chapter}{参考文献}{91}{example.2.4.19}%
+\contentsline {chapter}{后~~记}{93}{appendix*.3}%
 \contentsfinish 
