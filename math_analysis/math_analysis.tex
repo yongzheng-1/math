@@ -4055,6 +4055,91 @@ $$F(x) = \max\{-c, \min\{c, f(x)\}\}.$$由题10知，$F(x)$在$\mathbb{R}$上连
 \end{example}
 \begin{proof}
 \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$对任意$x,y\in\mathbb{R}$适合函数方程$f(x+y)=f(x)+f(y)$.证明:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 若$f$在一点$x_0$处连续。则$f(x)=f(1)x$；
+\begin{proof}很容易证得：
+$$f(n) = nf(1), \quad f\left(\frac{1}{n}\right)=\frac{1}{n}f(1), \quad f\left(\frac{m}{n}\right)=\frac{m}{n}f(1).$$
+即，对$\forall x\in\mathbb{Q}$, $f(x)=f(1)x$.
+下面我们证明$f$在$\mathbb{R}$上连续。
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 取$y=x_0, x\to 0$, 则$f(x+x_0) = f(x) + f(x_0)$. 由于$f$在$x_0$处连续，则$$\displaystyle\lim_{x\to 0}f(x+x_0)=f(x_0).$$于是
+$$\displaystyle\lim_{x\to 0}f(x)=0=f(0).$$
+所以，$f$在$x=0$处连续。
+\item 对$\forall x\in\mathbb{R}$, 取$y\to 0$，有 
+$$\displaystyle\lim_{y\to 0}f(x+y) = f(x) + \displaystyle\lim_{y\to 0}f(y) =f(x).$$
+所以，$f$在$x$处连续。
+\end{enumerate}
+设$x\in\mathbb{R}\setminus \mathbb{Q}$, 取$\left\{\displaystyle\frac{p_n}{q_n}\in\mathbb{Q}\bigg| n\in\mathbb{N}\right\}$使得
+$$\displaystyle\lim_{n\to +\infty}\frac{p_n}{q_n}  = x.$$
+于是，$$f(x) = \displaystyle\lim_{n\to +\infty}f\left(\frac{p_n}{q_n}\right)=\displaystyle\lim_{n\to +\infty}f(1)\frac{p_n}{q_n}=f(1)x.$$
+所以，$\forall x\in\mathbb{R}$,  $f(x)=f(1)x$.
+\end{proof}
+\item 若$f$在$\mathbb{R}$上单调，也有$f(x)=f(1)x$.
+\begin{proof}由上题知，对$\forall \frac{p}{q}\in\mathbb{Q}$, $f\left(\frac{p}{q}\right)=\frac{p}{q}f(1)$. 如果$f$单调，则$f$连续。
+
+下面我们不妨假设$f$单增。事实上，对$\forall x\in\mathbb{R}$,我们可以取有理列
+$\left\{\displaystyle\frac{p_n}{q_n}\in\mathbb{Q}\bigg| n\in\mathbb{N}\right\}$和$\left\{\displaystyle\frac{p^{\prime}_n}{q^{\prime}_n}\in\mathbb{Q}\bigg| n\in\mathbb{N}\right\}$使得，
+$$\displaystyle\lim_{n\to +\infty}\frac{p_n}{q_n}  = x^-,$$
+$$\displaystyle\lim_{n\to +\infty}\frac{p^{\prime}_n}{q^{\prime}_n} = x^+.$$
+对$\forall \varepsilon > 0$, 存在$N_1, N_2$使得
+$$f\left(\frac{p^{\prime}_{N_1}}{q^{\prime}_{N_1}}\right) - f\left(\frac{p_{N_2}}{q_{N_2}}\right) =f(1)\left(\frac{p^{\prime}_{N_1}}{q^{\prime}_{N_1}} - \frac{p_{N_2}}{q_{N_2}}\right) < \varepsilon.$$
+取$\delta  = \min\left\{x-\frac{p_{N_2}}{q_{N_2}}, \frac{p^{\prime}_{N_1}}{q^{\prime}_{N_1}}-x\right\}$,当$|y-x|<\delta$时，
+$$\left|f(y)-f(x)\right|< f\left(\frac{p^{\prime}_{N_1}}{q^{\prime}_{N_1}}\right) - f\left(\frac{p_{N_2}}{q_{N_2}}\right) < \varepsilon.$$
+所以，$f$在$x$处连续。由$x$的任意性知，$f$在$\mathbb{R}$上连续。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在$\mathbb{R}$上连续且$\forall x, y\in\mathbb{R}$有等式$f(x+y)=f(x)\cdot f(y)$.证明:$f(x)=a^x$,其中$a=f(1)$为一正数.
+\end{example}
+\begin{proof}
+由函数方程式知，
+$$f(0) = f^2(0)\Rightarrow f(0) = 1,$$
+$$f(1) = f\left(\frac{1}{2}\right)^2 > 0,$$
+$$f(n) = \underbrace{f(1)\cdot f(1)\cdots f(1)}_{n}=f(1)^n,$$
+$$f(1) = f\left(\underbrace{\frac{1}{n}+\frac{1}{n}+\cdots+\frac{1}{n}}_{n}\right)=f\left(\frac{1}{n}\right)^n\Rightarrow f\left(\frac{1}{n}\right)=\sqrt[n]{f(1)}.$$
+同理，我们可以证明$\forall \frac{p}{q}\in\mathbb{Q}$, 
+$$f\left(\frac{p}{q}\right)=f(1)^{\frac{p}{q}}.$$
+由$f$的连续性知，$\forall x\in\mathbb{R}$, $f(x) = f(1)^x$
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在$(0, +\infty)$上连续,且$\forall x, y\in\mathbb{R}$有等式$f(xy)=f(x)\cdot f(y)$.证明:$f(x)=0$或者$f(x)=x^a$,其中$a$为常数.
+\end{example}
+\begin{proof}如果$\exists x_0 \in (0, +\infty)$使得$f(x_0)\neq 0$，则由$f(x_0) =f(x_0)f(1)$知，$f(1) = 1$.从而$f(e) > 0$. 记
+$$a=\ln{f(e)},$$ 则$$f(e) = e^a.$$
+同时
+$$f(e^n)=\underbrace{f(e)\cdot f(e)\cdots f(e)}_{\text{n个}}=\underbrace{e^a\cdot e^a\cdots e^a}_{\text{n个}}=(e^n)^a,$$
+$$f(1)=f(e)f(e^{-1})\Rightarrow f(e^{-1}) = (e^{-1})^a,$$
+$$f(e^{-n}) = (e^{-n})^a,$$
+又因为$(\sqrt[n]{e})^n = e$知，
+$$\left(f(\sqrt[n]{e})\right)^n = e^a\Rightarrow f(\sqrt[n]{e})=(\sqrt[n]{e})^a.$$
+由此可见，对$\forall \frac{p}{q}\in\mathbb{Q}$, 
+$$f(e^{\frac{p}{q}})=\left(e^{\frac{p}{q}}\right)^a.$$
+
+对$\forall x\in(0,+\infty)$, 我们可以找一列有理数$\left\{\frac{p_n}{q_n}\bigg| n\in\mathbb{N}\right\}$使得
+$$\displaystyle\lim_{n\to +\infty}\frac{p_n}{q_n}=\ln{x}.$$
+于是，
+$$\displaystyle\lim_{n\to +\infty}e^{\frac{p_n}{q_n}}=e^{\ln{x}} = x,$$
+由$f$的连续性知，
+$$f(x)=\displaystyle\lim_{n\to +\infty}f\left(e^{\frac{p_n}{q_n}}\right)=\displaystyle\lim_{n\to +\infty}\left(e^{\frac{p_n}{q_n}}\right)^a=x^a.$$
+命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$\mathbb{R}$上连续且$\forall x, y\in\mathbb{R}$有等式
+$$f(x+y)+f(x-y)=2f(x)f(y).$$证明：$f=0$或$f(x)=\cos{ax}$或$f(x)=\cosh{ax}$，式中$a$为常数.
+\end{example}
+\begin{proof}
+如果$f(x_0)\neq 0$,则 $$2f(x_0)=f(x_0+0)+f(x_0-0)=2f(x_0)f(0)\Rightarrow f(0)=1.$$
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
 设$f:\mathbb{R}\rightarrow\mathbb{R}$,且$f(x^2)=f(x),\forall x\in\mathbb{R}$,又$f$在$x=0$与$x=1$处连续。证明：$f$为常值函数。
