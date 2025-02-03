@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  30 JAN 2025 03:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  1 FEB 2025 22:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -985,36 +985,29 @@ Overfull \hbox (25.0pt too wide) detected at line 4022
 []
  []
 
-[89] [90]
+[89] [90] [91] [92]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
-(./math_analysis.ind) [91
+(./math_analysis.ind) [93
 
 
 
 
 
 
-] [92
+] [94
 
-] [93] (./math_analysis.aux (./angiosperms.aux))
+] [95] (./math_analysis.aux (./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
-
-Package rerunfilecheck Warning: File `math_analysis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `math_analysis.out':
-(rerunfilecheck)             Before: EB06CD2FA6B6B3B4056CA0EA2EC58779;3706
-(rerunfilecheck)             After:  CA486B40B1E9F09C932BB12473298E33;3706.
+Package rerunfilecheck Info: File `math_analysis.out' has not changed.
+(rerunfilecheck)             Checksum: 5D04E7B653D278A4C8456BB723B7B34A;3706.
  ) 
 Here is how much of TeX's memory you used:
  17574 strings out of 474773
@@ -1025,4 +1018,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (97 pages).
+Output written on math_analysis.pdf (99 pages).
