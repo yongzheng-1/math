@@ -7,7 +7,7 @@
 \usepackage{imakeidx}
 \usepackage{hyperref}
 \usepackage{amsthm}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,accents}
 \usepackage{extarrows}% http://ctan.org/pkg/extarrows
 
 %%%% 定理类环境的定义 %%%%
@@ -4137,8 +4137,38 @@ $$f(x)=\displaystyle\lim_{n\to +\infty}f\left(e^{\frac{p_n}{q_n}}\right)=\displa
 设$f$在$\mathbb{R}$上连续且$\forall x, y\in\mathbb{R}$有等式
 $$f(x+y)+f(x-y)=2f(x)f(y).$$证明：$f=0$或$f(x)=\cos{ax}$或$f(x)=\cosh{ax}$，式中$a$为常数.
 \end{example}
-\begin{proof}
-如果$f(x_0)\neq 0$,则 $$2f(x_0)=f(x_0+0)+f(x_0-0)=2f(x_0)f(0)\Rightarrow f(0)=1.$$
+\begin{proof}我们分以下情况来证明此命题：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$f(x)=1, \forall x\in\mathbb{R}$, 则$f(x)=\cos(0x)$.得证. 
+\item 如果$f(x_0)\neq 0, f(x_0)\neq 1$,则$f(0)=1$.于是$f$不是常数函数。
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$f$是周期函数。连续的非常数函数存在最小正周期。设$T$为$f$的最小证周期，即$f(T)=f(0)=1$. 我们很容易证明
+$$f\left(\frac{T}{2}\right) = -1, f\left(\frac{T}{4}\right)=0, f\left(\frac{3T}{4}\right)=0,$$
+$$f(x) > 0, \forall x\in\left[0,\frac{T}{4}\right)\bigcup \left(\frac{3T}{4}, T\right],f(x) < 0, \forall x\in\left(\frac{T}{4},\frac{3T}{4}\right).$$
+
+取$a=\displaystyle\frac{2\pi}{T}$, 则$f(0) = \cos{a0}=1, f(T)=\cos{aT}=1.$
+
+二等分$[0,T]$, $$f(T)+f(0)=2f^2\left(\frac{T}{2}\right)\Rightarrow f\left(\frac{T}{2}\right)=-1=\cos{a\frac{T}{2}}.$$
+
+假设$2^n$等分$[0,T]$后，$$f\left(\frac{kT}{2^n}\right)=\cos{a\frac{kT}{2^n}}, \forall k=0,1,\cdots,2^n.$$
+
+下证在$2^{n+1}$等分点上，上式也成立。当$k=2l,\forall l=0,1,\cdots,2^n$时，显然成立。因为他们也是$2^n$等分点。
+当$k=1$时，$$2\cos^2{a\frac{T}{2^{n+1}}}=\cos{a\frac{2T}{2^{n+1}}}+\cos{a0}=f\left(\frac{2T}{2^{n+1}}\right)+f(0)=2f^2\left(\frac{T}{2^{n+1}}\right).$$
+所以$$f\left(\frac{T}{2^{n+1}}\right)=\cos{a\frac{T}{2^{n+1}}}.$$
+对于其他的奇数$k=2l-1,\forall l=2,3,\cdots,2^n$,
+\begin{equation*}
+\begin{split}
+2\cos{a\frac{kT}{2^{n+1}}}\cos{a\frac{T}{2^{n+1}}}&=\cos{a\frac{(k+1)T}{2^{n+1}}}+\cos{a\frac{(k-1)T}{2^{n+1}}}\\&=f\left(\frac{(k+1)T}{2^{n+1}}\right)+f\left(\frac{(k-1)T}{2^{n+1}}\right)\\&=2f\left(\frac{kT}{2^{n+1}}\right)f\left(\frac{T}{2^{n+1}}\right)
+\end{split}
+\end{equation*}
+于是, $$f\left(\frac{kT}{2^{n+1}}\right)=\cos{a\frac{kT}{2^{n+1}}}.$$
+
+当$n\to +\infty$, 等分点在$[0,T]$上稠密。由$f$和$\cos$的连续性和相同的周期性知，$f(x)=\cos{ax},\forall x\in\mathbb{R}$.
+\item 如果$f$不是周期函数。
+\end{enumerate}
+\end{enumerate}
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{example}
@@ -4157,6 +4187,435 @@ $$f(0) = \displaystyle\lim_{x\to 1^-}f(x)=f(1).$$
 于是，$f$为常值函数。
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{有界闭区间$[a,b]$上连续函数的性质}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{练习题}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+用$\varepsilon-\delta$语言表达函数$f$在$I$上不一致连续。
+\end{example}
+\begin{solution}
+$\exists \varepsilon_0 >0$,对$\forall \delta > 0$,存在$x\in I, x'\in I$满足$|x-x'|<\delta$但$|f(x)-f(x')| > \varepsilon_0$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在开区间$(a,b)$上连续且$f(a^+)$与$f(b^-)$存在有限。证明：
+$f$在$(a,b)$上一致连续。
+\end{example}
+\begin{proof}
+定义$$\tilde{f}(x)=
+\begin{cases}
+f(a^+),\quad&x=a，\\
+f(x)， \quad&x\in(a,b),\\
+f(b^-),\quad&x=b
+\end{cases}$$
+$\tilde{f}$在$[a,b]$上连续且$\tilde{f}\big|_{(a,b)} = f(x)$.所以，$f$在$(a,b)$上一致连续。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在区间$[a,+\infty)$上连续，若存在常数$b$与$c$使得
+$$\displaystyle\lim_{x\to +\infty}(f(x)-bx-c)=0,$$
+则称直线$y=bx+c$为曲线$y=f(x)$的一条渐近线。在这种情况下，$f$在$[a,+\infty)$上一致连续.
+\end{example}
+\begin{proof}
+对$\forall \varepsilon > 0$, 存在$M > 0$,当$x > M, x'> M$时，有
+$$\frac{\varepsilon}{2} \geq |f(x)-bx-c -f(x')+bx'+c| \geq |f(x)-f(x')|-|b||x-x'|$$
+取$\delta_0 < \displaystyle\frac{\varepsilon}{2(|b|+ 1)}$可得
+$$|f(x)-f(x')|< \varepsilon, \forall x>M, x'>M, |x-x'| < \delta_0.$$
+另一方面，$f|_{[a, M+1]}$上连续，从而一致连续，即$\exists \delta_1$, 
+当$x \leq M+1, x' \leq M+1, |x-x'| < \delta_1$时，有$$|f(x)-f(x')| < \varepsilon.$$
+取$\delta =\min\{\delta_0,\delta_1, 1\}$,当$x\in[a, +\infty), x'\in[a,+\infty), |x-x'|< \delta$时，有$$|f(x)-f(x')| < \varepsilon.$$
+即$f$在$[a,+\infty)$上一致连续。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}由“连续的周期函数一定是一致连续的”证明：$\sin^2{x}+\sin{x^2}$不是周期函数。 
+\end{example}
+\begin{proof}很显然$\sin^2{x}$在$\mathbb{R}$上是一致连续的。现证$\sin{x^2}$不是一致连续的。取$$x_n=\sqrt{2n\pi}, x'_n = \sqrt{2n\pi}+\frac{1}{\sqrt{2n\pi}},\forall n\in\mathbb{N},$$于是有
+$$\displaystyle\lim_{n\to +\infty}(x'_n - x_n)  = 0,$$
+$$\displaystyle\lim_{n\to +\infty}(\sin{(x'_n)^2}-\sin{(x_n)^2})=\displaystyle\lim_{n\to +\infty}\cos{2n\pi}\sin{\left(2+\frac{1}{2n\pi}\right)} =\sin{2}.$$
+所以$\sin{x^2}$在$\mathbb{R}$上不是一致连续的。从而$\sin^2{x}+\sin{x^2}$在$\mathbb{R}$不一致连续。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+研究下列函数的一致连续性：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $f(x)=\sin{x}, x\in\mathbb{R}$;
+\begin{solution}
+连续的周期函数一定是一致连续的，故$f(x)$是一致连续的。
+\end{solution}
+\item $f(x)=\cos{\displaystyle\frac{1}{x}}, x > 0$;
+\begin{solution}取$x_n=\displaystyle\frac{1}{n\pi}, n\in\mathbb{N}$.显然$$\displaystyle\lim_{n\to +\infty}x_n =0,$$ 但是$$|f(x_k) - f(x_{k+1})|=2.$$故$f$不是一致连续的。
+\end{solution}
+\item $f(x)=\sqrt[3]{x}, x\geq 0$;
+\begin{solution}显然当$x_1\geq 1, x_2\geq 1$时，$$|\sqrt[3]{x_1}-\sqrt[3]{x_2}|=\left|\frac{x_1-x_2}{\sqrt[3]{x_1^2}+\sqrt[3]{x_1x_2}+\sqrt[3]{x^2_2}}\right|\leq \frac{|x_1-x_2|}{3}.$$
+于是当$x\geq 1$时，$f$是一致连续的。
+在$[0,1]$上,$f$显然是一致连续的。从而，$f$在$[0,+\infty)$上一致连续。
+\end{solution}
+\item $f(x)=\cos{x^2}, x\in\mathbb{R}$;
+\begin{solution}取$$x_n=\sqrt{\left(2n+\frac{1}{2}\right)
+\pi}, x'_n=x_n +\frac{1}{x_n},$$
+于是有，$$\displaystyle\lim_{n\to +\infty}(x'_n-x_n)=0,$$
+$$\displaystyle\lim_{n\to +\infty}(\cos{(x'_n)^2}-\cos{(x_n)^2})=\displaystyle\lim_{n\to +\infty}-\sin{x^2_n}\sin{\left(2+\frac{1}{(2n+\frac{1}{2})\pi}\right)}=-\sin{2}.$$
+所以，函数$f(x)=\cos{x^2}$在$\mathbb{R}$上不一致连续。
+\end{solution}
+\item $f(x)=x\cos{\frac{1}{x}},x > 0$;
+\begin{solution}很显然$\displaystyle\lim_{x\to 0^+}f(x) = 0$.定义
+$$F(x)=
+\begin{cases}
+f(x), \quad&x > 0,\\
+0, \quad&x =0.
+\end{cases}$$
+我们现在来检查$F(x)$的连续性。当$x_1 > x_2 > 1$时，有
+\begin{equation*}
+\begin{split}
+\cos{1}\cdot(x_1-x_2) &< \cos{\frac{1}{x_2}}\cdot(x_1-x_2)\\&<
+F(x_1)-F(x_2) \\&= \cos{\frac{1}{x_1}}\cdot(x_1-x_2) + x_2\left(\cos{\frac{1}{x_1}} -\cos{\frac{1}{x_2}}\right)\\
+&<(x_1-x_2)+2x_2\sin{\left(\frac{1}{2}\cdot\left[\frac{1}{x_1}+\frac{1}{x_2}\right]\right)}\cdot\sin{\left(\frac{1}{2}\cdot\left[\frac{1}{x_2}-\frac{1}{x_1}\right]\right)}\\
+&<(x_1-x_2)+2x_2\frac{x_1-x_2}{2x_1x_2}\\
+&<2(x_1-x_2)
+\end{split}
+\end{equation*}
+由此可见，$F(x)$在区间$(1, +\infty)$上一致连续。另一方面，$F(x)$在$[0,1]$上连续，从而一致连续。所以，$F(x)$在$[0,+\infty)$上一致连续。从而$f(x) = F(x)\big{|}_{(0,+\infty)}$是一致连续的。
+\end{solution}
+\item $f(x) = x\arctan{x}, x\in\mathbb{R}$;
+\begin{solution}
+当$x_1 < x_2$时，$\arctan{x_1} < \arctan{x_2}$.于是，
+$$(x_2-x_1)\arctan{x_2} < x_2\arctan{x_2} - x_1\arctan{x_1} < (x_2-x_1)\arctan{x_1}.$$ 于是，当$|x_1| > M, |x_2| > M$时，
+$$|x_2\arctan{x_2} - x_1\arctan{x_1}| < \frac{\pi}{2}|x_2-x_1|.$$
+即，$f$在$(-\infty, -M)\cup(M, +\infty)$上一致连续。另一方面，$f$在$[-M, M]$上是一致连续的。所以，在$\mathbb{R}$上，$f(x) = x\arctan{x}$上一致连续。
+\end{solution}
+\item $f(x)=x^2\arcsin{x}, |x|\leq 1$.
+\begin{solution}
+有界闭区间上的连续函数是一致连续的。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item $3$次方程$x^3+2x-1=0$只有唯一根，此根在$(0,1)$内；
+\begin{proof}显然$f(x) = x^3+2x-1 = (x-1)(x^2+x+1)+2x$. 于是，$$f(x) < 0,\forall x \leq 0, \quad f(1) > 0, \forall x \geq 1.$$
+由介值定理，存在$\xi \in (0,1)$使得$f(\xi) = 0$.
+
+如果存在另一个$\xi'\in(0,1)$使得$f(\xi')=0$.于是
+$$\xi^3+2\xi-1=\xi'^3+2\xi'-1\Rightarrow (\xi-\xi')(\xi^2+\xi\xi'+\xi'^2+2) = 0.$$
+因为$\xi^2+\xi\xi'+\xi'^2+2 \geq 2$, 所以$\xi=\xi'$.即存在唯一根。
+\end{proof}
+\item 方程$x^5-3x+1=0$在区间$[0,1]$中有根;
+\begin{proof}记$f(x) =x^5-3x+1$,则$$f(0)=1 > 0, \quad f(1) =1-3+1=-1 <0.$$由介值定理可知，存在$\xi\in(0,1)$使得，$f(\xi) = 0$.
+\end{proof}
+\item 方程$x2^x=1$在区间$[0,1]$上有根；
+\begin{proof}
+记$f(x)=x2^x-1$,则
+$$f(0) = -1 < 0, \quad f(1) = 2 -1 =1 > 0.$$
+由介值定理可知，存在$\xi\in(0,1)$使得，$f(\xi) = 0$.
+\end{proof}
+\item 方程$\displaystyle\frac{a_1}{x-\lambda_1}+\frac{a_2}{x-\lambda_2} + \frac{a_3}{x-\lambda_3} = 0$,$a_1, a_2,a_3 > 0$,$\lambda_1<\lambda_2<\lambda_3$在区间$(\lambda_1,\lambda_2)$与$(\lambda_2,\lambda_3)$中各有一个根；
+\begin{proof}记$f(x)=\displaystyle\frac{a_1}{x-\lambda_1}+\frac{a_2}{x-\lambda_2} + \frac{a_3}{x-\lambda_3}$. 显然
+$$\displaystyle\lim_{x\to \lambda_1^+}f(x)  = +\infty, \quad \displaystyle\lim_{x\to \lambda_2^-}f(x)  = -\infty.$$
+于是由介值定理知，存在$\xi\in(\lambda_1,\lambda_2)$使得$f(\xi)= 0$.
+同理可证，存在$\xi'\in(\lambda_2,\lambda_3)$使得$f(\xi')= 0$. 
+\end{proof}
+\item 实系数偶次多项式
+$$f(x) = x^{2n}+a_1x^{2n-1}+\cdots+a_{2n-1}x+a_{2n}$$
+当$a_{2n} < 0$时至少有两个实根；
+\begin{proof}显然
+$$\displaystyle\lim_{x\to +\infty}f(x) = +\infty, \quad \displaystyle\lim_{x\to -\infty}f(x) = +\infty, \quad f(0) = a_{2n} < 0.$$
+由介值定理，在$(-\infty, 0)$和$(0,+\infty)$上,  $f(x)$各有一根。
+\end{proof}
+\item 方程$x-\lambda\sin{x}=0(0\leq \lambda < 1)$有唯一的根；
+\begin{proof}注意到$|\sin{x}| \leq |x|,\forall x\in\mathbb{R}$, 
+$$x-\lambda |x| \leq x-\lambda\sin{x} \leq x + |\lambda| |x|.$$
+
+当$x > 0$时， $x-\lambda\sin{x} \geq x -\lambda x = (1-\lambda) x  > 0$.
+
+当$x < 0$时，
+$x-\lambda\sin{x} \leq x -\lambda x = (1-\lambda) x < 0$. 
+
+所以，方程$x-\lambda\sin{x}=0$只有唯一根$x=0$.
+\end{proof}
+\item 方程$x -\lambda\sin{x} = b(0\leq \lambda < 1, b > 0)$在$[0,\lambda + b]$中有一根；
+\begin{proof}记$f(x) = x -\lambda\sin{x} - b$.显然
+$$f(0) = -b < 0, \quad f(\lambda+b) = b+\lambda -\lambda\sin{(b+\lambda)} - b = \lambda -\lambda\sin{(b+\lambda)} \geq 0.$$
+
+如果$f(\lambda+b) = 0$,得证。
+
+如果$f(\lambda+b) > 0$,则由介值定理知，存在$\xi\in(0, b+\lambda)$使得$f(\xi) = 0$.
+\end{proof}
+\item 方程$\sin{x}=\displaystyle\frac{1}{x}$有无穷多个根。
+\begin{proof}
+记$f(x) = x\sin{x} - 1$.可见$f\left(\displaystyle\frac{(2n+1)\pi}{2}\right)f\left(\displaystyle\frac{(2n+3)\pi}{2}\right) < 0$.由介值定理，存在$\xi_n\in\left(\displaystyle\frac{(2n+1)\pi}{2},\displaystyle\frac{(2n+3)\pi}{2}\right)$使得，
+$$f(\xi_n)=0.$$
+故，方程$\sin{x}=\displaystyle\frac{1}{x}$有无穷多个根。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+证明：存在唯一的连续函数$f,\forall x\in\mathbb{R}, y=f(x)$满足Kepler方程:$$y-\lambda\sin{y}=x, \quad 0\leq\lambda < 1.$$
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$\varphi(x)$在$\mathbb{R}$上连续，且
+$$\displaystyle\lim_{x\to +\infty}\frac{\varphi(x)}{x^n} = \displaystyle\lim_{x\to -\infty}\frac{\varphi(x)}{x^n}=0.$$
+证明：
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 当$n$为奇数时，方程$x^n+\varphi(x)=0$有一个实根；
+\begin{proof}
+由题可知，$$\displaystyle\lim_{x\to +\infty}\frac{x^n+\varphi(x)}{x^n}=+\infty,$$
+$$\displaystyle\lim_{x\to -\infty}\frac{x^n+\varphi(x)}{x^n}=-\infty.$$
+故存在$x_1< 0 < x_2$使得$$\left(x_1^n+\varphi(x_1)\right)\left(x_2^n+\varphi(x_2)\right) < 0.$$
+于是存在$x_0\in (x_1, x_2)$使得$x_0^n+\varphi(x_0) = 0$.
+\end{proof}
+\item 当$n$为偶数时，存在数$y$使得$\forall x\in\mathbb{R}$，有
+$$y^n+\varphi(y) \leq x^n+\varphi(x).$$
+\begin{proof}
+由题可知$$\displaystyle\lim_{x\to +\infty}\frac{x^n+\varphi(x)}{x^n} = \displaystyle\lim_{x\to -\infty}\frac{x^n+\varphi(x)}{x^n}=+\infty > \varphi(0).$$
+故存在$M>0$使得$x^n+\varphi(x) > \varphi(0),\forall x\in (-\infty,-M)\cup (M, +\infty)$.
+取$y\in[-M, M]$使得，$$y^n+\varphi(y) = \displaystyle\min_{x\in[-M, M]}(x^n+\varphi(x)).$$
+于是，$y^n+\varphi(y) \leq x^n+\varphi(x)， \forall x\in\mathbb{R}$.
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$\mathbb{R}$上连续，且$\forall x,y\in\mathbb{R}$，函数$f$满足：
+$$|f(x)-f(y)|\leq k|x-y|, 0< k < 1.$$
+证明:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 函数$kx-f(x)$单调增；
+\begin{proof}设$x < y$,则$$ky-f(y)-kx+f(x) \geq k(y-x) - |f(x)-f(y)| > 0.$$
+故$kx-f(x)$单调增。
+\end{proof}
+\item $\exists_1 \xi\in\mathbb{R}$, s.t. $f(\xi)=\xi$.
+\begin{proof}考虑函数$F(x)=f(x)-x$.很容易证明
+$$\displaystyle\lim_{x\to +\infty}F(x) < 0.$$
+事实上，对固定的$x_0$, 当$x > x_0$时，
+$$F(x) - F(x_0) = x_0-x +\left(f(x) - f(x_0)\right) < (1-k)(x_0 - x) < -\infty, \forall x\to  +\infty.$$
+同理可证，
+$$\displaystyle\lim_{x\to -\infty}F(x) > 0.$$
+假设$M_1 < 0 <M_2$满足
+$$F(x)  > 0, 
+\forall x \leq M_1, F(x) < 0,\forall x \geq M_2.$$
+由介值定理，存在$\xi\in[M_1, M_2]$使得$$F(\xi) = 0.$$
+即$f(\xi)=\xi$.
+唯一性的证明很容易。如果存在$\xi_0,\xi_1$使得$f(\xi_0)= \xi_0, f(\xi_1)=
+\xi_1$,则$|f(\xi_0)-f(\xi_1)| = |\xi_0-\xi_1|$.这与题设矛盾。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 设$f,g$在区间$I$上一致连续。证明$f+g$在$I$上也是一致连续。
+\begin{proof}
+对$\forall \varepsilon > 0$, 存在$\delta_1 > 0, \delta_2 > 0$，
+
+当$|x_1-x_2| < \delta_1$时，有
+$$|f(x_1)-f(x_2)|<\frac{\varepsilon}{2},$$
+当$|x_1-x_2| < \delta_2$时，有
+$$|g(x_1)-g(x_2)|<\frac{\varepsilon}{2}.$$
+取$\delta=\min\{\delta_1, \delta_2\}$,当$|x_1-x_2| < \delta$时有
+$$|f(x_1)+g(x_1)-f(x_2)-g(x_2)|<\varepsilon.$$
+即，$f+g$在$I$上一致连续。
+\end{proof}
+\item 设区间$I_1$以$c$为右端点，区间$I_2$以$c$为左端点。证明：函数$f$在$I_1\cup I_2$上一致连续$\iff$$f$在$I_1$与$I_2$上都一致连续。
+\begin{proof}
+（$\Rightarrow$）这是显然的的，因为$I_1\subset I_1\cup I_2$, $I_2\subset I_1\cup I_2$.
+
+($\Leftarrow$) 对$\forall \varepsilon > 0$, 存在$\delta > 0$,
+
+当$x_1\in I_1, x_2\in I_1$ 且$|x_1-x_2| < \delta$时，
+$$|f(x_1)-f(x_2)| < \frac{\varepsilon}{2}.$$ 
+
+
+当$x_1\in I_2, x_2\in I_2$ 且$|x_1-x_2| < \delta$时，
+$$|f(x_1)-f(x_2)| < \frac{\varepsilon}{2}.$$ 
+
+于是，当$x_1\in I_1\cup I_2, x_2\in I_1\cup I_2$且$|x_1-x_2| < \delta$时，
+如果，$x_1\in I_1, x_2\in I_1$ 或$x_1\in I_2， x_2\in I_2$时
+$$|f(x_1)-f(x_2)| < \frac{\varepsilon}{2} < \varepsilon.$$
+当$x_1\in I_1, x_2\in I_2$时，
+$$|f(x_1)-f(x_2)| < |f(x_1)-f(c)| + |f(c)- f(x_2)| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.$$
+即，$f$在$I_1\cup I_2$上一致连续。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 证明：$f(x)=\sqrt{x}$在$[0,+\infty)$上一致连续；
+\begin{proof}
+当$x_1 \geq 1, x_2 \geq 1$时，
+$$|f(x_1)-f(x_2)| = |\sqrt{x_1}-\sqrt{x_2}|=\frac{|x_1-x_2|}{\sqrt{x_1}+\sqrt{x_2}} < \frac{1}{2}|x_1-x_2|.$$
+从而$f$在$[1, +\infty)$上一致连续。
+
+另一方面，$f$在$[0,1]$上一致连续是显然的。
+
+所以，$f$在$[0,+\infty)$上一致连续。
+\end{proof}
+\item 应用例$2.5.11$及$\sin{x'}-\sin{x''}=2\cos{\frac{x'+x''}{2}}\sin{\frac{x'-x''}{2}}$。证明：$f(x)=\sin{x}$在$(-\infty,+\infty)$上一致连续。
+\begin{proof}
+对$x_1, x_2\in \mathbb{R}$，$$|\sin{x'}-\sin{x''}| < 2|\cos{\frac{x'+x''}{2}}||\sin{\frac{x'-x''}{2}}| < |x_1-x_2|.$$
+于是，$f=\sin{x}$在$\mathbb{R}$上一致连续。
+\end{proof}
+\item 证明：$f(x)=\cos{\sqrt{x}}$在$[0,+\infty)$上一致连续。
+\begin{proof}
+$$|f(x_1) - f(x_2)|= 2|\sin{\frac{\sqrt{x_1}+\sqrt{x_2}}{2}}||\sin{\frac{\sqrt{x_1}-\sqrt{x_2}}{2}}| < |\sqrt{x_1}-\sqrt{x_2}|.$$
+于是，$f$在$[0, +\infty)$上一致连续。
+\end{proof}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$[a,b]$上连续，且$\forall x\in[a,b]$，$f(x)\neq 0$。证明：$f$在$[a,b]$上恒正或恒负。
+\end{example}
+\begin{proof}
+假设存在$x_1\in[a,b], x_2\in[a,b]$满足$x_1 < x_2, f(x_1)f(x_2) < 0$.由介值定理可知，存在$x\in(x_1, x_2)$使得$f(x) = 0$.这与题设矛盾。故$f$恒为正或恒为负。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{思考题}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在区间$I$上连续，且是一对一的(即有反函数)，则$f$是严格单增的。
+\end{example}
+\begin{proof}
+不妨假设存在$x_1 < x_2 < x_3$使得
+$$f(x_1) < f(x_2), \quad f(x_3) < f(x_2).$$
+取$m=\max\{f(x_1), f(x_3)\}$, $l=\displaystyle\frac{m+f(x_2)}{2}$.由介值定理知，存在
+$\xi_1\in(x_1, x_2), \xi_2\in(x_2, x_3)$使得
+$$f(\xi_1) = f(\xi_2)=l.$$
+这与$f$是单射矛盾。故$f$在$I$上单调。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f:\mathbb{R}\rightarrow\mathbb{R}$连续，$f\circ f(x)=x, \forall x\in\mathbb{R}$. 证明：$\exists \xi\in\mathbb{R}$, s.t. $f(\xi)=\xi$.
+\end{example}
+\begin{proof}
+如果$f(x) < x,\forall x\in\mathbb{R}$, 则
+$$x = f\circ f(x) < f(x),$$
+这假设矛盾。故存在$x_1\in\mathbb{R}$使得$f(x_1) \geq x_1$.
+如果$f(x_1) = x_1$,取$\xi=x_1$,命题得证。故我们设$f(x_1) > x_1$.
+
+同理可证，如果$f(x) > x,\forall x\in\mathbb{R}$,则可以找到$x_2$使得$f(x_2) \leq x_2$.
+如果$f(x_2) = x_2$, 则取$\xi=x_2$,命题得证。现设$f(x_2) < x_2$.
+
+不妨设$x_1 < x_2$. 由于$$(f(x_1) - x_1)(f(x_2)-x_2) < 0,$$
+由介值定理, 存在$\xi\in(x_1, x_2)$使得$f(\xi) -\xi = 0$, i.e. $f(\xi) = \xi$.命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$[a,b]$上连续$(a<b)$，$f(a)=f(b)$。证明：在曲线$y=f(x)(x\in[a,b])$上一定能找到两点$A=(\xi,f(\xi))$，$B=(\xi+\displaystyle\frac{b-a}{2}, f(\xi+\displaystyle\frac{b-a}{2}))$，使得$\xi\in[a, \displaystyle\frac{a+b}{2}]$且$AB$平行$x$轴。
+\end{example}
+\begin{proof}我们考虑函数
+$$F(x) = f(x) - f\left(x+\displaystyle\frac{b-a}{2}\right).$$
+由于$f$在$[a,b]$上连续，从而$F(x)$在$[a,b]$上连续。
+$$F(a) = f(a) - f\left(\frac{b+a}{2}\right), \quad F\left(\frac{b+a}{2}\right) = f\left(\frac{b+a}{2}\right) - f(b).$$
+如果$F(a) = 0$, 则取$\xi=a$,命题得证。如果$F(a) \neq 0$,则$F\left(\frac{b+a}{2}\right)\neq 0$且$F(a)F\left(\frac{b+a}{2}\right) < 0$.由介值定理，存在$\xi\in\left(a,\displaystyle\frac{b+a}{2}\right)$使得$F(\xi) = 0$.命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$[0,2]$上连续，且$f(0)=f(2)$。证明:$\exists \xi \in[0,1]$，使得$f(\xi)=f(\xi+1)$.
+\end{example}
+\begin{proof}考虑函数$F(x) = f(x) - f(x+1)$.显然$F$在$[0,2]$上连续。
+$$F(0) = f(0) - f(1), \quad F(1) = f(1) - f(2) = f(1) - f(0).$$
+如果$F(0) = 0$, 则取$\xi = 0$,命题得证。如果$F(0)\neq 0$, 则
+$$F(0)F(1) < 0.$$
+由介值定理，存在$\xi\in(0,1)$使得$F(\xi) = 0$. 命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f:[0,1]\rightarrow \mathbb{R}$连续，$f(0)=f(1)$ 证明: $\forall n\in\mathbb{N}$，必存在$\xi_n\in[0, 1-\frac{1}{n}]$，使得$$f(\xi_n) = f\left(\xi_n+\frac{1}{n}\right).$$
+\end{example}
+\begin{proof}对$\forall n\in\mathbb{N}$, 考虑函数$$F(x) = f(x) -f\left(x+\frac{1}{
+n}\right).$$
+很显然
+$$\displaystyle\sum_{i=0}^{n-1}F\left(\frac{i}{n}\right) = f(0)-f(1) = 0.$$
+如果$\exists k$使得$F\left(\frac{k}{n}\right)=0$, 则取$\xi=\frac{k}{n}$, 命题得证。
+如果$\forall i, i =0, 2,\cdots n-1$, $F\left(\frac{i}{n}\right)\neq 0$,则必存在
+$i < j$使得$$F\left(\frac{i}{n}\right)\cdot F\left(\frac{j}{n}\right) < 0.$$
+由介值定理知，存在$\xi\in(\frac{i}{n}, \frac{j}{n})$使得$F(\xi) = 0$， 即$f(\xi) = f\left(\xi+\frac{1}{n}\right)$.命题得证。
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f,g:[0,1]\rightarrow [0,1]$连续，且$\forall x\in [0,1]$有$f(g(x))=g(f(x))$.证明:
+\renewcommand\labelenumi{\normalfont(\theenumi)}
+\begin{enumerate}
+\item 如果$f$单调减，则$\exists_1 a\in[0,1]$,s.t. $f(a)=g(a)=a$；
+\begin{proof}考虑函数$F(x) = f(x) - x$.很显然
+$$F(0) = f(0) \geq 0, \quad F(1) = f(1) - 1 \leq 0.$$
+
+如果$F(0) = 0$, i.e. $f(0) = 0$时，$f(x)\equiv 0, \forall x\in [0,1]$. 取$a=0$,则
+命题得证。
+
+如果$F(1) = 0$, i.e. $f(1) = 1$时，$f(x)\equiv 1, \forall x\in [0,1]$. 取$a=1$,则命题得证。
+
+如果$F(0) >0, F(1) < 0$,由介值定理知，$\exists a\in(0,1)$使得$F(a) = 0$, i.e. $f(a) = a$. $a$的唯一性是由$f$单调减保证的。
+\end{proof}
+\item 如果$f$单调，则$\exists a\in[0,1]$,s.t.$f(a)=g(a)=a$;
+\begin{proof}我们只证$f$是单增的情形。考虑函数$G(x) = g(x) - x$. 存在$x_0\in[0,1]$使得$G(x_0) = 0$, i.e. 
+$g(x_0) = x_0$。我们现在考察数列$$x_{n+1}=f(x_{n}), \quad n = 0,1,\cdots,$$
+
+用归纳法可证，$g(x_n) = x_n$. $n=0$时，上式成立。设$n=k$时，上式亦成立，i.e. $g(x_k) = x_k$.现证$n=k+1$时，此式亦成立。事实上，$$g(x_{k+1}) = g(f(x_{k}))  = f(g(x_k))=f(x_k)=x_{k+1}.$$
+
+注意到$f$是单增的. 如果$x_1 \geq x_0$$\{x_n\}$是单调增有上界的数列。如果$x_1\leq x_0$，则$\{x_n\}$是单减有下界的数列。故
+$$\displaystyle\lim_{n\to +\infty}x_n = a\in[0,1].$$
+对于这个$a$, 我们一定有
+$$f(a) = a, \quad g(a) = a.$$
+命题得证。
+\end{proof}
+\item 如果$f$单调增，使$f(a)=g(a)=a$成立的$a\in[0,1]$是否唯一;
+\begin{solution}
+不唯一，$f(x) = g(x)= x,\forall x\in[0,1]$就满足条件。
+\end{solution}
+\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f:\mathbb{R}\rightarrow\mathbb{R}$为连续函数，存在数$a$及$c>0$，使得对所有的$n\in\mathbb{N}$有$|f^n(a)|\leq c$。证明:$f$有不动点$x_0$，即$f(x_0)=x_0$。这里$f^n=\overbrace{f\circ f\circ f\circ\cdots\circ f}^{\text{n个}}$表示的n次复合。
+\end{example}
+\begin{proof}我们考虑数列
+$$a_0=a=f^0(a), \quad a_n = f^n(a), n = 1,2\cdots.$$
+如果$a_0 = a=f(a)=a_1$,命题得证。
+设$a_0 > f(a) = a_1$。如果存在$k$使得$a_k = f^k(a) = f(a_{k-1}) = a_{k-1}$。命题得证。如果存在$k$使得$a_k = f^k(a) = f(a_{k-1}) > a_{k-1}$.则$$(f(a)-a)(f(a_{k-1})-a_{k-1}) < 0.$$由介值定理知，存在$x_0$使得$f(x_0) = x_0$.命题得证。
+如果$\forall k$都有$a_k = f^k(a) = f(a_{k-1}) < a_{k-1}$。则$\{a_n\}$是单调减有下界的数列。故收敛。设$$\displaystyle\lim_{n\to +\infty}a_n = x_0.$$
+则$f(x_0) = x_0$.即$x_0$为$f$的不动点。
+
+同理可知，当$a_0 < a_1$时，我们也总可以找到一点$x_0$使得$f(x_0) = x_0$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$x_1,x_2,\cdots,x_n\in[0,1]$.证明:$\exists t_0\in [0,1]$,使得
+$$\frac{1}{n}\displaystyle\sum_{i=1}^n|t_0-x_i|=\frac{1}{2}.$$
+\end{example}
+\begin{proof}考察函数$F(x) = \displaystyle\sum_{i=1}^n|x-x_i|$.
+很显然，
+$$F(0) + F(1) = n.$$
+如果$F(0)=F(1) = \frac{n}{2}$, 则命题得证。如果$F(0)\neq F(1)$, 则$$\left(F(0)-\frac{n}{2}\right)\left(F(1)-\frac{n}{2}\right) < 0.$$
+由介值定理，不存在$t_0\in[0,1]$使得$F(t_0) = \frac{n}{2}$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设函数$f$在区间$I$上连续，且有唯一的极值点$x_0\in\accentset{\circ}{I}$($I$的内点集)。若$f(x_0)$为极大(小)值,则$f(x_0)$为最大(小)值。
+\end{example}
+\begin{proof}假设$x_0$为$f$的极大值点。
+
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 %\subsubsection{三级节标题}
 
