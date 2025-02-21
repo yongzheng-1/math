@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  1 FEB 2025 22:13
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.8)  20 FEB 2025 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -613,23 +613,31 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/accents/accents.sty
+Package: accents 2006/05/12 v1.4 Math Accent Tools
+\cc@skew=\dimen267
+\cc@wd=\dimen268
+\cc@code=\count332
+\cc@group=\count333
+\cc@skewchar=\count334
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/extarrows/extarrows.sty
 Package: extarrows 2020/03/12 v1.2.0 Some extensible arrows
 )
-\c@example=\count332
-\c@algorithm=\count333
-\c@theorem=\count334
-\c@definition=\count335
-\c@axiom=\count336
-\c@property=\count337
-\c@proposition=\count338
-\c@lemma=\count339
-\c@corollary=\count340
-\c@remark=\count341
-\c@condition=\count342
-\c@conclusion=\count343
-\c@assumption=\count344
-\c@solution=\count345
+\c@example=\count335
+\c@algorithm=\count336
+\c@theorem=\count337
+\c@definition=\count338
+\c@axiom=\count339
+\c@property=\count340
+\c@proposition=\count341
+\c@lemma=\count342
+\c@corollary=\count343
+\c@remark=\count344
+\c@condition=\count345
+\c@conclusion=\count346
+\c@assumption=\count347
+\c@solution=\count348
 \math_analysis@idxfile=\write3
 \openout3 = `math_analysis.idx'.
 
@@ -835,7 +843,12 @@ Package fontspec Info: Font family 'STFangsong(0)' created for font
 
 ] [2
 
-] (./math_analysis.toc [3])
+] (./math_analysis.toc [3]
+Overfull \hbox (0.30902pt too wide) detected at line 36
+ \TU/lmr/m/n/10.53937 100
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `math_analysis.toc'.
 
@@ -986,36 +999,58 @@ Overfull \hbox (25.0pt too wide) detected at line 4022
  []
 
 [89] [90] [91] [92]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4191.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4191.
+
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[93] [94] [95] [96] [97]
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[98]
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=t
+ex-text;!
+[99] [100] [101] [102] [103]
 \openout2 = `angiosperms.aux'.
 
 
 No file angiosperms.tex.
+[104
+
+
+
+
+]
 runsystem(makeindex math_analysis.idx)...executed safely (allowed).
 
-(./math_analysis.ind) [93
+ (./math_analysis.ind) [105
 
 
+] [106
 
-
-
-
-] [94
-
-] [95] (./math_analysis.aux (./angiosperms.aux))
+] [107] (./math_analysis.aux
+(./angiosperms.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `math_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: 5D04E7B653D278A4C8456BB723B7B34A;3706.
+(rerunfilecheck)             Checksum: B4AB8E4E772842C3C213714B6972A028;4062.
  ) 
 Here is how much of TeX's memory you used:
- 17574 strings out of 474773
- 396684 string characters out of 5757724
+ 17630 strings out of 474773
+ 397586 string characters out of 5757724
  1950839 words of memory out of 5000000
- 39427 multiletter control sequences out of 15000+600000
+ 39479 multiletter control sequences out of 15000+600000
  571603 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 107i,23n,111p,653b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,23n,111p,653b,733s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on math_analysis.pdf (99 pages).
+Output written on math_analysis.pdf (111 pages).
