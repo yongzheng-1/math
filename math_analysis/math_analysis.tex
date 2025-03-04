@@ -4612,7 +4612,28 @@ $$F(0) + F(1) = n.$$
 \begin{example}
 设函数$f$在区间$I$上连续，且有唯一的极值点$x_0\in\accentset{\circ}{I}$($I$的内点集)。若$f(x_0)$为极大(小)值,则$f(x_0)$为最大(小)值。
 \end{example}
-\begin{proof}假设$x_0$为$f$的极大值点。
+\begin{proof}假设$x_0$为$f$的极大值点。我们需要证明$f$在$I$的端点处不能取到最大值。设
+$I$的右端点为$b$.如果存在$x_1\in (x_0, b)$使得$f(x_1) \geq f(x_0)$。由于$x_0$是极大值，存在$x\in(x_0, x_1)$使得$f(x) < f(x_0)$.于是，$f$在$(x_0, x_1)$内有极小值。这与$x_0$是唯一极值矛盾。故当$x>x_0$时有$f(x) < f(x_0)$.
+
+同理可证，当$x < x_0$时也有$f(x) < f(x_0)$. 由于函数$f$在$I$上连续，则$f$在$I$端点出的值不会超过$f(x_0)$. i.e. $f(x)\leq f(x_0), \quad\forall x\in I$. i.e. $f(x_0) = \max_{x\in I}f(x)$.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$在$[a.b)$上连续，$\displaystyle\lim_{x\to b^-}f(x) = +\infty$，且$\forall (\alpha,\beta)\subset [a,b)$，$f(x)$在$(\alpha,\beta)$上达不到最小值。证明:$f$在$[a,b)$上是严格增的。
+\end{example}
+\begin{proof}
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f:\mathbb{R}\rightarrow\mathbb{R}$为连续函数，且$\forall x\in\mathbb{R}$都为$f$的极值点。证明:$f$为常值函数。
+\end{example}
+\begin{proof}
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}
+设$f$为$\mathbb{R}$上的连续函数，并且$\displaystyle\lim_{x\to \infty}f(x)=+\infty$，又设$f$的最小值$f(a)<a$。证明$f\circ f$至少在两个点上达到最小值。
+\end{example}
+\begin{proof}
 
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
